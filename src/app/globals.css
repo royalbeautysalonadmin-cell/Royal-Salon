@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 21 28% 23%;
+    --card: 0 0% 100%;
+    --card-foreground: 21 28% 23%;
+    --primary: 20 28% 33%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 46 65% 52%;
+    --secondary-foreground: 24 35% 18%;
+    --muted: 35 40% 94%;
+    --muted-foreground: 24 12% 45%;
+    --accent: 35 40% 94%;
+    --accent-foreground: 21 28% 23%;
+    --border: 32 30% 88%;
+    --input: 32 30% 88%;
+    --ring: 20 28% 33%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-charcoal font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  /* Custom luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F6F1EA;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6A4B3C, #D4AF37);
+    border-radius: 9999px;
+  }
+  ::selection {
+    background: rgba(212, 175, 55, 0.25);
+    color: #2D211A;
+  }
+}
+
+@layer components {
+  .container-luxury {
+    @apply mx-auto w-full max-w-[1320px] px-6 md:px-10;
+  }
+
+  /* Gold gradient text */
+  .text-gradient-gold {
+    @apply bg-gold-gradient bg-clip-text text-transparent;
+    background-size: 200% auto;
+  }
+
+  .text-gradient-brown {
+    @apply bg-brown-gradient bg-clip-text text-transparent;
+  }
+
+  /* Glassmorphism card */
+  .glass {
+    @apply border border-white/40 bg-white/20 backdrop-blur-xl;
+  }
+  .glass-dark {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+  }
+
+  /* Section eyebrow label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-brown-600;
+  }
+
+  /* Luxury gold hairline divider */
+  .divider-gold {
+    @apply h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .perspective {
+    perspective: 1000px;
+  }
+  /* GSAP / scroll reveal initial state (set via JS to allow no-JS fallback) */
+  .reveal-init {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
