@@ -1,5 +1,5 @@
 import { siteConfig } from "./site";
-import { services, faqs } from "@/data/content";
+import { allServices, faqs } from "@/data/content";
 
 export function localBusinessJsonLd() {
   return {
@@ -58,7 +58,7 @@ export function servicesJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    itemListElement: services.map((s, i) => ({
+    itemListElement: allServices.map((s, i) => ({
       "@type": "ListItem",
       position: i + 1,
       item: {

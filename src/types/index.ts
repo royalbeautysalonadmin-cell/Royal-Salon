@@ -1,11 +1,10 @@
 export type ServiceCategory =
-  | "Makeup"
   | "Hair"
-  | "Skin"
-  | "Nails"
-  | "Threading & Waxing"
-  | "Mehndi"
-  | "Training";
+  | "Makeup & Styling"
+  | "Threading"
+  | "Waxing"
+  | "Facial & Skin Care"
+  | "Manicure & Pedicure";
 
 export interface Service {
   slug: string;
@@ -16,6 +15,9 @@ export interface Service {
   duration: string;
   image: string;
   featured?: boolean;
+  variant?: string;
+  originalPrice?: number;
+  priceOnRequest?: boolean;
 }
 
 export interface Package {

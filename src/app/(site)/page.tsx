@@ -4,6 +4,7 @@ import { Services } from "@/components/sections/Services";
 import { BridalShowcase } from "@/components/sections/BridalShowcase";
 import { Packages } from "@/components/sections/Packages";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { Amenities } from "@/components/sections/Amenities";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
@@ -26,6 +27,7 @@ export default function HomePage() {
       <BridalShowcase />
       <Packages />
       <WhyChooseUs />
+      <Amenities />
       <Testimonials />
       <Gallery />
       <Contact />

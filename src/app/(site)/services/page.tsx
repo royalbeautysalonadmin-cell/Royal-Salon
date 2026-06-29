@@ -7,7 +7,7 @@ import { servicesJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Explore our full menu of luxury beauty treatments in Warsaw — bridal & party makeup, hair, skincare, nails, waxing and more.",
+    "Explore our full menu of 55+ luxury beauty treatments in Warsaw — hair, makeup, threading, waxing, facials, manicure, pedicure and more at Royal Beauty Salon.",
 };
 
 export default function ServicesPage() {

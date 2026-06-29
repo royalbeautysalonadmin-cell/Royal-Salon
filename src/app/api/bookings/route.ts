@@ -3,7 +3,7 @@ import { connectDB, isDbConfigured } from "@/lib/db";
 import { Appointment } from "@/models/Appointment";
 import { bookingSchema } from "@/lib/validation";
 import { sendBookingEmails } from "@/lib/email";
-import { services } from "@/data/content";
+import { allServices } from "@/data/content";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       );
     }
     const data = parsed.data;
-    const match = services.find((s) => s.slug === data.service);
+    const match = allServices.find((s) => s.slug === data.service);
     const serviceName = data.serviceName || match?.name || data.service;
 
     // Persist to MongoDB when configured; otherwise run in graceful demo mode.

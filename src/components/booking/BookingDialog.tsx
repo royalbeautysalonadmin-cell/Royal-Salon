@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,6 +11,7 @@ import {
   Sparkles,
   PartyPopper,
   Loader2,
+  Search,
 } from "lucide-react";
 import {
   Dialog,
@@ -23,7 +24,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { cn, formatPrice, formatDate } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
-import { services } from "@/data/content";
+import { allServices } from "@/data/content";
+import type { ServiceCategory } from "@/types";
 
 const TIME_SLOTS = [
   "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM",
@@ -32,6 +34,15 @@ const TIME_SLOTS = [
 ];
 
 const STEPS = ["Service", "Date", "Time", "Details", "Confirm"];
+
+const categoryOrder: ServiceCategory[] = [
+  "Hair",
+  "Makeup & Styling",
+  "Threading",
+  "Waxing",
+  "Facial & Skin Care",
+  "Manicure & Pedicure",
+];
 
 function nextDays(count: number) {
   const days: Date[] = [];
@@ -50,6 +61,8 @@ export function BookingDialog() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [serviceSearch, setServiceSearch] = useState("");
+  const [serviceCategory, setServiceCategory] = useState<ServiceCategory | "All">("All");
 
   const [form, setForm] = useState({
     service: "",
@@ -62,17 +75,18 @@ export function BookingDialog() {
   });
 
   const days = useMemo(() => nextDays(21), []);
-  const selectedService = services.find((s) => s.slug === form.service);
+  const selectedService = allServices.find((s) => s.slug === form.service);
 
-  // Reset / preselect on open
   useEffect(() => {
     if (isOpen) {
       setStep(0);
       setDone(false);
       setError(null);
+      setServiceSearch("");
+      setServiceCategory("All");
       setForm((f) => ({
         ...f,
-        service: preselectedService && services.some((s) => s.slug === preselectedService)
+        service: preselectedService && allServices.some((s) => s.slug === preselectedService)
           ? preselectedService
           : "",
         date: "",
@@ -82,6 +96,25 @@ export function BookingDialog() {
   }, [isOpen, preselectedService]);
 
   const update = (patch: Partial<typeof form>) => setForm((f) => ({ ...f, ...patch }));
+
+  const filteredServices = useMemo(() => {
+    return allServices.filter((s) => {
+      const matchCategory = serviceCategory === "All" || s.category === serviceCategory;
+      const matchSearch =
+        !serviceSearch ||
+        s.name.toLowerCase().includes(serviceSearch.toLowerCase());
+      return matchCategory && matchSearch;
+    });
+  }, [serviceSearch, serviceCategory]);
+
+  const servicesByCategory = useMemo(() => {
+    const grouped: Record<string, typeof allServices> = {};
+    for (const cat of categoryOrder) {
+      const items = filteredServices.filter((s) => s.category === cat);
+      if (items.length > 0) grouped[cat] = items;
+    }
+    return grouped;
+  }, [filteredServices]);
 
   const canNext = useMemo(() => {
     switch (step) {
@@ -128,7 +161,6 @@ export function BookingDialog() {
           />
         ) : (
           <div>
-            {/* Header + progress */}
             <div className="bg-brown-gradient px-6 py-5 text-white">
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5" />
@@ -165,7 +197,6 @@ export function BookingDialog() {
               </div>
             </div>
 
-            {/* Step content */}
             <div className="max-h-[55vh] overflow-y-auto px-6 py-6">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -177,27 +208,69 @@ export function BookingDialog() {
                 >
                   {step === 0 && (
                     <div>
-                      <p className="mb-4 text-sm text-charcoal/60">Choose your treatment</p>
-                      <div className="grid gap-2 sm:grid-cols-2">
-                        {services.map((s) => (
+                      <p className="mb-3 text-sm text-charcoal/60">Choose your treatment</p>
+
+                      <div className="relative mb-3">
+                        <Search className="absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-charcoal/40" />
+                        <input
+                          type="text"
+                          placeholder="Search services..."
+                          value={serviceSearch}
+                          onChange={(e) => setServiceSearch(e.target.value)}
+                          className="w-full rounded-lg border border-brown/15 bg-cream/30 py-2 pl-9 pr-3 text-sm text-charcoal placeholder:text-charcoal/40 focus:border-brown focus:outline-none focus:ring-1 focus:ring-brown/10"
+                        />
+                      </div>
+
+                      <div className="mb-3 flex flex-wrap gap-1.5">
+                        {(["All", ...categoryOrder] as const).map((cat) => (
                           <button
-                            key={s.slug}
-                            onClick={() => update({ service: s.slug })}
+                            key={cat}
+                            onClick={() => setServiceCategory(cat)}
                             className={cn(
-                              "flex items-center justify-between rounded-xl border p-3 text-left transition-all",
-                              form.service === s.slug
-                                ? "border-brown bg-brown/5 ring-1 ring-brown"
-                                : "border-border hover:border-brown/40"
+                              "rounded-full px-3 py-1 text-xs font-medium transition-all",
+                              serviceCategory === cat
+                                ? "bg-brown text-white"
+                                : "bg-cream text-charcoal/60 hover:bg-brown/10"
                             )}
                           >
-                            <span>
-                              <span className="block text-sm font-medium text-charcoal">{s.name}</span>
-                              <span className="block text-xs text-charcoal/50">{s.duration}</span>
-                            </span>
-                            <span className="text-sm font-semibold text-brown">
-                              {formatPrice(s.price)}
-                            </span>
+                            {cat}
                           </button>
+                        ))}
+                      </div>
+
+                      <div className="space-y-4">
+                        {Object.entries(servicesByCategory).map(([cat, items]) => (
+                          <div key={cat}>
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brown/70">
+                              {cat}
+                            </p>
+                            <div className="grid gap-1.5">
+                              {items.map((s) => (
+                                <button
+                                  key={s.slug}
+                                  onClick={() => update({ service: s.slug })}
+                                  className={cn(
+                                    "flex items-center justify-between rounded-xl border p-3 text-left transition-all",
+                                    form.service === s.slug
+                                      ? "border-brown bg-brown/5 ring-1 ring-brown"
+                                      : "border-border hover:border-brown/40"
+                                  )}
+                                >
+                                  <span className="min-w-0 flex-1">
+                                    <span className="block truncate text-sm font-medium text-charcoal">
+                                      {s.name}
+                                    </span>
+                                    <span className="block text-xs text-charcoal/50">
+                                      {s.duration}
+                                    </span>
+                                  </span>
+                                  <span className="ml-2 shrink-0 text-sm font-semibold text-brown">
+                                    {formatPrice(s.price)}
+                                  </span>
+                                </button>
+                              ))}
+                            </div>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -279,7 +352,7 @@ export function BookingDialog() {
                             id="b-phone"
                             value={form.phone}
                             onChange={(e) => update({ phone: e.target.value })}
-                            placeholder="+971 ..."
+                            placeholder="+48 ..."
                           />
                         </div>
                       </div>
@@ -309,9 +382,9 @@ export function BookingDialog() {
                     <div className="space-y-4">
                       <p className="text-sm text-charcoal/60">Please confirm your details</p>
                       <div className="space-y-3 rounded-2xl border border-brown/15 bg-cream/50 p-5">
-                        <Row label="Service" value={selectedService?.name || "—"} />
-                        <Row label="Price" value={selectedService ? formatPrice(selectedService.price) : "—"} />
-                        <Row label="Date" value={form.date ? formatDate(form.date) : "—"} />
+                        <Row label="Service" value={selectedService?.name || "\u2014"} />
+                        <Row label="Price" value={selectedService ? formatPrice(selectedService.price) : "\u2014"} />
+                        <Row label="Date" value={form.date ? formatDate(form.date) : "\u2014"} />
                         <Row label="Time" value={form.time} />
                         <Row label="Name" value={form.name} />
                         <Row label="Phone" value={form.phone} />
@@ -327,7 +400,6 @@ export function BookingDialog() {
               </AnimatePresence>
             </div>
 
-            {/* Footer nav */}
             <div className="flex items-center justify-between border-t border-border px-6 py-4">
               <Button
                 variant="ghost"
@@ -412,7 +484,7 @@ function SuccessScreen({
       >
         <p className="font-semibold text-brown">{service}</p>
         <p className="mt-1 text-charcoal/70">
-          {date ? formatDate(date) : ""} · {time}
+          {date ? formatDate(date) : ""} &middot; {time}
         </p>
       </motion.div>
       <Button variant="gold" className="mt-7" onClick={onClose}>

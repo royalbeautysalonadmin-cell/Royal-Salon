@@ -8,7 +8,7 @@ export const siteConfig = {
   ogImage: "/og.jpg",
   phone: process.env.NEXT_PUBLIC_SALON_PHONE || "+48 22 123 45 67",
   whatsapp: process.env.NEXT_PUBLIC_SALON_WHATSAPP || "48221234567",
-  email: process.env.NEXT_PUBLIC_SALON_EMAIL || "hello@royalbeautysalon.pl",
+  email: process.env.NEXT_PUBLIC_SALON_EMAIL || "warsawroyalbeauty@gmail.com",
   address: {
     line1: "ul. Mokotowska 12",
     line2: "00-561 Warsaw, Poland",

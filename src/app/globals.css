@@ -104,4 +104,20 @@
     opacity: 0;
     transform: translateY(40px);
   }
+  /* Elegant pulse animation for CTA buttons */
+  .pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+  }
+  /* Smooth card hover lift */
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px -15px rgba(74, 53, 42, 0.25);
+  }
 }
