@@ -56,7 +56,7 @@ export const services: Service[] = [
     description: "Beautiful highlights for medium-length hair, adding dimension and radiance.",
     price: 300,
     duration: "4h",
-    image: U("photo-1605980765922-8e2d8e6a3b15"),
+    image: U("photo-1522337660859-02fbefca4702"),
   },
   {
     slug: "hair-highlights-long",
@@ -102,7 +102,7 @@ export const services: Service[] = [
     price: 63,
     originalPrice: 70,
     duration: "30 min",
-    image: U("photo-1503951914875-452b2d0e7bb2"),
+    image: U("photo-1560869713-7d0a29430803"),
   },
   {
     slug: "kids-haircut",
@@ -207,7 +207,7 @@ export const services: Service[] = [
     price: 43,
     originalPrice: 50,
     duration: "30 min",
-    image: U("photo-1531891570138-53e3be23e4e2"),
+    image: U("photo-1583089892943-e02e5b017b6a"),
   },
   {
     slug: "ironing-medium",
