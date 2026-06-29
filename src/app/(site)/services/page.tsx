@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { Services } from "@/components/sections/Services";
+import { Packages } from "@/components/sections/Packages";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { Contact } from "@/components/sections/Contact";
 import { servicesJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -23,8 +25,10 @@ export default function ServicesPage() {
         description="From bridal artistry to advanced skincare, every service is delivered with luxury, precision and care in the heart of Warsaw."
         breadcrumb="Services"
       />
-      <Services />
+      <Services showHeader={false} />
+      <Packages />
       <WhyChooseUs />
+      <Contact />
     </>
   );
 }

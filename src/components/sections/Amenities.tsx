@@ -28,6 +28,7 @@ export function Amenities() {
       <div className="pointer-events-none absolute inset-0 bg-luxury-radial opacity-40" />
       <div className="container-luxury relative">
         <SectionHeading
+          light
           eyebrow="Salon Amenities"
           title="Everything You Need"
           description="We've thought of every detail to make your visit comfortable, convenient and truly luxurious."
