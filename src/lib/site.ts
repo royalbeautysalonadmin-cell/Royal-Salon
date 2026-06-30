@@ -4,7 +4,10 @@ export const siteConfig = {
   tagline: "Where Beauty Meets Royalty",
   description:
     "Experience luxury beauty treatments, bridal makeovers, premium skincare, and professional beauty training at Royal Beauty Salon.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  // Falls back to the live domain so production SEO (sitemap, canonical, OG)
+  // is correct even if NEXT_PUBLIC_SITE_URL is not set in the host env.
+  // Local dev overrides this via .env.local (http://localhost:3000).
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://royalbeautysaloon.com",
   ogImage: "/og.jpg",
   phone: process.env.NEXT_PUBLIC_SALON_PHONE || "+48 22 123 45 67",
   whatsapp: process.env.NEXT_PUBLIC_SALON_WHATSAPP || "48221234567",
