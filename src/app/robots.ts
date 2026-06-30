@@ -7,9 +7,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/api", "/admin/"],
+        // Keep private/non-content routes out of the index.
+        disallow: ["/admin", "/admin/", "/api/", "/_next/"],
       },
     ],
     sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
   };
 }

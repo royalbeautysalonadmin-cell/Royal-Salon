@@ -35,7 +35,39 @@ export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Packages", href: "/packages" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+/** Service category links for footer / internal linking. */
+export const serviceCategoryLinks = [
+  { label: "Hair", href: "/services/hair" },
+  { label: "Makeup & Styling", href: "/services/makeup" },
+  { label: "Facials & Skincare", href: "/services/facials" },
+  { label: "Waxing", href: "/services/waxing" },
+  { label: "Threading & Brows", href: "/services/threading" },
+  { label: "Manicure & Pedicure", href: "/services/nails" },
+] as const;
+
+/** Local SEO links for footer / internal linking. */
+export const warsawLinks = [
+  { label: "Beauty Salon Warsaw", href: "/warsaw" },
+  { label: "Bridal Makeup Warsaw", href: "/warsaw/bridal-makeup-warsaw" },
+  { label: "Hair Salon Warsaw", href: "/warsaw/hair-salon-warsaw" },
+  { label: "Facial Warsaw", href: "/warsaw/facial-warsaw" },
+  { label: "Eyebrow Threading Warsaw", href: "/warsaw/eyebrow-threading-warsaw" },
+  { label: "Waxing Warsaw", href: "/warsaw/waxing-warsaw" },
+] as const;
+
+/** Specialty / community landing pages for footer + internal linking. */
+export const specialtyLinks = [
+  { label: "Indian Salon Warsaw", href: "/indian-salon-warsaw" },
+  { label: "Indian Parlour Warsaw", href: "/indian-parlour-warsaw" },
+  { label: "Desi Salon Warsaw", href: "/desi-salon-warsaw" },
+  { label: "Hijab-Friendly Salon Warsaw", href: "/hijab-friendly-salon-warsaw" },
+  { label: "Women-Only Hair Salon Warsaw", href: "/women-only-hair-salon-warsaw" },
+  { label: "Muslim Women Hairdresser Warsaw", href: "/muslim-women-hairdresser-warsaw" },
+  { label: "Keratin for Hijab Hair Warsaw", href: "/keratin-nanoplasty-hijab-hair-warsaw" },
 ] as const;
 
 export function whatsappLink(message?: string) {

@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/accordion";
 import { siteConfig, whatsappLink } from "@/lib/site";
 import { faqs } from "@/data/content";
+import { sendContactEmailJS, isEmailJSConfigured } from "@/lib/emailjs";
 
 export function Contact() {
   const [loading, setLoading] = useState(false);
@@ -33,6 +34,21 @@ export function Contact() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error();
+
+      // Send email via EmailJS (client-side)
+      if (isEmailJSConfigured) {
+        try {
+          await sendContactEmailJS({
+            name: data.name as string,
+            email: data.email as string,
+            phone: data.phone as string | undefined,
+            message: data.message as string,
+          });
+        } catch (emailErr) {
+          console.error("[Contact] EmailJS error:", emailErr);
+        }
+      }
+
       toast.success("Message sent! We'll be in touch shortly.");
       form.reset();
     } catch {

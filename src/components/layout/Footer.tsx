@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from "lucide-react";
-import { siteConfig, navLinks } from "@/lib/site";
+import { siteConfig, navLinks, serviceCategoryLinks, warsawLinks, specialtyLinks } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-luxury-black text-white">
       <div className="pointer-events-none absolute inset-0 bg-luxury-radial opacity-40" />
-      <div className="container-luxury relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
-        <div className="space-y-5">
+      <div className="container-luxury relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-6">
+        <div className="space-y-5 lg:col-span-2">
           <div className="flex items-center gap-3">
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brown-gradient font-serif text-xl font-bold text-white">
               R
@@ -54,6 +54,32 @@ export function Footer() {
         </div>
 
         <div>
+          <h4 className="mb-5 font-serif text-lg">Services</h4>
+          <ul className="space-y-3 text-sm text-white/60">
+            {serviceCategoryLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="transition-colors hover:text-gold">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mb-5 font-serif text-lg">In Warsaw</h4>
+          <ul className="space-y-3 text-sm text-white/60">
+            {warsawLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="transition-colors hover:text-gold">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
           <h4 className="mb-5 font-serif text-lg">Contact</h4>
           <ul className="space-y-4 text-sm text-white/60">
             <li className="flex gap-3">
@@ -72,22 +98,33 @@ export function Footer() {
                 {siteConfig.email}
               </a>
             </li>
+            <li className="flex gap-3 pt-1">
+              <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+              <span>
+                {siteConfig.hours.map((h) => (
+                  <span key={h.day} className="block">
+                    <span className="text-white/80">{h.day}:</span> {h.time}
+                  </span>
+                ))}
+              </span>
+            </li>
           </ul>
         </div>
+      </div>
 
-        <div>
-          <h4 className="mb-5 font-serif text-lg">Opening Hours</h4>
-          <ul className="space-y-3 text-sm text-white/60">
-            {siteConfig.hours.map((h) => (
-              <li key={h.day} className="flex items-start gap-3">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <span>
-                  <span className="block text-white/80">{h.day}</span>
-                  {h.time}
-                </span>
-              </li>
+      {/* Popular searches — sitewide internal links to high-intent pages */}
+      <div className="border-t border-white/10">
+        <div className="container-luxury py-8">
+          <h4 className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-gold">
+            Popular in Warsaw
+          </h4>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/50">
+            {[...warsawLinks, ...specialtyLinks].map((link) => (
+              <Link key={link.href} href={link.href} className="transition-colors hover:text-gold">
+                {link.label}
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
 

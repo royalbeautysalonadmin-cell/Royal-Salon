@@ -25,6 +25,7 @@ import { Label } from "@/components/ui/label";
 import { cn, formatPrice, formatDate } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
 import { allServices } from "@/data/content";
+import { sendBookingEmailJS, isEmailJSConfigured } from "@/lib/emailjs";
 import type { ServiceCategory } from "@/types";
 
 const TIME_SLOTS = [
@@ -139,6 +140,25 @@ export function BookingDialog() {
         }),
       });
       if (!res.ok) throw new Error("Booking failed");
+
+      // Send email notification via EmailJS (client-side)
+      if (isEmailJSConfigured) {
+        try {
+          await sendBookingEmailJS({
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            service: selectedService?.name || form.service,
+            date: form.date,
+            time: form.time,
+            notes: form.notes,
+          });
+        } catch (emailErr) {
+          console.error("[Booking] EmailJS error:", emailErr);
+          // Don't block the booking if email fails
+        }
+      }
+
       setDone(true);
     } catch {
       setError("We couldn't submit your booking. Please try again or WhatsApp us.");

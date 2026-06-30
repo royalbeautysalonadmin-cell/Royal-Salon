@@ -1,24 +1,17 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { siteConfig } from "./site";
 import type { BookingPayload } from "@/types";
 
-const host = process.env.SMTP_HOST;
-const port = Number(process.env.SMTP_PORT || 587);
-const user = process.env.SMTP_USER;
-const pass = process.env.SMTP_PASSWORD;
-const from = process.env.SMTP_FROM || `Royal Beauty Salon <${user}>`;
+const resendApiKey = process.env.RESEND_API_KEY;
+const fromEmail =
+  process.env.SMTP_FROM || "Royal Beauty Salon <onboarding@resend.dev>";
 const adminEmail =
-  process.env.ADMIN_NOTIFICATION_EMAIL || process.env.ADMIN_EMAIL || user;
+  process.env.ADMIN_NOTIFICATION_EMAIL || process.env.ADMIN_EMAIL || "warsawroyalbeauty@gmail.com";
 
-export const isEmailConfigured = Boolean(host && user && pass);
+export const isEmailConfigured = Boolean(resendApiKey);
 
-function getTransport() {
-  return nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-  });
+function getClient() {
+  return new Resend(resendApiKey);
 }
 
 const ROSE = "#6A4B3C";
@@ -50,12 +43,15 @@ function detailRow(label: string, value: string) {
   </tr>`;
 }
 
-export async function sendBookingEmails(booking: BookingPayload & { serviceName?: string }) {
+export async function sendBookingEmails(
+  booking: BookingPayload & { serviceName?: string }
+) {
   if (!isEmailConfigured) {
-    console.warn("[email] SMTP not configured — skipping booking emails.");
+    console.warn("[email] RESEND_API_KEY not configured — skipping booking emails.");
     return { sent: false };
   }
-  const transport = getTransport();
+
+  const client = getClient();
   const serviceLabel = booking.serviceName || booking.service;
 
   const details = `
@@ -88,14 +84,14 @@ export async function sendBookingEmails(booking: BookingPayload & { serviceName?
   );
 
   await Promise.all([
-    transport.sendMail({
-      from,
+    client.emails.send({
+      from: fromEmail,
       to: booking.email,
       subject: "Appointment Request Received — Royal Beauty Salon",
       html: customerHtml,
     }),
-    transport.sendMail({
-      from,
+    client.emails.send({
+      from: fromEmail,
       to: adminEmail,
       subject: `New Booking: ${serviceLabel} on ${booking.date}`,
       html: adminHtml,
@@ -112,12 +108,14 @@ export async function sendContactEmail(data: {
   message: string;
 }) {
   if (!isEmailConfigured) {
-    console.warn("[email] SMTP not configured — skipping contact email.");
+    console.warn("[email] RESEND_API_KEY not configured — skipping contact email.");
     return { sent: false };
   }
-  const transport = getTransport();
-  await transport.sendMail({
-    from,
+
+  const client = getClient();
+
+  await client.emails.send({
+    from: fromEmail,
     to: adminEmail,
     replyTo: data.email,
     subject: `New Inquiry from ${data.name}`,
@@ -131,5 +129,6 @@ export async function sendContactEmail(data: {
       <p style="margin-top:16px;line-height:1.7;color:#333;">${data.message}</p>`
     ),
   });
+
   return { sent: true };
 }
