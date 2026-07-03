@@ -381,12 +381,12 @@ export const servicePath = (s: Service) =>
 interface CategoryNarrative {
   /** Opening paragraph templates — {name} is interpolated */
   about: (s: Service) => string[];
-  /** "What to expect" bullet steps */
-  expect: string[];
+  /** "What to expect" bullet steps — service-specific so no two pages in a category read identically */
+  expect: (s: Service) => string[];
   /** "Who it's for" line */
-  idealFor: string;
+  idealFor: (s: Service) => string;
   /** Aftercare / tips */
-  aftercare: string[];
+  aftercare: (s: Service) => string[];
   /** Two service-specific FAQs */
   faqs: (s: Service) => { q: string; a: string }[];
 }
@@ -397,18 +397,18 @@ const narratives: Record<ServiceCategory, CategoryNarrative> = {
       `${s.name} at Royal Beauty Salon is performed by our senior hair team in central Warsaw using premium, hair-friendly products. ${s.description} The result is healthy-looking hair finished to a polished, salon-perfect standard.`,
       `Before we begin, your stylist assesses the condition, porosity and history of your hair and talks through exactly what you want to achieve. This consultation means ${s.name.toLowerCase()} is tailored to you — protecting the integrity of your strands while delivering the look you came in for.`,
     ],
-    expect: [
-      "A personalised consultation and hair assessment",
+    expect: (s) => [
+      `A personalised consultation to plan your ${s.name.toLowerCase()}`,
       "Gentle preparation and sectioning of the hair",
-      "Expert application using professional, low-damage products",
+      `Expert application of ${s.name.toLowerCase()} using professional, low-damage products`,
       "A polished blow-dry or finish before you leave",
-      "Tailored home-care advice to extend your results",
+      `Home-care advice tailored to make your ${s.name.toLowerCase()} last`,
     ],
-    idealFor:
-      "Ideal for anyone in Warsaw wanting professional, healthy-looking hair results from an experienced team.",
-    aftercare: [
+    idealFor: (s) =>
+      `${s.name} is ideal for anyone in Warsaw wanting professional, healthy-looking hair results from an experienced team.`,
+    aftercare: (s) => [
       "Use a sulphate-free shampoo to protect colour and treatments",
-      "Apply a weekly nourishing mask to maintain condition",
+      `Apply a weekly nourishing mask to keep your ${s.name.toLowerCase()} in top condition`,
       "Book regular maintenance appointments to keep the look fresh",
     ],
     faqs: (s) => [
@@ -427,19 +427,19 @@ const narratives: Record<ServiceCategory, CategoryNarrative> = {
       `${s.name} is one of our most-requested looks at Royal Beauty Salon in Warsaw. ${s.description} Every application is built on careful skin prep so the finish stays flawless from the first photo to the last dance.`,
       `Our artists customise ${s.name.toLowerCase()} to your features, skin tone, outfit and the occasion. Using premium, camera-tested products, we create a look that feels like you — elevated, long-wearing and beautifully photogenic.`,
     ],
-    expect: [
-      "A consultation to understand your look, outfit and occasion",
+    expect: (s) => [
+      `A consultation to plan ${s.name.toLowerCase()} around your outfit and occasion`,
       "Tailored skin prep for a flawless, long-lasting base",
       "Custom colour and definition built for your features",
       "HD, photo-tested products that hold all day and night",
-      "Final touches and setting for camera-ready results",
+      `Final touches and setting so your ${s.name.toLowerCase()} stays camera-ready`,
     ],
-    idealFor:
-      "Perfect for brides, party guests and anyone in Warsaw who wants a professional, camera-ready finish.",
-    aftercare: [
+    idealFor: (s) =>
+      `${s.name} is perfect for brides, party guests and anyone in Warsaw who wants a professional, camera-ready finish.`,
+    aftercare: (s) => [
       "Carry a blotting paper and the lip shade used for quick touch-ups",
       "Avoid touching your face to keep the finish pristine",
-      "Book a trial ahead of weddings and major events",
+      `Book a trial run of your ${s.name.toLowerCase()} ahead of weddings and major events`,
     ],
     faqs: (s) => [
       {
@@ -457,19 +457,19 @@ const narratives: Record<ServiceCategory, CategoryNarrative> = {
       `${s.name} at Royal Beauty Salon gives you clean, precise results in just minutes. ${s.description} Our specialists work with a fine, twisted thread that lifts hair from the follicle for crisp lines and a gentle finish.`,
       `Because threading is so accurate, ${s.name.toLowerCase()} suits even sensitive skin. There are no harsh chemicals involved, and many clients find it more comfortable and longer-lasting than tweezing or shaving.`,
     ],
-    expect: [
-      "A quick consultation to confirm your desired shape",
+    expect: (s) => [
+      `A quick consultation to confirm your desired shape for ${s.name.toLowerCase()}`,
       "Gentle cleansing of the area",
-      "Precise threading following your natural lines",
+      `Precise ${s.name.toLowerCase()} following your natural lines`,
       "A soothing finish to calm the skin",
       "Aftercare tips to keep skin clear and calm",
     ],
-    idealFor:
-      "Great for sensitive skin and anyone in Warsaw wanting precise, gentle facial hair removal.",
-    aftercare: [
+    idealFor: (s) =>
+      `${s.name} is great for sensitive skin and anyone in Warsaw wanting precise, gentle facial hair removal.`,
+    aftercare: (s) => [
       "Avoid touching the area for a few hours to prevent irritation",
       "Skip heavy makeup on the area immediately afterwards",
-      "Apply a calming aloe or soothing gel if needed",
+      `Apply a calming aloe or soothing gel if your skin feels sensitive after ${s.name.toLowerCase()}`,
     ],
     faqs: (s) => [
       {
@@ -487,19 +487,19 @@ const narratives: Record<ServiceCategory, CategoryNarrative> = {
       `${s.name} at Royal Beauty Salon leaves your skin smooth for weeks. ${s.description} We use premium, low-temperature wax that grips hair effectively while staying kind to your skin.`,
       `Because ${s.name.toLowerCase()} removes hair from the root, regrowth comes back finer and slower over time. Single-use applicators and strict sanitisation are standard, so every appointment is fully hygienic.`,
     ],
-    expect: [
-      "A brief consultation and skin check",
+    expect: (s) => [
+      `A brief consultation and skin check before your ${s.name.toLowerCase()}`,
       "Cleansing and preparation of the area",
       "Application of skin-friendly, low-temperature wax",
-      "Gentle, efficient hair removal by an experienced therapist",
+      `Gentle, efficient ${s.name.toLowerCase()} by an experienced therapist`,
       "A soothing post-wax treatment to calm the skin",
     ],
-    idealFor:
-      "Ideal for anyone in Warsaw wanting smooth, long-lasting results with gentle, hygienic waxing.",
-    aftercare: [
+    idealFor: (s) =>
+      `${s.name} is ideal for anyone in Warsaw wanting smooth, long-lasting results with gentle, hygienic waxing.`,
+    aftercare: (s) => [
       "Avoid heat, saunas and swimming for 24 hours",
       "Wear loose clothing to prevent friction",
-      "Exfoliate gently after a few days to avoid ingrown hairs",
+      `Exfoliate gently a few days after ${s.name.toLowerCase()} to avoid ingrown hairs`,
     ],
     faqs: (s) => [
       {
@@ -517,18 +517,18 @@ const narratives: Record<ServiceCategory, CategoryNarrative> = {
       `${s.name} at Royal Beauty Salon is a results-driven treatment tailored to your skin. ${s.description} Our therapists pair professional analysis with quality actives so you see and feel a real difference.`,
       `Every ${s.name.toLowerCase()} begins with a skin consultation. We assess hydration, oiliness, sensitivity and sun exposure, then adapt cleansing, exfoliation, massage and masks to exactly what your skin needs on the day.`,
     ],
-    expect: [
-      "A thorough skin analysis and consultation",
+    expect: (s) => [
+      `A thorough skin analysis and consultation before your ${s.name.toLowerCase()}`,
       "Deep cleansing and tailored exfoliation",
       "Targeted treatment for your specific skin concern",
       "Relaxing facial massage to boost circulation",
       "A nourishing mask and protective finish",
     ],
-    idealFor:
-      "Suited to anyone in Warsaw wanting healthier, brighter, more balanced skin from expert therapists.",
-    aftercare: [
+    idealFor: (s) =>
+      `${s.name} is suited to anyone in Warsaw wanting healthier, brighter, more balanced skin from expert therapists.`,
+    aftercare: (s) => [
       "Keep skin hydrated and wear daily SPF",
-      "Avoid harsh actives for 24 hours after your treatment",
+      `Avoid harsh actives for 24 hours after your ${s.name.toLowerCase()}`,
       "Rebook every four to six weeks for consistent results",
     ],
     faqs: (s) => [
@@ -547,19 +547,19 @@ const narratives: Record<ServiceCategory, CategoryNarrative> = {
       `${s.name} at Royal Beauty Salon blends meticulous nail care with genuine relaxation. ${s.description} From shaping to the final polish, every step is performed with precision in a calm, luxurious setting.`,
       `Hygiene is central to ${s.name.toLowerCase()} — we sterilise every tool and use single-use files. You can fully relax, knowing your treatment meets the highest standards of cleanliness in Warsaw.`,
     ],
-    expect: [
-      "A consultation on shape, length and finish",
+    expect: (s) => [
+      `A consultation on shape, length and finish for your ${s.name.toLowerCase()}`,
       "Precise nail shaping and cuticle care",
       "Exfoliation and a relaxing massage",
       "Flawless, long-wearing polish application",
       "A pampering, hygienic finish",
     ],
-    idealFor:
-      "Perfect for anyone in Warsaw wanting beautifully groomed, hygienic nail care with a touch of luxury.",
-    aftercare: [
+    idealFor: (s) =>
+      `${s.name} is perfect for anyone in Warsaw wanting beautifully groomed, hygienic nail care with a touch of luxury.`,
+    aftercare: (s) => [
       "Apply cuticle oil daily to keep nails healthy",
       "Wear gloves for cleaning and washing up",
-      "Rebook regularly to maintain neat, polished nails",
+      `Rebook regularly to keep your ${s.name.toLowerCase()} neat and polished`,
     ],
     faqs: (s) => [
       {
@@ -591,9 +591,9 @@ export function getServiceContent(service: Service): ServiceContent {
     .slice(0, 4);
   return {
     about: n.about(service),
-    expect: n.expect,
-    idealFor: n.idealFor,
-    aftercare: n.aftercare,
+    expect: n.expect(service),
+    idealFor: n.idealFor(service),
+    aftercare: n.aftercare(service),
     faqs: n.faqs(service),
     related,
   };
