@@ -7,12 +7,10 @@ import { RevealGroup, RevealItem } from "@/components/shared/Reveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatPrice } from "@/lib/utils";
-import { useBookingStore } from "@/store/booking";
+import { siteConfig } from "@/lib/site";
 import { courses } from "@/data/content";
 
 export function Academy() {
-  const openBooking = useBookingStore((s) => s.open);
-
   return (
     <section id="academy" className="bg-cream py-24">
       <div className="container-luxury">
@@ -53,8 +51,10 @@ export function Academy() {
                     <span className="font-serif text-lg font-semibold text-brown">
                       {formatPrice(course.price)}
                     </span>
-                    <Button variant="ghost" size="sm" onClick={() => openBooking(course.slug)}>
-                      Enroll Now <ArrowRight className="h-4 w-4" />
+                    <Button variant="ghost" size="sm" asChild>
+                      <a href={siteConfig.booksyUrl} target="_blank" rel="noopener noreferrer">
+                        Enroll Now <ArrowRight className="h-4 w-4" />
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -73,8 +73,8 @@ export function Academy() {
               </p>
             </div>
           </div>
-          <Button variant="light" size="lg" onClick={() => openBooking("beauty-courses")}>
-            Request Brochure
+          <Button variant="light" size="lg" asChild>
+            <a href="/contact">Request Brochure</a>
           </Button>
         </div>
       </div>

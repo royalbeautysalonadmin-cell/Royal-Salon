@@ -1,23 +1,22 @@
-"use client";
-
 import { Calendar } from "lucide-react";
-import { useBookingStore } from "@/store/booking";
+import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 interface BookButtonProps {
+  /** Kept for call-site compatibility; Booksy handles service selection itself. */
   serviceSlug?: string;
   label?: string;
   full?: boolean;
   className?: string;
 }
 
-/** Opens the global booking dialog, optionally pre-selecting a service. */
-export function BookButton({ serviceSlug, label = "Book Now", full, className }: BookButtonProps) {
-  const open = useBookingStore((s) => s.open);
+/** Links directly to the salon's Booksy booking page. */
+export function BookButton({ label = "Book Now", full, className }: BookButtonProps) {
   return (
-    <button
-      type="button"
-      onClick={() => open(serviceSlug)}
+    <a
+      href={siteConfig.booksyUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-luxury-black shadow-luxury transition-transform hover:-translate-y-0.5",
         full && "w-full",
@@ -26,6 +25,6 @@ export function BookButton({ serviceSlug, label = "Book Now", full, className }:
     >
       <Calendar className="h-4 w-4" />
       {label}
-    </button>
+    </a>
   );
 }

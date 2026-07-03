@@ -7,7 +7,12 @@ export const siteConfig = {
   // Falls back to the live domain so production SEO (sitemap, canonical, OG)
   // is correct even if NEXT_PUBLIC_SITE_URL is not set in the host env.
   // Local dev overrides this via .env.local (http://localhost:3000).
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://royalbeautysaloon.com",
+  // MUST match the domain the host actually serves. The apex (non-www) domain
+  // 308-redirects to www, so www is the canonical origin — a non-www value here
+  // makes every canonical/sitemap URL a redirect and Google refuses to index.
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.royalbeautysaloon.com",
+  // All "Book" CTAs link straight to Booksy (no on-site booking form).
+  booksyUrl: "https://royalbeautywarsawsalon.booksy.com/a/",
   ogImage: "/og.jpg",
   phone: process.env.NEXT_PUBLIC_SALON_PHONE || "+48 22 123 45 67",
   whatsapp: process.env.NEXT_PUBLIC_SALON_WHATSAPP || "48221234567",

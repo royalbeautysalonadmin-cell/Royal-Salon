@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/layout/FloatingActions";
-import { BookingDialog } from "@/components/booking/BookingDialog";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +9,6 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <main>{children}</main>
       <Footer />
       <FloatingActions />
-      <BookingDialog />
     </>
   );
 }

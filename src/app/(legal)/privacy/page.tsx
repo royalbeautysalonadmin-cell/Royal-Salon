@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { LegalPage } from "@/components/layout/LegalPage";
+import { siteConfig } from "@/lib/site";
 
-export const metadata = { title: "Privacy Policy" };
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "How Royal Beauty Salon in Warsaw collects, uses and protects your personal information.",
+  alternates: { canonical: `${siteConfig.url}/privacy` },
+};
 
 export default function PrivacyPage() {
   return (

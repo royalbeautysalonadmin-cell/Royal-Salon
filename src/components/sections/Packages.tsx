@@ -7,12 +7,10 @@ import { RevealGroup, RevealItem } from "@/components/shared/Reveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatPrice } from "@/lib/utils";
-import { useBookingStore } from "@/store/booking";
+import { siteConfig } from "@/lib/site";
 import { packages } from "@/data/content";
 
 export function Packages() {
-  const openBooking = useBookingStore((s) => s.open);
-
   return (
     <section id="packages" className="bg-white py-24">
       <div className="container-luxury">
@@ -88,9 +86,11 @@ export function Packages() {
                   <Button
                     variant={pkg.popular ? "gold" : "default"}
                     className="mt-6 w-full"
-                    onClick={() => openBooking(pkg.slug)}
+                    asChild
                   >
-                    Book This Package
+                    <a href={siteConfig.booksyUrl} target="_blank" rel="noopener noreferrer">
+                      Book This Package
+                    </a>
                   </Button>
                 </div>
               </div>

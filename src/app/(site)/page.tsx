@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
@@ -9,6 +10,11 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
 import { servicesJsonLd, faqJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: siteConfig.url },
+};
 
 export default function HomePage() {
   return (

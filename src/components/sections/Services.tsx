@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatPrice } from "@/lib/utils";
-import { useBookingStore } from "@/store/booking";
+import { siteConfig } from "@/lib/site";
 import { allServices } from "@/data/content";
 import type { ServiceCategory, Service } from "@/types";
 
@@ -34,8 +34,6 @@ const categoryMeta: Record<ServiceCategory, { emoji: string; tagline: string }> 
 type SortOption = "popular" | "price-low" | "price-high" | "duration";
 
 function ServiceCard({ service }: { service: Service }) {
-  const openBooking = useBookingStore((s) => s.open);
-
   return (
     <motion.article
       layout
@@ -94,14 +92,11 @@ function ServiceCard({ service }: { service: Service }) {
             <Clock className="h-3 w-3 text-brown" />
             {service.duration}
           </span>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="group/btn -mr-2 px-2"
-            onClick={() => openBooking(service.slug)}
-          >
-            Book Now
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+          <Button variant="ghost" size="sm" className="group/btn -mr-2 px-2" asChild>
+            <a href={siteConfig.booksyUrl} target="_blank" rel="noopener noreferrer">
+              Book Now
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            </a>
           </Button>
         </div>
       </div>

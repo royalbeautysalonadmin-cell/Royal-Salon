@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { LegalPage } from "@/components/layout/LegalPage";
+import { siteConfig } from "@/lib/site";
 
-export const metadata = { title: "Terms of Service" };
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "Terms of service for bookings, treatments and website use at Royal Beauty Salon, Warsaw.",
+  alternates: { canonical: `${siteConfig.url}/terms` },
+};
 
 export default function TermsPage() {
   return (

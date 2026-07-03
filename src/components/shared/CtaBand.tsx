@@ -29,13 +29,21 @@ export function CtaBand({
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
-            href={whatsappLink(message)}
+            href={siteConfig.booksyUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-luxury-black shadow-luxury transition-transform hover:-translate-y-0.5"
           >
             <Calendar className="h-4 w-4" />
-            Book on WhatsApp
+            Book Now
+          </a>
+          <a
+            href={whatsappLink(message)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+          >
+            WhatsApp Us
           </a>
           <Link
             href="/contact"
