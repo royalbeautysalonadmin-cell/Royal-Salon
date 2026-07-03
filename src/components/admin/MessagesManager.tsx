@@ -47,7 +47,7 @@ export function MessagesManager({ initial }: { initial: AdminMessage[] }) {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/50">
+      <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
         No messages yet.
       </div>
     );
@@ -68,7 +68,7 @@ export function MessagesManager({ initial }: { initial: AdminMessage[] }) {
                 <p className="font-serif text-lg font-semibold text-luxury-black">{m.name}</p>
                 {!m.read && <Badge variant="default">New</Badge>}
               </div>
-              <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-charcoal/55">
+              <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-charcoal/70">
                 <a href={`mailto:${m.email}`} className="flex items-center gap-1 hover:text-brown">
                   <Mail className="h-3 w-3" /> {m.email}
                 </a>
@@ -88,7 +88,7 @@ export function MessagesManager({ initial }: { initial: AdminMessage[] }) {
                 </Button>
               )}
               {m.read && (
-                <span className="flex items-center gap-1 text-xs text-charcoal/40">
+                <span className="flex items-center gap-1 text-xs text-charcoal/70">
                   <MailOpen className="h-4 w-4" /> Read
                 </span>
               )}

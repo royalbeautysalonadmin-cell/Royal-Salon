@@ -71,7 +71,7 @@ export default function WarsawHubPage() {
                 <div key={i} className="rounded-2xl border border-brown/10 bg-cream p-4">
                   <Check className="h-4 w-4 text-brown" />
                   <p className="mt-2 text-sm font-semibold text-luxury-black">{h.title}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-charcoal/60">{h.desc}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-charcoal/70">{h.desc}</p>
                 </div>
               ))}
             </div>
@@ -135,7 +135,7 @@ export default function WarsawHubPage() {
                 <h3 className="mt-2 font-serif text-lg font-semibold text-luxury-black group-hover:text-brown">
                   {p.heading}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-charcoal/60">{p.tagline}</p>
+                <p className="mt-2 text-sm leading-relaxed text-charcoal/70">{p.tagline}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brown">
                   Learn more
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -19,7 +19,7 @@ export default async function MessagesAdminPage() {
     <div className="space-y-6">
       <div>
         <h1 className="font-serif text-3xl font-semibold text-luxury-black">Messages</h1>
-        <p className="text-charcoal/60">Inquiries submitted through the contact form.</p>
+        <p className="text-charcoal/70">Inquiries submitted through the contact form.</p>
       </div>
       {!configured && (
         <div className="rounded-xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-700">

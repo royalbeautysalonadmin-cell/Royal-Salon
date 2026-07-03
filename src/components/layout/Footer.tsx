@@ -129,7 +129,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-luxury flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
+        <div className="container-luxury flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <p className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-gold">Privacy Policy</Link>

@@ -141,7 +141,7 @@ export function NicheLanding({ slug }: { slug: string }) {
               <div key={i} className="rounded-2xl border border-brown/10 bg-cream p-4 shadow-soft">
                 <Check className="h-4 w-4 text-brown" />
                 <p className="mt-2 text-sm font-semibold text-luxury-black">{h.title}</p>
-                <p className="mt-1 text-xs leading-relaxed text-charcoal/60">{h.desc}</p>
+                <p className="mt-1 text-xs leading-relaxed text-charcoal/70">{h.desc}</p>
               </div>
             ))}
           </div>

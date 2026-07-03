@@ -136,7 +136,7 @@ export function ServicesManager({
       </div>
 
       {items.length === 0 ? (
-        <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/50">
+        <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
           No services yet. Add your first treatment.
         </div>
       ) : (
@@ -150,7 +150,7 @@ export function ServicesManager({
                 </div>
                 {s.featured && <Star className="h-4 w-4 fill-gold text-gold" />}
               </div>
-              <p className="mt-3 line-clamp-2 text-xs text-charcoal/55">{s.description}</p>
+              <p className="mt-3 line-clamp-2 text-xs text-charcoal/70">{s.description}</p>
               <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
                 <span className="font-semibold text-brown">{formatPrice(s.price)}</span>
                 <Button

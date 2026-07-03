@@ -82,7 +82,7 @@ export function AboutExtras() {
                     <v.icon className="h-7 w-7" />
                   </span>
                   <h3 className="mt-5 font-serif text-xl font-semibold text-luxury-black">{v.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-charcoal/65">{v.desc}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal/70">{v.desc}</p>
                 </div>
               </RevealItem>
             ))}

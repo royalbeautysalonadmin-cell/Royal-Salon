@@ -116,7 +116,7 @@ export default async function BlogPostPage({
           <p className="mt-4 text-base leading-relaxed text-white/70 md:text-lg">
             {post.excerpt}
           </p>
-          <p className="mt-5 text-sm text-white/40">
+          <p className="mt-5 text-sm text-white/50">
             Published {formatDate(post.date)} · Royal Beauty Salon, Warsaw
           </p>
         </div>
@@ -168,7 +168,7 @@ export default async function BlogPostPage({
               <h2 className="font-serif text-xl font-semibold text-luxury-black">
                 Related treatments at Royal Beauty Salon
               </h2>
-              <p className="mt-2 text-sm text-charcoal/65">
+              <p className="mt-2 text-sm text-charcoal/70">
                 Ready to put these tips into practice? Explore our services in Warsaw.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">

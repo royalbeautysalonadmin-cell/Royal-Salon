@@ -45,7 +45,7 @@ export function WhyChooseUs() {
                   <h3 className="relative mt-5 font-serif text-xl font-semibold text-luxury-black">
                     {item.title}
                   </h3>
-                  <p className="relative mt-2 text-sm leading-relaxed text-charcoal/65">
+                  <p className="relative mt-2 text-sm leading-relaxed text-charcoal/70">
                     {item.desc}
                   </p>
                 </div>

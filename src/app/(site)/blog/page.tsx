@@ -85,14 +85,14 @@ export default function BlogIndexPage() {
                 <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-wider text-brown">
                   <span>{featured.category}</span>
                   <span className="h-1 w-1 rounded-full bg-brown/40" />
-                  <span className="flex items-center gap-1 text-charcoal/50">
+                  <span className="flex items-center gap-1 text-charcoal/70">
                     <Clock className="h-3 w-3" /> {featured.readMinutes} min read
                   </span>
                 </div>
                 <h2 className="mt-3 font-serif text-2xl font-semibold leading-tight text-luxury-black group-hover:text-brown sm:text-3xl">
                   {featured.title}
                 </h2>
-                <p className="mt-3 text-base leading-relaxed text-charcoal/65">
+                <p className="mt-3 text-base leading-relaxed text-charcoal/70">
                   {featured.excerpt}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brown">
@@ -124,17 +124,17 @@ export default function BlogIndexPage() {
                   <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-brown">
                     {post.category}
                     <span className="h-1 w-1 rounded-full bg-brown/40" />
-                    <span className="flex items-center gap-1 text-charcoal/45">
+                    <span className="flex items-center gap-1 text-charcoal/70">
                       <Clock className="h-3 w-3" /> {post.readMinutes} min
                     </span>
                   </div>
                   <h3 className="mt-2 font-serif text-lg font-semibold leading-snug text-luxury-black group-hover:text-brown">
                     {post.title}
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-charcoal/60">
+                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-charcoal/70">
                     {post.excerpt}
                   </p>
-                  <span className="mt-auto pt-4 text-xs text-charcoal/45">
+                  <span className="mt-auto pt-4 text-xs text-charcoal/70">
                     {formatDate(post.date)}
                   </span>
                 </div>

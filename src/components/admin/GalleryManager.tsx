@@ -116,14 +116,14 @@ export function GalleryManager({
             <Upload className="h-4 w-4" /> Upload from device
             <input type="file" accept="image/*" className="hidden" onChange={onUpload} disabled={disabled || busy} />
           </label>
-          <p className="mt-2 text-xs text-charcoal/45">
+          <p className="mt-2 text-xs text-charcoal/70">
             Direct uploads require Cloudinary credentials. Otherwise paste an image URL.
           </p>
         </div>
       </div>
 
       {items.length === 0 ? (
-        <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/50">
+        <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
           No gallery images yet.
         </div>
       ) : (

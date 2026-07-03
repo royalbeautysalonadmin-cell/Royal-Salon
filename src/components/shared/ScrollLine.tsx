@@ -40,6 +40,10 @@ export function ScrollLine() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<SVGPathElement>(null);
   const tipRef = useRef<SVGGElement>(null);
+  // Cached so the scroll-driven tip update never calls getTotalLength() (an
+  // SVG geometry read that can force a reflow) on every animation frame —
+  // only recomputed when the path itself changes, in the effect below.
+  const lengthRef = useRef(0);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
   const { scrollYProgress } = useScroll({
@@ -66,18 +70,20 @@ export function ScrollLine() {
   const moveTip = (v: number) => {
     const track = trackRef.current;
     const tip = tipRef.current;
-    if (!track || !tip) return;
-    const length = track.getTotalLength();
-    if (!length) return;
+    if (!track || !tip || !lengthRef.current) return;
     const point = track.getPointAtLength(
-      Math.min(Math.max(v, 0.001), 1) * length
+      Math.min(Math.max(v, 0.001), 1) * lengthRef.current
     );
     tip.setAttribute("transform", `translate(${point.x}, ${point.y})`);
   };
 
   useMotionValueEvent(progress, "change", moveTip);
-  // Re-anchor the tip whenever the path is rebuilt (resize / route change).
-  useEffect(() => moveTip(progress.get()), [size]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Recompute the cached length only when the path is rebuilt (resize /
+  // route change), then re-anchor the tip once with the fresh value.
+  useEffect(() => {
+    lengthRef.current = trackRef.current?.getTotalLength() ?? 0;
+    moveTip(progress.get());
+  }, [size]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const d = size.height > 0 ? buildPath(size.width, size.height) : "";
 

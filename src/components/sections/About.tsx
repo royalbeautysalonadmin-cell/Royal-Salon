@@ -92,7 +92,7 @@ export function About() {
             />
             <div>
               <p className="font-serif text-lg text-luxury-black">Aleksandra Wójcik</p>
-              <p className="text-sm text-charcoal/60">Founder &amp; Creative Director</p>
+              <p className="text-sm text-charcoal/70">Founder &amp; Creative Director</p>
             </div>
           </Reveal>
         </div>

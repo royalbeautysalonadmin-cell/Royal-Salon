@@ -60,7 +60,7 @@ export default async function DashboardPage() {
     <div className="space-y-8">
       <div>
         <h1 className="font-serif text-3xl font-semibold text-luxury-black">Dashboard</h1>
-        <p className="text-charcoal/60">Welcome back — here&apos;s your salon at a glance.</p>
+        <p className="text-charcoal/70">Welcome back — here&apos;s your salon at a glance.</p>
       </div>
 
       {!configured && (
@@ -84,7 +84,7 @@ export default async function DashboardPage() {
               <c.icon className="h-5 w-5" />
             </span>
             <p className="mt-4 font-serif text-3xl font-semibold text-luxury-black">{c.value}</p>
-            <p className="text-sm text-charcoal/55">{c.label}</p>
+            <p className="text-sm text-charcoal/70">{c.label}</p>
           </div>
         ))}
       </div>
@@ -94,14 +94,14 @@ export default async function DashboardPage() {
         <div className="rounded-2xl border border-border bg-white p-6 shadow-soft lg:col-span-2">
           <h2 className="mb-4 font-serif text-xl font-semibold">Recent Appointments</h2>
           {all.length === 0 ? (
-            <p className="py-8 text-center text-sm text-charcoal/50">No appointments yet.</p>
+            <p className="py-8 text-center text-sm text-charcoal/70">No appointments yet.</p>
           ) : (
             <div className="divide-y divide-border">
               {all.slice(0, 6).map((a) => (
                 <div key={a._id} className="flex items-center justify-between gap-4 py-3">
                   <div>
                     <p className="font-medium text-charcoal">{a.name}</p>
-                    <p className="text-xs text-charcoal/55">
+                    <p className="text-xs text-charcoal/70">
                       {a.serviceName || a.service} · {formatDate(a.date)} · {a.time}
                     </p>
                   </div>
@@ -116,7 +116,7 @@ export default async function DashboardPage() {
         <div className="rounded-2xl border border-border bg-white p-6 shadow-soft">
           <h2 className="mb-4 font-serif text-xl font-semibold">Popular Services</h2>
           {popular.length === 0 ? (
-            <p className="py-8 text-center text-sm text-charcoal/50">No data yet.</p>
+            <p className="py-8 text-center text-sm text-charcoal/70">No data yet.</p>
           ) : (
             <ul className="space-y-3">
               {popular.map(([name, count], i) => (

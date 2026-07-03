@@ -19,7 +19,7 @@ export default async function GalleryAdminPage() {
     <div className="space-y-6">
       <div>
         <h1 className="font-serif text-3xl font-semibold text-luxury-black">Gallery</h1>
-        <p className="text-charcoal/60">Upload and manage portfolio images.</p>
+        <p className="text-charcoal/70">Upload and manage portfolio images.</p>
       </div>
       {!configured && (
         <div className="rounded-xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-700">

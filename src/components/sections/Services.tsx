@@ -75,7 +75,7 @@ function ServiceCard({ service }: { service: Service }) {
           </h3>
           <div className="flex shrink-0 items-baseline gap-1.5">
             {service.originalPrice && (
-              <span className="text-xs text-charcoal/40 line-through">
+              <span className="text-xs text-charcoal/70 line-through">
                 {formatPrice(service.originalPrice)}
               </span>
             )}
@@ -84,11 +84,11 @@ function ServiceCard({ service }: { service: Service }) {
             </span>
           </div>
         </div>
-        <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-charcoal/60">
+        <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-charcoal/70">
           {service.description}
         </p>
         <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
-          <span className="flex items-center gap-1.5 text-xs text-charcoal/55">
+          <span className="flex items-center gap-1.5 text-xs text-charcoal/70">
             <Clock className="h-3 w-3 text-brown" />
             {service.duration}
           </span>
@@ -123,7 +123,7 @@ function CategorySection({
           <h3 className="font-serif text-xl font-semibold text-luxury-black sm:text-2xl">
             {title}
           </h3>
-          <p className="text-xs text-charcoal/50 sm:text-sm">{tagline}</p>
+          <p className="text-xs text-charcoal/70 sm:text-sm">{tagline}</p>
         </div>
         <span className="ml-auto rounded-full bg-brown/8 px-3 py-1 text-xs font-medium text-brown">
           {services.length} service{services.length !== 1 ? "s" : ""}
@@ -224,18 +224,18 @@ export function Services({ showHeader = true }: { showHeader?: boolean }) {
         )}
         <div className="mx-auto mt-8 max-w-2xl">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal/40" />
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal/70" />
             <input
               type="text"
               placeholder="Search services (e.g. keratin, facial, waxing...)"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-full border border-brown/15 bg-white py-3.5 pl-11 pr-12 text-sm text-charcoal shadow-sm placeholder:text-charcoal/40 focus:border-brown focus:outline-none focus:ring-2 focus:ring-brown/10"
+              className="w-full rounded-full border border-brown/15 bg-white py-3.5 pl-11 pr-12 text-sm text-charcoal shadow-sm placeholder:text-charcoal/70 focus:border-brown focus:outline-none focus:ring-2 focus:ring-brown/10"
             />
             {search && (
               <button
                 onClick={() => setSearch("")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-charcoal/40 hover:text-charcoal"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-charcoal/70 hover:text-charcoal"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -281,7 +281,7 @@ export function Services({ showHeader = true }: { showHeader?: boolean }) {
                 className="overflow-hidden"
               >
                 <div className="mt-4 rounded-2xl border border-brown/10 bg-white p-4 shadow-sm">
-                  <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-charcoal/50">
+                  <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-charcoal/70">
                     <SlidersHorizontal className="h-3 w-3" />
                     Sort by
                   </div>
@@ -300,7 +300,7 @@ export function Services({ showHeader = true }: { showHeader?: boolean }) {
                         className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-all ${
                           sortBy === opt.value
                             ? "bg-brown text-white shadow-sm"
-                            : "bg-charcoal/5 text-charcoal/60 hover:bg-charcoal/10"
+                            : "bg-charcoal/5 text-charcoal/70 hover:bg-charcoal/10"
                         }`}
                       >
                         {opt.label}
@@ -328,7 +328,7 @@ export function Services({ showHeader = true }: { showHeader?: boolean }) {
               {cat === "All" ? "All Services" : cat}
               <span
                 className={`ml-1.5 text-xs ${
-                  active === cat ? "text-white/70" : "text-charcoal/40"
+                  active === cat ? "text-white/70" : "text-charcoal/70"
                 }`}
               >
                 {categoryCount(cat)}
@@ -338,7 +338,7 @@ export function Services({ showHeader = true }: { showHeader?: boolean }) {
         </div>
 
         {/* Results count */}
-        <p className="mt-6 text-center text-sm text-charcoal/50">
+        <p className="mt-6 text-center text-sm text-charcoal/70">
           Showing{" "}
           <span className="font-medium text-charcoal/70">{filtered.length}</span>{" "}
           service{filtered.length !== 1 ? "s" : ""}
@@ -373,10 +373,10 @@ export function Services({ showHeader = true }: { showHeader?: boolean }) {
         {filtered.length === 0 && (
           <div className="mt-16 text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-charcoal/5">
-              <Search className="h-7 w-7 text-charcoal/30" />
+              <Search className="h-7 w-7 text-charcoal/70" />
             </div>
-            <p className="text-lg font-medium text-charcoal/60">No services found</p>
-            <p className="mt-1 text-sm text-charcoal/40">
+            <p className="text-lg font-medium text-charcoal/70">No services found</p>
+            <p className="mt-1 text-sm text-charcoal/70">
               Try adjusting your search or filters
             </p>
             <Button

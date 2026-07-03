@@ -9,7 +9,7 @@ export default function NotFound() {
       <h1 className="mt-4 font-serif text-2xl font-semibold text-luxury-black">
         This page took a beauty break
       </h1>
-      <p className="mt-2 max-w-md text-charcoal/60">
+      <p className="mt-2 max-w-md text-charcoal/70">
         The page you&apos;re looking for doesn&apos;t exist. Let&apos;s get you back to the glamour.
       </p>
       <Button variant="gold" className="mt-8" asChild>

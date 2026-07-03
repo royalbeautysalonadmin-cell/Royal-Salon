@@ -138,7 +138,7 @@ export default async function ServiceDetailPage({
                 <Tag className="h-4 w-4 text-gold" />
                 {service.price > 1 ? `from ${formatPrice(service.price)}` : formatPrice(service.price)}
                 {service.originalPrice && (
-                  <span className="text-white/40 line-through">{formatPrice(service.originalPrice)}</span>
+                  <span className="text-white/50 line-through">{formatPrice(service.originalPrice)}</span>
                 )}
                 {savings > 0 && (
                   <span className="rounded-full bg-red-500 px-2 py-0.5 text-[0.65rem] font-bold">
@@ -230,7 +230,7 @@ export default async function ServiceDetailPage({
           {/* Sticky booking card */}
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <div className="rounded-3xl border border-brown/10 bg-white p-7 shadow-luxury">
-              <p className="text-sm font-medium uppercase tracking-wider text-charcoal/50">
+              <p className="text-sm font-medium uppercase tracking-wider text-charcoal/70">
                 Treatment summary
               </p>
               <div className="mt-4 flex items-baseline gap-2">
@@ -238,18 +238,18 @@ export default async function ServiceDetailPage({
                   {formatPrice(service.price)}
                 </span>
                 {service.originalPrice && (
-                  <span className="text-charcoal/40 line-through">
+                  <span className="text-charcoal/70 line-through">
                     {formatPrice(service.originalPrice)}
                   </span>
                 )}
               </div>
               <dl className="mt-5 space-y-3 text-sm">
                 <div className="flex items-center justify-between border-b border-border pb-3">
-                  <dt className="text-charcoal/55">Duration</dt>
+                  <dt className="text-charcoal/70">Duration</dt>
                   <dd className="font-medium text-luxury-black">{service.duration}</dd>
                 </div>
                 <div className="flex items-center justify-between border-b border-border pb-3">
-                  <dt className="text-charcoal/55">Category</dt>
+                  <dt className="text-charcoal/70">Category</dt>
                   <dd className="font-medium text-luxury-black">
                     <Link href={`/services/${meta.slug}`} className="text-brown hover:underline">
                       {meta.label}
@@ -257,7 +257,7 @@ export default async function ServiceDetailPage({
                   </dd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <dt className="text-charcoal/55">Location</dt>
+                  <dt className="text-charcoal/70">Location</dt>
                   <dd className="font-medium text-luxury-black">Warsaw</dd>
                 </div>
               </dl>

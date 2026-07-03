@@ -94,7 +94,7 @@ export default async function CategoryPage({
                 {p}
               </p>
             ))}
-            <p className="text-sm text-charcoal/55">
+            <p className="text-sm text-charcoal/70">
               {services.length} treatments available · from {fromPrice} zł · central Warsaw
             </p>
           </div>
@@ -134,7 +134,7 @@ export default async function CategoryPage({
 
           {/* Cross-links to other categories */}
           <div className="mt-14 border-t border-brown/10 pt-10 text-center">
-            <p className="text-sm font-medium uppercase tracking-wider text-charcoal/50">
+            <p className="text-sm font-medium uppercase tracking-wider text-charcoal/70">
               Explore other services
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">

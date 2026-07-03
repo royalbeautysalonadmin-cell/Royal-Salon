@@ -75,7 +75,7 @@ export function Navbar() {
               <span className="font-serif text-xl font-semibold tracking-wide text-luxury-black">
                 Royal Beauty
               </span>
-              <span className="text-[0.6rem] uppercase tracking-[0.4em] text-gold-600">
+              <span className="text-[0.6rem] uppercase tracking-[0.4em] text-gold-700">
                 Salon · Warsaw
               </span>
             </span>

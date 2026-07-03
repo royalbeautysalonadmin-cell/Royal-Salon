@@ -84,7 +84,7 @@ export function AppointmentsTable({ initial }: { initial: AdminAppt[] }) {
               className={`rounded-full px-4 py-1.5 text-sm font-medium capitalize transition-colors ${
                 filter === f
                   ? "bg-brown text-white"
-                  : "bg-white text-charcoal/60 hover:bg-brown/10"
+                  : "bg-white text-charcoal/70 hover:bg-brown/10"
               }`}
             >
               {f}
@@ -92,7 +92,7 @@ export function AppointmentsTable({ initial }: { initial: AdminAppt[] }) {
           ))}
         </div>
         <div className="relative w-full sm:w-64">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal/40" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal/70" />
           <Input
             value={q}
             onChange={(e) => setQ(e.target.value)}
@@ -103,7 +103,7 @@ export function AppointmentsTable({ initial }: { initial: AdminAppt[] }) {
       </div>
 
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/50">
+        <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
           No appointments found.
         </div>
       ) : (
@@ -120,7 +120,7 @@ export function AppointmentsTable({ initial }: { initial: AdminAppt[] }) {
                     <StatusBadge status={a.status} />
                   </div>
                   <p className="mt-1 text-sm text-brown">{a.serviceName || a.service}</p>
-                  <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-charcoal/55">
+                  <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-charcoal/70">
                     <span>{formatDate(a.date)} · {a.time}</span>
                     <a href={`mailto:${a.email}`} className="flex items-center gap-1 hover:text-brown">
                       <Mail className="h-3 w-3" /> {a.email}
@@ -129,7 +129,7 @@ export function AppointmentsTable({ initial }: { initial: AdminAppt[] }) {
                       <Phone className="h-3 w-3" /> {a.phone}
                     </a>
                   </div>
-                  {a.notes && <p className="mt-2 text-xs italic text-charcoal/50">“{a.notes}”</p>}
+                  {a.notes && <p className="mt-2 text-xs italic text-charcoal/70">“{a.notes}”</p>}
                 </div>
 
                 <div className="flex flex-wrap gap-2">

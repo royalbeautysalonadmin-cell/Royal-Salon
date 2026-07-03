@@ -19,7 +19,7 @@ export default async function TestimonialsAdminPage() {
     <div className="space-y-6">
       <div>
         <h1 className="font-serif text-3xl font-semibold text-luxury-black">Testimonials</h1>
-        <p className="text-charcoal/60">Manage client reviews shown on the website.</p>
+        <p className="text-charcoal/70">Manage client reviews shown on the website.</p>
       </div>
       {!configured && (
         <div className="rounded-xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-700">

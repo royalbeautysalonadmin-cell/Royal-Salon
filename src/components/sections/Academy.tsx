@@ -38,8 +38,8 @@ export function Academy() {
                   <h3 className="font-serif text-xl font-semibold text-luxury-black">
                     {course.name}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm text-charcoal/65">{course.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-charcoal/60">
+                  <p className="mt-2 flex-1 text-sm text-charcoal/70">{course.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-charcoal/70">
                     <span className="flex items-center gap-1.5">
                       <Clock className="h-3.5 w-3.5 text-brown" /> {course.duration}
                     </span>

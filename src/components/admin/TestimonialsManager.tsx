@@ -122,7 +122,7 @@ export function TestimonialsManager({
       </div>
 
       {items.length === 0 ? (
-        <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/50">
+        <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
           No testimonials yet.
         </div>
       ) : (
@@ -140,7 +140,7 @@ export function TestimonialsManager({
                   ))}
                 </div>
               </div>
-              <p className="mt-3 text-sm italic text-charcoal/65">“{t.quote}”</p>
+              <p className="mt-3 text-sm italic text-charcoal/70">“{t.quote}”</p>
               <div className="mt-4 flex justify-end border-t border-border pt-3">
                 <Button
                   size="sm"

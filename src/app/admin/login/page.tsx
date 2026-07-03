@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
           <h1 className="mt-4 font-serif text-2xl font-semibold text-luxury-black">
             Admin Portal
           </h1>
-          <p className="text-sm text-charcoal/60">Royal Beauty Salon Dashboard</p>
+          <p className="text-sm text-charcoal/70">Royal Beauty Salon Dashboard</p>
         </div>
 
         <form onSubmit={onSubmit} className="space-y-4">
@@ -60,7 +60,7 @@ export default function AdminLoginPage() {
             {loading ? <><Loader2 className="h-4 w-4 animate-spin" /> Signing in...</> : "Sign In"}
           </Button>
         </form>
-        <p className="mt-6 text-center text-xs text-charcoal/40">
+        <p className="mt-6 text-center text-xs text-charcoal/70">
           Protected area · Authorized personnel only
         </p>
       </div>

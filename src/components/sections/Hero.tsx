@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles, ArrowRight, Star, ChevronDown } from "lucide-react";
@@ -13,6 +13,20 @@ const ParticleField = dynamic(() => import("@/components/three/ParticleField"), 
   ssr: false,
 });
 
+/** Mounts once the browser is idle so the heavy WebGL init never competes
+ *  with the main thread during the critical hydration window — the
+ *  decorative layer still appears within a beat, just off the hot path. */
+function useIdleMount() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const ric = window.requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 200));
+    const cic = window.cancelIdleCallback ?? clearTimeout;
+    const id = ric(() => setReady(true));
+    return () => cic(id as never);
+  }, []);
+  return ready;
+}
+
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.13, delayChildren: 0.1 } },
@@ -24,6 +38,7 @@ const item = {
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const showParticles = useIdleMount();
   // Scroll-linked parallax: content, slider and orbs drift apart at
   // different speeds while the visitor scrolls out of the hero.
   const { scrollYProgress } = useScroll({
@@ -58,7 +73,7 @@ export function Hero() {
 
       {/* 3D particle layer (subtle golden dust) */}
       <div className="absolute inset-0 z-0 opacity-80">
-        <ParticleField />
+        {showParticles && <ParticleField />}
       </div>
 
       <div className="container-luxury relative z-10 py-14">
@@ -140,7 +155,7 @@ export function Hero() {
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <p className="font-serif text-3xl font-semibold text-gradient-brown">{s.value}</p>
-              <p className="mt-1 text-xs uppercase tracking-wider text-charcoal/60">{s.label}</p>
+              <p className="mt-1 text-xs uppercase tracking-wider text-charcoal/70">{s.label}</p>
             </div>
           ))}
         </motion.div>
@@ -151,7 +166,7 @@ export function Hero() {
         href="#about"
         aria-label="Scroll to explore"
         style={{ opacity: indicatorOpacity }}
-        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-charcoal/50 transition-colors hover:text-brown sm:flex"
+        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-charcoal/70 transition-colors hover:text-brown sm:flex"
       >
         <span className="text-[0.6rem] uppercase tracking-[0.3em]">Scroll</span>
         <motion.span

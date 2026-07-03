@@ -41,7 +41,7 @@ export function ServiceLinkCard({ service }: { service: Service }) {
             </h3>
             <div className="flex shrink-0 items-baseline gap-1.5">
               {service.originalPrice && (
-                <span className="text-xs text-charcoal/40 line-through">
+                <span className="text-xs text-charcoal/70 line-through">
                   {formatPrice(service.originalPrice)}
                 </span>
               )}
@@ -50,11 +50,11 @@ export function ServiceLinkCard({ service }: { service: Service }) {
               </span>
             </div>
           </div>
-          <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-charcoal/60">
+          <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-charcoal/70">
             {service.description}
           </p>
           <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
-            <span className="flex items-center gap-1.5 text-xs text-charcoal/55">
+            <span className="flex items-center gap-1.5 text-xs text-charcoal/70">
               <Clock className="h-3 w-3 text-brown" />
               {service.duration}
             </span>

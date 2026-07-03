@@ -56,12 +56,12 @@ export function Packages() {
                       {formatPrice(pkg.price)}
                     </span>
                     {pkg.originalPrice && (
-                      <span className="mb-1 text-sm text-charcoal/40 line-through">
+                      <span className="mb-1 text-sm text-charcoal/70 line-through">
                         {formatPrice(pkg.originalPrice)}
                       </span>
                     )}
                   </div>
-                  <p className="mt-3 text-sm text-charcoal/65">{pkg.description}</p>
+                  <p className="mt-3 text-sm text-charcoal/70">{pkg.description}</p>
 
                   <ul className="mt-5 space-y-2.5">
                     {pkg.includes.map((inc) => (
