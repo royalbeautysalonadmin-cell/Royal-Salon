@@ -1,8 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
-import { Sparkles, ArrowRight, Star } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Sparkles, ArrowRight, Star, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { stats } from "@/data/content";
@@ -22,15 +23,36 @@ const item = {
 };
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  // Scroll-linked parallax: content, slider and orbs drift apart at
+  // different speeds while the visitor scrolls out of the hero.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 110]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const sliderY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const statsY = useTransform(scrollYProgress, [0, 1], [0, 70]);
+  const orbY = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const indicatorOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
+
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-b from-cream via-white to-cream pt-28 lg:pt-24"
     >
       {/* Decorative gradient backdrop */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-brown/10 blur-[120px]" />
-        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-gold/20 blur-[120px]" />
+        <motion.div
+          style={{ y: orbY }}
+          className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-brown/10 blur-[120px]"
+        />
+        <motion.div
+          style={{ y: orbY }}
+          className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-gold/20 blur-[120px]"
+        />
         <div className="absolute inset-0 bg-luxury-radial" />
       </div>
 
@@ -41,7 +63,12 @@ export function Hero() {
 
       <div className="container-luxury relative z-10 py-14">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <motion.div variants={container} initial="hidden" animate="show">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            style={{ y: contentY, opacity: contentOpacity }}
+          >
             <motion.div variants={item}>
               <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium tracking-wide text-brown-700 shadow-soft">
                 <Sparkles className="h-4 w-4 text-gold-600" />
@@ -96,6 +123,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            style={{ y: sliderY }}
           >
             <HeroSlider />
           </motion.div>
@@ -106,6 +134,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.7 }}
+          style={{ y: statsY }}
           className="mt-14 grid grid-cols-2 gap-4 rounded-3xl border border-white/50 bg-white/50 p-6 shadow-soft backdrop-blur-md sm:grid-cols-4"
         >
           {stats.map((s) => (
@@ -116,6 +145,23 @@ export function Hero() {
           ))}
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.a
+        href="#about"
+        aria-label="Scroll to explore"
+        style={{ opacity: indicatorOpacity }}
+        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-charcoal/50 transition-colors hover:text-brown sm:flex"
+      >
+        <span className="text-[0.6rem] uppercase tracking-[0.3em]">Scroll</span>
+        <motion.span
+          animate={{ y: [0, 7, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          className="flex h-9 w-6 items-start justify-center rounded-full border border-charcoal/25 pt-1.5"
+        >
+          <ChevronDown className="h-3.5 w-3.5" />
+        </motion.span>
+      </motion.a>
     </section>
   );
 }
