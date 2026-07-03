@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -8,81 +8,128 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 
-// Wavy vertical path in a 56 x 800 viewBox, stretched to the viewport height.
-const LINE_PATH =
-  "M28 6 C 46 90, 10 160, 28 250 C 46 340, 10 410, 28 500 C 46 590, 10 660, 28 745 L 28 794";
+/**
+ * Builds a smooth serpentine path centred on the page, bulging alternately
+ * left and right, sized 1:1 to the measured content area so the curves keep
+ * the same rhythm on any page length.
+ */
+function buildPath(width: number, height: number) {
+  const cx = width / 2;
+  const amp = Math.min(width * 0.34, 620);
+  const waveHeight = 950; // px per half-wave — one gentle sweep per section
+  const n = Math.max(2, Math.round(height / waveHeight));
+  const segH = height / n;
+
+  let d = `M ${cx.toFixed(1)} 0`;
+  for (let i = 0; i < n; i++) {
+    const dir = i % 2 === 0 ? 1 : -1;
+    const x = (cx + amp * dir).toFixed(1);
+    const y0 = i * segH;
+    const y1 = (i + 1) * segH;
+    d += ` C ${x} ${(y0 + segH * 0.32).toFixed(1)}, ${x} ${(y1 - segH * 0.32).toFixed(1)}, ${cx.toFixed(1)} ${y1.toFixed(1)}`;
+  }
+  return d;
+}
 
 /**
- * Decorative golden SVG line fixed to the right edge of the viewport that
- * draws itself in as the page is scrolled, with a glowing tip that travels
- * along the path. Purely visual — hidden from pointer events and readers.
+ * Decorative golden line that flows down the middle of the page, weaving
+ * between sections and drawing itself in as the visitor scrolls, led by a
+ * glowing tip. Mounted as an absolute overlay covering the page content.
  */
 export function ScrollLine() {
-  const { scrollYProgress } = useScroll();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<SVGPathElement>(null);
+  const tipRef = useRef<SVGGElement>(null);
+  const [size, setSize] = useState({ width: 0, height: 0 });
+
+  const { scrollYProgress } = useScroll({
+    target: wrapperRef,
+    offset: ["start start", "end end"],
+  });
   const progress = useSpring(scrollYProgress, {
     stiffness: 90,
     damping: 24,
     mass: 0.4,
   });
 
-  const trackRef = useRef<SVGPathElement>(null);
-  const tipRef = useRef<SVGGElement>(null);
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver(([entry]) => {
+      const { width, height } = entry.contentRect;
+      setSize({ width: Math.round(width), height: Math.round(height) });
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const moveTip = (v: number) => {
     const track = trackRef.current;
     const tip = tipRef.current;
     if (!track || !tip) return;
     const length = track.getTotalLength();
-    const point = track.getPointAtLength(Math.min(Math.max(v, 0.002), 1) * length);
+    if (!length) return;
+    const point = track.getPointAtLength(
+      Math.min(Math.max(v, 0.001), 1) * length
+    );
     tip.setAttribute("transform", `translate(${point.x}, ${point.y})`);
   };
 
   useMotionValueEvent(progress, "change", moveTip);
-  useEffect(() => moveTip(progress.get()), []); // position tip before first scroll
+  // Re-anchor the tip whenever the path is rebuilt (resize / route change).
+  useEffect(() => moveTip(progress.get()), [size]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const d = size.height > 0 ? buildPath(size.width, size.height) : "";
 
   return (
     <div
+      ref={wrapperRef}
       aria-hidden
-      className="pointer-events-none fixed inset-y-0 right-2 z-30 hidden w-14 lg:block"
+      className="pointer-events-none absolute inset-0 z-[1] hidden overflow-hidden md:block"
     >
-      <svg
-        className="h-full w-full"
-        viewBox="0 0 56 800"
-        preserveAspectRatio="none"
-        fill="none"
-      >
-        <defs>
-          <linearGradient id="scroll-line-gold" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#E8C56A" />
-            <stop offset="55%" stopColor="#D4AF37" />
-            <stop offset="100%" stopColor="#B8860B" />
-          </linearGradient>
-        </defs>
+      {d && (
+        <svg
+          width="100%"
+          height="100%"
+          viewBox={`0 0 ${size.width} ${size.height}`}
+          preserveAspectRatio="none"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="scroll-line-gold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#E8C56A" />
+              <stop offset="55%" stopColor="#D4AF37" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </linearGradient>
+          </defs>
 
-        {/* Faint full track so the line's course is always hinted */}
-        <path
-          ref={trackRef}
-          d={LINE_PATH}
-          stroke="#B8860B"
-          strokeOpacity={0.18}
-          strokeWidth={1.5}
-        />
+          {/* Faint full track hinting the line's course */}
+          <path
+            ref={trackRef}
+            d={d}
+            stroke="#B8860B"
+            strokeOpacity={0.1}
+            strokeWidth={1.5}
+          />
 
-        {/* Portion drawn in as the visitor scrolls */}
-        <motion.path
-          d={LINE_PATH}
-          stroke="url(#scroll-line-gold)"
-          strokeWidth={2.5}
-          strokeLinecap="round"
-          style={{ pathLength: progress }}
-        />
+          {/* Portion drawn in as the visitor scrolls */}
+          <motion.path
+            d={d}
+            stroke="url(#scroll-line-gold)"
+            strokeOpacity={0.65}
+            strokeWidth={2.5}
+            strokeLinecap="round"
+            style={{ pathLength: progress }}
+          />
 
-        {/* Glowing tip riding the end of the drawn line */}
-        <g ref={tipRef}>
-          <circle r={9} fill="#D4AF37" opacity={0.22} />
-          <circle r={3.5} fill="#E8C56A" />
-        </g>
-      </svg>
+          {/* Glowing tip leading the drawn line */}
+          <g ref={tipRef}>
+            <circle r={11} fill="#D4AF37" opacity={0.18} />
+            <circle r={5.5} fill="#D4AF37" opacity={0.35} />
+            <circle r={3} fill="#E8C56A" />
+          </g>
+        </svg>
+      )}
     </div>
   );
 }

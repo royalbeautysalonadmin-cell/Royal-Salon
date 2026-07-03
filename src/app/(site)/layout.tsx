@@ -7,10 +7,12 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main className="relative">
+        {children}
+        <ScrollLine />
+      </main>
       <Footer />
       <FloatingActions />
-      <ScrollLine />
     </>
   );
 }
