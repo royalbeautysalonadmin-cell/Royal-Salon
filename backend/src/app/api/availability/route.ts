@@ -5,6 +5,8 @@ import { connectDB, isDbConfigured } from "@/lib/db";
 import { BlockedSlot } from "@/models/BlockedSlot";
 import { TIME_SLOTS, getSlotStatuses, getAdminSlotStatuses } from "@/lib/availability";
 
+export const dynamic = "force-dynamic";
+
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 export async function GET(req: Request) {

@@ -222,7 +222,7 @@ export function ServicesManager() {
   const [busyId, setBusyId] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/api/services")
+    fetch("/api/services", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();

@@ -19,7 +19,7 @@ export function AvailabilityManager() {
   const loadSlots = useCallback(async (d: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/availability?date=${d}`);
+      const res = await fetch(`/api/availability?date=${d}`, { cache: "no-store" });
       if (!res.ok) throw new Error();
       const data = await res.json();
       setSlots(data.slots);

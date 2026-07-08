@@ -32,7 +32,7 @@ export function AppointmentsTable() {
   const [busy, setBusy] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/api/bookings")
+    fetch("/api/bookings", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();

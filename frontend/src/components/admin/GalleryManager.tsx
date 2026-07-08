@@ -35,7 +35,7 @@ export function GalleryManager() {
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    fetch("/api/gallery")
+    fetch("/api/gallery", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();

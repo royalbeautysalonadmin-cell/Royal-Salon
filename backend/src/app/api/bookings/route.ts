@@ -8,6 +8,10 @@ import { isSlotAvailable } from "@/lib/availability";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
+// Every route here reads live DB state the admin panel polls repeatedly —
+// never let Next/Vercel/any intermediate cache serve a stale response.
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();

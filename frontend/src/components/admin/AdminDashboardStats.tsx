@@ -28,7 +28,7 @@ export function AdminDashboardStats() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/bookings")
+    fetch("/api/bookings", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();

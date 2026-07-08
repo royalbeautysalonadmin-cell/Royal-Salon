@@ -4,6 +4,8 @@ import { authOptions } from "@/lib/auth";
 import { connectDB, isDbConfigured } from "@/lib/db";
 import { ContactMessage } from "@/models/index";
 
+export const dynamic = "force-dynamic";
+
 // Admin-only: contact messages contain customer PII, unlike the other list
 // endpoints (services/gallery/testimonials) which are intentionally public.
 export async function GET() {

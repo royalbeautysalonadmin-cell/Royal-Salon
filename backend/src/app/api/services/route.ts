@@ -7,6 +7,8 @@ import { serviceSchema } from "@/lib/validation";
 import { slugify } from "@/lib/utils";
 import { triggerRevalidate } from "@/lib/revalidate";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req: Request) {
   if (!isDbConfigured) return NextResponse.json({ services: [] });
   await connectDB();

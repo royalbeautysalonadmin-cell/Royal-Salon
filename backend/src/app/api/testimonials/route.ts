@@ -5,6 +5,8 @@ import { connectDB, isDbConfigured } from "@/lib/db";
 import { Testimonial } from "@/models/index";
 import { triggerRevalidate } from "@/lib/revalidate";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   if (!isDbConfigured) return NextResponse.json({ testimonials: [] });
   await connectDB();

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { toast } from "sonner";
 import {
   LayoutDashboard,
   CalendarCheck,
@@ -19,6 +20,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { playNotificationSound } from "@/lib/notify-sound";
 
 const links = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
@@ -30,9 +32,83 @@ const links = [
   { href: "/admin/messages", label: "Messages", icon: Mail },
 ];
 
+const POLL_INTERVAL_MS = 20_000;
+
+/** Polls appointments + messages in the background and alerts the admin
+ * (sound + toast + sidebar badge) when new pending appointments or unread
+ * messages show up — without needing to leave/refresh the current tab. */
+function useAdminNotifications() {
+  const [pendingCount, setPendingCount] = useState(0);
+  const [unreadCount, setUnreadCount] = useState(0);
+  const pendingRef = useRef(0);
+  const unreadRef = useRef(0);
+  const initializedRef = useRef(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function poll() {
+      try {
+        const [bookingsRes, messagesRes] = await Promise.all([
+          fetch("/api/bookings", { cache: "no-store" }),
+          fetch("/api/messages", { cache: "no-store" }),
+        ]);
+        if (cancelled || !bookingsRes.ok || !messagesRes.ok) return;
+        const [bookingsData, messagesData]: [
+          { appointments?: { status: string }[] },
+          { messages?: { read?: boolean }[] },
+        ] = await Promise.all([bookingsRes.json(), messagesRes.json()]);
+        if (cancelled) return;
+
+        const newPending = (bookingsData.appointments || []).filter(
+          (a) => a.status === "pending"
+        ).length;
+        const newUnread = (messagesData.messages || []).filter((m) => !m.read).length;
+
+        if (initializedRef.current) {
+          if (newPending > pendingRef.current) {
+            playNotificationSound();
+            toast.success("New appointment booked!");
+          }
+          if (newUnread > unreadRef.current) {
+            playNotificationSound();
+            toast.success("New message received!");
+          }
+        }
+        initializedRef.current = true;
+        pendingRef.current = newPending;
+        unreadRef.current = newUnread;
+        setPendingCount(newPending);
+        setUnreadCount(newUnread);
+      } catch {
+        // Transient network error — the next poll will retry.
+      }
+    }
+
+    poll();
+    const id = setInterval(poll, POLL_INTERVAL_MS);
+    return () => {
+      cancelled = true;
+      clearInterval(id);
+    };
+  }, []);
+
+  return { pendingCount, unreadCount };
+}
+
+function NavBadge({ count }: { count: number }) {
+  if (count <= 0) return null;
+  return (
+    <span className="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1.5 text-[0.65rem] font-bold text-white">
+      {count > 99 ? "99+" : count}
+    </span>
+  );
+}
+
 export function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { pendingCount, unreadCount } = useAdminNotifications();
 
   return (
     <div className="min-h-screen bg-cream">
@@ -70,6 +146,12 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                 link.href === "/admin"
                   ? pathname === "/admin"
                   : pathname.startsWith(link.href);
+              const badgeCount =
+                link.href === "/admin/appointments"
+                  ? pendingCount
+                  : link.href === "/admin/messages"
+                    ? unreadCount
+                    : 0;
               return (
                 <Link
                   key={link.href}
@@ -84,6 +166,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                 >
                   <link.icon className="h-4 w-4" />
                   {link.label}
+                  <NavBadge count={badgeCount} />
                 </Link>
               );
             })}

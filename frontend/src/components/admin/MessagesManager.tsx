@@ -22,7 +22,7 @@ export function MessagesManager() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/messages")
+    fetch("/api/messages", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();

@@ -6,6 +6,8 @@ import { Gallery } from "@/models/index";
 import { uploadImage, isCloudinaryConfigured } from "@/lib/cloudinary";
 import { triggerRevalidate } from "@/lib/revalidate";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   if (!isDbConfigured) return NextResponse.json({ images: [] });
   await connectDB();

@@ -31,7 +31,7 @@ export function TestimonialsManager() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    fetch("/api/testimonials")
+    fetch("/api/testimonials", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();
