@@ -4,6 +4,7 @@ import { Appointment } from "@/models/Appointment";
 import { ServiceModel } from "@/models/Service";
 import { bookingSchema } from "@/lib/validation";
 import { sendBookingEmails } from "@/lib/email";
+import { isSlotAvailable } from "@/lib/availability";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
@@ -39,8 +40,29 @@ export async function POST(req: Request) {
       }
       serviceName = service.name;
 
-      const doc = await Appointment.create({ ...data, serviceName, status: "pending" });
-      id = String(doc._id);
+      // Fast, friendly pre-check — the client already only offers open
+      // slots, but this catches a slot taken or blocked since the form loaded.
+      if (!(await isSlotAvailable(data.date, data.time))) {
+        return NextResponse.json(
+          { error: "That time slot was just taken. Please choose another." },
+          { status: 409 }
+        );
+      }
+
+      try {
+        const doc = await Appointment.create({ ...data, serviceName, status: "pending" });
+        id = String(doc._id);
+      } catch (e: unknown) {
+        // Final safety net: the DB's partial unique index catches the rare
+        // race where two customers submit the same slot at almost the same instant.
+        if (e && typeof e === "object" && "code" in e && e.code === 11000) {
+          return NextResponse.json(
+            { error: "That time slot was just taken. Please choose another." },
+            { status: 409 }
+          );
+        }
+        throw e;
+      }
     }
 
     // Fire confirmation + admin notification emails (non-blocking failure tolerated).

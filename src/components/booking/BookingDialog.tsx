@@ -26,6 +26,7 @@ import { Label } from "@/components/ui/label";
 import { cn, formatPrice, formatDate } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
 import { SERVICE_CATEGORIES } from "@/lib/validation";
+import type { SlotInfo } from "@/lib/availability";
 import type { ServiceCategory } from "@/types";
 
 interface BookableService {
@@ -36,12 +37,6 @@ interface BookableService {
   price: number;
   duration?: string;
 }
-
-const TIME_SLOTS = [
-  "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM",
-  "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM",
-  "06:00 PM", "07:00 PM", "08:00 PM",
-];
 
 const STEPS = ["Service", "Date", "Time", "Details", "Confirm"];
 
@@ -66,6 +61,10 @@ export function BookingDialog() {
   const [services, setServices] = useState<BookableService[]>([]);
   const [loadingServices, setLoadingServices] = useState(false);
   const [servicesError, setServicesError] = useState<string | null>(null);
+
+  const [slots, setSlots] = useState<SlotInfo[]>([]);
+  const [loadingSlots, setLoadingSlots] = useState(false);
+  const [slotsError, setSlotsError] = useState<string | null>(null);
 
   const [serviceSearch, setServiceSearch] = useState("");
   const [serviceCategory, setServiceCategory] = useState<ServiceCategory | "All">("All");
@@ -109,6 +108,35 @@ export function BookingDialog() {
     };
   }, [isOpen]);
 
+  // Fetch real slot availability for the chosen date — merges admin-blocked
+  // slots and existing customer bookings, so double-booking is impossible.
+  useEffect(() => {
+    if (!isOpen || !form.date) {
+      setSlots([]);
+      return;
+    }
+    let cancelled = false;
+    setLoadingSlots(true);
+    setSlotsError(null);
+    fetch(`/api/availability?date=${form.date}`)
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then((data: { slots: SlotInfo[] }) => {
+        if (!cancelled) setSlots(data.slots || []);
+      })
+      .catch(() => {
+        if (!cancelled) setSlotsError("Couldn't load availability. Please try again.");
+      })
+      .finally(() => {
+        if (!cancelled) setLoadingSlots(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [isOpen, form.date]);
+
   useEffect(() => {
     if (isOpen) {
       setStep(0);
@@ -132,6 +160,18 @@ export function BookingDialog() {
       setForm((f) => ({ ...f, service: "" }));
     }
   }, [loadingServices, services, form.service]);
+
+  // If the chosen time is no longer available once slots load for the date
+  // (booked or blocked since the dialog opened), clear it so the customer
+  // has to pick a genuinely open slot.
+  useEffect(() => {
+    if (!loadingSlots && form.time) {
+      const slot = slots.find((s) => s.time === form.time);
+      if (!slot || slot.status !== "available") {
+        setForm((f) => ({ ...f, time: "" }));
+      }
+    }
+  }, [loadingSlots, slots, form.time]);
 
   const update = (patch: Partial<typeof form>) => setForm((f) => ({ ...f, ...patch }));
 
@@ -381,22 +421,52 @@ export function BookingDialog() {
                       <p className="mb-4 flex items-center gap-2 text-sm text-charcoal/70">
                         <Clock className="h-4 w-4 text-brown" /> Choose a time
                       </p>
-                      <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
-                        {TIME_SLOTS.map((t) => (
-                          <button
-                            key={t}
-                            onClick={() => update({ time: t })}
-                            className={cn(
-                              "rounded-xl border py-2.5 text-sm transition-all",
-                              form.time === t
-                                ? "border-brown bg-brown text-white"
-                                : "border-border hover:border-brown/40"
-                            )}
-                          >
-                            {t}
-                          </button>
-                        ))}
-                      </div>
+                      {loadingSlots ? (
+                        <div className="flex items-center justify-center gap-2 py-14 text-sm text-charcoal/70">
+                          <Loader2 className="h-4 w-4 animate-spin" /> Checking availability...
+                        </div>
+                      ) : slotsError ? (
+                        <div className="flex flex-col items-center gap-2 py-14 text-center text-sm text-charcoal/70">
+                          <AlertCircle className="h-5 w-5 text-red-500" />
+                          {slotsError}
+                        </div>
+                      ) : (
+                        <>
+                          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+                            {slots.map((s) => {
+                              const isAvailable = s.status === "available";
+                              const isSelected = form.time === s.time;
+                              return (
+                                <button
+                                  key={s.time}
+                                  disabled={!isAvailable}
+                                  onClick={() => isAvailable && update({ time: s.time })}
+                                  title={
+                                    s.status === "booked"
+                                      ? "Already booked"
+                                      : s.status === "blocked"
+                                      ? "Not available"
+                                      : undefined
+                                  }
+                                  className={cn(
+                                    "rounded-xl border py-2.5 text-sm transition-all",
+                                    isSelected
+                                      ? "border-brown bg-brown text-white"
+                                      : isAvailable
+                                      ? "border-border hover:border-brown/40"
+                                      : "cursor-not-allowed border-border/50 bg-cream/50 text-charcoal/70 line-through"
+                                  )}
+                                >
+                                  {s.time}
+                                </button>
+                              );
+                            })}
+                          </div>
+                          <p className="mt-3 text-xs text-charcoal/70">
+                            Greyed-out times are already booked or unavailable.
+                          </p>
+                        </>
+                      )}
                     </div>
                   )}
 

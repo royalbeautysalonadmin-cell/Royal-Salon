@@ -7,6 +7,7 @@ import { signOut } from "next-auth/react";
 import {
   LayoutDashboard,
   CalendarCheck,
+  CalendarClock,
   Scissors,
   Images,
   MessageSquareQuote,
@@ -22,6 +23,7 @@ import { cn } from "@/lib/utils";
 const links = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/appointments", label: "Appointments", icon: CalendarCheck },
+  { href: "/admin/availability", label: "Availability", icon: CalendarClock },
   { href: "/admin/services", label: "Services", icon: Scissors },
   { href: "/admin/gallery", label: "Gallery", icon: Images },
   { href: "/admin/testimonials", label: "Testimonials", icon: MessageSquareQuote },

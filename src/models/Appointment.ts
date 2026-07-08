@@ -20,6 +20,16 @@ const AppointmentSchema = new Schema(
   { timestamps: true }
 );
 
+// Atomic double-booking guard: only one non-rejected appointment can hold a
+// given date+time. Partial so a rejected booking doesn't permanently lock
+// the slot — the app-level availability check already filters these out,
+// this index is the last-resort safety net against a race between two
+// customers submitting the same slot at once.
+AppointmentSchema.index(
+  { date: 1, time: 1 },
+  { unique: true, partialFilterExpression: { status: { $in: ["pending", "approved", "completed"] } } }
+);
+
 export type AppointmentDoc = InferSchemaType<typeof AppointmentSchema>;
 
 export const Appointment =
