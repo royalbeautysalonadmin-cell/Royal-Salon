@@ -6,10 +6,14 @@ import { ServiceModel } from "@/models/Service";
 import { serviceSchema } from "@/lib/validation";
 import { slugify } from "@/lib/utils";
 
-export async function GET() {
+export async function GET(req: Request) {
   if (!isDbConfigured) return NextResponse.json({ services: [] });
   await connectDB();
-  const services = await ServiceModel.find().sort({ createdAt: -1 }).lean();
+  // The public booking form only ever asks for active services; the admin
+  // dashboard omits this param so it can see (and re-enable) disabled ones.
+  const onlyActive = new URL(req.url).searchParams.get("active") === "true";
+  const query = onlyActive ? { active: true } : {};
+  const services = await ServiceModel.find(query).sort({ createdAt: -1 }).lean();
   return NextResponse.json({ services });
 }
 
@@ -25,6 +29,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Validation failed", issues: parsed.error.flatten() }, { status: 400 });
   }
   await connectDB();
-  const created = await ServiceModel.create(parsed.data);
-  return NextResponse.json({ service: created }, { status: 201 });
+  try {
+    const created = await ServiceModel.create(parsed.data);
+    return NextResponse.json({ service: created }, { status: 201 });
+  } catch (e: unknown) {
+    if (e && typeof e === "object" && "code" in e && e.code === 11000) {
+      return NextResponse.json(
+        { error: "A service with that name already exists." },
+        { status: 409 }
+      );
+    }
+    throw e;
+  }
 }

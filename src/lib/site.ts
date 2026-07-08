@@ -11,8 +11,6 @@ export const siteConfig = {
   // 308-redirects to www, so www is the canonical origin — a non-www value here
   // makes every canonical/sitemap URL a redirect and Google refuses to index.
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.royalbeautysaloon.com",
-  // All "Book" CTAs link straight to Booksy (no on-site booking form).
-  booksyUrl: "https://royalbeautywarsawsalon.booksy.com/a/",
   ogImage: "/og.jpg",
   phone: process.env.NEXT_PUBLIC_SALON_PHONE || "+48 22 123 45 67",
   whatsapp: process.env.NEXT_PUBLIC_SALON_WHATSAPP || "48221234567",

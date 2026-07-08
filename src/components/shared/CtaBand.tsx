@@ -1,12 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { Phone, Calendar } from "lucide-react";
 import { siteConfig, whatsappLink } from "@/lib/site";
+import { useBookingStore } from "@/store/booking";
 
 interface CtaBandProps {
   title?: string;
   description?: string;
   /** WhatsApp prefill message */
   message?: string;
+  /** Service slug to pre-select in the booking dialog, if this band is on a service page. */
+  serviceSlug?: string;
 }
 
 /** Reusable conversion band for service / category / location pages. */
@@ -14,7 +19,10 @@ export function CtaBand({
   title = "Ready to book your appointment?",
   description = "Reserve your spot at Royal Beauty Salon in central Warsaw. Walk-ins welcome, but booking ahead guarantees your preferred time.",
   message,
+  serviceSlug,
 }: CtaBandProps) {
+  const openBooking = useBookingStore((s) => s.open);
+
   return (
     <section className="relative overflow-hidden bg-luxury-black py-16 text-white sm:py-20">
       <div className="pointer-events-none absolute inset-0 bg-luxury-radial opacity-60" />
@@ -28,15 +36,14 @@ export function CtaBand({
           {description}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href={siteConfig.booksyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => openBooking(serviceSlug)}
             className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-luxury-black shadow-luxury transition-transform hover:-translate-y-0.5"
           >
             <Calendar className="h-4 w-4" />
             Book Now
-          </a>
+          </button>
           <a
             href={whatsappLink(message)}
             target="_blank"

@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { connectDB, isDbConfigured } from "@/lib/db";
 import { Appointment } from "@/models/Appointment";
+import { ServiceModel } from "@/models/Service";
 import { bookingSchema } from "@/lib/validation";
 import { sendBookingEmails } from "@/lib/email";
-import { allServices } from "@/data/content";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
@@ -18,13 +18,27 @@ export async function POST(req: Request) {
       );
     }
     const data = parsed.data;
-    const match = allServices.find((s) => s.slug === data.service);
-    const serviceName = data.serviceName || match?.name || data.service;
+    let serviceName = data.serviceName || data.service;
 
     // Persist to MongoDB when configured; otherwise run in graceful demo mode.
     let id = "demo";
     if (isDbConfigured) {
       await connectDB();
+
+      // Re-verify the service is a real, currently-bookable service — the
+      // client already filters to active services, but this guards against
+      // a stale form or a service disabled between load and submit.
+      const service = await ServiceModel.findOne({ slug: data.service, active: true }).lean<{
+        name: string;
+      }>();
+      if (!service) {
+        return NextResponse.json(
+          { error: "That service is no longer available. Please choose another." },
+          { status: 409 }
+        );
+      }
+      serviceName = service.name;
+
       const doc = await Appointment.create({ ...data, serviceName, status: "pending" });
       id = String(doc._id);
     }

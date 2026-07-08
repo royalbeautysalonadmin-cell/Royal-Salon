@@ -8,11 +8,13 @@ import { Menu, X, Phone, MapPin, Clock, Instagram, Facebook } from "lucide-react
 import { cn } from "@/lib/utils";
 import { navLinks, siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/button";
+import { useBookingStore } from "@/store/booking";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const openBooking = useBookingStore((s) => s.open);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -106,10 +108,8 @@ export function Navbar() {
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <Button variant="gold" size="sm" asChild>
-              <a href={siteConfig.booksyUrl} target="_blank" rel="noopener noreferrer">
-                Book Appointment
-              </a>
+            <Button variant="gold" size="sm" onClick={() => openBooking()}>
+              Book Appointment
             </Button>
           </div>
 
@@ -149,15 +149,15 @@ export function Navbar() {
               >
                 <Phone className="h-4 w-4 text-brown" /> {siteConfig.phone}
               </a>
-              <Button variant="gold" className="mt-2" asChild>
-                <a
-                  href={siteConfig.booksyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                >
-                  Book Appointment
-                </a>
+              <Button
+                variant="gold"
+                className="mt-2"
+                onClick={() => {
+                  setOpen(false);
+                  openBooking();
+                }}
+              >
+                Book Appointment
               </Button>
             </div>
           </motion.div>

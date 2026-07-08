@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles, ArrowRight, Star, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site";
+import { useBookingStore } from "@/store/booking";
 import { stats } from "@/data/content";
 import { HeroSlider } from "./HeroSlider";
 
@@ -39,6 +39,7 @@ const item = {
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const showParticles = useIdleMount();
+  const openBooking = useBookingStore((s) => s.open);
   // Scroll-linked parallax: content, slider and orbs drift apart at
   // different speeds while the visitor scrolls out of the hero.
   const { scrollYProgress } = useScroll({
@@ -108,11 +109,9 @@ export function Hero() {
             </motion.p>
 
             <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
-              <Button size="lg" variant="gold" className="group" asChild>
-                <a href={siteConfig.booksyUrl} target="_blank" rel="noopener noreferrer">
-                  Book Appointment
-                  <ArrowRight className="transition-transform group-hover:translate-x-1" />
-                </a>
+              <Button size="lg" variant="gold" onClick={() => openBooking()} className="group">
+                Book Appointment
+                <ArrowRight className="transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="/services">Explore Services</a>

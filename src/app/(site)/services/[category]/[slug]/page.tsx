@@ -313,6 +313,7 @@ export default async function ServiceDetailPage({
       <CtaBand
         title={`Book ${service.name} at Royal Beauty Salon`}
         message={`Hello Royal Beauty Salon, I'd like to book ${service.name}.`}
+        serviceSlug={service.slug}
       />
     </>
   );

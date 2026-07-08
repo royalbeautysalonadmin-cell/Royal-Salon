@@ -6,7 +6,7 @@ import { Gem, HandHeart, Leaf, Wand2, Quote, Instagram } from "lucide-react";
 import { Reveal, RevealGroup, RevealItem } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site";
+import { useBookingStore } from "@/store/booking";
 
 const U = (id: string, w = 600) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
@@ -42,6 +42,8 @@ const team = [
 ];
 
 export function AboutExtras() {
+  const openBooking = useBookingStore((s) => s.open);
+
   return (
     <>
       {/* Philosophy band */}
@@ -145,10 +147,8 @@ export function AboutExtras() {
             <p className="mx-auto mt-3 max-w-xl text-white/85">
               Book your appointment today and discover the Royal Beauty difference in the heart of Warsaw.
             </p>
-            <Button variant="light" size="lg" className="mt-7" asChild>
-              <a href={siteConfig.booksyUrl} target="_blank" rel="noopener noreferrer">
-                Book Your Appointment
-              </a>
+            <Button variant="light" size="lg" className="mt-7" onClick={() => openBooking()}>
+              Book Your Appointment
             </Button>
           </motion.div>
         </div>

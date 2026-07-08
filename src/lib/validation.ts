@@ -20,13 +20,26 @@ export const contactSchema = z.object({
   message: z.string().min(5, "Please enter a message"),
 });
 
+export const SERVICE_CATEGORIES = [
+  "Hair",
+  "Makeup & Styling",
+  "Threading",
+  "Waxing",
+  "Facial & Skin Care",
+  "Manicure & Pedicure",
+] as const;
+
 export const serviceSchema = z.object({
   slug: z.string().min(1),
   name: z.string().min(1),
-  category: z.string().min(1),
+  category: z.enum(SERVICE_CATEGORIES),
   description: z.string().optional(),
   price: z.number().nonnegative(),
   duration: z.string().optional(),
   image: z.string().optional(),
   featured: z.boolean().optional(),
+  active: z.boolean().optional(),
 });
+
+/** Fields an admin may change on an existing service via PATCH. */
+export const serviceUpdateSchema = serviceSchema.partial();
