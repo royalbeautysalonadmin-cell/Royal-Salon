@@ -27,6 +27,7 @@ export const SERVICE_CATEGORIES = [
   "Waxing",
   "Facial & Skin Care",
   "Manicure & Pedicure",
+  "Mehndi & Henna",
 ] as const;
 
 export const serviceSchema = z.object({

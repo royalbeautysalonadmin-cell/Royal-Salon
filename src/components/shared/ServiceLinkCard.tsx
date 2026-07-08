@@ -10,7 +10,13 @@ import type { Service } from "@/types";
  * A crawlable, link-based service card that points to the service detail
  * page (unlike the homepage card which opens the booking dialog).
  */
-export function ServiceLinkCard({ service }: { service: Service }) {
+export function ServiceLinkCard({
+  service,
+  locale = "en",
+}: {
+  service: Service;
+  locale?: "en" | "pl";
+}) {
   const href = servicePath(service);
   return (
     <article className="group overflow-hidden rounded-2xl border border-brown/10 bg-white shadow-soft transition-all duration-300 hover:shadow-luxury hover:-translate-y-1">
@@ -59,7 +65,7 @@ export function ServiceLinkCard({ service }: { service: Service }) {
               {service.duration}
             </span>
             <span className="flex items-center gap-1 text-xs font-medium text-brown">
-              View details
+              {locale === "pl" ? "Zobacz szczegóły" : "View details"}
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
           </div>

@@ -31,7 +31,14 @@ const Gallery = dynamic(() => import("@/components/sections/Gallery").then((m) =
 const Contact = dynamic(() => import("@/components/sections/Contact").then((m) => m.Contact));
 
 export const metadata: Metadata = {
-  alternates: { canonical: siteConfig.url },
+  alternates: {
+    canonical: siteConfig.url,
+    languages: {
+      "en-GB": siteConfig.url,
+      "pl-PL": `${siteConfig.url}/salon-kosmetyczny-warszawa`,
+      "x-default": siteConfig.url,
+    },
+  },
 };
 
 export default function HomePage() {

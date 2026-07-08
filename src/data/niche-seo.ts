@@ -19,6 +19,9 @@ export interface NicheSection {
 
 export interface NichePage {
   slug: string;
+  /** Page language — swaps the surrounding UI chrome (buttons, breadcrumb,
+   *  section labels) to match. Defaults to English when omitted. */
+  locale?: "en" | "pl";
   /** Primary target keyword (used in copy + schema serviceType). */
   primaryKeyword: string;
   /** Secondary keywords woven naturally into the page. */
@@ -60,6 +63,10 @@ export const nichePages: NichePage[] = [
       "South Asian salon Warsaw",
       "Indian parlour Warsaw",
       "Desi salon Warsaw",
+      "Asian beauty salon Warsaw",
+      "Indian hair salon Warsaw",
+      "Indian hairdresser Warsaw",
+      "Indian makeup artist Warsaw",
     ],
     title: "Indian Beauty Salon in Warsaw — Threading, Bridal & Mehndi",
     metaDescription:
@@ -96,9 +103,10 @@ export const nichePages: NichePage[] = [
         ],
       },
       {
-        heading: "Hair oil treatments and hair care",
+        heading: "Indian hair salon: oil treatments, cutting and colour",
         body: [
           "A proper hair oil massage — champi — with steam and wash nourishes the scalp, relieves stress and supports healthy hair growth. It is one of the most-loved services we carry over from traditional Indian parlours, alongside cutting, colour and keratin smoothing.",
+          "As a full Indian hair salon, we go beyond champi — our Indian hairdressers also handle global colour, balayage, keratin and nanoplasty smoothing, and precision cuts, so you can treat your hair and your beauty routine at the same appointment.",
         ],
       },
     ],
@@ -125,17 +133,22 @@ export const nichePages: NichePage[] = [
         q: "Do I need to be from the South Asian community to visit?",
         a: "Not at all. Everyone is warmly welcome. Our services are loved by clients of every background who enjoy threading, mehndi, hair oil treatments and our bridal artistry.",
       },
+      {
+        q: "Do you have an Indian hairdresser and Indian makeup artist on the team?",
+        a: "Yes. Our Indian hairdressers handle everything from champi oil massage to global colour and keratin smoothing, and our Indian makeup artists specialise in HD Desi bridal and party looks built for vibrant outfits and jewellery.",
+      },
     ],
     featuredServiceSlugs: [
       "threading-combo",
       "bridal-makeup",
+      "bridal-mehndi-hands-feet",
       "hair-oil-massage-steam",
       "full-face-eyebrows-threading",
       "party-makeup",
       "royal-nanoplasty",
     ],
     relatedNicheSlugs: ["indian-parlour-warsaw", "desi-salon-warsaw", "hijab-friendly-salon-warsaw"],
-    relatedCategorySlugs: ["threading", "makeup", "hair"],
+    relatedCategorySlugs: ["threading", "makeup", "hair", "mehndi-henna"],
     serviceName: "Indian Beauty Salon Services in Warsaw",
     serviceDescription:
       "Authentic South Asian beauty services in Warsaw including eyebrow threading, bridal makeup, mehndi, hair oil treatments and HD makeup.",
@@ -250,8 +263,11 @@ export const nichePages: NichePage[] = [
     secondaryKeywords: [
       "Desi bridal makeup Warsaw",
       "Pakistani bridal makeup Warsaw",
+      "Indian bridal makeup Warsaw",
+      "Indian bridal salon Warsaw",
       "mehndi artist Warsaw",
       "Asian bridal Warsaw",
+      "engagement makeup Warsaw",
     ],
     title: "Desi Salon in Warsaw — Bridal Makeup, Mehndi & Draping",
     metaDescription:
@@ -302,7 +318,11 @@ export const nichePages: NichePage[] = [
     faqs: [
       {
         q: "Do you do Pakistani and Indian bridal makeup in Warsaw?",
-        a: "Yes — our artists specialise in Desi bridal makeup for Pakistani, Indian and Bangladeshi weddings, with HD, long-wearing looks tailored to your outfit and theme.",
+        a: "Yes — our artists specialise in Desi bridal makeup for Pakistani, Indian and Bangladeshi weddings, with HD, long-wearing looks tailored to your outfit and theme. As an Indian bridal salon at heart, we also handle every event around the wedding, not just the main day.",
+      },
+      {
+        q: "Do you do engagement and mehndi-night makeup, not just the wedding day?",
+        a: "Yes — engagement makeup, mehndi night, sangeet and reception looks are all popular bookings alongside the main bridal day. Each function gets its own look, tailored to the outfit and lighting.",
       },
       {
         q: "Can you do makeup for the whole wedding party?",
@@ -319,6 +339,7 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "bridal-makeup",
+      "bridal-mehndi-hands-feet",
       "bridal-hairstyle",
       "saree-dupatta-draping",
       "hd-party-makeup",
@@ -326,7 +347,7 @@ export const nichePages: NichePage[] = [
       "hair-do-advanced",
     ],
     relatedNicheSlugs: ["indian-salon-warsaw", "indian-parlour-warsaw"],
-    relatedCategorySlugs: ["makeup", "hair", "threading"],
+    relatedCategorySlugs: ["makeup", "hair", "threading", "mehndi-henna"],
     serviceName: "Desi Bridal & Party Services in Warsaw",
     serviceDescription:
       "Desi salon services in Warsaw — HD bridal makeup, bridal mehndi, hairstyling, and saree and dupatta draping for South Asian weddings and celebrations.",
@@ -737,6 +758,117 @@ export const nichePages: NichePage[] = [
     ],
     ctaMessage:
       "Hello Royal Beauty Salon, I'd like to book keratin/nanoplasty for hijab hair in Warsaw.",
+  },
+
+  /* ─────────────────────────── Polish-language hub ─────────────────────────── */
+  {
+    slug: "salon-kosmetyczny-warszawa",
+    locale: "pl",
+    primaryKeyword: "salon kosmetyczny Warszawa",
+    secondaryKeywords: [
+      "salon fryzjerski Warszawa",
+      "fryzjer damski Warszawa",
+      "indyjski salon Warszawa",
+      "salon dla kobiet Warszawa",
+      "salon przyjazny muzułmankom Warszawa",
+    ],
+    title: "Salon Kosmetyczny i Fryzjerski w Warszawie",
+    metaDescription:
+      "Salon kosmetyczny i fryzjerski w centrum Warszawy — depilacja nitką, koloryzacja, keratynowe prostowanie, nanoplastia, manicure, pedicure i makijaż ślubny. Umów wizytę w Royal Beauty Salon.",
+    h1: "Salon Kosmetyczny i Fryzjerski w Warszawie",
+    eyebrow: "Salon Kosmetyczny • Warszawa",
+    tagline:
+      "Depilacja nitką, koloryzacja włosów, nanoplastia i makijaż ślubny — wszystko w jednym miejscu na ul. Mokotowskiej.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt: "Wnętrze salonu kosmetycznego i fryzjerskiego w Warszawie",
+    intro: [
+      "Royal Beauty Salon to salon kosmetyczny i fryzjerski w samym centrum Warszawy, na ul. Mokotowskiej. Łączymy tradycyjne, azjatyckie techniki pielęgnacji urody — takie jak depilacja nitką — z nowoczesnymi zabiegami fryzjerskimi: koloryzacją, keratynowym prostowaniem włosów i nanoplastią.",
+      "Nasz zespół tworzą doświadczeni specjaliści, w tym fryzjerki damskie i kosmetyczki, które doskonale znają zarówno klasyczne europejskie techniki, jak i azjatyckie metody pielęgnacji urody — w tym depilację i regulację brwi metodą nitki, henna brwi oraz tradycyjne zabiegi z olejkami do włosów.",
+      "Jako indyjski salon w Warszawie z otwartym sercem dla wszystkich, jesteśmy również salonem przyjaznym kobietom i muzułmankom — oferujemy prywatną, komfortową atmosferę oraz żeński personel dla klientek, które tego potrzebują.",
+    ],
+    sections: [
+      {
+        heading: "Depilacja i regulacja brwi metodą nitki",
+        body: [
+          "Depilacja twarzy nitką (threading) to precyzyjna, delikatna metoda usuwania niechcianego owłosienia — idealna do regulacji brwi, depilacji wąsika i całej twarzy. W przeciwieństwie do wosku, nitka usuwa włoski dokładnie od cebulki, bez podrażniania skóry.",
+          "Oferujemy również henna brwi — naturalne barwienie brwi, które podkreśla ich kształt i intensywność koloru na kilka tygodni.",
+        ],
+      },
+      {
+        heading: "Fryzjer damski: koloryzacja, keratyna i nanoplastia",
+        body: [
+          "Nasi fryzjerzy damscy specjalizują się w koloryzacji włosów — od pełnej zmiany koloru po delikatne rozjaśnienia — a także w zabiegach wygładzających: keratynowym prostowaniu włosów i nanoplastii, które redukują puszenie się włosów i przywracają im gładkość na miesiące.",
+          "Każda wizyta zaczyna się od konsultacji, podczas której oceniamy kondycję Twoich włosów i dobieramy zabieg dopasowany do Twoich potrzeb.",
+        ],
+      },
+      {
+        heading: "Manicure, pedicure i makijaż ślubny",
+        body: [
+          "Zadbaj o dłonie i stopy w naszym salonie manicure i pedicure w Warszawie — precyzyjne opracowanie, pielęgnacja skórek i trwały lakier w higienicznych warunkach.",
+          "Dla Panny Młodej oferujemy profesjonalny makijaż ślubny, stylizację fryzury oraz — w ramach naszej indyjskiej specjalizacji — tradycyjną henna na dłonie i stopy (mehndi) na wesele.",
+        ],
+      },
+      {
+        heading: "Salon dla kobiet i przyjazny muzułmankom",
+        body: [
+          "Rozumiemy, że wiele klientek szuka salonu, w którym mogą czuć się w pełni komfortowo — dlatego jesteśmy salonem przyjaznym muzułmankom, oferującym prywatną atmosferę i zabiegi wykonywane wyłącznie przez kobiecy personel na życzenie.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Depilacja nitką", desc: "Precyzyjna regulacja brwi i depilacja twarzy." },
+      { title: "Koloryzacja i nanoplastia", desc: "Pełna pielęgnacja i stylizacja włosów." },
+      { title: "Manicure i pedicure", desc: "Higieniczna, relaksująca pielęgnacja dłoni i stóp." },
+      { title: "Salon dla kobiet", desc: "Prywatna atmosfera, żeński personel na życzenie." },
+    ],
+    faqs: [
+      {
+        q: "Czy wykonujecie depilację brwi metodą nitki?",
+        a: "Tak — regulacja i depilacja brwi nitką to jedna z naszych specjalności. Wykonujemy również henna brwi oraz pełną depilację twarzy nitką.",
+      },
+      {
+        q: "Czym różni się keratynowe prostowanie od nanoplastii?",
+        a: "Oba zabiegi wygładzają i redukują puszenie się włosów, ale nanoplastia jest łagodniejsza dla włosów (nie zawiera formaldehydu) i często polecana przy delikatniejszych włosach. Nasz stylista doradzi, który zabieg będzie odpowiedni dla Twoich włosów.",
+      },
+      {
+        q: "Czy oferujecie makijaż ślubny i henna na wesele?",
+        a: "Tak — nasi artyści wykonują profesjonalny makijaż ślubny oraz tradycyjną henna (mehndi) na dłonie i stopy, idealną na wesela i uroczystości.",
+      },
+      {
+        q: "Czy salon jest przyjazny kobietom noszącym hidżab?",
+        a: "Tak, jesteśmy salonem przyjaznym muzułmankom — oferujemy prywatną, komfortową przestrzeń oraz zabiegi wykonywane przez kobiecy personel na życzenie.",
+      },
+      {
+        q: "Gdzie znajduje się salon?",
+        a: "Znajdujemy się na ul. Mokotowskiej 12 w centrum Warszawy (Śródmieście), z łatwym dojazdem komunikacją miejską.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "eyebrow-threading",
+      "royal-nanoplasty",
+      "keratin-treatment-medium",
+      "fashion-shade-global-color",
+      "manicure",
+      "pedicure",
+      "bridal-makeup",
+      "bridal-mehndi-hands-feet",
+    ],
+    relatedNicheSlugs: [
+      "indian-salon-warsaw",
+      "hijab-friendly-salon-warsaw",
+      "women-only-hair-salon-warsaw",
+    ],
+    relatedCategorySlugs: ["hair", "threading", "nails"],
+    serviceName: "Salon Kosmetyczny i Fryzjerski w Warszawie",
+    serviceDescription:
+      "Kompleksowy salon kosmetyczny i fryzjerski w centrum Warszawy — depilacja nitką, koloryzacja, keratynowe prostowanie, nanoplastia, manicure, pedicure oraz makijaż ślubny.",
+    imageAltRecommendations: [
+      "Zabieg depilacji brwi nitką w salonie w Warszawie",
+      "Koloryzacja włosów w salonie fryzjerskim w Warszawie",
+      "Manicure i pedicure w salonie kosmetycznym Warszawa",
+      "Makijaż ślubny wykonywany w warszawskim salonie",
+    ],
+    ctaMessage: "Dzień dobry, chciałabym umówić wizytę w Royal Beauty Salon w Warszawie.",
   },
 ];
 

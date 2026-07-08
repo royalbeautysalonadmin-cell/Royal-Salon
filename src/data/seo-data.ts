@@ -338,6 +338,61 @@ export const categories: CategoryMeta[] = [
       "luxury manicure Warsaw",
     ],
   },
+  {
+    slug: "mehndi-henna",
+    category: "Mehndi & Henna",
+    label: "Mehndi & Henna",
+    title: "Mehndi Artist in Warsaw — Bridal & Party Henna Design",
+    metaDescription:
+      "Professional mehndi artist in Warsaw. Intricate bridal henna, Arabic mehndi design and simple party mehndi for weddings, mehndi nights and celebrations. Book at Royal Beauty Salon.",
+    heading: "Mehndi & Henna Artist in Warsaw",
+    eyebrow: "Mehndi & Henna",
+    tagline:
+      "Traditional bridal mehndi and modern Arabic henna design, hand-drawn by artists who know the craft.",
+    intro: [
+      "Finding a genuine mehndi artist in Warsaw who can create authentic, intricate henna design is not easy — which is exactly why Royal Beauty Salon built a dedicated henna studio inside our Mokotowska salon. Whether you need traditional Indian bridal motifs, bold Arabic mehndi patterns or simple party henna for guests, our artists have trained specifically in the craft.",
+      "Bridal mehndi is a celebration in itself. Your artist will talk through your outfit, jewellery and the story you want your design to tell — from fine lace-work on the palms to bold trailing vines up the forearm — before hand-drawing a design unique to you, covering both hands and feet for full bridal coverage.",
+      "Not every occasion calls for the full bridal treatment. For mehndi nights, sangeet, Eid, or simply a guest wanting to join the celebration, we offer faster Arabic-style and simple one-hand designs that still look beautifully finished without the multi-hour sitting.",
+    ],
+    benefits: [
+      "Genuine hand-drawn mehndi — no stencils, no shortcuts",
+      "Indian bridal, Arabic and Indo-Western design styles",
+      "Full bridal coverage for hands and feet, or faster guest designs",
+      "Natural, skin-friendly henna paste mixed fresh in-salon",
+      "Part of our Royal Bridal Package alongside HD makeup and hairstyling",
+    ],
+    faqs: [
+      {
+        q: "How long does bridal mehndi take?",
+        a: "Full bridal mehndi covering both hands and feet takes around 3 hours for an intricate, detailed design. Simpler Arabic or one-hand designs take 30–90 minutes — your artist will confirm timing based on the design you choose.",
+      },
+      {
+        q: "Do you do Arabic mehndi as well as Indian designs?",
+        a: "Yes. Our artists work in Indian bridal, Arabic (bold floral) and Indo-Western styles, so you can choose the look that suits your outfit and the occasion.",
+      },
+      {
+        q: "How dark will the henna stain be, and how long does it last?",
+        a: "Our natural henna paste typically develops into a rich, deep stain within 24–48 hours and lasts one to three weeks depending on your skin and aftercare. We'll give you full aftercare guidance after your appointment.",
+      },
+      {
+        q: "Can I book mehndi with makeup and hair for my wedding?",
+        a: "Yes — bridal mehndi is included in our Royal Bridal Package alongside HD bridal makeup, hairstyling and draping, or it can be booked as a standalone service on a separate day before the wedding.",
+      },
+      {
+        q: "Is henna safe for sensitive skin?",
+        a: "We use natural, chemical-free henna paste rather than black henna (which can contain harsh additives), making it suitable for most skin types. Let your artist know about any allergies before your appointment.",
+      },
+    ],
+    keywords: [
+      "mehndi artist Warsaw",
+      "henna artist Warsaw",
+      "bridal mehndi Warsaw",
+      "Arabic mehndi Warsaw",
+      "Indian mehndi Warsaw",
+      "Pakistani mehndi Warsaw",
+      "henna Warszawa",
+    ],
+  },
 ];
 
 /** Quick lookup: category slug → CategoryMeta */
@@ -569,6 +624,36 @@ const narratives: Record<ServiceCategory, CategoryNarrative> = {
       {
         q: `Are your tools hygienic for ${s.name}?`,
         a: `Yes. For ${s.name.toLowerCase()} we sterilise all metal tools between clients and use single-use files and buffers, so your treatment is fully hygienic.`,
+      },
+    ],
+  },
+  "Mehndi & Henna": {
+    about: (s) => [
+      `${s.name} at Royal Beauty Salon is hand-drawn by artists trained specifically in traditional and modern henna work. ${s.description} Every design is freehand — no stencils — so your mehndi is genuinely one of a kind.`,
+      `We mix our henna paste fresh in-salon from natural ingredients, so ${s.name.toLowerCase()} develops into a rich, long-lasting stain that's gentle on the skin. Your artist will talk through placement and pattern density with you before starting.`,
+    ],
+    expect: (s) => [
+      `A quick consultation on design style and placement for your ${s.name.toLowerCase()}`,
+      "Freehand henna application using natural, fresh-mixed paste",
+      "A comfortable seated sitting while the design is drawn",
+      "Guidance on drying time and how to protect the design as it sets",
+      "Aftercare tips to deepen and prolong the stain",
+    ],
+    idealFor: (s) =>
+      `${s.name} is ideal for brides, wedding guests and anyone in Warsaw wanting authentic, hand-drawn henna for a celebration or special occasion.`,
+    aftercare: (s) => [
+      "Leave the dried henna paste on for as long as possible (ideally overnight) before gently flaking it off",
+      "Avoid water on the design for at least 6–8 hours after application",
+      `Apply a little natural oil or balm daily to deepen and extend your ${s.name.toLowerCase()} stain`,
+    ],
+    faqs: (s) => [
+      {
+        q: `How long does ${s.name} take?`,
+        a: `${s.name} takes approximately ${s.duration}. Your artist works at an unhurried pace to keep the linework clean and precise.`,
+      },
+      {
+        q: `How long will ${s.name} last?`,
+        a: `The henna stain from ${s.name.toLowerCase()} typically lasts one to three weeks, gradually fading as skin naturally exfoliates. Keeping the area moisturised helps it last longer.`,
       },
     ],
   },

@@ -53,6 +53,7 @@ export const serviceCategoryLinks = [
   { label: "Waxing", href: "/services/waxing" },
   { label: "Threading & Brows", href: "/services/threading" },
   { label: "Manicure & Pedicure", href: "/services/nails" },
+  { label: "Mehndi & Henna", href: "/services/mehndi-henna" },
 ] as const;
 
 /** Local SEO links for footer / internal linking. */
@@ -74,6 +75,7 @@ export const specialtyLinks = [
   { label: "Women-Only Hair Salon Warsaw", href: "/women-only-hair-salon-warsaw" },
   { label: "Muslim Women Hairdresser Warsaw", href: "/muslim-women-hairdresser-warsaw" },
   { label: "Keratin for Hijab Hair Warsaw", href: "/keratin-nanoplasty-hijab-hair-warsaw" },
+  { label: "Salon Kosmetyczny Warszawa", href: "/salon-kosmetyczny-warszawa" },
 ] as const;
 
 export function whatsappLink(message?: string) {
