@@ -122,7 +122,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         </button>
       </div>
 
-      <div className="flex">
+      <div className="flex lg:min-h-screen">
         {/* Sidebar */}
         <aside
           className={cn(

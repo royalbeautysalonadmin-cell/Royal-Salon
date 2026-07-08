@@ -6,6 +6,8 @@ export type SlotStatus = "available" | "booked" | "blocked";
 export interface SlotInfo {
   time: string;
   status: SlotStatus;
+  /** True for a slot added via the admin's custom-time feature rather than the standard catalog. */
+  isCustom?: boolean;
 }
 
 export interface AdminSlotInfo extends SlotInfo {

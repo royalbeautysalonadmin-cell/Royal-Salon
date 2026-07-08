@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { toast } from "sonner";
-import { Ban, CheckCircle2, Loader2, User } from "lucide-react";
+import { Ban, CheckCircle2, Loader2, User, Plus, X, Sparkles } from "lucide-react";
 import { cn, formatDate } from "@/lib/utils";
 import type { AdminSlotInfo } from "@/lib/availability";
 
@@ -10,11 +10,23 @@ function todayIso() {
   return new Date().toISOString().split("T")[0];
 }
 
+/** Converts an HTML <input type="time"> value ("HH:MM", 24h) to the
+ * "h:mm AM/PM" format the backend's TIME_FORMAT_RE expects. */
+function to12Hour(value: string): string {
+  const [hStr, mStr] = value.split(":");
+  let h = parseInt(hStr, 10) % 12;
+  if (h === 0) h = 12;
+  const period = parseInt(hStr, 10) >= 12 ? "PM" : "AM";
+  return `${h}:${mStr} ${period}`;
+}
+
 export function AvailabilityManager() {
   const [date, setDate] = useState(todayIso());
   const [slots, setSlots] = useState<AdminSlotInfo[]>([]);
   const [loading, setLoading] = useState(true);
   const [busyTime, setBusyTime] = useState<string | null>(null);
+  const [customTime, setCustomTime] = useState("");
+  const [addingCustom, setAddingCustom] = useState(false);
 
   const loadSlots = useCallback(async (d: string) => {
     setLoading(true);
@@ -56,6 +68,47 @@ export function AvailabilityManager() {
     }
   }
 
+  async function addCustom() {
+    if (!customTime) return;
+    const formatted = to12Hour(customTime);
+    setAddingCustom(true);
+    try {
+      const res = await fetch("/api/availability", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ date, time: formatted, action: "add" }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Could not add time.");
+      setSlots(json.slots);
+      toast.success(`${formatted} added to the schedule.`);
+      setCustomTime("");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Could not add time.");
+    } finally {
+      setAddingCustom(false);
+    }
+  }
+
+  async function removeCustom(slot: AdminSlotInfo) {
+    setBusyTime(slot.time);
+    try {
+      const res = await fetch("/api/availability", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ date, time: slot.time, action: "remove" }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Could not remove time.");
+      setSlots(json.slots);
+      toast.success(`${slot.time} removed.`);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Could not remove time.");
+    } finally {
+      setBusyTime(null);
+    }
+  }
+
   return (
     <div className="space-y-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -85,6 +138,34 @@ export function AvailabilityManager() {
         <span className="flex items-center gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-charcoal/40" /> Blocked
         </span>
+        <span className="flex items-center gap-1.5">
+          <Sparkles className="h-3 w-3 text-gold" /> Custom time
+        </span>
+      </div>
+
+      {/* Add a custom time on top of the standard schedule for this date */}
+      <div className="flex flex-wrap items-end gap-3 rounded-2xl border border-border bg-white p-4 shadow-soft">
+        <div className="space-y-1">
+          <label htmlFor="custom-time" className="text-sm font-medium text-charcoal">
+            Add a custom time
+          </label>
+          <input
+            id="custom-time"
+            type="time"
+            value={customTime}
+            onChange={(e) => setCustomTime(e.target.value)}
+            className="block h-11 rounded-xl border border-input bg-white px-4 text-sm text-charcoal focus:border-brown focus:outline-none focus:ring-2 focus:ring-brown/20"
+          />
+        </div>
+        <button
+          type="button"
+          disabled={!customTime || addingCustom}
+          onClick={addCustom}
+          className="flex h-11 items-center gap-2 rounded-xl bg-gold px-4 text-sm font-semibold text-luxury-black shadow-sm transition-opacity hover:opacity-90 disabled:opacity-50"
+        >
+          {addingCustom ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4" />}
+          Add to {formatDate(date)}
+        </button>
       </div>
 
       {loading ? (
@@ -98,24 +179,41 @@ export function AvailabilityManager() {
             const isBooked = slot.status === "booked";
             const isBlocked = slot.status === "blocked";
             return (
-              <button
+              <div
                 key={slot.time}
-                type="button"
-                disabled={isBooked || isBusy}
-                onClick={() => toggle(slot)}
+                role="button"
+                tabIndex={isBooked || isBusy ? -1 : 0}
+                onClick={() => !isBooked && !isBusy && toggle(slot)}
+                onKeyDown={(e) => {
+                  if ((e.key === "Enter" || e.key === " ") && !isBooked && !isBusy) toggle(slot);
+                }}
                 className={cn(
-                  "flex flex-col gap-2 rounded-2xl border p-4 text-left shadow-soft transition-all",
+                  "relative flex flex-col gap-2 rounded-2xl border p-4 text-left shadow-soft transition-all",
                   isBooked
                     ? "cursor-default border-brown/20 bg-brown/5"
                     : isBlocked
-                    ? "border-charcoal/20 bg-charcoal/5 hover:border-red-300 hover:bg-red-50"
-                    : "border-emerald-200 bg-emerald-50/50 hover:border-emerald-400 hover:bg-emerald-50",
-                  isBusy && "opacity-60"
+                    ? "cursor-pointer border-charcoal/20 bg-charcoal/5 hover:border-red-300 hover:bg-red-50"
+                    : "cursor-pointer border-emerald-200 bg-emerald-50/50 hover:border-emerald-400 hover:bg-emerald-50",
+                  isBusy && "pointer-events-none opacity-60"
                 )}
               >
-                <div className="flex items-center justify-between">
-                  <span className="font-serif text-base font-semibold text-luxury-black">
+                {slot.isCustom && !isBooked && (
+                  <button
+                    type="button"
+                    aria-label={`Remove ${slot.time}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeCustom(slot);
+                    }}
+                    className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white text-charcoal/50 shadow-sm transition-colors hover:bg-red-50 hover:text-red-500"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                )}
+                <div className="flex items-center justify-between gap-2">
+                  <span className="flex items-center gap-1.5 font-serif text-base font-semibold text-luxury-black">
                     {slot.time}
+                    {slot.isCustom && <Sparkles className="h-3.5 w-3.5 text-gold" />}
                   </span>
                   {isBusy ? (
                     <Loader2 className="h-4 w-4 animate-spin text-charcoal/50" />
@@ -138,7 +236,7 @@ export function AvailabilityManager() {
                 ) : (
                   <p className="text-xs text-charcoal/70">Open — click to block</p>
                 )}
-              </button>
+              </div>
             );
           })}
         </div>
