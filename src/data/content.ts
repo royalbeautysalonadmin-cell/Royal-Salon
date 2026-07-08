@@ -18,7 +18,7 @@ export const services: Service[] = [
     description: "Advanced smoothing treatment for silky, frizz-free hair that lasts for months.",
     price: 450,
     duration: "5h",
-    image: U("photo-1542596768-5d1d21f1cf98"),
+    image: "/services/royal-nanoplasty.webp",
     featured: true,
   },
   {
@@ -28,7 +28,7 @@ export const services: Service[] = [
     description: "Personalized consultation with our expert stylists to plan your perfect look.",
     price: 1,
     duration: "15 min",
-    image: U("photo-1562322140-8baeececf3df"),
+    image: "/services/hair-consultation.webp",
   },
   {
     slug: "fashion-shade-global-color",
@@ -37,7 +37,7 @@ export const services: Service[] = [
     description: "Full head global colour with trendy fashion shades for a bold, stunning transformation.",
     price: 200,
     duration: "2h 30m",
-    image: U("photo-1580618672591-eb180b1a973f"),
+    image: "/services/fashion-shade-global-color.webp",
     featured: true,
   },
   {
@@ -47,7 +47,7 @@ export const services: Service[] = [
     description: "Quick and precise root colour touch-up to keep your hair looking fresh.",
     price: 80,
     duration: "45 min",
-    image: U("photo-1595476108010-b4d1f102b1b1"),
+    image: "/services/hair-root-touchup.webp",
   },
   {
     slug: "hair-highlights-medium",
@@ -56,7 +56,7 @@ export const services: Service[] = [
     description: "Beautiful highlights for medium-length hair, adding dimension and radiance.",
     price: 300,
     duration: "4h",
-    image: U("photo-1522337660859-02fbefca4702"),
+    image: "/services/hair-highlights-medium.webp",
   },
   {
     slug: "hair-highlights-long",
@@ -65,7 +65,7 @@ export const services: Service[] = [
     description: "Stunning highlights for long hair, creating depth and a sun-kissed glow.",
     price: 400,
     duration: "5h",
-    image: U("photo-1554519515-242161756769"),
+    image: "/services/hair-highlights-long.webp",
   },
   {
     slug: "global-with-highlights-short",
@@ -74,7 +74,7 @@ export const services: Service[] = [
     description: "Full global colour combined with highlights for short hair — maximum impact.",
     price: 350,
     duration: "4h",
-    image: U("photo-1527799820374-dcf8d9d4a388"),
+    image: "/services/global-with-highlights-short.webp",
   },
   {
     slug: "global-with-highlights-medium",
@@ -83,7 +83,7 @@ export const services: Service[] = [
     description: "Global colour paired with highlights for medium-length hair.",
     price: 450,
     duration: "4h 30m",
-    image: U("photo-1519699047748-de8e457a634e"),
+    image: "/services/global-with-highlights-medium.webp",
   },
   {
     slug: "global-with-highlights-long",
@@ -92,7 +92,7 @@ export const services: Service[] = [
     description: "Luxurious global colour with highlights for long, flowing hair.",
     price: 550,
     duration: "5h 30m",
-    image: U("photo-1500917293891-ef795e70e1f6"),
+    image: "/services/global-with-highlights-long.webp",
   },
   {
     slug: "hair-cutting-basic",
@@ -102,7 +102,7 @@ export const services: Service[] = [
     price: 63,
     originalPrice: 70,
     duration: "30 min",
-    image: U("photo-1707812343087-c9ff9e5abb43"),
+    image: "/services/hair-cutting-basic.webp",
   },
   {
     slug: "kids-haircut",
@@ -111,7 +111,7 @@ export const services: Service[] = [
     description: "Fun, gentle haircut experience designed specifically for children.",
     price: 75,
     duration: "1h",
-    image: U("photo-1722935408489-2bf93349c8cb"),
+    image: "/services/kids-haircut.webp",
   },
   {
     slug: "hair-cutting-advanced",
@@ -121,7 +121,7 @@ export const services: Service[] = [
     price: 108,
     originalPrice: 120,
     duration: "1h",
-    image: U("photo-1634449571010-02389ed0f9b0"),
+    image: "/services/hair-cutting-advanced.webp",
     featured: true,
   },
   {
@@ -131,7 +131,7 @@ export const services: Service[] = [
     description: "Luxurious silk botox treatment to restore, smooth and add incredible shine to medium hair.",
     price: 350,
     duration: "4h",
-    image: U("photo-1600948836101-f9ffda59d250"),
+    image: "/services/silk-botox-smoothing-medium.webp",
   },
   {
     slug: "silk-botox-smoothing-long",
@@ -140,7 +140,7 @@ export const services: Service[] = [
     description: "Deep repair and smoothing for long hair with our premium silk botox formula.",
     price: 450,
     duration: "5h",
-    image: U("photo-1544717302-de2939b7ef71"),
+    image: "/services/silk-botox-smoothing-long.webp",
   },
   {
     slug: "silk-botox-smoothing-extra-long",
@@ -149,7 +149,7 @@ export const services: Service[] = [
     description: "Complete silk botox restoration for extra-long hair — ultimate smoothness and shine.",
     price: 600,
     duration: "6h",
-    image: U("photo-1517841905240-472988babdf9"),
+    image: "/services/silk-botox-smoothing-extra-long.webp",
   },
   {
     slug: "keratin-treatment-medium",
@@ -168,7 +168,7 @@ export const services: Service[] = [
     description: "Premium keratin therapy for long hair — say goodbye to frizz forever.",
     price: 450,
     duration: "4h",
-    image: U("photo-1559599101-f09722fb4948"),
+    image: "/services/keratin-treatment-long.webp",
   },
   {
     slug: "keratin-treatment-extra-long",
@@ -187,7 +187,7 @@ export const services: Service[] = [
     price: 77,
     originalPrice: 90,
     duration: "30 min",
-    image: U("photo-1732382638510-cfdf5696a39d"),
+    image: "/services/hair-spa-blast-dry.webp",
   },
   {
     slug: "hair-spa-blow-dry",
@@ -197,7 +197,7 @@ export const services: Service[] = [
     price: 128,
     originalPrice: 150,
     duration: "1h 15m",
-    image: U("photo-1560066984-138dadb4c035"),
+    image: "/services/hair-spa-blow-dry.webp",
   },
   {
     slug: "ironing-short",
@@ -207,7 +207,7 @@ export const services: Service[] = [
     price: 43,
     originalPrice: 50,
     duration: "30 min",
-    image: U("photo-1583089892943-e02e5b017b6a"),
+    image: "/services/ironing-short.webp",
   },
   {
     slug: "ironing-medium",
@@ -227,7 +227,7 @@ export const services: Service[] = [
     price: 85,
     originalPrice: 100,
     duration: "45 min",
-    image: U("photo-1746723375184-5f537d2e6f31"),
+    image: "/services/ironing-long.webp",
   },
   {
     slug: "temporary-curls-short",
@@ -237,7 +237,7 @@ export const services: Service[] = [
     price: 51,
     originalPrice: 60,
     duration: "30 min",
-    image: U("photo-1522337360788-8b13dee7a37e"),
+    image: "/services/temporary-curls-short.webp",
   },
   {
     slug: "temporary-curls-medium",
@@ -247,7 +247,7 @@ export const services: Service[] = [
     price: 72,
     originalPrice: 85,
     duration: "45 min",
-    image: U("photo-1519699047748-de8e457a634e"),
+    image: "/services/temporary-curls-medium.webp",
   },
   {
     slug: "temporary-curls-long",
@@ -257,7 +257,7 @@ export const services: Service[] = [
     price: 102,
     originalPrice: 120,
     duration: "45 min",
-    image: U("photo-1675034743339-0b0747047727"),
+    image: "/services/temporary-curls-long.webp",
   },
   {
     slug: "blow-dry",
@@ -267,7 +267,7 @@ export const services: Service[] = [
     price: 43,
     originalPrice: 50,
     duration: "30 min",
-    image: U("photo-1559599101-f09722fb4948"),
+    image: "/services/blow-dry.webp",
   },
   {
     slug: "wash-conditioning-blast-dry",
@@ -277,7 +277,7 @@ export const services: Service[] = [
     price: 51,
     originalPrice: 60,
     duration: "30 min",
-    image: U("photo-1521590832167-7bcbfaa6381f"),
+    image: "/services/wash-conditioning-blast-dry.webp",
   },
   {
     slug: "hair-oil-massage-steam",
@@ -286,7 +286,7 @@ export const services: Service[] = [
     description: "Therapeutic hair oil massage with steam treatment and wash for deep nourishment.",
     price: 110,
     duration: "30 min",
-    image: U("photo-1544717302-de2939b7ef71"),
+    image: "/services/hair-oil-massage-steam.webp",
   },
   {
     slug: "hair-oil-massage",
@@ -296,7 +296,7 @@ export const services: Service[] = [
     price: 72,
     originalPrice: 85,
     duration: "30 min",
-    image: U("photo-1517841905240-472988babdf9"),
+    image: "/services/hair-oil-massage.webp",
   },
   {
     slug: "gray-hair-color-short",
@@ -305,7 +305,7 @@ export const services: Service[] = [
     description: "Full gray coverage for short hair with long-lasting, vibrant colour.",
     price: 100,
     duration: "45 min",
-    image: U("photo-1527799820374-dcf8d9d4a388"),
+    image: "/services/gray-hair-color-short.webp",
   },
   {
     slug: "gray-hair-color-medium",
@@ -314,7 +314,7 @@ export const services: Service[] = [
     description: "Complete gray coverage for medium hair with premium colour products.",
     price: 150,
     duration: "1h",
-    image: U("photo-1595476108010-b4d1f102b1b1"),
+    image: "/services/gray-hair-color-medium.webp",
   },
   {
     slug: "gray-hair-color-long",
@@ -323,7 +323,7 @@ export const services: Service[] = [
     description: "Full gray coverage for long hair — natural, vibrant results.",
     price: 200,
     duration: "1h 30m",
-    image: U("photo-1580618672591-eb180b1a973f"),
+    image: "/services/gray-hair-color-long.webp",
   },
 ];
 
@@ -336,7 +336,7 @@ export const makeupServices: Service[] = [
     description: "Glamorous, photo-ready makeup for parties, galas and special evenings.",
     price: 120,
     duration: "1h",
-    image: U("photo-1487412947147-5cebf100ffc2"),
+    image: "/services/party-makeup.webp",
     featured: true,
   },
   {
@@ -346,7 +346,7 @@ export const makeupServices: Service[] = [
     description: "Elegant basic hairstyling for everyday occasions and casual events.",
     price: 100,
     duration: "1h",
-    image: U("photo-1596178065887-1198b6148b2b"),
+    image: "/services/hair-do-basic.webp",
   },
   {
     slug: "hair-do-advanced",
@@ -355,7 +355,7 @@ export const makeupServices: Service[] = [
     description: "Intricate, show-stopping hairstyling for weddings and special celebrations.",
     price: 200,
     duration: "1h 30m",
-    image: U("photo-1560066984-138dadb4c035"),
+    image: "/services/hair-do-advanced.webp",
     featured: true,
   },
   {
@@ -365,7 +365,7 @@ export const makeupServices: Service[] = [
     description: "High-definition party makeup for a flawless, camera-ready look.",
     price: 200,
     duration: "1h 30m",
-    image: U("photo-1457972729786-0411a3b2b626"),
+    image: "/services/hd-party-makeup.webp",
   },
   {
     slug: "bridal-makeup",
@@ -374,7 +374,7 @@ export const makeupServices: Service[] = [
     description: "A flawless, long-wearing bridal look crafted by our master artists for your most important day.",
     price: 450,
     duration: "2h",
-    image: U("photo-1519741497674-611481863552"),
+    image: "/services/bridal-makeup.webp",
     featured: true,
   },
   {
@@ -384,7 +384,7 @@ export const makeupServices: Service[] = [
     description: "Exquisite bridal hairstyling to complement your wedding day look perfectly.",
     price: 230,
     duration: "2h 30m",
-    image: U("photo-1541899481282-d53bffe3c35d"),
+    image: "/services/bridal-hairstyle.webp",
     featured: true,
   },
   {
@@ -394,7 +394,7 @@ export const makeupServices: Service[] = [
     description: "Professional saree and dupatta draping for weddings and festive occasions.",
     price: 60,
     duration: "30 min",
-    image: U("photo-1583089892943-e02e5b017b6a"),
+    image: "/services/saree-dupatta-draping.webp",
   },
 ];
 
@@ -407,7 +407,7 @@ export const threadingServices: Service[] = [
     description: "Complete threading combo — eyebrows, forehead, upper lip and chin in one session.",
     price: 40,
     duration: "35 min",
-    image: U("photo-1674049406179-d7bf2c263e71"),
+    image: "/services/threading-combo.webp",
     featured: true,
   },
   {
@@ -426,7 +426,7 @@ export const threadingServices: Service[] = [
     description: "Quick eyebrow shaping with warm wax for smooth, long-lasting results.",
     price: 35,
     duration: "30 min",
-    image: U("photo-1512290923902-8a9f81dc236c"),
+    image: "/services/eyebrow-wax.webp",
   },
   {
     slug: "forehead-threading",
@@ -435,7 +435,7 @@ export const threadingServices: Service[] = [
     description: "Hair removal from the forehead using precise threading technique.",
     price: 15,
     duration: "10 min",
-    image: U("photo-1573461160327-b450ce3d8e7f"),
+    image: "/services/forehead-threading.webp",
   },
   {
     slug: "forehead-wax",
@@ -444,7 +444,7 @@ export const threadingServices: Service[] = [
     description: "Smooth forehead with gentle wax hair removal.",
     price: 20,
     duration: "10 min",
-    image: U("photo-1570172619644-dfd03ed5d881"),
+    image: "/services/forehead-wax.webp",
   },
   {
     slug: "upper-lip-threading",
@@ -453,7 +453,7 @@ export const threadingServices: Service[] = [
     description: "Quick and precise upper lip hair removal with threading.",
     price: 15,
     duration: "10 min",
-    image: U("photo-1589156229687-496a31ad1d1f"),
+    image: "/services/upper-lip-threading.webp",
   },
   {
     slug: "upper-lip-wax",
@@ -462,7 +462,7 @@ export const threadingServices: Service[] = [
     description: "Gentle wax treatment for smooth upper lip area.",
     price: 20,
     duration: "10 min",
-    image: U("photo-1573461160327-b450ce3d8e7f"),
+    image: "/services/upper-lip-wax.webp",
   },
   {
     slug: "lower-lip-threading",
@@ -471,7 +471,7 @@ export const threadingServices: Service[] = [
     description: "Precise lower lip threading for a clean, smooth finish.",
     price: 15,
     duration: "10 min",
-    image: U("photo-1596178065887-1198b6148b2b"),
+    image: "/services/lower-lip-threading.webp",
   },
   {
     slug: "lower-lip-wax",
@@ -480,7 +480,7 @@ export const threadingServices: Service[] = [
     description: "Gentle wax hair removal for the lower lip area.",
     price: 20,
     duration: "10 min",
-    image: U("photo-1516975080664-ed2fc6a32937"),
+    image: "/services/lower-lip-wax.webp",
   },
   {
     slug: "chin-threading",
@@ -489,7 +489,7 @@ export const threadingServices: Service[] = [
     description: "Precise chin hair removal using traditional threading technique.",
     price: 15,
     duration: "10 min",
-    image: U("photo-1519741497674-611481863552"),
+    image: "/services/chin-threading.webp",
   },
   {
     slug: "chin-wax",
@@ -498,7 +498,7 @@ export const threadingServices: Service[] = [
     description: "Smooth chin with gentle wax hair removal treatment.",
     price: 20,
     duration: "10 min",
-    image: U("photo-1594744803329-e58b31de8bf5"),
+    image: "/services/chin-wax.webp",
   },
   {
     slug: "side-lock-threading",
@@ -507,7 +507,7 @@ export const threadingServices: Service[] = [
     description: "Threading for side face and sideburn area for a clean, defined look.",
     price: 30,
     duration: "15 min",
-    image: U("photo-1573461160327-b450ce3d8e7f"),
+    image: "/services/side-lock-threading.webp",
   },
   {
     slug: "side-lock-wax",
@@ -516,7 +516,7 @@ export const threadingServices: Service[] = [
     description: "Wax hair removal for side face and sideburn area.",
     price: 40,
     duration: "20 min",
-    image: U("photo-1589156229687-496a31ad1d1f"),
+    image: "/services/side-lock-wax.webp",
   },
   {
     slug: "full-face-threading",
@@ -525,7 +525,7 @@ export const threadingServices: Service[] = [
     description: "Complete full face threading for a smooth, hair-free complexion.",
     price: 50,
     duration: "30 min",
-    image: U("photo-1516975080664-ed2fc6a32937"),
+    image: "/services/full-face-threading.webp",
     featured: true,
   },
   {
@@ -535,7 +535,7 @@ export const threadingServices: Service[] = [
     description: "Complete full face wax for smooth, radiant skin.",
     price: 50,
     duration: "30 min",
-    image: U("photo-1570172619644-dfd03ed5d881"),
+    image: "/services/full-face-wax.webp",
   },
   {
     slug: "full-face-eyebrows-threading",
@@ -544,7 +544,7 @@ export const threadingServices: Service[] = [
     description: "Complete full face threading including eyebrow shaping — the ultimate combo.",
     price: 65,
     duration: "30 min",
-    image: U("photo-1573461160327-b450ce3d8e7f"),
+    image: "/services/full-face-eyebrows-threading.webp",
     featured: true,
   },
 ];
@@ -559,7 +559,7 @@ export const waxingServices: Service[] = [
     price: 102,
     originalPrice: 120,
     duration: "45 min",
-    image: U("photo-1515377905703-c4788e51af15"),
+    image: "/services/brazilian-bikini-wax.webp",
   },
   {
     slug: "summer-wax",
@@ -568,7 +568,7 @@ export const waxingServices: Service[] = [
     description: "Full summer-ready waxing package for a confident, carefree season.",
     price: 150,
     duration: "1h 30m",
-    image: U("photo-1544161515-4ab6ce6db874"),
+    image: "/services/summer-wax.webp",
     featured: true,
   },
   {
@@ -578,7 +578,7 @@ export const waxingServices: Service[] = [
     description: "Complete full body waxing excluding bikini area — smooth from head to toe.",
     price: 275,
     duration: "2h 30m",
-    image: U("photo-1519823551278-64ac92734fb1"),
+    image: "/services/full-body-wax-no-bikini.webp",
     featured: true,
   },
   {
@@ -588,7 +588,7 @@ export const waxingServices: Service[] = [
     description: "Popular summer wax combo covering multiple areas in one session.",
     price: 175,
     duration: "1h 40m",
-    image: U("photo-1507003211169-0a1dd7228f2d"),
+    image: "/services/summer-wax-combo-2.webp",
   },
   {
     slug: "full-arms-wax",
@@ -598,7 +598,7 @@ export const waxingServices: Service[] = [
     price: 51,
     originalPrice: 60,
     duration: "30 min",
-    image: U("photo-1515377905703-c4788e51af15"),
+    image: "/services/full-arms-wax.webp",
   },
   {
     slug: "underarms-wax",
@@ -608,7 +608,7 @@ export const waxingServices: Service[] = [
     price: 30,
     originalPrice: 35,
     duration: "30 min",
-    image: U("photo-1507003211169-0a1dd7228f2d"),
+    image: "/services/underarms-wax.webp",
   },
   {
     slug: "half-legs-wax",
@@ -618,7 +618,7 @@ export const waxingServices: Service[] = [
     price: 60,
     originalPrice: 70,
     duration: "30 min",
-    image: U("photo-1544161515-4ab6ce6db874"),
+    image: "/services/half-legs-wax.webp",
   },
   {
     slug: "full-legs-wax",
@@ -628,7 +628,7 @@ export const waxingServices: Service[] = [
     price: 94,
     originalPrice: 110,
     duration: "40 min",
-    image: U("photo-1519823551278-64ac92734fb1"),
+    image: "/services/full-legs-wax.webp",
   },
   {
     slug: "full-back-wax",
@@ -638,7 +638,7 @@ export const waxingServices: Service[] = [
     price: 77,
     originalPrice: 90,
     duration: "30 min",
-    image: U("photo-1515377905703-c4788e51af15"),
+    image: "/services/full-back-wax.webp",
   },
   {
     slug: "tummy-wax",
@@ -648,7 +648,7 @@ export const waxingServices: Service[] = [
     price: 43,
     originalPrice: 50,
     duration: "30 min",
-    image: U("photo-1507003211169-0a1dd7228f2d"),
+    image: "/services/tummy-wax.webp",
   },
 ];
 
@@ -662,7 +662,7 @@ export const facialServices: Service[] = [
     price: 102,
     originalPrice: 120,
     duration: "1h",
-    image: U("photo-1761718209852-54ca4210183e"),
+    image: "/services/tan-removal-facial.webp",
   },
   {
     slug: "facial-dry-skin",
@@ -672,7 +672,7 @@ export const facialServices: Service[] = [
     price: 102,
     originalPrice: 120,
     duration: "1h",
-    image: U("photo-1598440947619-2c35fc9aa908"),
+    image: "/services/facial-dry-skin.webp",
   },
   {
     slug: "facial-oily-skin",
@@ -682,7 +682,7 @@ export const facialServices: Service[] = [
     price: 102,
     originalPrice: 120,
     duration: "1h",
-    image: U("photo-1596178065887-1198b6148b2b"),
+    image: "/services/facial-oily-skin.webp",
   },
   {
     slug: "facial-sensitive-skin",
@@ -692,7 +692,7 @@ export const facialServices: Service[] = [
     price: 119,
     originalPrice: 140,
     duration: "1h",
-    image: U("photo-1552693673-1bf958298935"),
+    image: "/services/facial-sensitive-skin.webp",
   },
   {
     slug: "hydra-facial",
@@ -702,7 +702,7 @@ export const facialServices: Service[] = [
     price: 170,
     originalPrice: 200,
     duration: "1h 30m",
-    image: U("photo-1616394584738-fc6e612e71b9"),
+    image: "/services/hydra-facial.webp",
     featured: true,
   },
   {
@@ -713,7 +713,7 @@ export const facialServices: Service[] = [
     price: 128,
     originalPrice: 150,
     duration: "1h",
-    image: U("photo-1761718210089-ba3bb5ccb54f"),
+    image: "/services/royal-facial.webp",
     featured: true,
   },
   {
@@ -723,7 +723,7 @@ export const facialServices: Service[] = [
     description: "Combined summer facial and waxing package — glow and go for the season.",
     price: 120,
     duration: "2h",
-    image: U("photo-1761718209694-70031ee64f82"),
+    image: "/services/offer-summer-facial-wax.webp",
   },
   {
     slug: "cleanup",
@@ -732,7 +732,7 @@ export const facialServices: Service[] = [
     description: "Quick deep cleansing cleanup to refresh and rejuvenate your skin.",
     price: 50,
     duration: "30 min",
-    image: U("photo-1761718209793-cb6d348831e0"),
+    image: "/services/cleanup.webp",
   },
   {
     slug: "face-bleach",
@@ -741,7 +741,7 @@ export const facialServices: Service[] = [
     description: "Gentle face bleaching for a brighter, more even complexion.",
     price: 30,
     duration: "30 min",
-    image: U("photo-1516975080664-ed2fc6a32937"),
+    image: "/services/face-bleach.webp",
   },
   {
     slug: "face-detan",
@@ -750,7 +750,7 @@ export const facialServices: Service[] = [
     description: "Effective de-tanning treatment to remove sun damage and restore natural skin tone.",
     price: 30,
     duration: "30 min",
-    image: U("photo-1570172619644-dfd03ed5d881"),
+    image: "/services/face-detan.webp",
   },
 ];
 
@@ -763,7 +763,7 @@ export const nailServices: Service[] = [
     description: "Luxury manicure with nourishing care, shaping and flawless polish.",
     price: 90,
     duration: "45 min",
-    image: U("photo-1604654894610-df63bc536371"),
+    image: "/services/manicure.webp",
     featured: true,
   },
   {
@@ -773,7 +773,7 @@ export const nailServices: Service[] = [
     description: "Indulgent spa pedicure that pampers and refreshes tired feet.",
     price: 120,
     duration: "1h",
-    image: U("photo-1519014816548-bf5fe059798b"),
+    image: "/services/pedicure.webp",
     featured: true,
   },
 ];
