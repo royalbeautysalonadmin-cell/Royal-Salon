@@ -1,0 +1,35 @@
+{
+  "name": "royal-beauty-saloon-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Royal Beauty Salon — backend API (Next.js route handlers, MongoDB/Mongoose, NextAuth).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed": "tsx scripts/seed.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.5.1",
+    "mongoose": "^8.9.3",
+    "next": "^15.5.19",
+    "next-auth": "^4.24.11",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "resend": "^6.16.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.17.10",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "dotenv": "^17.4.2",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.5.19",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

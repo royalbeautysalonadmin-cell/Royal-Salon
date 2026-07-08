@@ -13,7 +13,7 @@ admin dashboard.
   Academy, Why Choose Us, Testimonials carousel, masonry Gallery with lightbox, Contact + map + FAQ
 - **3-click booking system**: multi-step flow (Service → Date → Time → Details → Confirm) with an
   animated success screen
-- **Email workflow**: customer confirmation + admin notification via Nodemailer (branded HTML)
+- **Email workflow**: customer confirmation + admin notification via Resend (branded HTML)
 - **Secure admin dashboard**: analytics, appointment management (approve / reject / complete /
   reschedule / delete), services CRUD, gallery upload, testimonials & contact messages
 - **SEO**: dynamic metadata, Open Graph, Twitter cards, JSON-LD (LocalBusiness / Service / FAQ),
@@ -23,7 +23,7 @@ admin dashboard.
 ## 🛠 Tech Stack
 
 Next.js 15 (App Router) · TypeScript · Tailwind CSS · shadcn-style UI (Radix) · Framer Motion ·
-React Three Fiber · Zustand · MongoDB + Mongoose · NextAuth · Nodemailer · Cloudinary.
+React Three Fiber · Zustand · MongoDB + Mongoose · NextAuth · Resend · Cloudinary.
 
 ## 🎨 Brand Palette
 
@@ -36,67 +36,64 @@ React Three Fiber · Zustand · MongoDB + Mongoose · NextAuth · Nodemailer · 
 | Luxury Black | `#111111` | Dark sections |
 | Charcoal | `#333333` | Text |
 
-## 🚀 Getting Started
+## 🗂 Repository Layout
+
+This is a **physical monorepo split** into two independently-deployable Next.js apps — not a
+single project with a proxy. They talk to each other over HTTP, not shared imports.
+
+```
+/frontend   Public site + admin UI. Deployed to Vercel.
+            Fetches its service catalog from the backend API at BUILD time
+            (see frontend/src/lib/backend-api.ts) — no service data is
+            duplicated locally.
+/backend    API route handlers, MongoDB/Mongoose, NextAuth. Deployed to Render.
+            Holds the one source of truth for the service catalog.
+```
+
+`frontend/next.config.ts` proxies `/api/*` to `BACKEND_URL` at runtime (via `rewrites()`), so the
+browser only ever talks to the frontend's own domain — auth cookies, CORS and same-origin fetches
+all just work.
+
+## 🚀 Getting Started (local dev)
+
+Run both apps side by side — the frontend needs the backend reachable at build **and** run time.
 
 ```bash
+# Terminal 1 — backend (http://localhost:4000)
+cd backend
 npm install
-cp .env.example .env.local   # fill in your credentials (optional for demo)
-npm run dev                  # http://localhost:3000
+cp .env.example .env.local   # fill in MongoDB URI, NextAuth secret, etc.
+PORT=4000 npm run dev
+npm run seed                 # first time only: seed services + admin user
+
+# Terminal 2 — frontend (http://localhost:3000)
+cd frontend
+npm install
+cp .env.example .env.local   # set BACKEND_URL=http://localhost:4000
+npm run dev
 ```
 
-> A `.env.local` with safe demo defaults is included so the app runs immediately. The app
-> degrades gracefully: without `MONGODB_URI` it runs in **demo mode**, without SMTP it skips
-> emails, without Cloudinary you can still add gallery images by URL.
-
-### Enable full functionality
-
-1. Create a **MongoDB Atlas** cluster → set `MONGODB_URI`.
-2. Set `NEXTAUTH_SECRET` (`openssl rand -base64 32`), `ADMIN_EMAIL`, `ADMIN_PASSWORD`.
-3. (Optional) Configure SMTP for emails and Cloudinary for uploads.
-4. Seed the database + create the admin user:
-
-```bash
-npm run seed
-```
+`NEXTAUTH_SECRET` must be **identical** in both `.env.local` files — the backend issues the
+session JWT, the frontend verifies it.
 
 ## 🔐 Admin
 
-Visit **`/admin`** → redirects to **`/admin/login`**.
-Demo credentials (from `.env.local`): `admin@royalbeautysalon.pl` / `Royal@2026`.
+Visit **`/admin`** on the frontend → redirects to **`/admin/login`**. Credentials come from the
+backend's `ADMIN_EMAIL`/`ADMIN_PASSWORD` (used once by `npm run seed`, in `/backend`).
 
 ## 📦 Scripts
 
-| Script | Description |
-|---|---|
-| `npm run dev` | Start dev server |
-| `npm run build` | Production build |
-| `npm start` | Run production server |
-| `npm run seed` | Seed services/packages/courses/testimonials/gallery + admin user |
+Each app has its own `package.json` (`dev`, `build`, `start`, `lint`); `/backend` additionally has
+`npm run seed` (services/packages/courses/testimonials/gallery + admin user).
 
-## 🗂 Project Structure
+## ☁️ Deploy
 
-```
-src/
-├── app/                # App Router: pages, API routes, admin (route group)
-├── components/
-│   ├── ui/             # shadcn-style primitives
-│   ├── sections/       # homepage sections
-│   ├── booking/        # multi-step booking dialog
-│   ├── admin/          # dashboard managers
-│   ├── layout/         # navbar, footer, floating actions
-│   ├── three/          # R3F particle field
-│   └── shared/         # reveal animations, headings
-├── data/               # demo content (services, packages, courses, …)
-├── lib/                # db, auth, email, cloudinary, seo, utils
-├── models/             # Mongoose schemas
-├── store/              # Zustand
-└── types/              # shared types + JSX augmentation
-```
-
-## ☁️ Deploy (Vercel)
-
-Push to GitHub, import into Vercel, add the environment variables from `.env.example`, deploy.
-Add the Cloudinary & Unsplash hostnames (already in `next.config.ts`) if you change image sources.
+- **Backend → Render**: New Web Service, Root Directory `backend`, Build Command
+  `npm install && npm run build`, Start Command `npm run start`. Set the env vars from
+  `backend/.env.example` (Render injects `PORT` automatically).
+- **Frontend → Vercel**: Import the repo, set Root Directory to `frontend`, add the env vars from
+  `frontend/.env.example` — critically `BACKEND_URL` pointed at the Render service's public URL.
+  The build fails loud if the backend is unreachable or returns a truncated catalog, by design.
 
 ---
 
