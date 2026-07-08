@@ -89,7 +89,7 @@ export function BookingDialog() {
     let cancelled = false;
     setLoadingServices(true);
     setServicesError(null);
-    fetch("/api/services?active=true")
+    fetch("/api/services?active=true", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();
@@ -118,7 +118,7 @@ export function BookingDialog() {
     let cancelled = false;
     setLoadingSlots(true);
     setSlotsError(null);
-    fetch(`/api/availability?date=${form.date}`)
+    fetch(`/api/availability?date=${form.date}`, { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();
