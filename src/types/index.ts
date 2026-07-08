@@ -4,8 +4,7 @@ export type ServiceCategory =
   | "Threading"
   | "Waxing"
   | "Facial & Skin Care"
-  | "Manicure & Pedicure"
-  | "Mehndi & Henna";
+  | "Manicure & Pedicure";
 
 export interface Service {
   slug: string;

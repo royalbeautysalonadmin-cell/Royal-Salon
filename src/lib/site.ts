@@ -53,7 +53,6 @@ export const serviceCategoryLinks = [
   { label: "Waxing", href: "/services/waxing" },
   { label: "Threading & Brows", href: "/services/threading" },
   { label: "Manicure & Pedicure", href: "/services/nails" },
-  { label: "Mehndi & Henna", href: "/services/mehndi-henna" },
 ] as const;
 
 /** Local SEO links for footer / internal linking. */

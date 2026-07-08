@@ -141,14 +141,13 @@ export const nichePages: NichePage[] = [
     featuredServiceSlugs: [
       "threading-combo",
       "bridal-makeup",
-      "bridal-mehndi-hands-feet",
       "hair-oil-massage-steam",
       "full-face-eyebrows-threading",
       "party-makeup",
       "royal-nanoplasty",
     ],
     relatedNicheSlugs: ["indian-parlour-warsaw", "desi-salon-warsaw", "hijab-friendly-salon-warsaw"],
-    relatedCategorySlugs: ["threading", "makeup", "hair", "mehndi-henna"],
+    relatedCategorySlugs: ["threading", "makeup", "hair"],
     serviceName: "Indian Beauty Salon Services in Warsaw",
     serviceDescription:
       "Authentic South Asian beauty services in Warsaw including eyebrow threading, bridal makeup, mehndi, hair oil treatments and HD makeup.",
@@ -236,7 +235,6 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "threading-combo",
-      "eyebrow-threading",
       "full-arms-wax",
       "cleanup",
       "face-bleach",
@@ -339,7 +337,6 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "bridal-makeup",
-      "bridal-mehndi-hands-feet",
       "bridal-hairstyle",
       "saree-dupatta-draping",
       "hd-party-makeup",
@@ -347,7 +344,7 @@ export const nichePages: NichePage[] = [
       "hair-do-advanced",
     ],
     relatedNicheSlugs: ["indian-salon-warsaw", "indian-parlour-warsaw"],
-    relatedCategorySlugs: ["makeup", "hair", "threading", "mehndi-henna"],
+    relatedCategorySlugs: ["makeup", "hair", "threading"],
     serviceName: "Desi Bridal & Party Services in Warsaw",
     serviceDescription:
       "Desi salon services in Warsaw — HD bridal makeup, bridal mehndi, hairstyling, and saree and dupatta draping for South Asian weddings and celebrations.",
@@ -844,14 +841,13 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "eyebrow-threading",
+      "threading-combo",
       "royal-nanoplasty",
       "keratin-treatment-medium",
       "fashion-shade-global-color",
       "manicure",
       "pedicure",
       "bridal-makeup",
-      "bridal-mehndi-hands-feet",
     ],
     relatedNicheSlugs: [
       "indian-salon-warsaw",

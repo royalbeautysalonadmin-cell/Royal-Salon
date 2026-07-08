@@ -20,7 +20,6 @@ const categories: (ServiceCategory | "All")[] = [
   "Waxing",
   "Facial & Skin Care",
   "Manicure & Pedicure",
-  "Mehndi & Henna",
 ];
 
 const categoryMeta: Record<ServiceCategory, { emoji: string; tagline: string }> = {
@@ -30,7 +29,6 @@ const categoryMeta: Record<ServiceCategory, { emoji: string; tagline: string }> 
   Waxing: { emoji: "", tagline: "Smooth, hair-free skin all year" },
   "Facial & Skin Care": { emoji: "", tagline: "Glow with our signature facials" },
   "Manicure & Pedicure": { emoji: "", tagline: "Nail care & pampering for hands & feet" },
-  "Mehndi & Henna": { emoji: "", tagline: "Hand-drawn bridal & party henna design" },
 };
 
 type SortOption = "popular" | "price-low" | "price-high" | "duration";
@@ -201,7 +199,6 @@ export function Services({ showHeader = true }: { showHeader?: boolean }) {
       Waxing: [],
       "Facial & Skin Care": [],
       "Manicure & Pedicure": [],
-      "Mehndi & Henna": [],
     };
     for (const s of filtered) {
       groups[s.category].push(s);
@@ -216,7 +213,6 @@ export function Services({ showHeader = true }: { showHeader?: boolean }) {
     "Waxing",
     "Facial & Skin Care",
     "Manicure & Pedicure",
-    "Mehndi & Henna",
   ];
 
   const hasActiveFilters = search || active !== "All" || sortBy !== "popular";

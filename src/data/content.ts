@@ -158,7 +158,7 @@ export const services: Service[] = [
     description: "Professional keratin smoothing for frizz-free, glossy, manageable medium-length hair.",
     price: 350,
     duration: "3h",
-    image: U("photo-1560869713-7d0a29430803"),
+    image: "/services/keratin-treatment-medium.webp",
     featured: true,
   },
   {
@@ -169,15 +169,6 @@ export const services: Service[] = [
     price: 450,
     duration: "4h",
     image: "/services/keratin-treatment-long.webp",
-  },
-  {
-    slug: "keratin-treatment-extra-long",
-    name: "Keratin Treatment (Extra Long)",
-    category: "Hair",
-    description: "Full keratin treatment for extra-long hair with lasting smoothness.",
-    price: 600,
-    duration: "5h",
-    image: U("photo-1521590832167-7bcbfaa6381f"),
   },
   {
     slug: "hair-spa-blast-dry",
@@ -208,16 +199,6 @@ export const services: Service[] = [
     originalPrice: 50,
     duration: "30 min",
     image: "/services/ironing-short.webp",
-  },
-  {
-    slug: "ironing-medium",
-    name: "Ironing / Temporary Straightening (Medium)",
-    category: "Hair",
-    description: "Professional straightening for medium hair — smooth and polished results.",
-    price: 64,
-    originalPrice: 75,
-    duration: "40 min",
-    image: U("photo-1492106087820-71f1a00d2b11"),
   },
   {
     slug: "ironing-long",
@@ -409,15 +390,6 @@ export const threadingServices: Service[] = [
     duration: "35 min",
     image: "/services/threading-combo.webp",
     featured: true,
-  },
-  {
-    slug: "eyebrow-threading",
-    name: "Eyebrow Threading",
-    category: "Threading",
-    description: "Precise eyebrow shaping with threading for clean, defined arches.",
-    price: 25,
-    duration: "15 min",
-    image: U("photo-1594744803329-e58b31de8bf5"),
   },
   {
     slug: "eyebrow-wax",
@@ -778,51 +750,6 @@ export const nailServices: Service[] = [
   },
 ];
 
-/* ─── Mehndi & Henna Services ─── */
-export const mehndiServices: Service[] = [
-  {
-    slug: "bridal-mehndi-hands-feet",
-    name: "Bridal Mehndi (Hands & Feet)",
-    category: "Mehndi & Henna",
-    description:
-      "Intricate traditional bridal henna covering both hands and feet — the same artistry included in our Royal Bridal Package.",
-    price: 380,
-    duration: "3h",
-    image: U("photo-1595407753234-0882f1e77954"),
-    featured: true,
-  },
-  {
-    slug: "arabic-mehndi-design",
-    name: "Arabic Mehndi Design",
-    category: "Mehndi & Henna",
-    description:
-      "Bold, flowing floral henna in the Arabic style for both hands — a striking, faster alternative to full bridal coverage.",
-    price: 150,
-    duration: "1h 30m",
-    image: U("photo-1595407753234-0882f1e77954"),
-  },
-  {
-    slug: "party-mehndi",
-    name: "Party Mehndi (Guest Design)",
-    category: "Mehndi & Henna",
-    description:
-      "Simple, elegant henna for wedding guests and family — perfect for mehndi nights, sangeet and celebrations.",
-    price: 80,
-    duration: "45 min",
-    image: U("photo-1595407753234-0882f1e77954"),
-  },
-  {
-    slug: "simple-mehndi-one-hand",
-    name: "Simple Mehndi (One Hand)",
-    category: "Mehndi & Henna",
-    description:
-      "A neat, elegant henna design on one hand — a lovely introduction to mehndi art for any occasion.",
-    price: 50,
-    duration: "30 min",
-    image: U("photo-1595407753234-0882f1e77954"),
-  },
-];
-
 /* ─── Combined All Services ─── */
 export const allServices: Service[] = [
   ...services,
@@ -831,7 +758,6 @@ export const allServices: Service[] = [
   ...waxingServices,
   ...facialServices,
   ...nailServices,
-  ...mehndiServices,
 ];
 
 /* ─── Packages ─── */
