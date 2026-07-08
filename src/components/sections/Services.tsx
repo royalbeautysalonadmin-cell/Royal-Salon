@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, ArrowUpRight, Search, SlidersHorizontal, X, Sparkles } from "lucide-react";
@@ -10,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { formatPrice } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
 import { allServices } from "@/data/content";
+import { servicePath } from "@/data/seo-data";
 import type { ServiceCategory, Service } from "@/types";
 
 const categories: (ServiceCategory | "All")[] = [
@@ -94,15 +96,20 @@ function ServiceCard({ service }: { service: Service }) {
             <Clock className="h-3 w-3 text-brown" />
             {service.duration}
           </span>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="group/btn -mr-2 px-2"
-            onClick={() => openBooking(service.slug)}
-          >
-            Book Now
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-          </Button>
+          <div className="flex items-center gap-1">
+            <Button variant="ghost" size="sm" className="px-2" asChild>
+              <Link href={servicePath(service)}>Details</Link>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="group/btn -mr-2 px-2"
+              onClick={() => openBooking(service.slug)}
+            >
+              Book Now
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            </Button>
+          </div>
         </div>
       </div>
     </motion.article>
