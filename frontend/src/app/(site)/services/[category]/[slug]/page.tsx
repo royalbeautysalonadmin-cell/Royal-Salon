@@ -25,7 +25,7 @@ import {
 import { getBackendServices } from "@/lib/backend-api";
 
 export const dynamicParams = false;
-export const revalidate = 86400;
+export const revalidate = 300;
 
 export async function generateStaticParams() {
   const allServices = await getBackendServices();

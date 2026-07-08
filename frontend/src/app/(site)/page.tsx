@@ -11,7 +11,7 @@ import {
   getBackendClosedDays,
 } from "@/lib/backend-api";
 
-export const revalidate = 86400;
+export const revalidate = 300;
 
 // Below-the-fold sections are code-split into their own chunks (still fully
 // server-rendered — ssr defaults to true — so content, SEO and layout are

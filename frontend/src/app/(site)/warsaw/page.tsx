@@ -16,7 +16,7 @@ import { siteConfig } from "@/lib/site";
 import { localBusinessJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { getBackendServices } from "@/lib/backend-api";
 
-export const revalidate = 86400;
+export const revalidate = 300;
 
 const hub = localPageBySlug("warsaw")!;
 

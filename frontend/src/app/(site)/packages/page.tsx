@@ -5,7 +5,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { siteConfig } from "@/lib/site";
 import { getBackendTestimonials } from "@/lib/backend-api";
 
-export const revalidate = 86400;
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Beauty Packages",

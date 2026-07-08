@@ -22,7 +22,7 @@ import {
 import { getBackendServices } from "@/lib/backend-api";
 
 export const dynamicParams = false;
-export const revalidate = 86400;
+export const revalidate = 300;
 
 export function generateStaticParams() {
   // "warsaw" is served by the /warsaw hub page, not this dynamic route.

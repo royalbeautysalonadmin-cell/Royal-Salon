@@ -22,7 +22,7 @@ import {
 import { getBackendServices } from "@/lib/backend-api";
 
 export const dynamicParams = false;
-export const revalidate = 86400;
+export const revalidate = 300;
 
 export function generateStaticParams() {
   return categories.map((c) => ({ category: c.slug }));

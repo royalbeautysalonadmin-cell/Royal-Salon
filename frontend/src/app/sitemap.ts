@@ -9,7 +9,7 @@ import {
 import { nichePages } from "@/data/niche-seo";
 import { getBackendServices } from "@/lib/backend-api";
 
-export const revalidate = 86400;
+export const revalidate = 300;
 
 type Entry = {
   path: string;

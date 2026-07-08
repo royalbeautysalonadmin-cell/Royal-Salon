@@ -13,7 +13,7 @@ import { categories, servicesForCategorySlug } from "@/data/seo-data";
 import { siteConfig } from "@/lib/site";
 import { getBackendServices } from "@/lib/backend-api";
 
-export const revalidate = 86400;
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Our Services — 55+ Beauty Treatments in Warsaw",
