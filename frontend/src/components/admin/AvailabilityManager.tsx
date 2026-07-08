@@ -2,9 +2,19 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { toast } from "sonner";
-import { Ban, CheckCircle2, Loader2, User, Plus, X, Sparkles } from "lucide-react";
+import { Ban, CheckCircle2, Loader2, User, Plus, X, Sparkles, CalendarOff } from "lucide-react";
 import { cn, formatDate } from "@/lib/utils";
-import type { AdminSlotInfo } from "@/lib/availability";
+import { WEEKDAY_KEYS, type AdminSlotInfo, type WeekdayKey } from "@/lib/availability";
+
+const DAY_TOGGLES: { key: WeekdayKey; label: string }[] = [
+  { key: "mon", label: "Mon" },
+  { key: "tue", label: "Tue" },
+  { key: "wed", label: "Wed" },
+  { key: "thu", label: "Thu" },
+  { key: "fri", label: "Fri" },
+  { key: "sat", label: "Sat" },
+  { key: "sun", label: "Sun" },
+];
 
 function todayIso() {
   return new Date().toISOString().split("T")[0];
@@ -27,6 +37,11 @@ export function AvailabilityManager() {
   const [busyTime, setBusyTime] = useState<string | null>(null);
   const [customTime, setCustomTime] = useState("");
   const [addingCustom, setAddingCustom] = useState(false);
+  const [dateClosed, setDateClosed] = useState(false);
+
+  const [closedDays, setClosedDays] = useState<WeekdayKey[]>([]);
+  const [loadingDays, setLoadingDays] = useState(true);
+  const [busyDay, setBusyDay] = useState<WeekdayKey | null>(null);
 
   const loadSlots = useCallback(async (d: string) => {
     setLoading(true);
@@ -35,6 +50,7 @@ export function AvailabilityManager() {
       if (!res.ok) throw new Error();
       const data = await res.json();
       setSlots(data.slots);
+      setDateClosed(Boolean(data.closed));
     } catch {
       toast.error("Couldn't load availability for that date.");
     } finally {
@@ -46,6 +62,39 @@ export function AvailabilityManager() {
     loadSlots(date);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date]);
+
+  useEffect(() => {
+    fetch("/api/settings", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : { closedDays: [] }))
+      .then((data: { closedDays?: WeekdayKey[] }) => setClosedDays(data.closedDays || []))
+      .catch(() => toast.error("Couldn't load the weekly schedule."))
+      .finally(() => setLoadingDays(false));
+  }, []);
+
+  async function toggleDay(day: WeekdayKey) {
+    const next = closedDays.includes(day)
+      ? closedDays.filter((d) => d !== day)
+      : [...closedDays, day];
+    setBusyDay(day);
+    try {
+      const res = await fetch("/api/settings", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ closedDays: next }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Could not update schedule.");
+      setClosedDays(json.closedDays);
+      toast.success(
+        next.includes(day) ? "Day marked as closed." : "Day reopened."
+      );
+      loadSlots(date);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Could not update schedule.");
+    } finally {
+      setBusyDay(null);
+    }
+  }
 
   async function toggle(slot: AdminSlotInfo) {
     if (slot.status === "booked") return;
@@ -111,6 +160,40 @@ export function AvailabilityManager() {
 
   return (
     <div className="space-y-5">
+      {/* Weekly schedule — toggle off a day to close the salon that weekday */}
+      <div className="rounded-2xl border border-border bg-white p-4 shadow-soft">
+        <p className="text-sm font-medium text-charcoal">Weekly schedule</p>
+        <p className="mt-0.5 text-xs text-charcoal/70">
+          Turn a day off to close the salon on that weekday — customers can&apos;t book it and a
+          notice appears on the homepage.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {DAY_TOGGLES.map(({ key, label }) => {
+            const isClosed = closedDays.includes(key);
+            const isBusy = busyDay === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                disabled={loadingDays || isBusy}
+                onClick={() => toggleDay(key)}
+                aria-pressed={!isClosed}
+                className={cn(
+                  "flex h-11 min-w-[4.5rem] items-center justify-center gap-1.5 rounded-xl border px-3 text-sm font-medium transition-all",
+                  isClosed
+                    ? "border-red-200 bg-red-50 text-red-600"
+                    : "border-emerald-200 bg-emerald-50 text-emerald-700",
+                  (loadingDays || isBusy) && "opacity-60"
+                )}
+              >
+                {isBusy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
+                {label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
           <label htmlFor="avail-date" className="text-sm font-medium text-charcoal">
@@ -127,6 +210,14 @@ export function AvailabilityManager() {
         </div>
         <p className="text-sm text-charcoal/70">{formatDate(date)}</p>
       </div>
+
+      {dateClosed && (
+        <div className="flex items-center gap-2 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <CalendarOff className="h-4 w-4 shrink-0" />
+          The salon is marked closed on this weekday — customers can&apos;t book it. You can still
+          manage slots below if needed.
+        </div>
+      )}
 
       <div className="flex flex-wrap gap-3 text-xs text-charcoal/70">
         <span className="flex items-center gap-1.5">

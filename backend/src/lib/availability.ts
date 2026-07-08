@@ -2,6 +2,33 @@ import { connectDB, isDbConfigured } from "@/lib/db";
 import { Appointment } from "@/models/Appointment";
 import { BlockedSlot } from "@/models/BlockedSlot";
 import { CustomSlot } from "@/models/CustomSlot";
+import { Settings } from "@/models/index";
+
+/** Weekday keys in JS Date.getDay() order (0 = Sunday). */
+export const WEEKDAY_KEYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"] as const;
+export type WeekdayKey = (typeof WEEKDAY_KEYS)[number];
+
+export async function getClosedDays(): Promise<WeekdayKey[]> {
+  if (!isDbConfigured) return [];
+  await connectDB();
+  const settings = await Settings.findOne({ key: "global" })
+    .select("closedDays")
+    .lean<{ closedDays?: string[] }>();
+  return (settings?.closedDays || []) as WeekdayKey[];
+}
+
+/** Parses a "YYYY-MM-DD" date string as a calendar date (not UTC-shifted)
+ *  and returns its weekday key. */
+export function weekdayKeyForDate(date: string): WeekdayKey {
+  const [y, m, d] = date.split("-").map(Number);
+  return WEEKDAY_KEYS[new Date(y, m - 1, d).getDay()];
+}
+
+export async function isDateClosed(date: string): Promise<boolean> {
+  const closedDays = await getClosedDays();
+  if (closedDays.length === 0) return false;
+  return closedDays.includes(weekdayKeyForDate(date));
+}
 
 /** The salon's default bookable time slots — the baseline shared by the
  *  public booking dialog, the admin availability manager, and the
@@ -128,9 +155,10 @@ export async function getAdminSlotStatuses(date: string): Promise<AdminSlotInfo[
 export async function isSlotAvailable(date: string, time: string): Promise<boolean> {
   if (!isDbConfigured) return true;
   await connectDB();
-  const [existing, blocked] = await Promise.all([
+  const [existing, blocked, closed] = await Promise.all([
     Appointment.exists({ date, time, status: { $in: OCCUPYING_STATUSES } }),
     BlockedSlot.exists({ date, time }),
+    isDateClosed(date),
   ]);
-  return !existing && !blocked;
+  return !existing && !blocked && !closed;
 }

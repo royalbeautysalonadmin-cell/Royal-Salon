@@ -10,6 +10,7 @@ import {
   getTimesForDate,
   getSlotStatuses,
   getAdminSlotStatuses,
+  isDateClosed,
 } from "@/lib/availability";
 
 export const dynamic = "force-dynamic";
@@ -25,8 +26,11 @@ export async function GET(req: Request) {
   }
 
   const session = await getServerSession(authOptions);
-  const slots = session ? await getAdminSlotStatuses(date) : await getSlotStatuses(date);
-  return NextResponse.json({ date, slots });
+  const [slots, closed] = await Promise.all([
+    session ? getAdminSlotStatuses(date) : getSlotStatuses(date),
+    isDateClosed(date),
+  ]);
+  return NextResponse.json({ date, closed, slots });
 }
 
 /** Admin: block/unblock a slot, or add/remove a custom one-off time for a date. */

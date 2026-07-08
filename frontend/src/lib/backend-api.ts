@@ -1,6 +1,7 @@
 import "server-only";
 import { z } from "zod";
 import { SERVICE_CATEGORIES } from "@/lib/validation";
+import { WEEKDAY_KEYS, type WeekdayKey } from "@/lib/availability";
 import type { Service, Testimonial, GalleryImage } from "@/types";
 
 const BACKEND_URL = process.env.BACKEND_URL;
@@ -107,6 +108,25 @@ export async function getBackendGallery(): Promise<GalleryImage[]> {
     if (!res.ok) return [];
     const parsed = z.object({ images: z.array(rawGalleryImageSchema) }).safeParse(await res.json());
     return parsed.success ? parsed.data.images : [];
+  } catch {
+    return [];
+  }
+}
+
+const settingsSchema = z.object({
+  closedDays: z.array(z.enum(WEEKDAY_KEYS)).default([]),
+  announcement: z.string().default(""),
+});
+
+/** Which weekdays the salon is closed on — decorative/informational, so
+ * degrade to "open every day" rather than fail the build if unreachable. */
+export async function getBackendClosedDays(): Promise<WeekdayKey[]> {
+  if (!BACKEND_URL) return [];
+  try {
+    const res = await fetchWithRetry(`${BACKEND_URL}/api/settings`, 2);
+    if (!res.ok) return [];
+    const parsed = settingsSchema.safeParse(await res.json());
+    return parsed.success ? parsed.data.closedDays : [];
   } catch {
     return [];
   }

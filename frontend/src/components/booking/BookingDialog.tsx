@@ -26,7 +26,8 @@ import { Label } from "@/components/ui/label";
 import { cn, formatPrice, formatDate } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
 import { SERVICE_CATEGORIES } from "@/lib/validation";
-import type { SlotInfo } from "@/lib/availability";
+import type { SlotInfo, WeekdayKey } from "@/lib/availability";
+import { WEEKDAY_KEYS } from "@/lib/availability";
 import type { ServiceCategory } from "@/types";
 
 interface BookableService {
@@ -65,6 +66,9 @@ export function BookingDialog() {
   const [slots, setSlots] = useState<SlotInfo[]>([]);
   const [loadingSlots, setLoadingSlots] = useState(false);
   const [slotsError, setSlotsError] = useState<string | null>(null);
+  const [dateClosed, setDateClosed] = useState(false);
+
+  const [closedDays, setClosedDays] = useState<WeekdayKey[]>([]);
 
   const [serviceSearch, setServiceSearch] = useState("");
   const [serviceCategory, setServiceCategory] = useState<ServiceCategory | "All">("All");
@@ -108,11 +112,30 @@ export function BookingDialog() {
     };
   }, [isOpen]);
 
+  // Fetch which weekdays the salon is closed on, so those dates can't be
+  // picked at all — same lifecycle as the services fetch above.
+  useEffect(() => {
+    if (!isOpen) return;
+    let cancelled = false;
+    fetch("/api/settings", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : { closedDays: [] }))
+      .then((data: { closedDays?: WeekdayKey[] }) => {
+        if (!cancelled) setClosedDays(data.closedDays || []);
+      })
+      .catch(() => {
+        if (!cancelled) setClosedDays([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [isOpen]);
+
   // Fetch real slot availability for the chosen date — merges admin-blocked
   // slots and existing customer bookings, so double-booking is impossible.
   useEffect(() => {
     if (!isOpen || !form.date) {
       setSlots([]);
+      setDateClosed(false);
       return;
     }
     let cancelled = false;
@@ -123,8 +146,11 @@ export function BookingDialog() {
         if (!res.ok) throw new Error();
         return res.json();
       })
-      .then((data: { slots: SlotInfo[] }) => {
-        if (!cancelled) setSlots(data.slots || []);
+      .then((data: { slots: SlotInfo[]; closed?: boolean }) => {
+        if (!cancelled) {
+          setSlots(data.slots || []);
+          setDateClosed(Boolean(data.closed));
+        }
       })
       .catch(() => {
         if (!cancelled) setSlotsError("Couldn't load availability. Please try again.");
@@ -391,13 +417,18 @@ export function BookingDialog() {
                         {days.map((d) => {
                           const iso = d.toISOString().split("T")[0];
                           const active = form.date === iso;
+                          const closed = closedDays.includes(WEEKDAY_KEYS[d.getDay()]);
                           return (
                             <button
                               key={iso}
-                              onClick={() => update({ date: iso })}
+                              disabled={closed}
+                              onClick={() => !closed && update({ date: iso })}
+                              title={closed ? "Salon closed this day" : undefined}
                               className={cn(
                                 "flex flex-col items-center rounded-xl border py-3 transition-all",
-                                active
+                                closed
+                                  ? "cursor-not-allowed border-border/50 bg-cream/50 text-charcoal/40 line-through"
+                                  : active
                                   ? "border-brown bg-brown text-white"
                                   : "border-border hover:border-brown/40"
                               )}
@@ -429,6 +460,11 @@ export function BookingDialog() {
                         <div className="flex flex-col items-center gap-2 py-14 text-center text-sm text-charcoal/70">
                           <AlertCircle className="h-5 w-5 text-red-500" />
                           {slotsError}
+                        </div>
+                      ) : dateClosed ? (
+                        <div className="flex flex-col items-center gap-2 py-14 text-center text-sm text-charcoal/70">
+                          <AlertCircle className="h-5 w-5 text-brown" />
+                          We&apos;re closed on this date. Please go back and pick another day.
                         </div>
                       ) : (
                         <>

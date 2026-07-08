@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
+import { ClosedDaysBanner } from "@/components/shared/ClosedDaysBanner";
 import { servicesJsonLd, faqJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { getBackendServices, getBackendTestimonials, getBackendGallery } from "@/lib/backend-api";
+import {
+  getBackendServices,
+  getBackendTestimonials,
+  getBackendGallery,
+  getBackendClosedDays,
+} from "@/lib/backend-api";
 
 export const revalidate = 86400;
 
@@ -45,10 +51,11 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const [services, testimonials, gallery] = await Promise.all([
+  const [services, testimonials, gallery, closedDays] = await Promise.all([
     getBackendServices(),
     getBackendTestimonials(),
     getBackendGallery(),
+    getBackendClosedDays(),
   ]);
   const activeServices = services.filter((s) => s.active !== false);
   return (
@@ -61,6 +68,7 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
       />
+      <ClosedDaysBanner closedDays={closedDays} />
       <Hero />
       <About />
       <Services services={services} />

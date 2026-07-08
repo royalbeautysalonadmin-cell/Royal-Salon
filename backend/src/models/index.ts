@@ -86,6 +86,8 @@ const SettingsSchema = new Schema(
     email: String,
     address: String,
     announcement: String,
+    // Weekday keys the salon is closed on, e.g. ["sun"]. Empty = open every day.
+    closedDays: { type: [String], default: [] },
   },
   { timestamps: true }
 );
