@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { connectDB, isDbConfigured } from "@/lib/db";
 import { Gallery } from "@/models/index";
 import { uploadImage, isCloudinaryConfigured } from "@/lib/cloudinary";
+import { triggerRevalidate } from "@/lib/revalidate";
 
 export async function GET() {
   if (!isDbConfigured) return NextResponse.json({ images: [] });
@@ -27,6 +28,12 @@ export async function POST(req: Request) {
     src = result.url;
     publicId = result.publicId;
   }
+  if (body.dataUri && !isCloudinaryConfigured) {
+    return NextResponse.json(
+      { error: "Direct uploads aren't set up yet — add CLOUDINARY_CLOUD_NAME/API_KEY/API_SECRET on the backend, or paste an image URL instead." },
+      { status: 503 }
+    );
+  }
   if (!src) return NextResponse.json({ error: "Image source required" }, { status: 400 });
 
   await connectDB();
@@ -36,5 +43,6 @@ export async function POST(req: Request) {
     category: body.category || "Makeup",
     alt: body.alt || "Royal Beauty gallery image",
   });
+  triggerRevalidate();
   return NextResponse.json({ image }, { status: 201 });
 }

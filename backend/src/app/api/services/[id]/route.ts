@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { connectDB, isDbConfigured } from "@/lib/db";
 import { ServiceModel } from "@/models/Service";
 import { serviceUpdateSchema } from "@/lib/validation";
+import { triggerRevalidate } from "@/lib/revalidate";
 
 async function guard() {
   const session = await getServerSession(authOptions);
@@ -29,6 +30,7 @@ export async function PATCH(
       runValidators: true,
     }).lean();
     if (!updated) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    triggerRevalidate();
     return NextResponse.json({ service: updated });
   } catch (e: unknown) {
     if (e && typeof e === "object" && "code" in e && e.code === 11000) {
@@ -49,5 +51,6 @@ export async function DELETE(
   const { id } = await params;
   await connectDB();
   await ServiceModel.findByIdAndDelete(id);
+  triggerRevalidate();
   return NextResponse.json({ success: true });
 }

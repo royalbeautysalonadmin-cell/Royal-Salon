@@ -5,17 +5,16 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { gallery } from "@/data/content";
 import type { GalleryImage } from "@/types";
 
 const filters = ["All", "Bridal", "Makeup", "Hair", "Skin", "Nails", "Mehndi"] as const;
 
-export function Gallery() {
+export function Gallery({ images }: { images: GalleryImage[] }) {
   const [active, setActive] = useState<(typeof filters)[number]>("All");
   const [lightbox, setLightbox] = useState<GalleryImage | null>(null);
 
   const items =
-    active === "All" ? gallery : gallery.filter((g) => g.category === active);
+    active === "All" ? images : images.filter((g) => g.category === active);
 
   return (
     <section id="gallery" className="bg-cream py-24">

@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { connectDB, isDbConfigured } from "@/lib/db";
 import { Gallery } from "@/models/index";
 import { deleteImage } from "@/lib/cloudinary";
+import { triggerRevalidate } from "@/lib/revalidate";
 
 export async function DELETE(
   _req: Request,
@@ -20,5 +21,6 @@ export async function DELETE(
     try { await deleteImage(doc.publicId); } catch (e) { console.error(e); }
   }
   await Gallery.findByIdAndDelete(id);
+  triggerRevalidate();
   return NextResponse.json({ success: true });
 }

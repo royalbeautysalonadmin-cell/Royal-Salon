@@ -53,13 +53,13 @@ export function GalleryManager() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...payload, category }),
       });
-      if (!res.ok) throw new Error();
-      const { image } = await res.json();
-      setItems((p) => [image, ...p]);
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Upload failed.");
+      setItems((p) => [json.image, ...p]);
       toast.success("Image added.");
       setUrl("");
-    } catch {
-      toast.error("Upload failed.");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Upload failed.");
     } finally {
       setBusy(false);
     }

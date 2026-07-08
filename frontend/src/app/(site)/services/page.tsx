@@ -32,11 +32,12 @@ export const metadata: Metadata = {
 
 export default async function ServicesPage() {
   const services = await getBackendServices();
+  const activeServices = services.filter((s) => s.active !== false);
   return (
     <>
       <JsonLd
         data={[
-          servicesJsonLd(services),
+          servicesJsonLd(activeServices),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services" },
@@ -64,8 +65,8 @@ export default async function ServicesPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((cat) => {
-              const count = servicesForCategorySlug(services, cat.slug).length;
-              const cover = servicesForCategorySlug(services, cat.slug)[0]?.image;
+              const count = servicesForCategorySlug(activeServices, cat.slug).length;
+              const cover = servicesForCategorySlug(activeServices, cat.slug)[0]?.image;
               return (
                 <Link
                   key={cat.slug}

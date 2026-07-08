@@ -81,6 +81,7 @@ export default async function ServiceDetailPage({
   const { service, meta } = found;
   const content = getServiceContent(allServices, service);
   const path = servicePath(service);
+  const unavailable = service.active === false;
   const savings = service.originalPrice
     ? Math.round(((service.originalPrice - service.price) / service.originalPrice) * 100)
     : 0;
@@ -119,12 +120,22 @@ export default async function ServiceDetailPage({
 
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <Badge variant="gold" className="text-[0.65rem]">{service.category}</Badge>
-              {service.featured && (
-                <Badge variant="gold" className="text-[0.65rem]">
-                  <Sparkles className="mr-1 h-2.5 w-2.5" /> Signature
-                </Badge>
+              {unavailable ? (
+                <Badge variant="danger" className="text-[0.65rem]">Currently Unavailable</Badge>
+              ) : (
+                service.featured && (
+                  <Badge variant="gold" className="text-[0.65rem]">
+                    <Sparkles className="mr-1 h-2.5 w-2.5" /> Signature
+                  </Badge>
+                )
               )}
             </div>
+
+            {unavailable && (
+              <div className="mt-4 rounded-2xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                This treatment is temporarily unavailable for booking. Please check back later or contact us to ask about alternatives.
+              </div>
+            )}
 
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight md:text-5xl text-balance">
               {service.name} in Warsaw
@@ -155,7 +166,7 @@ export default async function ServiceDetailPage({
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <BookButton serviceSlug={service.slug} />
+              <BookButton serviceSlug={service.slug} unavailable={unavailable} />
               <a
                 href={whatsappLink(`Hello Royal Beauty Salon, I'd like to book ${service.name}.`)}
                 target="_blank"
@@ -265,7 +276,7 @@ export default async function ServiceDetailPage({
                 </div>
               </dl>
               <div className="mt-6">
-                <BookButton serviceSlug={service.slug} full />
+                <BookButton serviceSlug={service.slug} full unavailable={unavailable} />
               </div>
               <a
                 href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}

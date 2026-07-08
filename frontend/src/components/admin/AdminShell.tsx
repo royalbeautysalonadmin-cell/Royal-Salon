@@ -50,11 +50,11 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         {/* Sidebar */}
         <aside
           className={cn(
-            "fixed inset-y-0 left-0 z-40 w-64 transform border-r border-border bg-luxury-black text-white transition-transform lg:static lg:translate-x-0",
+            "fixed inset-y-0 left-0 z-40 flex w-64 transform flex-col border-r border-border bg-luxury-black text-white transition-transform lg:static lg:translate-x-0",
             open ? "translate-x-0" : "-translate-x-full"
           )}
         >
-          <div className="flex items-center gap-3 border-b border-white/10 px-6 py-5">
+          <div className="flex shrink-0 items-center gap-3 border-b border-white/10 px-6 py-5">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brown-gradient text-white">
               <Crown className="h-5 w-5" />
             </span>
@@ -64,7 +64,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <nav className="flex flex-col gap-1 p-4">
+          <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto p-4">
             {links.map((link) => {
               const active =
                 link.href === "/admin"
@@ -89,7 +89,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             })}
           </nav>
 
-          <div className="absolute inset-x-0 bottom-0 border-t border-white/10 p-4">
+          <div className="shrink-0 border-t border-white/10 p-4">
             <Link
               href="/"
               target="_blank"

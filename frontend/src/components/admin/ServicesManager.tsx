@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { toast } from "sonner";
-import { Plus, Trash2, Star, Pencil, EyeOff, Eye, Loader2 } from "lucide-react";
+import { Plus, Trash2, Star, Pencil, EyeOff, Eye, Loader2, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -47,6 +48,15 @@ type ServiceFormValues = {
   variant?: string;
 };
 
+function fileToDataUri(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
 function ServiceForm({
   defaults,
   submitLabel,
@@ -58,6 +68,32 @@ function ServiceForm({
   saving: boolean;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }) {
+  const [image, setImage] = useState(defaults?.image || "");
+  const [uploading, setUploading] = useState(false);
+
+  async function onUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    e.target.value = "";
+    if (!file) return;
+    setUploading(true);
+    try {
+      const dataUri = await fileToDataUri(file);
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ dataUri }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Upload failed.");
+      setImage(json.url);
+      toast.success("Image uploaded.");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Upload failed.");
+    } finally {
+      setUploading(false);
+    }
+  }
+
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
@@ -124,13 +160,29 @@ function ServiceForm({
         </div>
       </div>
       <div className="space-y-1.5">
-        <Label htmlFor="s-image">Image URL</Label>
-        <Input
-          id="s-image"
-          name="image"
-          placeholder="https://..."
-          defaultValue={defaults?.image}
-        />
+        <Label htmlFor="s-image">Image</Label>
+        <div className="flex items-center gap-3">
+          {image && (
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-border">
+              <Image src={image} alt="" fill className="object-cover" unoptimized />
+            </div>
+          )}
+          <Input
+            id="s-image"
+            name="image"
+            placeholder="https://..."
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
+        </div>
+        <label className="mt-1 inline-flex cursor-pointer items-center gap-2 rounded-full border border-brown/40 px-4 py-2 text-xs font-medium text-brown transition-colors hover:bg-brown hover:text-white">
+          {uploading ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Upload className="h-3.5 w-3.5" />}
+          Upload from device
+          <input type="file" accept="image/*" className="hidden" onChange={onUpload} disabled={uploading} />
+        </label>
+        <p className="text-xs text-charcoal/70">
+          Direct uploads require Cloudinary credentials on the backend. Otherwise paste an image URL above.
+        </p>
       </div>
       <div className="space-y-1.5">
         <Label htmlFor="s-desc">Description</Label>
@@ -298,6 +350,7 @@ export function ServicesManager() {
           </DialogHeader>
           {editing && (
             <ServiceForm
+              key={editing._id}
               defaults={{
                 name: editing.name,
                 category: editing.category,

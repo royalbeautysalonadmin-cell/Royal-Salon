@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { connectDB, isDbConfigured } from "@/lib/db";
 import { Testimonial } from "@/models/index";
+import { triggerRevalidate } from "@/lib/revalidate";
 
 export async function GET() {
   if (!isDbConfigured) return NextResponse.json({ testimonials: [] });
@@ -28,5 +29,6 @@ export async function POST(req: Request) {
     rating: Number(body.rating) || 5,
     quote: body.quote,
   });
+  triggerRevalidate();
   return NextResponse.json({ testimonial }, { status: 201 });
 }

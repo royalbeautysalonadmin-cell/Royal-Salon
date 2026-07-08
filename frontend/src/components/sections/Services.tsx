@@ -4,14 +4,17 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "sonner";
 import { Clock, ArrowUpRight, Search, SlidersHorizontal, X, Sparkles } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { formatPrice } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
 import { servicePath } from "@/data/seo-data";
 import type { ServiceCategory, Service } from "@/types";
+
+const UNAVAILABLE_MESSAGE = "This service is currently unavailable. Please check back later or contact us for details.";
 
 const categories: (ServiceCategory | "All")[] = [
   "All",
@@ -36,6 +39,7 @@ type SortOption = "popular" | "price-low" | "price-high" | "duration";
 
 function ServiceCard({ service }: { service: Service }) {
   const openBooking = useBookingStore((s) => s.open);
+  const unavailable = service.active === false;
 
   return (
     <motion.article
@@ -44,7 +48,10 @@ function ServiceCard({ service }: { service: Service }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.35 }}
-      className="group overflow-hidden rounded-2xl border border-brown/10 bg-white shadow-soft transition-all duration-300 hover:shadow-luxury hover:-translate-y-1"
+      className={cn(
+        "group overflow-hidden rounded-2xl border border-brown/10 bg-white shadow-soft transition-all duration-300",
+        unavailable ? "opacity-60 grayscale" : "hover:shadow-luxury hover:-translate-y-1"
+      )}
     >
       <div className="relative h-48 overflow-hidden sm:h-56">
         <Image
@@ -58,13 +65,19 @@ function ServiceCard({ service }: { service: Service }) {
         <Badge variant="dark" className="absolute left-3 top-3 text-[0.6rem]">
           {service.category}
         </Badge>
-        {service.featured && (
-          <Badge variant="gold" className="absolute right-3 top-3 text-[0.6rem]">
-            <Sparkles className="mr-1 h-2.5 w-2.5" />
-            Signature
+        {unavailable ? (
+          <Badge variant="danger" className="absolute right-3 top-3 text-[0.6rem]">
+            Unavailable
           </Badge>
+        ) : (
+          service.featured && (
+            <Badge variant="gold" className="absolute right-3 top-3 text-[0.6rem]">
+              <Sparkles className="mr-1 h-2.5 w-2.5" />
+              Signature
+            </Badge>
+          )
         )}
-        {service.originalPrice && (
+        {!unavailable && service.originalPrice && (
           <div className="absolute bottom-3 right-3 rounded-full bg-red-500 px-2.5 py-1 text-[0.65rem] font-bold text-white shadow-lg">
             Save {Math.round(((service.originalPrice - service.price) / service.originalPrice) * 100)}%
           </div>
@@ -95,20 +108,31 @@ function ServiceCard({ service }: { service: Service }) {
             <Clock className="h-3 w-3 text-brown" />
             {service.duration}
           </span>
-          <div className="flex items-center gap-1">
-            <Button variant="ghost" size="sm" className="px-2" asChild>
-              <Link href={servicePath(service)}>Details</Link>
-            </Button>
+          {unavailable ? (
             <Button
               variant="ghost"
               size="sm"
-              className="group/btn -mr-2 px-2"
-              onClick={() => openBooking(service.slug)}
+              className="px-2"
+              onClick={() => toast.error(UNAVAILABLE_MESSAGE)}
             >
-              Book Now
-              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+              Unavailable
             </Button>
-          </div>
+          ) : (
+            <div className="flex items-center gap-1">
+              <Button variant="ghost" size="sm" className="px-2" asChild>
+                <Link href={servicePath(service)}>Details</Link>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="group/btn -mr-2 px-2"
+                onClick={() => openBooking(service.slug)}
+              >
+                Book Now
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </motion.article>

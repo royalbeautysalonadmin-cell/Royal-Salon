@@ -3,6 +3,9 @@ import { PageHero } from "@/components/shared/PageHero";
 import { Packages } from "@/components/sections/Packages";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { siteConfig } from "@/lib/site";
+import { getBackendTestimonials } from "@/lib/backend-api";
+
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Beauty Packages",
@@ -11,7 +14,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/packages` },
 };
 
-export default function PackagesPage() {
+export default async function PackagesPage() {
+  const testimonials = await getBackendTestimonials();
   return (
     <>
       <PageHero
@@ -21,7 +25,7 @@ export default function PackagesPage() {
         breadcrumb="Packages"
       />
       <Packages />
-      <Testimonials />
+      <Testimonials testimonials={testimonials} />
     </>
   );
 }

@@ -5,6 +5,7 @@ import { connectDB, isDbConfigured } from "@/lib/db";
 import { ServiceModel } from "@/models/Service";
 import { serviceSchema } from "@/lib/validation";
 import { slugify } from "@/lib/utils";
+import { triggerRevalidate } from "@/lib/revalidate";
 
 export async function GET(req: Request) {
   if (!isDbConfigured) return NextResponse.json({ services: [] });
@@ -31,6 +32,7 @@ export async function POST(req: Request) {
   await connectDB();
   try {
     const created = await ServiceModel.create(parsed.data);
+    triggerRevalidate();
     return NextResponse.json({ service: created }, { status: 201 });
   } catch (e: unknown) {
     if (e && typeof e === "object" && "code" in e && e.code === 11000) {

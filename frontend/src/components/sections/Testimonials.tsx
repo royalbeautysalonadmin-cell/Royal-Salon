@@ -5,21 +5,25 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { testimonials } from "@/data/content";
+import type { Testimonial } from "@/types";
 
-export function Testimonials() {
+export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const next = useCallback(() => setIndex((i) => (i + 1) % testimonials.length), []);
+  const next = useCallback(
+    () => setIndex((i) => (i + 1) % testimonials.length),
+    [testimonials.length]
+  );
   const prev = () => setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || testimonials.length === 0) return;
     const id = setInterval(next, 5000);
     return () => clearInterval(id);
-  }, [paused, next]);
+  }, [paused, next, testimonials.length]);
 
+  if (testimonials.length === 0) return null;
   const active = testimonials[index];
 
   return (

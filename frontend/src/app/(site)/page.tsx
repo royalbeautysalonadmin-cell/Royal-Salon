@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
 import { servicesJsonLd, faqJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { getBackendServices } from "@/lib/backend-api";
+import { getBackendServices, getBackendTestimonials, getBackendGallery } from "@/lib/backend-api";
 
 export const revalidate = 86400;
 
@@ -45,12 +45,17 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const services = await getBackendServices();
+  const [services, testimonials, gallery] = await Promise.all([
+    getBackendServices(),
+    getBackendTestimonials(),
+    getBackendGallery(),
+  ]);
+  const activeServices = services.filter((s) => s.active !== false);
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd(services)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd(activeServices)) }}
       />
       <script
         type="application/ld+json"
@@ -63,8 +68,8 @@ export default async function HomePage() {
       <Packages />
       <WhyChooseUs />
       <Amenities />
-      <Testimonials />
-      <Gallery />
+      <Testimonials testimonials={testimonials} />
+      <Gallery images={gallery} />
       <Contact />
     </>
   );

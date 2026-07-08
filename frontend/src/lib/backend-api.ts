@@ -1,7 +1,7 @@
 import "server-only";
 import { z } from "zod";
 import { SERVICE_CATEGORIES } from "@/lib/validation";
-import type { Service } from "@/types";
+import type { Service, Testimonial, GalleryImage } from "@/types";
 
 const BACKEND_URL = process.env.BACKEND_URL;
 // Tripwire, not a business rule — bump as the catalog genuinely grows.
@@ -61,8 +61,53 @@ export async function getBackendServices(): Promise<Service[]> {
   if (missing.length) {
     throw new Error(`No services returned for: ${missing.join(", ")} — partial response, failing the build.`);
   }
-  // Only publicly bookable services render on SEO/site pages — the tripwire
-  // checks above ran against the full response so a legitimately disabled
-  // service doesn't look like a truncated one.
-  return services.filter((s) => s.active !== false);
+  // Disabled services are still returned — the site renders them faded/
+  // non-bookable rather than hiding them outright (see ServiceCard /
+  // ServiceLinkCard). The tripwire checks above already ran against the
+  // full response so a legitimately disabled service doesn't get mistaken
+  // for a truncated one.
+  return services;
+}
+
+const rawTestimonialSchema = z.object({
+  name: z.string(),
+  role: z.string().default("Client"),
+  avatar: z.string().default(""),
+  rating: z.number().default(5),
+  quote: z.string(),
+});
+
+/**
+ * Testimonials/gallery are decorative, not SEO-load-bearing the way the
+ * service catalog is — degrade gracefully (empty array) rather than fail
+ * the whole build if the backend is briefly unreachable.
+ */
+export async function getBackendTestimonials(): Promise<Testimonial[]> {
+  if (!BACKEND_URL) return [];
+  try {
+    const res = await fetchWithRetry(`${BACKEND_URL}/api/testimonials`, 2);
+    if (!res.ok) return [];
+    const parsed = z.object({ testimonials: z.array(rawTestimonialSchema) }).safeParse(await res.json());
+    return parsed.success ? parsed.data.testimonials : [];
+  } catch {
+    return [];
+  }
+}
+
+const rawGalleryImageSchema = z.object({
+  src: z.string(),
+  category: z.enum(["Bridal", "Hair", "Makeup", "Nails", "Skin", "Mehndi"]),
+  alt: z.string().default(""),
+});
+
+export async function getBackendGallery(): Promise<GalleryImage[]> {
+  if (!BACKEND_URL) return [];
+  try {
+    const res = await fetchWithRetry(`${BACKEND_URL}/api/gallery`, 2);
+    if (!res.ok) return [];
+    const parsed = z.object({ images: z.array(rawGalleryImageSchema) }).safeParse(await res.json());
+    return parsed.success ? parsed.data.images : [];
+  } catch {
+    return [];
+  }
 }
