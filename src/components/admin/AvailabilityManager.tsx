@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { toast } from "sonner";
 import { Ban, CheckCircle2, Loader2, User } from "lucide-react";
 import { cn, formatDate } from "@/lib/utils";
@@ -10,16 +10,10 @@ function todayIso() {
   return new Date().toISOString().split("T")[0];
 }
 
-export function AvailabilityManager({
-  initialDate,
-  initialSlots,
-}: {
-  initialDate: string;
-  initialSlots: AdminSlotInfo[];
-}) {
-  const [date, setDate] = useState(initialDate);
-  const [slots, setSlots] = useState(initialSlots);
-  const [loading, setLoading] = useState(false);
+export function AvailabilityManager() {
+  const [date, setDate] = useState(todayIso());
+  const [slots, setSlots] = useState<AdminSlotInfo[]>([]);
+  const [loading, setLoading] = useState(true);
   const [busyTime, setBusyTime] = useState<string | null>(null);
 
   const loadSlots = useCallback(async (d: string) => {
@@ -36,10 +30,8 @@ export function AvailabilityManager({
     }
   }, []);
 
-  const mounted = useRef(false);
   useEffect(() => {
-    if (mounted.current) loadSlots(date);
-    mounted.current = true;
+    loadSlots(date);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date]);
 

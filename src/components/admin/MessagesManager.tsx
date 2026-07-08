@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Mail, Phone, Trash2, MailOpen, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Trash2, MailOpen, CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/utils";
@@ -17,8 +17,20 @@ export interface AdminMessage {
   createdAt: string;
 }
 
-export function MessagesManager({ initial }: { initial: AdminMessage[] }) {
-  const [items, setItems] = useState(initial);
+export function MessagesManager() {
+  const [items, setItems] = useState<AdminMessage[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/messages")
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then((data: { messages: AdminMessage[] }) => setItems(data.messages || []))
+      .catch(() => toast.error("Couldn't load messages."))
+      .finally(() => setLoading(false));
+  }, []);
 
   async function markRead(id: string) {
     try {
@@ -43,6 +55,14 @@ export function MessagesManager({ initial }: { initial: AdminMessage[] }) {
     } catch {
       toast.error("Delete failed.");
     }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-white py-16 text-sm text-charcoal/70">
+        <Loader2 className="h-4 w-4 animate-spin" /> Loading...
+      </div>
+    );
   }
 
   if (items.length === 0) {

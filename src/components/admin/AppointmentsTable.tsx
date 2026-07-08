@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Check, X, CheckCheck, Trash2, Search, Mail, Phone } from "lucide-react";
+import { Check, X, CheckCheck, Trash2, Search, Mail, Phone, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { StatusBadge } from "./StatusBadge";
@@ -24,11 +24,23 @@ export interface AdminAppt {
 
 const FILTERS = ["all", "pending", "approved", "completed", "rejected"] as const;
 
-export function AppointmentsTable({ initial }: { initial: AdminAppt[] }) {
-  const [items, setItems] = useState(initial);
+export function AppointmentsTable() {
+  const [items, setItems] = useState<AdminAppt[]>([]);
+  const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>("all");
   const [q, setQ] = useState("");
   const [busy, setBusy] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/bookings")
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then((data: { appointments: AdminAppt[] }) => setItems(data.appointments || []))
+      .catch(() => toast.error("Couldn't load appointments."))
+      .finally(() => setLoading(false));
+  }, []);
 
   async function setStatus(id: string, status: string) {
     setBusy(id);
@@ -102,7 +114,11 @@ export function AppointmentsTable({ initial }: { initial: AdminAppt[] }) {
         </div>
       </div>
 
-      {filtered.length === 0 ? (
+      {loading ? (
+        <div className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-white py-16 text-sm text-charcoal/70">
+          <Loader2 className="h-4 w-4 animate-spin" /> Loading...
+        </div>
+      ) : filtered.length === 0 ? (
         <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
           No appointments found.
         </div>

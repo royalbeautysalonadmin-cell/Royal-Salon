@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { toast } from "sonner";
-import { Upload, Trash2, Link as LinkIcon } from "lucide-react";
+import { Upload, Trash2, Link as LinkIcon, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -27,17 +27,23 @@ function fileToDataUri(file: File): Promise<string> {
   });
 }
 
-export function GalleryManager({
-  initial,
-  disabled,
-}: {
-  initial: AdminImage[];
-  disabled?: boolean;
-}) {
-  const [items, setItems] = useState(initial);
+export function GalleryManager() {
+  const [items, setItems] = useState<AdminImage[]>([]);
+  const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState("Makeup");
   const [url, setUrl] = useState("");
   const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/gallery")
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then((data: { images: AdminImage[] }) => setItems(data.images || []))
+      .catch(() => toast.error("Couldn't load gallery."))
+      .finally(() => setLoading(false));
+  }, []);
 
   async function create(payload: Record<string, unknown>) {
     setBusy(true);
@@ -104,7 +110,7 @@ export function GalleryManager({
           <div className="flex items-end gap-2">
             <Button
               variant="default"
-              disabled={disabled || busy || !url}
+              disabled={busy || !url}
               onClick={() => create({ src: url, alt: "Gallery image" })}
             >
               <LinkIcon className="h-4 w-4" /> Add
@@ -114,7 +120,7 @@ export function GalleryManager({
         <div className="mt-4">
           <label className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-brown/40 px-5 py-2.5 text-sm font-medium text-brown transition-colors hover:bg-brown hover:text-white">
             <Upload className="h-4 w-4" /> Upload from device
-            <input type="file" accept="image/*" className="hidden" onChange={onUpload} disabled={disabled || busy} />
+            <input type="file" accept="image/*" className="hidden" onChange={onUpload} disabled={busy} />
           </label>
           <p className="mt-2 text-xs text-charcoal/70">
             Direct uploads require Cloudinary credentials. Otherwise paste an image URL.
@@ -122,7 +128,11 @@ export function GalleryManager({
         </div>
       </div>
 
-      {items.length === 0 ? (
+      {loading ? (
+        <div className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-white py-16 text-sm text-charcoal/70">
+          <Loader2 className="h-4 w-4 animate-spin" /> Loading...
+        </div>
+      ) : items.length === 0 ? (
         <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
           No gallery images yet.
         </div>

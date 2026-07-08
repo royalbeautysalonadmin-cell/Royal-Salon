@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Plus, Trash2, Star, Pencil, EyeOff, Eye } from "lucide-react";
+import { Plus, Trash2, Star, Pencil, EyeOff, Eye, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -125,18 +125,24 @@ function ServiceForm({
   );
 }
 
-export function ServicesManager({
-  initial,
-  disabled,
-}: {
-  initial: AdminService[];
-  disabled?: boolean;
-}) {
-  const [items, setItems] = useState(initial);
+export function ServicesManager() {
+  const [items, setItems] = useState<AdminService[]>([]);
+  const [loading, setLoading] = useState(true);
   const [addOpen, setAddOpen] = useState(false);
   const [editing, setEditing] = useState<AdminService | null>(null);
   const [saving, setSaving] = useState(false);
   const [busyId, setBusyId] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/services")
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then((data: { services: AdminService[] }) => setItems(data.services || []))
+      .catch(() => toast.error("Couldn't load services."))
+      .finally(() => setLoading(false));
+  }, []);
 
   function readForm(form: HTMLFormElement) {
     const data = Object.fromEntries(new FormData(form));
@@ -232,7 +238,7 @@ export function ServicesManager({
       <div className="flex justify-end">
         <Dialog open={addOpen} onOpenChange={setAddOpen}>
           <DialogTrigger asChild>
-            <Button variant="gold" disabled={disabled}>
+            <Button variant="gold">
               <Plus className="h-4 w-4" /> Add Service
             </Button>
           </DialogTrigger>
@@ -270,7 +276,11 @@ export function ServicesManager({
         </DialogContent>
       </Dialog>
 
-      {items.length === 0 ? (
+      {loading ? (
+        <div className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-white py-16 text-sm text-charcoal/70">
+          <Loader2 className="h-4 w-4 animate-spin" /> Loading...
+        </div>
+      ) : items.length === 0 ? (
         <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
           No services yet. Add your first treatment.
         </div>

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Plus, Trash2, Star } from "lucide-react";
+import { Plus, Trash2, Star, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,16 +24,22 @@ export interface AdminTestimonial {
   avatar?: string;
 }
 
-export function TestimonialsManager({
-  initial,
-  disabled,
-}: {
-  initial: AdminTestimonial[];
-  disabled?: boolean;
-}) {
-  const [items, setItems] = useState(initial);
+export function TestimonialsManager() {
+  const [items, setItems] = useState<AdminTestimonial[]>([]);
+  const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/testimonials")
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then((data: { testimonials: AdminTestimonial[] }) => setItems(data.testimonials || []))
+      .catch(() => toast.error("Couldn't load testimonials."))
+      .finally(() => setLoading(false));
+  }, []);
 
   async function add(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -73,7 +79,7 @@ export function TestimonialsManager({
       <div className="flex justify-end">
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <Button variant="gold" disabled={disabled}>
+            <Button variant="gold">
               <Plus className="h-4 w-4" /> Add Testimonial
             </Button>
           </DialogTrigger>
@@ -121,7 +127,11 @@ export function TestimonialsManager({
         </Dialog>
       </div>
 
-      {items.length === 0 ? (
+      {loading ? (
+        <div className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-white py-16 text-sm text-charcoal/70">
+          <Loader2 className="h-4 w-4 animate-spin" /> Loading...
+        </div>
+      ) : items.length === 0 ? (
         <div className="rounded-2xl border border-border bg-white py-16 text-center text-sm text-charcoal/70">
           No testimonials yet.
         </div>
