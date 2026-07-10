@@ -21,6 +21,7 @@ const rawServiceSchema = z.object({
   originalPrice: z.number().optional(),
   priceOnRequest: z.boolean().optional(),
   variant: z.string().optional(),
+  updatedAt: z.string().optional(),
 });
 const responseSchema = z.object({ services: z.array(rawServiceSchema) });
 
