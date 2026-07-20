@@ -92,17 +92,20 @@ export function Contact() {
               ))}
             </div>
 
-            <div className="overflow-hidden rounded-2xl border border-brown/10 shadow-soft">
-              <iframe
-                title="Royal Beauty Salon location"
-                src={`https://www.google.com/maps?q=${siteConfig.address.mapsQuery}&output=embed`}
-                width="100%"
-                height="260"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale-[0.2]"
-              />
-            </div>
+            <a
+              href={`https://www.google.com/maps?q=${siteConfig.address.mapsQuery}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-2xl border border-brown/10 shadow-soft transition-all hover:shadow-luxury"
+            >
+              <div className="flex items-center gap-3 bg-cream/60 p-5">
+                <MapPin className="h-5 w-5 text-brown" />
+                <div>
+                  <p className="text-sm font-medium text-luxury-black">{siteConfig.address.full}</p>
+                  <p className="text-xs text-charcoal/70">Open in Google Maps</p>
+                </div>
+              </div>
+            </a>
 
             <div className="rounded-2xl border border-brown/10 bg-cream/40 p-6">
               <h3 className="mb-2 flex items-center gap-2 font-serif text-lg">

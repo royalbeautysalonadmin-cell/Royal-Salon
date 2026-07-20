@@ -66,7 +66,7 @@ export function servicesJsonLd(services: Service[]) {
         "@type": "Service",
         name: s.name,
         description: s.description,
-        provider: { "@type": "BeautySalon", name: siteConfig.name },
+        provider: { "@id": `${siteConfig.url}/#organization` },
         offers: {
           "@type": "Offer",
           price: s.price,
@@ -101,19 +101,7 @@ export function serviceDetailJsonLd(service: Service, canonicalPath: string) {
     url: `${siteConfig.url}${canonicalPath}`,
     image: service.image,
     areaServed: { "@type": "City", name: "Warsaw" },
-    provider: {
-      "@type": "BeautySalon",
-      name: siteConfig.name,
-      image: `${siteConfig.url}${siteConfig.ogImage}`,
-      telephone: siteConfig.phone,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: siteConfig.address.line1,
-        addressLocality: "Warsaw",
-        postalCode: "00-561",
-        addressCountry: "PL",
-      },
-    },
+    provider: { "@id": `${siteConfig.url}/#organization` },
     offers: {
       "@type": "Offer",
       price: service.price,
@@ -187,19 +175,7 @@ export function genericServiceJsonLd(opts: {
     serviceType: opts.serviceType ?? opts.name,
     url: `${siteConfig.url}${opts.path}`,
     areaServed: { "@type": "City", name: "Warsaw" },
-    provider: {
-      "@type": "BeautySalon",
-      name: siteConfig.name,
-      image: `${siteConfig.url}${siteConfig.ogImage}`,
-      telephone: siteConfig.phone,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: siteConfig.address.line1,
-        addressLocality: "Warsaw",
-        postalCode: "00-561",
-        addressCountry: "PL",
-      },
-    },
+    provider: { "@id": `${siteConfig.url}/#organization` },
   };
 }
 

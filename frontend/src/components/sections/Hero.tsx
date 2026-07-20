@@ -96,8 +96,8 @@ export function Hero() {
               variants={item}
               className="mt-6 font-serif text-5xl font-semibold leading-[1.04] text-luxury-black sm:text-6xl lg:text-7xl text-balance"
             >
-              Where Beauty <br />
-              Meets <span className="text-gradient-gold">Royalty</span>
+              Luxury Beauty Salon <br />
+              in <span className="text-gradient-gold">Warsaw</span>
             </motion.h1>
 
             <motion.p

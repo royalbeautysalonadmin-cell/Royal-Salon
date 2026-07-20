@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { Providers } from "@/components/providers";
 import { localBusinessJsonLd } from "@/lib/seo";
+import { Analytics, FacebookPixel } from "@/components/analytics";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -26,15 +27,17 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "luxury salon Warsaw",
-    "salon urody Warszawa",
+    "salon kosmetyczny Warszawa",
+    "salon fryzjerski Warszawa",
     "bridal makeup Warsaw",
     "makijaż ślubny Warszawa",
     "beauty salon Warsaw",
-    "hydra facial",
-    "keratin treatment",
+    "hydra facial Warsaw",
+    "keratin treatment Warsaw",
     "beauty academy Warsaw",
     "hair styling Warsaw",
     "manicure pedicure Warszawa",
+    "depilacja nitką Warszawa",
   ],
   authors: [{ name: siteConfig.name }],
   openGraph: {
@@ -73,6 +76,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>{children}</Providers>
+        <Analytics />
+        <FacebookPixel />
       </body>
     </html>
   );
