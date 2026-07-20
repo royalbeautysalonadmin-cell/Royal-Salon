@@ -13,7 +13,7 @@ import {
   servicesForCategorySlug,
 } from "@/data/seo-data";
 import { siteConfig } from "@/lib/site";
-import { localBusinessJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { getBackendServices } from "@/lib/backend-api";
 
 export const revalidate = 300;
@@ -52,7 +52,7 @@ export default async function WarsawHubPage() {
 
   return (
     <>
-      <JsonLd data={[localBusinessJsonLd(), breadcrumb, faqJsonLd(hub.faqs)]} />
+      <JsonLd data={[breadcrumb, faqJsonLd(hub.faqs)]} />
 
       <PageHero
         eyebrow={hub.eyebrow}

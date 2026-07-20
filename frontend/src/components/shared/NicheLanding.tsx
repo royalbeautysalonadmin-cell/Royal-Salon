@@ -9,12 +9,7 @@ import { CtaBand } from "@/components/shared/CtaBand";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { BookButton } from "@/components/shared/BookButton";
 import { siteConfig, whatsappLink } from "@/lib/site";
-import {
-  localBusinessJsonLd,
-  breadcrumbJsonLd,
-  faqJsonLd,
-  genericServiceJsonLd,
-} from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, genericServiceJsonLd } from "@/lib/seo";
 import { nicheBySlug, nicheFeaturedServices } from "@/data/niche-seo";
 import { categoryBySlug } from "@/data/seo-data";
 import { getBackendServices } from "@/lib/backend-api";
@@ -92,7 +87,6 @@ export async function NicheLanding({ slug }: { slug: string }) {
     <div lang={locale === "pl" ? "pl" : undefined}>
       <JsonLd
         data={[
-          localBusinessJsonLd(),
           genericServiceJsonLd({
             name: page.serviceName,
             description: page.serviceDescription,

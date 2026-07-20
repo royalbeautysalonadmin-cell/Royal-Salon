@@ -40,6 +40,19 @@ const Gallery = dynamic(() => import("@/components/sections/Gallery").then((m) =
 const Contact = dynamic(() => import("@/components/sections/Contact").then((m) => m.Contact));
 
 export const metadata: Metadata = {
+  title: `${siteConfig.name} — Luxury Beauty Salon in Warsaw`,
+  description:
+    "Royal Beauty Salon offers luxury beauty treatments, bridal makeovers, keratin nanoplasty, hijab-friendly services, and premium skincare in central Warsaw, Poland.",
+  keywords: [
+    "Beauty Salon Warsaw",
+    "hijab friendly salon Warsaw",
+    "Indian parlour Warsaw",
+    "keratin treatment Warsaw",
+    "nanoplasty hair treatment Warsaw",
+    "luxury salon Warsaw",
+    "bridal makeup Warsaw",
+    "beauty salon Poland",
+  ],
   alternates: {
     canonical: siteConfig.url,
     languages: {
@@ -47,6 +60,21 @@ export const metadata: Metadata = {
       "pl-PL": `${siteConfig.url}/salon-kosmetyczny-warszawa`,
       "x-default": siteConfig.url,
     },
+  },
+  openGraph: {
+    type: "website",
+    url: siteConfig.url,
+    title: `${siteConfig.name} — Luxury Beauty Salon in Warsaw`,
+    description:
+      "Luxury beauty treatments, bridal makeovers, keratin nanoplasty, and hijab-friendly services in central Warsaw.",
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} — Luxury Beauty Salon in Warsaw`,
+    description:
+      "Luxury beauty treatments, bridal makeovers, keratin nanoplasty, and hijab-friendly services in central Warsaw.",
+    images: [siteConfig.ogImage],
   },
 };
 

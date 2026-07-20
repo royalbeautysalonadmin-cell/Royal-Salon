@@ -14,11 +14,7 @@ import {
   servicesForCategorySlug,
 } from "@/data/seo-data";
 import { siteConfig } from "@/lib/site";
-import {
-  localBusinessJsonLd,
-  breadcrumbJsonLd,
-  faqJsonLd,
-} from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { getBackendServices } from "@/lib/backend-api";
 
 export const dynamicParams = false;
@@ -80,7 +76,7 @@ export default async function LocalPage({
 
   return (
     <>
-      <JsonLd data={[localBusinessJsonLd(), breadcrumb, faqJsonLd(page.faqs)]} />
+      <JsonLd data={[breadcrumb, faqJsonLd(page.faqs)]} />
 
       <PageHero
         eyebrow={page.eyebrow}

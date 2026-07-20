@@ -22,6 +22,7 @@ export const revalidate = 300;
  */
 const SEO_DATA_UPDATED = new Date("2026-07-08T12:37:41-07:00"); // seo-data.ts (categories, localPages, blogPosts fallback)
 const NICHE_DATA_UPDATED = new Date("2026-07-08T12:37:41-07:00"); // niche-seo.ts
+const HOMEPAGE_UPDATED = new Date("2026-07-08T14:52:35-07:00"); // page.tsx (homepage)
 const ABOUT_UPDATED = new Date("2026-07-08T12:37:41-07:00");
 const SERVICES_PAGE_UPDATED = new Date("2026-07-08T14:52:35-07:00");
 const PACKAGES_UPDATED = new Date("2026-07-08T14:52:35-07:00");
@@ -43,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const entries: Entry[] = [
     // Core pages
-    { path: "", priority: 1, changeFrequency: "weekly", lastModified: SERVICES_PAGE_UPDATED },
+    { path: "", priority: 1, changeFrequency: "weekly", lastModified: HOMEPAGE_UPDATED },
     { path: "about", priority: 0.7, changeFrequency: "monthly", lastModified: ABOUT_UPDATED },
     { path: "services", priority: 0.9, changeFrequency: "weekly", lastModified: SERVICES_PAGE_UPDATED },
     { path: "packages", priority: 0.8, changeFrequency: "monthly", lastModified: PACKAGES_UPDATED },
