@@ -27,7 +27,7 @@ const CHROME = {
     allCategory: (label: string) => `All ${label}`,
     alsoLooking: "You may also be looking for",
     learnMore: "Learn more",
-    address: "ul. Mokotowska, Warsaw",
+    address: "Aleja Stanów Zjednoczonych 67/D7, Warszawa",
   },
   pl: {
     home: "Strona główna",
@@ -38,7 +38,7 @@ const CHROME = {
     allCategory: (label: string) => `Wszystkie: ${label}`,
     alsoLooking: "Może zainteresuje Cię również",
     learnMore: "Dowiedz się więcej",
-    address: "ul. Mokotowska, Warszawa",
+    address: "Aleja Stanów Zjednoczonych 67/D7, Warszawa",
   },
 } as const;
 

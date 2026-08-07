@@ -6,6 +6,6 @@ export const siteConfig = {
   phone: process.env.NEXT_PUBLIC_SALON_PHONE || "+48 22 123 45 67",
   email: process.env.NEXT_PUBLIC_SALON_EMAIL || "warsawroyalbeauty@gmail.com",
   address: {
-    full: "ul. Mokotowska 12, 00-561 Warsaw, Poland",
+    full: "Aleja Stanów Zjednoczonych 67/D7, 03-770 Warszawa, Poland",
   },
 } as const;

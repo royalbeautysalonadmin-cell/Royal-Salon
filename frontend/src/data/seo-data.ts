@@ -49,7 +49,7 @@ export const categories: CategoryMeta[] = [
     intro: [
       "Your hair tells a story before you say a word. At Royal Beauty Salon in Warsaw, our senior colourists and stylists combine European technique with premium, low-ammonia products to give you healthy, head-turning results — whether that is a sun-kissed balayage, a glassy keratin finish or a precision cut tailored to your face shape.",
       "Every appointment begins with a personalised consultation. We assess your hair's porosity, density and condition, listen to the look you want, and build a plan that protects the integrity of your strands. No guesswork, no one-size-fits-all — just colour and care designed around you.",
-      "From quick root touch-ups on a lunch break to full-day bridal transformations, our hair menu covers colour, smoothing, treatments, cutting and blow-dry styling. All performed in a calm, five-star setting on ul. Mokotowska in central Warsaw.",
+      "From quick root touch-ups on a lunch break to full-day bridal transformations, our hair menu covers colour, smoothing, treatments, cutting and blow-dry styling. All performed in a calm, five-star setting on Aleja Stanów Zjednoczonych in central Warsaw.",
     ],
     benefits: [
       "Senior colourists trained in balayage, global colour and grey coverage",
@@ -286,7 +286,7 @@ export const categories: CategoryMeta[] = [
     label: "Manicure & Pedicure",
     title: "Manicure & Pedicure in Warsaw — Luxury Nail Care",
     metaDescription:
-      "Luxury manicure and spa pedicure in Warsaw. Nourishing nail care, shaping and flawless polish at Royal Beauty Salon on ul. Mokotowska.",
+      "Luxury manicure and spa pedicure in Warsaw. Nourishing nail care, shaping and flawless polish at Royal Beauty Salon on Aleja Stanów Zjednoczonych.",
     heading: "Manicure & Pedicure in Warsaw",
     eyebrow: "Manicure & Pedicure",
     tagline:
@@ -622,20 +622,20 @@ export interface LocalPage {
 export const localPages: LocalPage[] = [
   {
     slug: "warsaw",
-    title: "Beauty Salon in Warsaw — Mokotowska, Śródmieście",
+    title: "Beauty Salon in Warsaw — Aleja Stanów Zjednoczonych",
     metaDescription:
-      "Royal Beauty Salon is a luxury beauty salon in central Warsaw on ul. Mokotowska. Hair, makeup, facials, waxing, threading, manicure and bridal services. Book today.",
+      "Royal Beauty Salon is a luxury beauty salon in central Warsaw on Aleja Stanów Zjednoczonych. Hair, makeup, facials, waxing, threading, manicure and bridal services. Book today.",
     heading: "Your Luxury Beauty Salon in Warsaw",
     eyebrow: "Warsaw",
     tagline:
-      "A five-star beauty destination in the heart of Warsaw on ul. Mokotowska.",
+      "A five-star beauty destination in the heart of Warsaw on Aleja Stanów Zjednoczonych.",
     intro: [
-      "Royal Beauty Salon is a luxury beauty destination in the heart of Warsaw, perfectly placed on ul. Mokotowska in the Śródmieście district. We bring hair, skin, makeup, nails and bridal artistry together under one elegant roof, served by an award-winning team.",
+      "Royal Beauty Salon is a luxury beauty destination in the heart of Warsaw, perfectly placed on Aleja Stanów Zjednoczonych in the Praga-Północ district. We bring hair, skin, makeup, nails and bridal artistry together under one elegant roof, served by an award-winning team.",
       "Whether you live in central Warsaw or are visiting the city, our salon is easy to reach and built around your comfort — with free parking, card payments, accessible facilities and a calm, five-star atmosphere from the moment you arrive.",
       "From quick threading appointments to full bridal transformations, we are Warsaw's address for premium beauty done with care, hygiene and genuine expertise.",
     ],
     highlights: [
-      { title: "Central location", desc: "On ul. Mokotowska in Śródmieście, easy to reach from across Warsaw." },
+      { title: "Central location", desc: "On Aleja Stanów Zjednoczonych in Warsaw, easy to reach from across the city." },
       { title: "Free parking", desc: "Convenient parking for guests arriving by car." },
       { title: "Full-service salon", desc: "Hair, skin, makeup, nails and bridal — all in one place." },
       { title: "Award-winning team", desc: "Internationally trained, certified beauty professionals." },
@@ -643,7 +643,7 @@ export const localPages: LocalPage[] = [
     faqs: [
       {
         q: "Where is Royal Beauty Salon located in Warsaw?",
-        a: "We are on ul. Mokotowska 12, 00-561 Warsaw, in the central Śródmieście district — easily reached by car, public transport or on foot from the city centre.",
+        a: "We are on Aleja Stanów Zjednoczonych 67/D7, 03-770 Warszawa — easily reached by car, public transport or on foot.",
       },
       {
         q: "Do you offer parking?",
@@ -696,21 +696,21 @@ export const localPages: LocalPage[] = [
     slug: "hair-salon-warsaw",
     title: "Hair Salon in Warsaw — Colour, Keratin & Cuts",
     metaDescription:
-      "Top-rated hair salon in central Warsaw for balayage, keratin smoothing, highlights, grey coverage and precision cuts. Book at Royal Beauty Salon, ul. Mokotowska.",
+      "Top-rated hair salon in central Warsaw for balayage, keratin smoothing, highlights, grey coverage and precision cuts. Book at Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
     heading: "Hair Salon in Warsaw",
     eyebrow: "Hair • Warsaw",
     tagline:
       "Colour, keratin smoothing and precision cuts from senior stylists in central Warsaw.",
     intro: [
       "Looking for a hair salon in Warsaw that treats your hair's health as seriously as the finished look? Our senior colourists and stylists combine European technique with premium, low-ammonia products to deliver colour, smoothing and cuts that look incredible and stay healthy.",
-      "Conveniently located on ul. Mokotowska in central Warsaw, we offer everything from balayage and global colour to keratin smoothing, grey coverage and precision cuts. Every appointment begins with a consultation so your result is tailored to you.",
+      "Conveniently located on Aleja Stanów Zjednoczonych in central Warsaw, we offer everything from balayage and global colour to keratin smoothing, grey coverage and precision cuts. Every appointment begins with a consultation so your result is tailored to you.",
       "Whether you want a subtle refresh or a complete transformation, you're in expert hands at Royal Beauty Salon.",
     ],
     highlights: [
       { title: "Senior colourists", desc: "Balayage, global colour and seamless grey coverage." },
       { title: "Keratin & smoothing", desc: "Frizz-free, glossy results that last for months." },
       { title: "Healthy-hair focus", desc: "Low-ammonia, bond-protecting colour lines." },
-      { title: "Central Warsaw", desc: "Easy to reach on ul. Mokotowska in Śródmieście." },
+      { title: "Central Warsaw", desc: "Easy to reach on Aleja Stanów Zjednoczonych in Warsaw." },
     ],
     faqs: [
       {
@@ -732,7 +732,7 @@ export const localPages: LocalPage[] = [
     slug: "facial-warsaw",
     title: "Facial in Warsaw — HydraFacial & Skin Treatments",
     metaDescription:
-      "Advanced facials in Warsaw including HydraFacial and treatments for dry, oily and sensitive skin. Visible, glowing results at Royal Beauty Salon, ul. Mokotowska.",
+      "Advanced facials in Warsaw including HydraFacial and treatments for dry, oily and sensitive skin. Visible, glowing results at Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
     heading: "Facials in Warsaw",
     eyebrow: "Skincare • Warsaw",
     tagline:
@@ -740,7 +740,7 @@ export const localPages: LocalPage[] = [
     intro: [
       "For a facial in Warsaw that delivers real, visible results, our skin therapists tailor every treatment to your skin type and goals. From deep hydration to instant glow, we combine professional analysis with medical-grade products.",
       "Our menu ranges from our signature Royal Facial to advanced HydraFacial hydradermabrasion, plus targeted treatments for dry, oily and sensitive skin, tan removal and quick cleanups. Each begins with a consultation so we treat exactly what your skin needs.",
-      "Located on ul. Mokotowska in central Warsaw, we're the relaxing, expert address for healthier, brighter skin.",
+      "Located on Aleja Stanów Zjednoczonych in central Warsaw, we're the relaxing, expert address for healthier, brighter skin.",
     ],
     highlights: [
       { title: "HydraFacial", desc: "Cleanse, exfoliate and hydrate for an instant glow." },
@@ -751,7 +751,7 @@ export const localPages: LocalPage[] = [
     faqs: [
       {
         q: "Where can I get a HydraFacial in Warsaw?",
-        a: "At Royal Beauty Salon on ul. Mokotowska. Our HydraFacial cleanses, exfoliates and hydrates in one session for an immediate, plump glow.",
+        a: "At Royal Beauty Salon on Aleja Stanów Zjednoczonych. Our HydraFacial cleanses, exfoliates and hydrates in one session for an immediate, plump glow.",
       },
       {
         q: "How often should I get a facial?",
@@ -768,7 +768,7 @@ export const localPages: LocalPage[] = [
     slug: "eyebrow-threading-warsaw",
     title: "Eyebrow Threading in Warsaw — Brow Shaping & Hair Removal",
     metaDescription:
-      "Precise eyebrow threading and brow shaping in Warsaw. Gentle facial hair removal for upper lip, chin and full face at Royal Beauty Salon, ul. Mokotowska.",
+      "Precise eyebrow threading and brow shaping in Warsaw. Gentle facial hair removal for upper lip, chin and full face at Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
     heading: "Eyebrow Threading in Warsaw",
     eyebrow: "Brows • Warsaw",
     tagline:
@@ -776,7 +776,7 @@ export const localPages: LocalPage[] = [
     intro: [
       "For precise eyebrow threading in Warsaw, our brow specialists shape each arch to your unique bone structure — lifting, framing and balancing your features without over-thinning.",
       "Threading is gentle enough for sensitive skin and gives crisper lines than tweezing. Beyond brows, we offer threading and warm-wax options for the upper lip, chin, forehead, sides and full face.",
-      "Drop in for a quick brow tidy or a full-face thread at our central Warsaw salon on ul. Mokotowska — appointments are fast, precise and gentle.",
+      "Drop in for a quick brow tidy or a full-face thread at our central Warsaw salon on Aleja Stanów Zjednoczonych — appointments are fast, precise and gentle.",
     ],
     highlights: [
       { title: "Brow mapping", desc: "Shapes tailored to your face for a lifted look." },
@@ -804,7 +804,7 @@ export const localPages: LocalPage[] = [
     slug: "waxing-warsaw",
     title: "Waxing in Warsaw — Brazilian & Full Body Wax",
     metaDescription:
-      "Professional waxing in Warsaw — Brazilian, full body, legs, arms and underarms. Gentle, hygienic, long-lasting results at Royal Beauty Salon, ul. Mokotowska.",
+      "Professional waxing in Warsaw — Brazilian, full body, legs, arms and underarms. Gentle, hygienic, long-lasting results at Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
     heading: "Waxing in Warsaw",
     eyebrow: "Hair Removal • Warsaw",
     tagline:
@@ -812,7 +812,7 @@ export const localPages: LocalPage[] = [
     intro: [
       "For smooth, long-lasting results, our waxing therapists in Warsaw use premium, low-temperature wax that's effective yet kind to your skin — even in delicate areas like the bikini line.",
       "From Brazilian and full-body waxing to legs, arms, underarms and seasonal summer packages, we cover every area with strict hygiene and single-use applicators as standard.",
-      "Conveniently located on ul. Mokotowska in central Warsaw, we make it easy to stay smooth and confident all year round.",
+      "Conveniently located on Aleja Stanów Zjednoczonych in central Warsaw, we make it easy to stay smooth and confident all year round.",
     ],
     highlights: [
       { title: "Gentle wax", desc: "Low-temperature formulas kind to sensitive skin." },

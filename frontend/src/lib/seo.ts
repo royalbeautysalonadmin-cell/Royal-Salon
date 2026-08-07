@@ -18,7 +18,7 @@ export function localBusinessJsonLd() {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.line1,
       addressLocality: "Warsaw",
-      postalCode: "00-561",
+      postalCode: "03-770",
       addressCountry: "PL",
     },
     geo: {

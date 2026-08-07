@@ -77,7 +77,7 @@ export const nichePages: NichePage[] = [
     heroImage: U("photo-1595407753234-0882f1e77954"),
     heroAlt: "Bridal mehndi being applied at an Indian beauty salon in Warsaw",
     intro: [
-      "If you have been searching for an Indian beauty salon in Warsaw that truly understands South Asian beauty traditions, you have found your home. Royal Beauty Salon brings authentic threading, bridal artistry, mehndi, hair oil treatments and HD makeup together under one roof on ul. Mokotowska in central Warsaw.",
+      "If you have been searching for an Indian beauty salon in Warsaw that truly understands South Asian beauty traditions, you have found your home. Royal Beauty Salon brings authentic threading, bridal artistry, mehndi, hair oil treatments and HD makeup together under one roof on Aleja Stanów Zjednoczonych in central Warsaw.",
       "Our team grew up with these services and performs them the way they are meant to be done — precise eyebrow threading, rich champi hair oil massage, intricate bridal mehndi and flawless Desi bridal makeup. Whether you are part of the Indian, Pakistani, Bangladeshi or wider Desi community in Warsaw, or simply love these treatments, you will feel right at home.",
       "Many of our clients come to us because mainstream salons in Warsaw do not offer threading or understand South Asian bridal looks. We do both — with the warmth, attention and skill you would expect from the best parlour back home.",
     ],
@@ -118,7 +118,7 @@ export const nichePages: NichePage[] = [
     faqs: [
       {
         q: "Is there an Indian salon in Warsaw that does threading?",
-        a: "Yes. Royal Beauty Salon on ul. Mokotowska offers authentic eyebrow and facial threading along with the full range of South Asian beauty services, performed by specialists who do it daily.",
+        a: "Yes. Royal Beauty Salon on Aleja Stanów Zjednoczonych offers authentic eyebrow and facial threading along with the full range of South Asian beauty services, performed by specialists who do it daily.",
       },
       {
         q: "Do you do Indian and Desi bridal makeup?",
@@ -229,7 +229,7 @@ export const nichePages: NichePage[] = [
       },
       {
         q: "Where is your parlour located in Warsaw?",
-        a: "We are on ul. Mokotowska 12 in central Warsaw (Śródmieście), easy to reach by public transport, with free parking for guests.",
+        a: "We are on Aleja Stanów Zjednoczonych 67/D7, 03-770 Warszawa, easy to reach by public transport, with free parking for guests.",
       },
     ],
     featuredServiceSlugs: [

@@ -16,12 +16,12 @@ export const siteConfig = {
   whatsapp: process.env.NEXT_PUBLIC_SALON_WHATSAPP || "48221234567",
   email: process.env.NEXT_PUBLIC_SALON_EMAIL || "warsawroyalbeauty@gmail.com",
   address: {
-    line1: "ul. Mokotowska 12",
-    line2: "00-561 Warsaw, Poland",
-    full: "ul. Mokotowska 12, 00-561 Warsaw, Poland",
-    mapsQuery: "Mokotowska+12+Warszawa",
-    lat: 52.2235,
-    lng: 21.0185,
+    line1: "Aleja Stanów Zjednoczonych 67/D7",
+    line2: "03-770 Warszawa, Poland",
+    full: "Aleja Stanów Zjednoczonych 67/D7, 03-770 Warszawa, Poland",
+    mapsQuery: "Aleja+Stanów+Zjednoczonych+67+D7+Warszawa",
+    lat: 52.2545,
+    lng: 21.0538,
   },
   hours: [
     { day: "Monday – Friday", time: "9:00 – 21:00" },

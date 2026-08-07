@@ -161,7 +161,7 @@ export default async function ServiceDetailPage({
                 )}
               </span>
               <span className="flex items-center gap-2 text-white/80">
-                <MapPin className="h-4 w-4 text-gold" /> ul. Mokotowska, Warsaw
+                <MapPin className="h-4 w-4 text-gold" /> Aleja Stanów Zjednoczonych 67/D7, Warszawa
               </span>
             </div>
 
