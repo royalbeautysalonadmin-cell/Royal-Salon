@@ -40,7 +40,12 @@ type Entry = {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url;
-  const allServices = await getBackendServices();
+  let allServices: Awaited<ReturnType<typeof getBackendServices>> = [];
+  try {
+    allServices = await getBackendServices();
+  } catch {
+    // Backend unreachable at build time (e.g. Vercel) — emit static URLs only
+  }
 
   const entries: Entry[] = [
     // Core pages

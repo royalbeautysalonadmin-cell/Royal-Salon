@@ -24,15 +24,20 @@ import {
 } from "@/lib/seo";
 import { getBackendServices } from "@/lib/backend-api";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 300;
 
 export async function generateStaticParams() {
-  const allServices = await getBackendServices();
-  return allServices.map((s) => {
-    const found = findServiceBySlug(allServices, s.slug)!;
-    return { category: found.categorySlug, slug: s.slug };
-  });
+  try {
+    const allServices = await getBackendServices();
+    return allServices.map((s) => {
+      const found = findServiceBySlug(allServices, s.slug)!;
+      return { category: found.categorySlug, slug: s.slug };
+    });
+  } catch {
+    // Backend unreachable at build time — pages will be generated on-demand via ISR
+    return [];
+  }
 }
 
 export async function generateMetadata({
