@@ -2,6 +2,7 @@
 
 import { Toaster } from "sonner";
 import { type ReactNode } from "react";
+import { LanguageProvider } from "@/lib/i18n";
 
 // No SessionProvider here: nothing in this app calls `useSession()` (the
 // admin dashboard uses `getServerSession` server-side; login/logout use the
@@ -10,7 +11,7 @@ import { type ReactNode } from "react";
 // /api/auth/session fetch + extra client JS on every public page load.
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <>
+    <LanguageProvider>
       {children}
       <Toaster
         position="top-center"
@@ -19,6 +20,6 @@ export function Providers({ children }: { children: ReactNode }) {
           style: { fontFamily: "var(--font-jost)", borderRadius: "0.75rem" },
         }}
       />
-    </>
+    </LanguageProvider>
   );
 }

@@ -18,9 +18,11 @@ import {
 import { siteConfig, whatsappLink } from "@/lib/site";
 import { faqs } from "@/data/content";
 import { sendContactEmailJS, isEmailJSConfigured } from "@/lib/emailjs";
+import { useTranslation } from "@/lib/i18n";
 
 export function Contact() {
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -59,7 +61,7 @@ export function Contact() {
   }
 
   const contactItems = [
-    { icon: MapPin, label: "Visit Us", value: siteConfig.address.full },
+    { icon: MapPin, label: t("contact.visit"), value: siteConfig.address.full },
     { icon: Phone, label: "Call Us", value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, "")}` },
     { icon: Mail, label: "Email Us", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
   ];
@@ -68,7 +70,7 @@ export function Contact() {
     <section id="contact" className="bg-white py-24">
       <div className="container-luxury">
         <SectionHeading
-          eyebrow="Get In Touch"
+          eyebrow={t("contact.heading")}
           title="Visit Our Luxury Salon"
           description="We'd love to welcome you. Reach out, book a visit, or simply say hello."
         />
@@ -131,29 +133,29 @@ export function Contact() {
               <h3 className="font-serif text-2xl font-semibold">Send Us a Message</h3>
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="c-name">Name</Label>
+                  <Label htmlFor="c-name">{t("contact.name")}</Label>
                   <Input id="c-name" name="name" required placeholder="Your name" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="c-phone">Phone</Label>
+                  <Label htmlFor="c-phone">{t("contact.phone")}</Label>
                   <Input id="c-phone" name="phone" required placeholder="+971 ..." />
                 </div>
               </div>
               <div className="mt-4 space-y-2">
-                <Label htmlFor="c-email">Email</Label>
+                <Label htmlFor="c-email">{t("contact.email")}</Label>
                 <Input id="c-email" name="email" type="email" required placeholder="you@email.com" />
               </div>
               <div className="mt-4 space-y-2">
-                <Label htmlFor="c-message">Message</Label>
+                <Label htmlFor="c-message">{t("contact.message")}</Label>
                 <Textarea id="c-message" name="message" required placeholder="How can we help you?" />
               </div>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <Button type="submit" variant="gold" disabled={loading} className="flex-1">
-                  {loading ? "Sending..." : <>Send Message <Send className="h-4 w-4" /></>}
+                  {loading ? t("contact.sending") : <>{t("contact.send")} <Send className="h-4 w-4" /></>}
                 </Button>
                 <Button type="button" variant="outline" asChild className="flex-1">
                   <a href={whatsappLink()} target="_blank" rel="noreferrer">
-                    <MessageCircle className="h-4 w-4" /> WhatsApp
+                    <MessageCircle className="h-4 w-4" /> {t("contact.whatsapp")}
                   </a>
                 </Button>
               </div>

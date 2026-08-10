@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { About } from "@/components/sections/About";
 import { AboutExtras } from "@/components/sections/AboutExtras";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,7 +16,13 @@ export const metadata: Metadata = {
     "luxury salon Warsaw",
     "beauty academy Warsaw",
   ],
-  alternates: { canonical: `${siteConfig.url}/about` },
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+    languages: {
+      "en-GB": `${siteConfig.url}/about`,
+      "x-default": `${siteConfig.url}/about`,
+    },
+  },
   openGraph: {
     type: "website",
     url: `${siteConfig.url}/about`,
@@ -35,6 +43,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <PageHero
         eyebrow="Our Story"
         title="A Royal Legacy of Beauty"

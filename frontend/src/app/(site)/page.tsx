@@ -40,7 +40,7 @@ const Gallery = dynamic(() => import("@/components/sections/Gallery").then((m) =
 const Contact = dynamic(() => import("@/components/sections/Contact").then((m) => m.Contact));
 
 export const metadata: Metadata = {
-  title: "Luxury Beauty Salon Warsaw — Royal Beauty Salon",
+  title: "Luxury Beauty Salon Warsaw",
   description:
     "Royal Beauty Salon offers luxury beauty treatments, bridal makeovers, keratin nanoplasty, hijab-friendly services, and premium skincare in central Warsaw.",
   keywords: [

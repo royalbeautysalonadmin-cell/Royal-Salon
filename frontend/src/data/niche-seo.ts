@@ -229,7 +229,7 @@ export const nichePages: NichePage[] = [
       },
       {
         q: "Where is your parlour located in Warsaw?",
-        a: "We are on Aleja Stanów Zjednoczonych 67/D7, 03-770 Warszawa, easy to reach by public transport, with free parking for guests.",
+        a: "We are on Aleja Stanów Zjednoczonych 67/D7, 04-028 Warszawa, easy to reach by public transport, with free parking for guests.",
       },
     ],
     featuredServiceSlugs: [
@@ -774,11 +774,11 @@ export const nichePages: NichePage[] = [
     h1: "Salon Kosmetyczny i Fryzjerski w Warszawie",
     eyebrow: "Salon Kosmetyczny • Warszawa",
     tagline:
-      "Depilacja nitką, koloryzacja włosów, nanoplastia i makijaż ślubny — wszystko w jednym miejscu na ul. Mokotowskiej.",
+      "Depilacja nitką, koloryzacja włosów, nanoplastia i makijaż ślubny — wszystko w jednym miejscu na Alei Stanów Zjednoczonych.",
     heroImage: U("photo-1522337360788-8b13dee7a37e"),
     heroAlt: "Wnętrze salonu kosmetycznego i fryzjerskiego w Warszawie",
     intro: [
-      "Royal Beauty Salon to salon kosmetyczny i fryzjerski w samym centrum Warszawy, na ul. Mokotowskiej. Łączymy tradycyjne, azjatyckie techniki pielęgnacji urody — takie jak depilacja nitką — z nowoczesnymi zabiegami fryzjerskimi: koloryzacją, keratynowym prostowaniem włosów i nanoplastią.",
+      "Royal Beauty Salon to salon kosmetyczny i fryzjerski w samym centrum Warszawy, na Alei Stanów Zjednoczonych 67/D7. Łączymy tradycyjne, azjatyckie techniki pielęgnacji urody — takie jak depilacja nitką — z nowoczesnymi zabiegami fryzjerskimi: koloryzacją, keratynowym prostowaniem włosów i nanoplastią.",
       "Nasz zespół tworzą doświadczeni specjaliści, w tym fryzjerki damskie i kosmetyczki, które doskonale znają zarówno klasyczne europejskie techniki, jak i azjatyckie metody pielęgnacji urody — w tym depilację i regulację brwi metodą nitki, henna brwi oraz tradycyjne zabiegi z olejkami do włosów.",
       "Jako indyjski salon w Warszawie z otwartym sercem dla wszystkich, jesteśmy również salonem przyjaznym kobietom i muzułmankom — oferujemy prywatną, komfortową atmosferę oraz żeński personel dla klientek, które tego potrzebują.",
     ],
@@ -836,7 +836,7 @@ export const nichePages: NichePage[] = [
       },
       {
         q: "Gdzie znajduje się salon?",
-        a: "Znajdujemy się na ul. Mokotowskiej 12 w centrum Warszawy (Śródmieście), z łatwym dojazdem komunikacją miejską.",
+        a: "Znajdujemy się na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa, z łatwym dojazdem komunikacją miejską i bezpłatnym parkingiem dla gości.",
       },
     ],
     featuredServiceSlugs: [
@@ -864,6 +864,1240 @@ export const nichePages: NichePage[] = [
       "Makijaż ślubny wykonywany w warszawskim salonie",
     ],
     ctaMessage: "Dzień dobry, chciałabym umówić wizytę w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── salon-pieknosci-warszawa ─────────────────────────── */
+  {
+    slug: "salon-pieknosci-warszawa",
+    locale: "pl",
+    primaryKeyword: "salon piękności Warszawa",
+    secondaryKeywords: [
+      "salon piękności Warszawa Centrum",
+      "salon urody Warszawa",
+      "najlepszy salon kosmetyczny Warszawa",
+      "salon beauty Warszawa",
+      "salon kosmetyczny blisko mnie Warszawa",
+    ],
+    title: "Salon Piękności w Warszawie — Royal Beauty Salon",
+    metaDescription:
+      "Salon piękności w centrum Warszawy — fryzjer, kosmetyczka, manicure, pedicure, makijaż i depilacja. Umów wizytę w Royal Beauty Salon na Stanów Zjednoczonych.",
+    h1: "Salon Piękności w Warszawie",
+    eyebrow: "Salon Piękności • Warszawa",
+    tagline:
+      "Twój kompleksowy salon piękności w sercu Warszawy — fryzjer, kosmetyczka i manicure w jednym miejscu.",
+    heroImage: U("photo-1600948836101-f9ffda59d250"),
+    heroAlt: "Eleganckie wnętrze salonu piękności w Warszawie",
+    intro: [
+      "Royal Beauty Salon to kompleksowy salon piękności w centrum Warszawy, na Alei Stanów Zjednoczonych 67/D7. Oferujemy pełen zakres usług fryzjerskich, kosmetycznych i pielęgnacyjnych — od koloryzacji włosów i keratynowego prostowania, przez manicure i pedicure, po profesjonalny makijaż ślubny.",
+      "Nasz zespół to doświadczeni specjaliści z wieloletnim doświadczeniem, którzy łączą europejskie techniki z azjatyckimi metodami pielęgnacji urody. Niezależnie od tego, czy szukasz szybkiej regulacji brwi, czy kompleksowej metamorfozy — jesteśmy tu dla Ciebie.",
+      "Jako salon piękności w Warszawie z prawdziwą pasją do dbałości o detale, gwarantujemy higienę, komfort i produkty najwyższej jakości przy każdej wizycie.",
+    ],
+    sections: [
+      {
+        heading: "Fryzjer damski w Warszawie",
+        body: [
+          "Nasi fryzjerzy specjalizują się w koloryzacji, keratynowym prostowaniu, nanoplastii, strzyżeniu i stylizacji. Każdy zabieg zaczyna się od konsultacji, aby dobrać metodę najlepszą dla Twoich włosów.",
+        ],
+      },
+      {
+        heading: "Kosmetyczka i pielęgnacja twarzy",
+        body: [
+          "Oferujemy zabiegi na twarz dopasowane do każdego rodzaju skóry — od oczyszczania wodorowego, przez HydraFacial, po zabiegi anti-aging i nawilżające. Każda wizyta zaczyna się od analizy skóry.",
+        ],
+      },
+      {
+        heading: "Manicure, pedicure i depilacja",
+        body: [
+          "Zadbaj o dłonie i stopy w naszym salonie manicure i pedicure w Warszawie. Oferujemy również depilację nitką, woskiem i depilację laserową.",
+        ],
+      },
+      {
+        heading: "Makijaż i okazje specjalne",
+        body: [
+          "Profesjonalny makijaż ślubny, wieczorowy i okazjonalny. Oferujemy również usługi drapowania saree i dupatta dla klientek z Azji Południowej.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Kompleksowa obsługa", desc: "Fryzjer, kosmetyczka i manicure w jednym miejscu." },
+      { title: "Doświadczeni specjaliści", desc: "Zespół z wieloletnim doświadczeniem." },
+      { title: "Higiena i komfort", desc: "Produkty najwyższej jakości i sterylne warunki." },
+      { title: "Dogodna lokalizacja", desc: "Centrum Warszawy, bezpłatny parking." },
+    ],
+    faqs: [
+      {
+        q: "Czy w waszym salonie mogę zrobić manicure i fryzurę tej samej dnia?",
+        a: "Tak — oferujemy kompleksową obsługę, dzięki której możesz zadbać o włosy, dłonie i twarz podczas jednej wizyty.",
+      },
+      {
+        q: "Czy oferujecie makijaż ślubny?",
+        a: "Tak — nasi artyści makijażu specjalizują się w makijażu ślubnym, wieczorowym i okazjonalnym.",
+      },
+      {
+        q: "Gdzie znajduje się salon?",
+        a: "Znajdujemy się na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa, z łatwym dojazdem i bezpłatnym parkingiem.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "royal-nanoplasty",
+      "manicure",
+      "pedicure",
+      "royal-facial",
+      "bridal-makeup",
+    ],
+    relatedNicheSlugs: [
+      "salon-kosmetyczny-warszawa",
+      "indian-salon-warsaw",
+      "women-only-hair-salon-warsaw",
+    ],
+    relatedCategorySlugs: ["hair", "nails", "facials"],
+    serviceName: "Salon Piękności w Warszawie",
+    serviceDescription:
+      "Kompleksowy salon piękności w centrum Warszawy — fryzjer, kosmetyczka, manicure, pedicure, makijaż i depilacja.",
+    imageAltRecommendations: [
+      "Salon piękności w Warszawie — wnętrze",
+      "Manicure hybrydowy w salonie piękności Warszawa",
+      "Fryzjer damski koloryzacja włosów Warszawa",
+      "Zabieg na twarz w salonie kosmetycznym Warszawa",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── salon-urody-warszawa ─────────────────────────── */
+  {
+    slug: "salon-urody-warszawa",
+    locale: "pl",
+    primaryKeyword: "salon urody Warszawa",
+    secondaryKeywords: [
+      "salon urody Warszawa Centrum",
+      "salon kosmetyczny Warszawa",
+      "salon piękności Warszawa",
+      "salon fryzjerski Warszawa",
+    ],
+    title: "Salon Urody w Warszawie — Kompleksowa Pielęgnacja",
+    metaDescription:
+      "Salon urody w centrum Warszawy — koloryzacja, keratyna, manicure, pedicure, zabiegi na twarz i makijaż. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Salon Urody w Warszawie",
+    eyebrow: "Salon Urody • Warszawa",
+    tagline:
+      "Profesjonalna pielęgnacja urody w eleganckim salonie w sercu Warszawy.",
+    heroImage: U("photo-1562322140-8baeececf3df"),
+    heroAlt: "Profesjonalna koloryzacja włosów w salonie urody w Warszawie",
+    intro: [
+      "Szukasz salonu urody w Warszawie, który oferuje kompleksową pielęgnację włosów, skóry i dłoni? Royal Beauty Salon na Alei Stanów Zjednoczonych to miejsce, w którym profesjonalizm spotyka się z pasją do piękna.",
+      "Nasi specjaliści łączą nowoczesne technologie z sprawdzonymi metodami pielęgnacji, oferując zabiegi dostosowane do Twoich indywidualnych potrzeb — od keratynowego prostowania po zaawansowane zabiegi na twarz.",
+      "Każda wizyta w naszym salonie urody to moment relaksu i odprężenia, w którym możesz oddać się w ręce profesjonalistów.",
+    ],
+    sections: [
+      {
+        heading: "Pielęgnacja włosów",
+        body: [
+          "Oferujemy pełen zakres usług fryzjerskich — od strzyżenia i modelowania, przez koloryzację i rozjaśnianie, po keratynowe prostowanie i nanoplastię. Każdy zabieg poprzedza konsultacja.",
+        ],
+      },
+      {
+        heading: "Zabiegi na twarz",
+        body: [
+          "Nasze zabiegi na twarz obejmują oczyszczanie, nawilżanie, anti-aging i HydraFacial. Dobieramy protokół do Twojego rodzaju skóry i celów pielęgnacyjnych.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja dłoni i stóp",
+        body: [
+          "Manicure i pedicure w Warszawie — od klasycznego po hybrydowy i SPA. Stawiamy na higienę, precyzję i trwałość.",
+        ],
+      },
+      {
+        heading: "Makijaż okazjonalny",
+        body: [
+          "Profesjonalny makijaż ślubny, wieczorowy i na specjalne okazje. Oferujemy również makijaż permanentny i hennę brwi.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Zabiegi na twarz", desc: "HydraFacial, anti-aging i nawilżanie." },
+      { title: "Keratyna i nanoplastia", desc: "Gładkie, zdrowe włosy na miesiące." },
+      { title: "Manicure i pedicure", desc: "Higiena i precyzja przy każdym zabiegu." },
+      { title: "Makijaż ślubny", desc: "Profesjonalny makijaż na Twój wyjątkowy dzień." },
+    ],
+    faqs: [
+      {
+        q: "Jakie zabiegi na twarz oferujecie?",
+        a: "Oferujemy oczyszczanie wodorowe, HydraFacial, zabiegi nawilżające, anti-aging i peelingi. Dobieramy protokół do rodzaju skóry.",
+      },
+      {
+        q: "Czy mogę umówić się na keratynowe prostowanie?",
+        a: "Tak — oferujemy keratynowe prostowanie i nanoplastię dla włosów średnich i długich. Zapraszamy na konsultację.",
+      },
+      {
+        q: "Czy salon urody w Warszawie oferuje parking?",
+        a: "Tak — zapewniamy bezpłatny parking dla naszych gości.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "royal-nanoplasty",
+      "keratin-treatment-medium",
+      "royal-facial",
+      "manicure",
+      "pedicure",
+      "bridal-makeup",
+    ],
+    relatedNicheSlugs: [
+      "salon-pieknosci-warszawa",
+      "salon-kosmetyczny-warszawa",
+      "hijab-friendly-salon-warsaw",
+    ],
+    relatedCategorySlugs: ["hair", "facials", "nails"],
+    serviceName: "Salon Urody w Warszawie",
+    serviceDescription:
+      "Salon urody w centrum Warszawy — koloryzacja, keratyna, manicure, pedicure, zabiegi na twarz i makijaż.",
+    imageAltRecommendations: [
+      "Salon urody w Warszawie — zabieg na twarz",
+      "Keratynowe prostowanie włosów Warszawa",
+      "Manicure SPA w salonie urody Warszawa",
+      "Makijaż ślubny w salonie urody Warszawa",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę w salonie urody Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── fryzjer-warszawa ─────────────────────────── */
+  {
+    slug: "fryzjer-warszawa",
+    locale: "pl",
+    primaryKeyword: "fryzjer Warszawa",
+    secondaryKeywords: [
+      "fryzjer damski Warszawa",
+      "salon fryzjerski Warszawa",
+      "fryzjer Warszawa Centrum",
+      "najlepszy fryzjer Warszawa",
+      "fryzjer Warszawa opinie",
+    ],
+    title: "Fryzjer w Warszawie — Koloryzacja, Keratyna, Strzyżenie",
+    metaDescription:
+      "Fryzjer w centrum Warszawy — balayage, koloryzacja, keratynowe prostowanie, strzyżenie i modelowanie. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Fryzjer w Warszawie",
+    eyebrow: "Fryzjer • Warszawa",
+    tagline:
+      "Profesjonalny fryzjer w centrum Warszawy — koloryzacja, keratyna i strzyżenie.",
+    heroImage: U("photo-1560066984-138dadb4c035"),
+    heroAlt: "Profesjonalny fryzjer przy pracy w salonie w Warszawie",
+    intro: [
+      "Szukasz fryzjera w Warszawie, który rozumie Twoje włosy i potrafi nadać im wymarzony kształt i kolor? Royal Beauty Salon to salon fryzjerski w centrum Warszawy, w którym doświadczeni styliści tworzą looki dopasowane do Twojej twarzy, stylu i osobowości.",
+      "Od subtelnego balayage po odważną koloryzację globalną, od keratynowego prostowania po precyzyjne strzyżenie — nasz zespół łączy europejskie techniki z produktami najwyższej jakości, dbając o zdrowie włosów przy każdym zabiegu.",
+      "Każda wizyta u fryzjera w naszym salonie zaczyna się od konsultacji, abyś mogła odejść z włosami, które kochasz.",
+    ],
+    sections: [
+      {
+        heading: "Koloryzacja i balayage",
+        body: [
+          "Nasi koloryści specjalizują się w balayage, rozjaśnianiu, koloryzacji globalnej i zakrywaniu siwizny. Używamy niskiamonijowych, chroniących wiązania linii koloryzujących.",
+        ],
+      },
+      {
+        heading: "Keratynowe prostowanie i nanoplastia",
+        body: [
+          "Wyprostuj i wygładź włosy na miesiące dzięki naszym zabiegom keratynowym i nanoplastii. Idealne dla włosów puszących się i niesfornych.",
+        ],
+      },
+      {
+        heading: "Strzyżenie i modelowanie",
+        body: [
+          "Precyzyjne strzyżenie dopasowane do kształtu twarzy i stylu życia. Oferujemy również modelowanie, blow-out i stylizację okazjonalną.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja i leczenie włosów",
+        body: [
+          "Oferujemy zabiegi SPA, olejki, ampułki i intensywne kuracje regenerujące, aby przywrócić włosom zdrowie i blask.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Balayage i koloryzacja", desc: "Subtelne i odważne looki kolorystyczne." },
+      { title: "Keratyna i nanoplastia", desc: "Gładkie, łatwe w obsłudze włosy." },
+      { title: "Strzyżenie dopasowane", desc: "Do kształtu twarzy i stylu życia." },
+      { title: "Zdrowe włosy", desc: "Produkty niskiamonijowe i ochrona wiązań." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje fryzjer w Warszawie?",
+        a: "Ceny zaczynają się od 63 zł za strzyżenie podstawowe, 108 zł za strzyżenie zaawansowane z modelowaniem. Koloryzacja i keratyna — cena do ustalenia na konsultacji.",
+      },
+      {
+        q: "Czy oferujecie keratynowe prostowanie włosów?",
+        a: "Tak — oferujemy keratynowe prostowanie i nanoplastię dla włosów średnich i długich. Zapraszamy na konsultację.",
+      },
+      {
+        q: "Jak umówić wizytę u fryzjera w Warszawie?",
+        a: "Możesz umówić wizytę telefonicznie, przez WhatsApp lub online. Zalecamy rezerwację z wyprzedzeniem.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "fashion-shade-global-color",
+      "royal-nanoplasty",
+      "keratin-treatment-medium",
+      "blow-dry",
+      "hair-spa-blow-dry",
+    ],
+    relatedNicheSlugs: [
+      "salon-pieknosci-warszawa",
+      "salon-urody-warszawa",
+      "salon-kosmetyczny-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Fryzjer w Warszawie",
+    serviceDescription:
+      "Profesjonalny fryzjer w centrum Warszawy — koloryzacja, balayage, keratynowe prostowanie, nanoplastia i strzyżenie.",
+    imageAltRecommendations: [
+      "Fryzjer koloryzujący włosy w salonie Warszawa",
+      "Keratynowe prostowanie włosów Warszawa",
+      "Strzyżenie damskie u fryzjera w Warszawie",
+      "Balayage w salonie fryzjerskim Warszawa",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę u fryzjera w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── depilacja-warszawa ─────────────────────────── */
+  {
+    slug: "depilacja-warszawa",
+    locale: "pl",
+    primaryKeyword: "depilacja Warszawa",
+    secondaryKeywords: [
+      "depilacja laserowa Warszawa",
+      "depilacja woskiem Warszawa",
+      "depilacja nóg Warszawa",
+      "depilacja bikini Warszawa",
+      "depilacja nitką Warszawa",
+    ],
+    title: "Depilacja w Warszawie — Wosk, Nitka i Laser",
+    metaDescription:
+      "Profesjonalna depilacja w Warszawie — wosk, nitka i laserowa. Gładka skóra na tygodnie. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Depilacja w Warszawie",
+    eyebrow: "Depilacja • Warszawa",
+    tagline:
+      "Gładka skóra na tygodnie — depilacja woskiem, nitką i laserowa w centrum Warszawy.",
+    heroImage: U("photo-1516975080664-ed2fc6a32937"),
+    heroAlt: "Profesjonalna depilacja w salonie w Warszawie",
+    intro: [
+      "Gładka skóra bez podrażnień i wrastających włosów — to obietnica profesjonalnej depilacji w Royal Beauty Salon w Warszawie. Oferujemy depilację woskiem, nitką i depilację laserową, dobierając metodę do Twojego rodzaju skóry i włosów.",
+      "Nasi specjaliści używają niskotermperaturowe woski i jednorazowe aplikatory, zapewniając higienę i komfort przy każdym zabiegu. Depilacja nitką to precyzyjna alternatywa dla wosku, idealna dla wrażliwej skóry.",
+      "Regularna depilacja sprawia, że odrastające włoski stają się rzadsze i delikatniejsze — wiele klientek zauważa różnicę już po kilku wizytach.",
+    ],
+    sections: [
+      {
+        heading: "Depilacja woskiem",
+        body: [
+          "Od nóg po bikini — nasza depilacja woskiem usuwa włoski z cebulką, zapewniając gładkość na 3-6 tygodni. Używamy wosków niskotermperaturowych i jednorazowych aplikatorów.",
+        ],
+      },
+      {
+        heading: "Depilacja nitką (threading)",
+        body: [
+          "Precyzyjna depilacja nitką — idealna do wąsika, brwi i twarzy. Nitka usuwa włoski dokładnie od cebulki, bez podrażnień.",
+        ],
+      },
+      {
+        heading: "Depilacja laserowa",
+        body: [
+          "Trwałe usuwanie owłosienia laserem — idealne dla osób szukających długotrwałych efektów. Oferujemy pakiety na różne partie ciała.",
+        ],
+      },
+      {
+        heading: "Depilacja intymna",
+        body: [
+          "Brazilian wax i depilacja bikini — delikatnie i profesjonalnie, z zachowaniem pełnej dyskrecji i higieny.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Higiena", desc: "Jednorazowe aplikatory i sterylne warunki." },
+      { title: "Bez wrastających włosów", desc: "Profesjonalna technika minimalizuje ryzyko." },
+      { title: "Trwałe efekty", desc: "Gładka skóra na tygodnie." },
+      { title: "Pakiety laserowe", desc: "Depilacja laserowa w atrakcyjnych cenach." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje depilacja w Warszawie?",
+        a: "Ceny depilacji woskiem zaczynają się od 30 zł za wąsik, 50 zł za bikini i 80 zł za nogi. Depilacja nitką — od 25 zł.",
+      },
+      {
+        q: "Czy depilacja laserowa jest bolesna?",
+        a: "Zabieg jest komfortowy — większość klientek odczuwa delikatne ciepło. Stosujemy chłodzenie przed i po zabiegu.",
+      },
+      {
+        q: "Jak często należy powtarzać depilację woskiem?",
+        a: "Co 3-6 tygodni, w zależności od partii ciała i tempa odrastania włosów.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "full-legs-wax",
+      "brazilian-wax",
+      "threading-combo",
+      "full-arms-wax",
+    ],
+    relatedNicheSlugs: ["salon-pieknosci-warszawa", "indian-parlour-warsaw"],
+    relatedCategorySlugs: ["waxing", "threading"],
+    serviceName: "Depilacja w Warszawie",
+    serviceDescription:
+      "Profesjonalna depilacja w Warszawie — wosk, nitka i laserowa. Gładka skóra na tygodnie.",
+    imageAltRecommendations: [
+      "Depilacja woskiem w salonie Warszawa",
+      "Depilacja nitką w salonie kosmetycznym Warszawa",
+      "Depilacja laserowa w Warszawie",
+      "Brazilian wax w profesjonalnym salonie Warszawa",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na depilację w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── manicure-warszawa ─────────────────────────── */
+  {
+    slug: "manicure-warszawa",
+    locale: "pl",
+    primaryKeyword: "manicure Warszawa",
+    secondaryKeywords: [
+      "manicure hybrydowy Warszawa",
+      "pedicure Warszawa",
+      "salon manicure Warszawa",
+      "manicure Warszawa cena",
+      "manicure SPA Warszawa",
+    ],
+    title: "Manicure i Pedicure w Warszawie — Hybryda, SPA, Klasyczny",
+    metaDescription:
+      "Manicure i pedicure w centrum Warszawy — hybrydowy, klasyczny, SPA i żelowy. Higiena i precyzja. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Manicure i Pedicure w Warszawie",
+    eyebrow: "Manicure • Pedicure • Warszawa",
+    tagline:
+      "Piękne, zadbane dłonie i stopy — manicure i pedicure w eleganckim salonie w Warszawie.",
+    heroImage: U("photo-1604654892683-403ddb220dce"),
+    heroAlt: "Profesjonalny manicure hybrydowy w salonie w Warszawie",
+    intro: [
+      "Zadbane dłonie to wizytówka każdej kobiety. W Royal Beauty Salon w Warszawie oferujemy manicure i pedicure w pełnym zakresie — od klasycznego, przez hybrydowy, po SPA i żelowy — zawsze w sterylnych warunkach i z dbałością o każdy detal.",
+      "Nasi specjaliści od manicure znają się na pielęgnacji skórek, precyzyjnym opracowaniu płytki i trwałych kolorach, które utrzymują się tygodniami bez odprysków.",
+      "Oferujemy również pedicure leczniczy i relaksujący, idealny po długim dniu lub jako element kompleksowej pielęgnacji stóp.",
+    ],
+    sections: [
+      {
+        heading: "Manicure hybrydowy",
+        body: [
+          "Trwały kolor bez odprysków na 2-3 tygodnie. Oferujemy szeroką paletę kolorów i efektów — od klasycznych po trendowe.",
+        ],
+      },
+      {
+        heading: "Manicure klasyczny i SPA",
+        body: [
+          "Pielęgnacja skórek, opracowanie płytki i odżywka. Manicure SPA z peelingiem, maską i masażem dłoni.",
+        ],
+      },
+      {
+        heading: "Pedicure",
+        body: [
+          "Profesjonalny pedicure klasyczny, hybrydowy i relaksujący. Opracowanie skórek, pętli i pięt.",
+        ],
+      },
+      {
+        heading: "Żel i akryl",
+        body: [
+          "Przedłużanie i wzmacnianie paznokci żelem i akrylem — naturalne efekty, trwałość i elegancja.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Higiena", desc: "Sterylne narzędzia i jednorazowe pilniki." },
+      { title: "Trwałość", desc: "Hybryda utrzymuje się 2-3 tygodnie." },
+      { title: "Pielęgnacja", desc: "Manicure SPA z masażem i odżywką." },
+      { title: "Szeroka paleta", desc: "Setki kolorów i efektów do wyboru." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje manicure hybrydowy w Warszawie?",
+        a: "Manicure hybrydowy w naszym salonie zaczyna się od 80 zł. Manicure klasyczny — od 50 zł. Pedicure — od 90 zł.",
+      },
+      {
+        q: "Jak długo utrzymuje się manicure hybrydowy?",
+        a: "Hybryda utrzymuje się 2-3 tygodnie bez odprysków, pod warunkiem prawidłowej aplikacji i pielęgnacji.",
+      },
+      {
+        q: "Czy oferujecie manicure SPA?",
+        a: "Tak — nasz manicure SPA obejmuje peeling, maskę, masaż i odżywczy zabieg na dłonie.",
+      },
+    ],
+    featuredServiceSlugs: ["manicure", "pedicure", "nail-art"],
+    relatedNicheSlugs: [
+      "salon-pieknosci-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["nails"],
+    serviceName: "Manicure i Pedicure w Warszawie",
+    serviceDescription:
+      "Manicure i pedicure w centrum Warszawy — hybrydowy, klasyczny, SPA i żelowy. Higiena i precyzja.",
+    imageAltRecommendations: [
+      "Manicure hybrydowy w salonie Warszawa",
+      "Pedicure SPA w salonie kosmetycznym Warszawa",
+      "Manicure żelowy profesjonalnie Warszawa",
+      "Pielęgnacja paznokci w eleganckim salonie Warszawa",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na manicure w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── makijaz-slubny-warszawa ─────────────────────────── */
+  {
+    slug: "makijaz-slubny-warszawa",
+    locale: "pl",
+    primaryKeyword: "makijaż ślubny Warszawa",
+    secondaryKeywords: [
+      "makijaż ślubny Warszawa cena",
+      "makijaż ślubny Warszawa 2026",
+      "wizażystka ślubna Warszawa",
+      "makijaż okazjonalny Warszawa",
+      "makijaż na wesele Warszawa",
+    ],
+    title: "Makijaż Ślubny w Warszawie — Profesjonalny Wizażysta",
+    metaDescription:
+      "Profesjonalny makijaż ślubny w Warszawie — trwały, HD, z próbnym makijażem. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Makijaż Ślubny w Warszawie",
+    eyebrow: "Makijaż Ślubny • Warszawa",
+    tagline:
+      "Perfekcyjny makijaż na Twój wyjątkowy dzień — trwały, piękny i dopasowany do Ciebie.",
+    heroImage: U("photo-1487412720507-e7ab37603c6f"),
+    heroAlt: "Profesjonalny makijaż ślubny wykonywany w Warszawie",
+    intro: [
+      "Twój dzień ślubu zasługuje na makijaż, który przetrwa od pierwszego spojrzenia do ostatniego tańca. W Royal Beauty Salon w Warszawie tworzymy makijaże ślubne, które wyglądają naturalnie na zdjęciach i na żywo, dzięki zastosowaniu produktów HD i technik transfer-resistant.",
+      "Każdy makijaż ślubny poprzedza próbna sesja, podczas której dopracowujemy kolory, konturowanie i styl, abyś w dniu ślubu czuła się pewnie i pięknie.",
+      "Oferujemy również makijaż dla druhen, matek i gości weselnych — cała drużyna może być gotowa razem.",
+    ],
+    sections: [
+      {
+        heading: "Makijaż ślubny krok po kroku",
+        body: [
+          "Zaczynamy od analizy skóry i konsultacji, następnie próbna sesja makijażu, a w dniu ślubu — precyzyjna aplikacja z utrwaleniem na wiele godzin.",
+        ],
+      },
+      {
+        heading: "Trwałość i fotogeniczność",
+        body: [
+          "Używamy produktów HD, transfer-resistant i long-wearing, które wyglądają idealnie zarówno na zdjęciach, jak i na żywo.",
+        ],
+      },
+      {
+        heading: "Makijaż dla całej drużyny",
+        body: [
+          "Oferujemy makijaż ślubny, wieczorowy i okazjonalny dla druhen, matek i gości. Cała grupa może być gotowa jednocześnie.",
+        ],
+      },
+      {
+        heading: "Dojazd do klientki",
+        body: [
+          "Oferujemy dojazd do domu, hotelu lub sali weselnej na terenie całej Warszawy i okolic.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Próbny makijaż", desc: "Dopracowujemy look przed ślubem." },
+      { title: "Trwałość cały dzień", desc: "Produkty HD i long-wearing." },
+      { title: "Dojazd", desc: "Przyjedziemy do Ciebie na terenie Warszawy." },
+      { title: "Drużyna", desc: "Makijaż dla druhen i gości." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje makijaż ślubny w Warszawie?",
+        a: "Makijaż ślubny w naszym salonie zaczyna się od 250 zł, wliczając próbną sesję. Makijaż dla druhen — od 150 zł.",
+      },
+      {
+        q: "Jak wcześnie rezerwować makijaż ślubny?",
+        a: "Zalecamy rezerwację 4-6 tygodni przed ślubem, abyśmy mogły przeprowadzić próbną sesję i zarezerwować termin.",
+      },
+      {
+        q: "Czy oferujecie dojazd do sali weselnej?",
+        a: "Tak — nasz zespół dojedzie do domu, hotelu lub sali weselnej na terenie całej Warszawy.",
+      },
+    ],
+    featuredServiceSlugs: ["bridal-makeup", "party-makeup", "bridal-hairstyle"],
+    relatedNicheSlugs: ["desi-salon-warsaw", "salon-pieknosci-warszawa"],
+    relatedCategorySlugs: ["makeup"],
+    serviceName: "Makijaż Ślubny w Warszawie",
+    serviceDescription:
+      "Profesjonalny makijaż ślubny w Warszawie — trwały, HD, z próbnym makijażem i dojazdem.",
+    imageAltRecommendations: [
+      "Makijaż ślubny w Warszawie — efekt końcowy",
+      "Wizażystka ślubna pracująca w salonie Warszawa",
+      "Próbny makijaż ślubny w salonie kosmetycznym",
+      "Makijaż dla druhen na ślubie w Warszawie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym zarezerwować makijaż ślubny w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── keratynowe-prostowanie-warszawa ─────────────────────────── */
+  {
+    slug: "keratynowe-prostowanie-warszawa",
+    locale: "pl",
+    primaryKeyword: "keratynowe prostowanie Warszawa",
+    secondaryKeywords: [
+      "keratynowe prostowanie włosów Warszawa cena",
+      "nanoplastia Warszawa",
+      "wygładzanie włosów Warszawa",
+      "keratyna do włosów Warszawa",
+      "prostowanie włosów Warszawa",
+    ],
+    title: "Keratynowe Prostowanie Włosów w Warszawie — Cennik",
+    metaDescription:
+      "Keratynowe prostowanie i nanoplastia włosów w Warszawie. Gładkie, zdrowe włosy na 3-5 miesięcy. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Keratynowe Prostowanie Włosów w Warszawie",
+    eyebrow: "Keratyna • Nanoplastia • Warszawa",
+    tagline:
+      "Pożegnaj puszenie się włosów — keratynowe prostowanie i nanoplastia w centrum Warszawy.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt: "Gładkie, lśniące włosy po keratynowym prostowaniu w Warszawie",
+    intro: [
+      "Puszące się, niesforne włosy mogą być frustrujące — ale keratynowe prostowanie w Royal Beauty Salon w Warszawie zmienia to w kilka godzin. Oferujemy keratynowe prostowanie i nanoplastię, które wygładzają włosy na 3-5 miesięcy, dzięki zastosowaniu profesjonalnych, niskoszkodliwych formuł.",
+      "Każdy zabieg zaczyna się od analizy stanu włosów i doboru odpowiedniego produktu — czy to keratyna, silk botox, czy nanoplastia. Dbamy o to, aby Twoje włosy pozostały zdrowe i silne po zabiegu.",
+      "Rezultaty są natychmiastowe — włosy stają się gładkie, lśniące i łatwe w codziennej stylizacji.",
+    ],
+    sections: [
+      {
+        heading: "Keratynowe prostowanie — jak to działa?",
+        body: [
+          "Keratyna wnika w strukturę włosów, wypełniając ubytki i uszczelniając łuski. Dzięki temu włosy stają się gładkie, lśniące i odporne na wilgoć.",
+        ],
+      },
+      {
+        heading: "Nanoplastia — łagodniejsza alternatywa",
+        body: [
+          "Nanoplastia to nowoczesny zabieg wygładzający bez formaldehydu. Jest łagodniejsza dla włosów i skóry głowy, a efekty utrzymują się równie długo.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja po zabiegu",
+        body: [
+          "Podpowiadamy, jak dbać o włosy po keratynowym prostowaniu — szampony bez siarczanów, unikanie soli i chloru, regularne odżywki.",
+        ],
+      },
+      {
+        heading: "Cennik keratynowego prostowania",
+        body: [
+          "Ceny zaczynają się od 350 zł za włosy krótkie, od 500 zł za średnie i od 700 zł za długie. Dokładna cena zależy od długości i gęstości włosów.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Natychmiastowe efekty", desc: "Gładkie, lśniące włosy od razu po zabiegu." },
+      { title: "Trwałość 3-5 miesięcy", desc: "Długotrwałe wygładzenie." },
+      { title: "Bez formaldehydu", desc: "Nanoplastia — łagodniejsza dla włosów." },
+      { title: "Pielęgnacja domowa", desc: "Podpowiadamy, jak utrzymać efekt." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje keratynowe prostowanie włosów w Warszawie?",
+        a: "Ceny zaczynają się od 350 zł za włosy krótkie, od 500 zł za średnie i od 700 zł za długie. Dokładna cena zależy od długości i gęstości.",
+      },
+      {
+        q: "Czy keratynowe prostowanie niszczy włosy?",
+        a: "Nie — profesjonalnie wykonany zabieg jest bezpieczny i może nawet poprawić kondycję włosów dzięki wypełnieniu ubytków keratyną.",
+      },
+      {
+        q: "Jak długo utrzymuje się efekt keratynowego prostowania?",
+        a: "Efekt utrzymuje się 3-5 miesięcy, w zależności od rodzaju włosów i pielęgnacji domowej.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "royal-nanoplasty",
+      "keratin-treatment-medium",
+      "keratin-treatment-long",
+      "silk-botox-smoothing-medium",
+    ],
+    relatedNicheSlugs: [
+      "keratin-nanoplasty-hijab-hair-warsaw",
+      "fryzjer-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Keratynowe Prostowanie Włosów w Warszawie",
+    serviceDescription:
+      "Keratynowe prostowanie i nanoplastia włosów w Warszawie — gładkie, zdrowe włosy na 3-5 miesięcy.",
+    imageAltRecommendations: [
+      "Keratynowe prostowanie włosów w salonie Warszawa",
+      "Nanoplastia włosów — efekt przed i po",
+      "Gładkie włosy po zabiegu keratynowym Warszawa",
+      "Profesjonalny zabieg keratynowy w Warszawie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na keratynowe prostowanie włosów w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── baleaz-warszawa ─────────────────────────── */
+  {
+    slug: "baleaz-warszawa",
+    locale: "pl",
+    primaryKeyword: "baleaż Warszawa",
+    secondaryKeywords: [
+      "baleaż Warszawa cena",
+      "balayage Warszawa",
+      "rozjaśnianie włosów Warszawa",
+      "pasemka Warszawa",
+      "koloryzacja włosów Warszawa",
+    ],
+    title: "Baleaż w Warszawie — Subtelne Rozjaśnianie Włosów",
+    metaDescription:
+      "Profesjonalny baleaż w Warszawie — subtelne, naturalne rozjaśnianie włosów. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Baleaż w Warszawie",
+    eyebrow: "Baleaż • Koloryzacja • Warszawa",
+    tagline:
+      "Naturalne, sun-kissed rozjaśnianie włosów przez profesjonalnych koloryzistów w Warszawie.",
+    heroImage: U("photo-1519699047748-de8e457a634e"),
+    heroAlt: "Profesjonalny baleaż na włosach w salonie w Warszawie",
+    intro: [
+      "Baleaż to technika koloryzacji, która tworzy naturalne, miękkie przejścia kolorystyczne — jakby włosy zostały rozjaśnione słońcem. W Royal Beauty Salon w Warszawie nasi koloryści specjalizują się w baleażu, tworząc looki od subtelnych po odważne.",
+      "Każdy baleaż jest indywidualnie projektowany — dobieramy odcień, intensywność i umieszczenie pasemek, aby efekt komplementował Twoją karnację i styl.",
+      "Używamy niskiamonijowych, chroniących wiązania produktów, aby Twoje włosy pozostały zdrowe i lśniące po zabiegu.",
+    ],
+    sections: [
+      {
+        heading: "Czym jest baleaż?",
+        body: [
+          "Baleaż to ręczna technika rozjaśniania, która tworzy naturalne, miękkie przejścia. W przeciwieństwie do tradycyjnych pasemek, baleaż daje efekt stopniowego przejścia koloru.",
+        ],
+      },
+      {
+        heading: "Baleaż a pasemka",
+        body: [
+          "Baleaż jest bardziej naturalny i wymaga mniejszej ilości zabiegów utrzymania niż tradycyjne pasemka. Efekt jest miękki i organiczny.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja po baleażu",
+        body: [
+          "Po zabiegu zalecamy szampony i odżywki dedykowane włosom rozjaśnianym, aby zachować kolor i zdrowie włosów.",
+        ],
+      },
+      {
+        heading: "Cennik baleażu w Warszawie",
+        body: [
+          "Ceny baleażu zaczynają się od 200 zł za krótkie włosy, od 300 zł za średnie i od 400 zł za długie.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Naturalne efekty", desc: "Subtelne, sun-kissed przejścia kolorystyczne." },
+      { title: "Zdrowe włosy", desc: "Niskiamonijowe, chroniące produkty." },
+      { title: "Indywidualny projekt", desc: "Dopasowujemy do karnacji i stylu." },
+      { title: "Trwałość", desc: "Efekt utrzymuje się miesiącami." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje baleaż w Warszawie?",
+        a: "Ceny zaczynają się od 200 zł za krótkie włosy, od 300 zł za średnie i od 400 zł za długie.",
+      },
+      {
+        q: "Baleaż czy pasemka — co lepsze?",
+        a: "Baleaż daje bardziej naturalny efekt i wymaga rzadszych wizyt. Pasemka są bardziej wyraziste. Doradzimy, co sprawdzi się lepiej.",
+      },
+      {
+        q: "Jak często należy powtarzać baleaż?",
+        a: "Co 3-4 miesiące, aby utrzymać świeży, naturalny wygląd.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-highlights-medium",
+      "fashion-shade-global-color",
+      "hair-cutting-advanced",
+    ],
+    relatedNicheSlugs: ["fryzjer-warszawa", "salon-urody-warszawa"],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Baleaż w Warszawie",
+    serviceDescription:
+      "Profesjonalny baleaż w Warszawie — subtelne, naturalne rozjaśnianie włosów przez doświadczonych koloryzistów.",
+    imageAltRecommendations: [
+      "Baleaż na włosach w salonie Warszawa",
+      "Efekt baleażu — naturalne rozjaśnianie",
+      "Koloryzacja baleaż w profesjonalnym salonie Warszawa",
+      "Baleaż a pasemka — porównanie w salonie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na baleaż w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── henna-brwi-warszawa ─────────────────────────── */
+  {
+    slug: "henna-brwi-warszawa",
+    locale: "pl",
+    primaryKeyword: "henna brwi Warszawa",
+    secondaryKeywords: [
+      "henna brwi Warszawa cena",
+      "regulacja brwi Warszawa",
+      "henna rzęs Warszawa",
+      "barwienie brwi Warszawa",
+      "brwi henna Warszawa",
+    ],
+    title: "Henna Brwi w Warszawie — Barwienie i Regulacja",
+    metaDescription:
+      "Henna brwi i regulacja w Warszawie — precyzyjne modelowanie i naturalne barwienie. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Henna Brwi w Warszawie",
+    eyebrow: "Henna Brwi • Warszawa",
+    tagline:
+      "Podkreśl kształt i kolor brwi naturalną henną — precyzyjna regulacja i barwienie.",
+    heroImage: U("photo-1516975080664-ed2fc6a32937"),
+    heroAlt: "Profesjonalna henna brwi wykonywana w salonie w Warszawie",
+    intro: [
+      "Piękne, zdefiniowane brwi ramują twarz i dodają wyrazu spojrzeniu. W Royal Beauty Salon w Warszawie oferujemy hennę brwi — naturalne barwienie, które podkreśla kształt i intensywność koloru na kilka tygodni.",
+      "Każda henna poprzedza precyzyjną regulację, aby nadać brwiom idealny kształt dopasowany do Twojej twarzy. Używamy henny roślinnej, która jest delikatna dla skóry i daje naturalne efekty.",
+      "Oferujemy również hennę rzęs i kompleksową pielęgnację okolic oczu.",
+    ],
+    sections: [
+      {
+        heading: "Henna brwi — krok po kroku",
+        body: [
+          "Zaczynamy od precyzyjnej regulacji, następnie nakładamy hennę i pozostawiamy na kilka minut. Efekt: zdefiniowane, naturalnie podkreślone brwi.",
+        ],
+      },
+      {
+        heading: "Regulacja brwi nitką",
+        body: [
+          "Precyzyjna regulacja brwi metodą nitki — idealna dla klientów ceniących dokładność i naturalny efekt.",
+        ],
+      },
+      {
+        heading: "Henna rzęs",
+        body: [
+          "Barwienie rzęs henną — delikatne przyciemnienie, które otwiera spojrzenie bez tuszu.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja po hennie",
+        body: [
+          "Podpowiadamy, jak dbać o brwi po hennie — unikanie wody przez 24h, stosowanie odżywek.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Naturalna henna", desc: "Roślinna, delikatna dla skóry." },
+      { title: "Precyzyjna regulacja", desc: "Metodą nitki dla idealnego kształtu." },
+      { title: "Trwałość", desc: "Kolor utrzymuje się 2-3 tygodnie." },
+      { title: "Szybki zabieg", desc: "Gotowe w 20-30 minut." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje henna brwi w Warszawie?",
+        a: "Henna brwi z regulacją w naszym salonie kosztuje 40-60 zł, w zależności od zakresu usługi.",
+      },
+      {
+        q: "Jak długo utrzymuje się henna brwi?",
+        a: "Henna utrzymuje się 2-3 tygodnie, w zależności od typu skóry i pielęgnacji.",
+      },
+      {
+        q: "Czy henna jest bezpieczna dla skóry?",
+        a: "Tak — używamy henny roślinnej, która jest delikatna i nie podrażnia skóry.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "henna-eyebrows",
+      "threading-combo",
+      "full-face-eyebrows-threading",
+    ],
+    relatedNicheSlugs: [
+      "indian-parlour-warsaw",
+      "salon-pieknosci-warszawa",
+    ],
+    relatedCategorySlugs: ["threading"],
+    serviceName: "Henna Brwi w Warszawie",
+    serviceDescription:
+      "Henna brwi i regulacja w Warszawie — precyzyjne modelowanie i naturalne barwienie.",
+    imageAltRecommendations: [
+      "Henna brwi w salonie kosmetycznym Warszawa",
+      "Regulacja brwi nitką w Warszawie",
+      "Henna rzęs — efekt przed i po",
+      "Profesjonalna henna brwi w eleganckim salonie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na hennę brwi w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── przedluzanie-rzes-warszawa ─────────────────────────── */
+  {
+    slug: "przedluzanie-rzes-warszawa",
+    locale: "pl",
+    primaryKeyword: "przedłużanie rzęs Warszawa",
+    secondaryKeywords: [
+      "przedłużanie rzęs Warszawa cena",
+      "rzęsy objętościowe Warszawa",
+      "lifting rzęs Warszawa",
+      "przedłużanie rzęs 1:1 Warszawa",
+      "salon rzęs Warszawa",
+    ],
+    title: "Przedłużanie Rzęs w Warszawie — 1:1, Objętościowe, Lifting",
+    metaDescription:
+      "Przedłużanie i zagęszczanie rzęs w Warszawie — 1:1, objętościowe i lifting. Naturalne, piękne rzęsy. Royal Beauty Salon.",
+    h1: "Przedłużanie Rzęs w Warszawie",
+    eyebrow: "Rzęsy • Warszawa",
+    tagline:
+      "Długie, gęste, piękne rzęsy — przedłużanie i lifting w centrum Warszawy.",
+    heroImage: U("photo-1596462502278-27bfdc403348"),
+    heroAlt: "Profesjonalne przedłużanie rzęs w salonie w Warszawie",
+    intro: [
+      "Marzysz o długich, gęstych rzęsach bez tuszu? W Royal Beauty Salon w Warszawie oferujemy przedłużanie rzęs metodą 1:1, objętościową i volume, a także lifting i laminowanie rzęs — zawsze z dbałością o naturalny efekt i zdrowie Twoich rzęs.",
+      "Każda aplikacja jest indywidualnie dopasowana — dobieramy długość, grubość i skręt, aby efekt komplementował Twoją twarz i był naturalny.",
+      "Oferujemy również lifting rzęs — zabieg, który podkręca i pogrubia naturalne rzęsy bez przedłużania.",
+    ],
+    sections: [
+      {
+        heading: "Przedłużanie 1:1",
+        body: [
+          "Jedna sztuczna rzęsa na jedną naturalną — efekt naturalnego wydłużenia i zagęszczenia. Idealne na co dzień.",
+        ],
+      },
+      {
+        heading: "Rzęsy objętościowe i volume",
+        body: [
+          "Kilka cienkich sztucznych rzęs na jedną naturalną — efekt pełniejszych, bardziej dramatycznych rzęs.",
+        ],
+      },
+      {
+        heading: "Lifting i laminowanie rzęs",
+        body: [
+          "Podkręcenie i pogrubienie naturalnych rzęs — idealne dla osób, które wolą naturalny efekt bez przedłużania.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja po zabiegu",
+        body: [
+          "Unikaj wody i pary przez 24h, nie trzyj oczu, stosuj szczoteczkę do rzęs.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Naturalny efekt", desc: "Dopasowujemy do Twojej twarzy." },
+      { title: "Bez tuszu", desc: "Piękne rzęsy bez codziennego makijażu." },
+      { title: "Lifting rzęs", desc: "Naturalne podkręcenie bez przedłużania." },
+      { title: "Trwałość", desc: "Efekt utrzymuje się 3-4 tygodnie." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje przedłużanie rzęs w Warszawie?",
+        a: "Przedłużanie 1:1 zaczyna się od 120 zł, objętościowe od 150 zł, lifting od 100 zł.",
+      },
+      {
+        q: "Jak często należy uzupełniać rzęsy?",
+        a: "Co 3-4 tygodnie, aby utrzymać pełny, równomierny efekt.",
+      },
+      {
+        q: "Czy przedłużanie rzęs niszczy naturalne rzęsy?",
+        a: "Nie — profesjonalna aplikacja jest bezpieczna. Stosujemy lekkie kleje i nie obciążamy rzęs.",
+      },
+    ],
+    featuredServiceSlugs: ["lash-extensions", "lash-lift"],
+    relatedNicheSlugs: [
+      "salon-pieknosci-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["makeup"],
+    serviceName: "Przedłużanie Rzęs w Warszawie",
+    serviceDescription:
+      "Przedłużanie i zagęszczanie rzęs w Warszawie — 1:1, objętościowe i lifting. Naturalne, piękne rzęsy.",
+    imageAltRecommendations: [
+      "Przedłużanie rzęs metodą 1:1 w salonie Warszawa",
+      "Rzęsy objętościowe — efekt before/after",
+      "Lifting rzęs w profesjonalnym salonie Warszawa",
+      "Piękne, przedłużone rzęsy po zabiegu",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na przedłużanie rzęs w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── Salon tylko dla kobiet ─────────────────────────── */
+  {
+    slug: "salon-tylko-dla-kobiet-warszawa",
+    locale: "pl",
+    primaryKeyword: "salon tylko dla kobiet Warszawa",
+    secondaryKeywords: [
+      "salon tylko dla kobiet Warszawa",
+      "salon fryzjerski tylko dla kobiet Warszawa",
+      "salon kosmetyczny tylko dla kobiet Warszawa",
+      "salon damski Warszawa",
+    ],
+    title: "Salon Tylko dla Kobiet w Warszawie — Prywatna Atmosfera",
+    metaDescription:
+      "Salon tylko dla kobiet w Warszawie — prywatna, komfortowa atmosfera z żeńskim personelem. Fryzjer, kosmetyczka i manicure. Royal Beauty Salon.",
+    h1: "Salon Tylko dla Kobiet w Warszawie",
+    eyebrow: "Tylko dla Kobiet • Warszawa",
+    tagline:
+      "Prywatna, komfortowa atmosfera z żeńskim personelem — Twój salon, tylko dla kobiet.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt: "Elegancki salon tylko dla kobiet w Warszawie",
+    intro: [
+      "Wiele kobiet czuje się bardziej komfortowo w przestrzeni dedykowanej wyłącznie im — i dokładnie to oferujemy w Royal Beauty Salon w Warszawie. Nasz salon tylko dla kobiet zapewnia prywatną, spokojną atmosferę z żeńskim personelem, w której możesz w pełni się zrelaksować.",
+      "Oferujemy kompleksowe usługi fryzjerskie, kosmetyczne i pielęgnacyjne — od koloryzacji i keratynowego prostowania, przez manicure i pedicure, po zabiegi na twarz i depilację — wszystko w eleganckim wnętrzu zaprojektowanym z myślą o komforcie kobiet.",
+      "Niezależnie od tego, czy szukasz szybkiej wizyty, czy kompleksowej metamorfozy — nasz salon jest miejscem, w którym możesz czuć się swobodnie i bezpiecznie.",
+    ],
+    sections: [
+      {
+        heading: "Prywatna atmosfera",
+        body: [
+          "Nasz salon jest zaprojektowany z myślą o komforcie kobiet — spokojne wnętrza, prywatne stanowiska i żeński personel tworzą atmosferę, w której możesz się w pełni zrelaksować.",
+        ],
+      },
+      {
+        heading: "Fryzjer tylko dla kobiet",
+        body: [
+          "Nasi fryzjerzy specjalizują się w koloryzacji, keratynowym prostowaniu, nanoplastii i precyzyjnym strzyżeniu — wszystko wykonywane przez doświadczone stylistki.",
+        ],
+      },
+      {
+        heading: "Kosmetyczka i pielęgnacja",
+        body: [
+          "Zabiegi na twarz, manicure, pedicure i depilacja — wszystko w prywatnej, komfortowej atmosferze z żeńskim personelem.",
+        ],
+      },
+      {
+        heading: "Dla kobiet, przez kobiety",
+        body: [
+          "Rozumiemy potrzeby kobiet i dbamy o to, aby każda wizyta była wyjątkowa — od konsultacji po pielęgnację po zabiegu.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Tylko dla kobiet", desc: "Prywatna atmosfera z żeńskim personelem." },
+      { title: "Prywatne stanowiska", desc: "Komfort i dyskrecja przy każdej wizycie." },
+      { title: "Pełen zakres usług", desc: "Fryzjer, kosmetyczka i manicure." },
+      { title: "Eleganckie wnętrza", desc: "Piękne, spokojne wnętrza salonu." },
+    ],
+    faqs: [
+      {
+        q: "Czy w waszym salonie są tylko pracownice?",
+        a: "Tak — nasz salon tylko dla kobiet zatrudnia wyłącznie żeński personel, aby zapewnić komfort i prywatność naszym klientkom.",
+      },
+      {
+        q: "Jakie usługi oferujecie?",
+        a: "Pełen zakres — fryzjer, kosmetyczka, manicure, pedicure, depilacja i makijaż, wszystko w prywatnej atmosferze.",
+      },
+      {
+        q: "Czy mogę zaparkować?",
+        a: "Tak — bezpłatny parking dla gości dostępny przy salonie.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "royal-nanoplasty",
+      "manicure",
+      "royal-facial",
+      "pedicure",
+    ],
+    relatedNicheSlugs: [
+      "women-only-hair-salon-warsaw",
+      "hijab-friendly-salon-warsaw",
+      "salon-pieknosci-warszawa",
+    ],
+    relatedCategorySlugs: ["hair", "nails", "facials"],
+    serviceName: "Salon Tylko dla Kobiet w Warszawie",
+    serviceDescription:
+      "Salon tylko dla kobiet w Warszawie — prywatna atmosfera, żeński personel, fryzjer, kosmetyczka i manicure.",
+    imageAltRecommendations: [
+      "Salon tylko dla kobiet w Warszawie — wnętrze",
+      "Fryzjerka pracująca w salonie tylko dla kobiet",
+      "Manicure w prywatnym salonie dla kobiet Warszawa",
+      "Zabieg na twarz w salonie tylko dla kobiet",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę w salonie tylko dla kobiet w Royal Beauty Salon.",
+  },
+
+  /* ─────────────────────────── Salon dla muzułmanek ─────────────────────────── */
+  {
+    slug: "salon-dla-muzulmanek-warszawa",
+    locale: "pl",
+    primaryKeyword: "salon dla muzułmanek Warszawa",
+    secondaryKeywords: [
+      "salon muzułmański Warszawa",
+      "salon przyjazny muzułmankom Warszawa",
+      "salon hidżab Warszawa",
+      "fryzjer dla muzułmanek Warszawa",
+    ],
+    title: "Salon dla Muzułmanek w Warszawie — Prywatny i Komfortowy",
+    metaDescription:
+      "Salon dla muzułmanek w Warszawie — prywatne, zasłonione stanowiska, żeński personel i atmosfera szacunku. Royal Beauty Salon.",
+    h1: "Salon dla Muzułmanek w Warszawie",
+    eyebrow: "Muzułmanki • Prywatny",
+    tagline:
+      "Prywatna, komfortowa atmosfera z szacunkiem dla Twoich wartości — Twój salon w Warszawie.",
+    heroImage: U("photo-1560066984-138dadb4c035"),
+    heroAlt: "Prywatny salon dla muzułmanek w Warszawie",
+    intro: [
+      "Znalezienie salonu w Warszawie, który rozumie potrzeby muzułmańskich kobiet, może być trudne. Royal Beauty Salon oferuje naprawdę przyjazną muzułmankom obsługę — z prywatnymi, zasłoniętymi stanowiskami, żeńskim personel i atmosferą pełną szacunku.",
+      "W naszym salonie możesz zdjąć hidżab w prywatnej przestrzeni, z dala od męskich oczu i publicznego widoku, podczas gdy nasze stylistki i kosmetyczki dbają o Twoje włosy, skórę i urodę.",
+      "Oferujemy keratynowe prostowanie, koloryzację, zabiegi na twarz, manicure i depilację — wszystko w prywatnej, komfortowej atmosferze, z szacunkiem dla Twoich wartości.",
+    ],
+    sections: [
+      {
+        heading: "Prywatne, zasłonięte stanowiska",
+        body: [
+          "Nasze usługi dla muzułmańskich klientek są wykonywane na prywatnych, zasłoniętych stanowiskach — nie na otwartej sali widocznej z ulicy. Ty decydujesz o swoim komforcie, a my dostosowujemy się do Twoich preferencji.",
+        ],
+      },
+      {
+        heading: "Żeński personel",
+        body: [
+          "Każdy zabieg dla naszych muzułmańskich klientek jest wykonywany przez kobiety — od strzyżenia i koloryzacji, przez keratynowe prostowanie, po zabiegi na twarz. Zawsze jesteś w rękach kobiet, które rozumieją i szanują Twoje potrzeby.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja włosów pod hidżabem",
+        body: [
+          "Włosy noszone pod hidżabem mają particularne potrzeby — tarcie, spłaszczenie i pot na skórze głowy mogą je uszkadzać. Oferujemy keratynowe prostowanie, nanoplastię i odżywcze zabiegi SPA, aby Twoje włosy pozostały zdrowe i łatwe w obsłudze.",
+        ],
+      },
+      {
+        heading: "Rezerwacja z myślą o prywatności",
+        body: [
+          "Powiedz nam o swoich preferencjach przy rezerwacji — prywatny termin, żeński personel, spokojniejsze godziny — a dostosujemy Twoją wizytę. Dyskrecja jest częścią naszej usługi.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Prywatne stanowiska", desc: "Zasłonięte, z dala od publicznego widoku." },
+      { title: "Żeński personel", desc: "Zabiegi wykonywane wyłącznie przez kobiety." },
+      { title: "Szacunek i dyskrecja", desc: "Twoje wartości są u nas szanowane." },
+      { title: "Włosy pod hidżabem", desc: "Keratyna i pielęgnacja dla włosów zakrytych." },
+    ],
+    faqs: [
+      {
+        q: "Czy w Warszawie jest salon przyjazny muzułmankom?",
+        a: "Tak — Royal Beauty Salon oferuje prywatne, zasłonięte stanowiska z żeńskim personelem dla muzułmańskich klientek.",
+      },
+      {
+        q: "Czy mogę zdjąć hidżab w prywatności?",
+        a: "Tak — oferujemy prywatne, zasłonięte stanowiska z dala od męskich oczu i publicznego widoku.",
+      },
+      {
+        q: "Jakie usługi są dostępne?",
+        a: "Keratynowe prostowanie, koloryzacja, zabiegi na twarz, manicure i depilacja — wszystko w prywatnej atmosferze.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "royal-nanoplasty",
+      "keratin-treatment-medium",
+      "royal-facial",
+      "manicure",
+      "hair-spa-blow-dry",
+    ],
+    relatedNicheSlugs: [
+      "hijab-friendly-salon-warsaw",
+      "muslim-women-hairdresser-warsaw",
+      "women-only-hair-salon-warsaw",
+    ],
+    relatedCategorySlugs: ["hair", "facials", "nails"],
+    serviceName: "Salon dla Muzułmanek w Warszawie",
+    serviceDescription:
+      "Salon dla muzułmanek w Warszawie — prywatne stanowiska, żeński personel i atmosfera szacunku.",
+    imageAltRecommendations: [
+      "Prywatny salon dla muzułmanek w Warszawie",
+      "Zabieg keratynowy na prywatnym stanowisku dla muzułmanki",
+      "Manicure w prywatnym salonie dla muzułmanek Warszawa",
+      "Thatronka w zasłoniętym salonie dla muzułmanek",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę w prywatnym salonie dla muzułmanek w Royal Beauty Salon.",
+  },
+
+  /* ─────────────────────────── Fryzjer dla kobiet ─────────────────────────── */
+  {
+    slug: "fryzjer-dla-kobiet-warszawa",
+    locale: "pl",
+    primaryKeyword: "fryzjer dla kobiet Warszawa",
+    secondaryKeywords: [
+      "fryzjer damski Warszawa",
+      "salon fryzjerski dla kobiet Warszawa",
+      "fryzjer kobiet Warszawa",
+      "fryzjer tylko dla kobiet Warszawa",
+    ],
+    title: "Fryzjer Dla Kobiet w Warszawie — Żeńskie Stylistki",
+    metaDescription:
+      "Fryzjer dla kobiet w Warszawie — żeńskie stylistki, prywatna atmosfera. Koloryzacja, keratyna i strzyżenie. Royal Beauty Salon.",
+    h1: "Fryzjer Dla Kobiet w Warszawie",
+    eyebrow: "Fryzjer Damski • Warszawa",
+    tagline:
+      "Profesjonalna fryzjerka dla kobiet — koloryzacja, keratyna i strzyżenie w prywatnej atmosferze.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt: "Fryzjerka pracująca z włosami klientki w salonie w Warszawie",
+    intro: [
+      "Jeśli szukasz fryzjera dla kobiet w Warszawie, w którym poczujesz się komfortowo i bezpiecznie — Royal Beauty Salon jest idealnym miejscem. Nasze stylistki to doświadczone fryzjerki, które specjalizują się w koloryzacji, keratynowym prostowaniu i precyzyjnym strzyżeniu.",
+      "Oferujemy prywatną atmosferę z żeńskim personelem — możesz w pełni się zrelaksować i zaufać naszym specjalistkom. Każda wizyta zaczyna się od konsultacji, aby dobrać zabieg najlepszy dla Twoich włosów.",
+      "Od subtelnego balayage po odważną koloryzację globalną, od keratynowego prostowania po precyzyjne strzyżenie — nasz fryzjer dla kobiet w Warszawie tworzy looki, które kochasz.",
+    ],
+    sections: [
+      {
+        heading: "Koloryzacja przez żeńskie stylistki",
+        body: [
+          "Nasze koloryzatorki specjalizują się w balayage, rozjaśnianiu, koloryzacji globalnej i zakrywaniu siwizny. Używamy niskiamonijowych, chroniących wiązania linii koloryzujących.",
+        ],
+      },
+      {
+        heading: "Keratynowe prostowanie i nanoplastia",
+        body: [
+          "Wyprostuj i wygładź włosy na miesiące dzięki naszym zabiegom keratynowym i nanoplastii — wszystko w prywatnej atmosferze z żeńskim personelem.",
+        ],
+      },
+      {
+        heading: "Strzyżenie i modelowanie",
+        body: [
+          "Precyzyjne strzyżenie dopasowane do kształtu twarzy i stylu życia. Oferujemy również modelowanie i stylizację okazjonalną.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja i leczenie włosów",
+        body: [
+          "Oferujemy zabiegi SPA, olejki, ampułki i intensywne kuracje regenerujące, aby przywrócić włosom zdrowie i blask.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Żeńskie stylistki", desc: "Twoje włosy w rękach doświadczonych fryzjerek." },
+      { title: "Prywatna atmosfera", desc: "Komfort i dyskrecja przy każdej wizycie." },
+      { title: "Koloryzacja i keratyna", desc: "Profesjonalna pielęgnacja włosów." },
+      { title: "Konsultacja", desc: "Każda wizyta zaczyna się od doboru zabiegu." },
+    ],
+    faqs: [
+      {
+        q: "Czy w waszym salonie fryzjerkami są tylko kobiety?",
+        a: "Tak — nasz fryzjer dla kobiet zatrudnia wyłącznie żeńskie stylistki, aby zapewnić komfort i prywatność naszym klientkom.",
+      },
+      {
+        q: "Jakie usługi fryzjerskie oferujecie?",
+        a: "Koloryzację, balayage, keratynowe prostowanie, nanoplastię, strzyżenie i modelowanie — wszystko przez doświadczone fryzjerkę.",
+      },
+      {
+        q: "Czy mogę umówić się na keratynowe prostowanie?",
+        a: "Tak — oferujemy keratynowe prostowanie i nanoplastię w prywatnej atmosferze z żeńskim personelem.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "fashion-shade-global-color",
+      "royal-nanoplasty",
+      "keratin-treatment-medium",
+      "blow-dry",
+    ],
+    relatedNicheSlugs: [
+      "women-only-hair-salon-warsaw",
+      "hijab-friendly-salon-warsaw",
+      "fryzjer-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Fryzjer Dla Kobiet w Warszawie",
+    serviceDescription:
+      "Fryzjer dla kobiet w Warszawie — żeńskie stylistki, prywatna atmosfera, koloryzacja, keratyna i strzyżenie.",
+    imageAltRecommendations: [
+      "Fryzjerka koloryzująca włosy klientce w salonie Warszawa",
+      "Keratynowe prostowanie u fryzjera dla kobiet Warszawa",
+      "Strzyżenie damskie w prywatnym salonie Warszawa",
+      "Modelowanie włosów u fryzjerkę w Warszawie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę u fryzjerkę w Royal Beauty Salon w Warszawie.",
   },
 ];
 

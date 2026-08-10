@@ -1,4 +1,8 @@
-import { ServicesManager } from "@/components/admin/ServicesManager";
+import dynamic from "next/dynamic";
+
+const ServicesManager = dynamic(
+  () => import("@/components/admin/ServicesManager").then((m) => m.ServicesManager)
+);
 
 export default function ServicesAdminPage() {
   return (

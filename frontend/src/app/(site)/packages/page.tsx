@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { Packages } from "@/components/sections/Packages";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { getBackendTestimonials } from "@/lib/backend-api";
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
     "luxury salon packages",
     "beauty membership Warsaw",
   ],
-  alternates: { canonical: `${siteConfig.url}/packages` },
+  alternates: {
+    canonical: `${siteConfig.url}/packages`,
+    languages: {
+      "en-GB": `${siteConfig.url}/packages`,
+      "x-default": `${siteConfig.url}/packages`,
+    },
+  },
   openGraph: {
     type: "website",
     url: `${siteConfig.url}/packages`,
@@ -39,6 +47,12 @@ export default async function PackagesPage() {
   const testimonials = await getBackendTestimonials();
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Packages", path: "/packages" },
+        ])}
+      />
       <PageHero
         eyebrow="Beauty Packages"
         title="Curated Luxury Packages"

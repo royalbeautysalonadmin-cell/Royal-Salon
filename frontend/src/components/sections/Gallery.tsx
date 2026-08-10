@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { useTranslation } from "@/lib/i18n";
 import type { GalleryImage } from "@/types";
 
 const filters = ["All", "Bridal", "Makeup", "Hair", "Skin", "Nails", "Mehndi"] as const;
@@ -12,6 +14,7 @@ const filters = ["All", "Bridal", "Makeup", "Hair", "Skin", "Nails", "Mehndi"] a
 export function Gallery({ images }: { images: GalleryImage[] }) {
   const [active, setActive] = useState<(typeof filters)[number]>("All");
   const [lightbox, setLightbox] = useState<GalleryImage | null>(null);
+  const { t } = useTranslation();
 
   const items =
     active === "All" ? images : images.filter((g) => g.category === active);
@@ -20,9 +23,9 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
     <section id="gallery" className="bg-cream py-24">
       <div className="container-luxury">
         <SectionHeading
-          eyebrow="Gallery"
-          title="Moments of Royal Beauty"
-          description="A glimpse into our artistry — from breathtaking bridals to flawless everyday glamour."
+          eyebrow={t("gallery.heading")}
+          title={t("gallery.title")}
+          description={t("gallery.description")}
         />
 
         <div className="mt-10 flex flex-wrap justify-center gap-2">
@@ -70,6 +73,15 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-medium text-brown hover:underline"
+          >
+            {t("viewAllServices")} →
+          </Link>
+        </div>
       </div>
 
       {/* Lightbox */}

@@ -170,18 +170,18 @@ export const testimonials: Testimonial[] = [
 
 /* ─── Gallery ─── */
 export const gallery: GalleryImage[] = [
-  { src: U("photo-1457972729786-0411a3b2b626"), category: "Bridal", alt: "Bridal makeover" },
-  { src: U("photo-1560066984-138dadb4c035"), category: "Hair", alt: "Hair styling" },
-  { src: U("photo-1487412947147-5cebf100ffc2"), category: "Makeup", alt: "Party makeup" },
-  { src: U("photo-1604654894610-df63bc536371"), category: "Nails", alt: "Luxury manicure" },
-  { src: U("photo-1570172619644-dfd03ed5d881"), category: "Skin", alt: "Facial treatment" },
-  { src: U("photo-1595407753234-0882f1e77954"), category: "Mehndi", alt: "Bridal mehndi" },
-  { src: U("photo-1519741497674-611481863552"), category: "Bridal", alt: "Bride portrait" },
-  { src: U("photo-1527799820374-dcf8d9d4a388"), category: "Hair", alt: "Hair colouring" },
-  { src: U("photo-1522337360788-8b13dee7a37e"), category: "Hair", alt: "Hair updo" },
-  { src: U("photo-1512290923902-8a9f81dc236c"), category: "Skin", alt: "Glowing skin" },
-  { src: U("photo-1519014816548-bf5fe059798b"), category: "Nails", alt: "Spa pedicure" },
-  { src: U("photo-1596178065887-1198b6148b2b"), category: "Makeup", alt: "Glam makeup" },
+  { src: U("photo-1457972729786-0411a3b2b626"), category: "Bridal", alt: "Bridal makeover at Royal Beauty Salon Warsaw" },
+  { src: U("photo-1560066984-138dadb4c035"), category: "Hair", alt: "Hair styling at luxury salon Warsaw" },
+  { src: U("photo-1487412947147-5cebf100ffc2"), category: "Makeup", alt: "Party makeup artistry Warsaw" },
+  { src: U("photo-1604654894610-df63bc536371"), category: "Nails", alt: "Luxury manicure pedicure Warsaw" },
+  { src: U("photo-1570172619644-dfd03ed5d881"), category: "Skin", alt: "Facial treatment hydra facial Warsaw" },
+  { src: U("photo-1595407753234-0882f1e77954"), category: "Mehndi", alt: "Bridal mehndi art Warsaw" },
+  { src: U("photo-1519741497674-611481863552"), category: "Bridal", alt: "Bride portrait luxury beauty Warsaw" },
+  { src: U("photo-1527799820374-dcf8d9d4a388"), category: "Hair", alt: "Hair colouring specialist Warsaw" },
+  { src: U("photo-1522337360788-8b13dee7a37e"), category: "Hair", alt: "Hair updo styling Warsaw" },
+  { src: U("photo-1512290923902-8a9f81dc236c"), category: "Skin", alt: "Glowing skin facial Warsaw" },
+  { src: U("photo-1519014816548-bf5fe059798b"), category: "Nails", alt: "Spa pedicure Warsaw" },
+  { src: U("photo-1596178065887-1198b6148b2b"), category: "Makeup", alt: "Glam makeup artistry Warsaw" },
 ];
 
 /* ─── Why Choose Us ─── */
@@ -189,62 +189,68 @@ export const whyChooseUs = [
   {
     icon: "Users",
     title: "Professional Team",
-    desc: "Award-winning artists and certified beauticians with global experience.",
+    desc: "Award-winning artists and certified beauticians with global experience, serving Warsaw's elite clientele.",
+    link: "/about",
   },
   {
     icon: "Sparkles",
     title: "Premium Products",
-    desc: "Only luxury, dermatologically tested and cruelty-free brands.",
+    desc: "Only luxury, dermatologically tested and cruelty-free brands used in our Warsaw salon.",
+    link: "/services",
   },
   {
     icon: "ShieldCheck",
     title: "Hygienic Environment",
-    desc: "Hospital-grade sterilisation and single-use tools for every guest.",
+    desc: "Hospital-grade sterilisation and single-use tools for every guest at our central Warsaw location.",
+    link: "/contact",
   },
   {
     icon: "Crown",
     title: "Luxury Experience",
-    desc: "A serene five-star ambience designed for total relaxation.",
+    desc: "A serene five-star ambience designed for total relaxation in the heart of Warsaw.",
+    link: "/packages",
   },
   {
     icon: "Heart",
     title: "Customer Satisfaction",
-    desc: "Thousands of delighted clients and a 4.9-star average rating.",
+    desc: "Thousands of delighted clients and a 4.9-star average rating — Warsaw's most loved beauty salon.",
+    link: "/packages",
   },
   {
     icon: "Award",
     title: "Certified Experts",
-    desc: "Internationally accredited professionals and trainers.",
+    desc: "Internationally accredited professionals and trainers at our Warsaw beauty academy.",
+    link: "/about",
   },
 ];
 
 /* ─── Salon Amenities ─── */
 export const amenities = [
-  { icon: "Car", title: "Parking Available", desc: "Free parking space for all our guests." },
-  { icon: "CreditCard", title: "Card Payments", desc: "We accept all major credit and debit cards." },
-  { icon: "Gift", title: "Loyalty Program", desc: "Earn points with every visit and redeem for free services." },
-  { icon: "Wifi", title: "Free Wi-Fi", desc: "Stay connected while you pamper yourself." },
-  { icon: "Accessibility", title: "Accessible", desc: "Wheelchair accessible facilities for everyone." },
-  { icon: "Baby", title: "Child Friendly", desc: "Kids-friendly services and a welcoming environment." },
+  { icon: "Car", title: "Free Parking", desc: "Complimentary parking space for all guests visiting our Warsaw salon." },
+  { icon: "CreditCard", title: "Card Payments", desc: "We accept all major credit and debit cards for your convenience." },
+  { icon: "Gift", title: "Loyalty Program", desc: "Earn points with every visit and redeem for free beauty services." },
+  { icon: "Wifi", title: "Free Wi-Fi", desc: "Stay connected while you pamper yourself at our Warsaw salon." },
+  { icon: "Accessibility", title: "Accessible", desc: "Wheelchair accessible facilities for everyone in central Warsaw." },
+  { icon: "Baby", title: "Child Friendly", desc: "Kids-friendly services and a welcoming environment for families." },
 ];
 
 /* ─── FAQs ─── */
 export const faqs = [
   {
-    q: "How far in advance should I book a bridal appointment?",
-    a: "We recommend booking your bridal package at least 4–6 weeks in advance to secure your preferred date and include a complimentary trial session.",
+    q: "How far in advance should I book a bridal appointment at your Warsaw salon?",
+    a: "We recommend booking your bridal package at least 4–6 weeks in advance to secure your preferred date at our Warsaw location and include a complimentary trial session.",
   },
   {
-    q: "Do you offer on-location services?",
-    a: "Yes. Our bridal and party teams can travel to your home, hotel or venue across Warsaw. On-location charges apply based on distance.",
+    q: "Do you offer on-location bridal services in Warsaw?",
+    a: "Yes. Our bridal and party teams can travel to your home, hotel or venue across Warsaw. On-location charges apply based on distance within the city.",
   },
   {
     q: "Are your products suitable for sensitive skin?",
-    a: "Absolutely. We use premium, dermatologically tested and cruelty-free products, and every treatment begins with a skin consultation.",
+    a: "Absolutely. We use premium, dermatologically tested and cruelty-free products at our Warsaw salon, and every treatment begins with a skin consultation.",
   },
   {
-    q: "Do you provide certificates for your beauty courses?",
-    a: "All our academy courses include internationally accredited certification upon successful completion, plus career and placement guidance.",
+    q: "Do you provide certificates for your beauty courses in Warsaw?",
+    a: "All our academy courses at our Warsaw beauty academy include internationally accredited certification upon successful completion, plus career and placement guidance.",
   },
   {
     q: "What is your cancellation policy?",
@@ -254,7 +260,7 @@ export const faqs = [
 
 /* ─── Stats ─── */
 export const stats = [
-  { value: "12+", label: "Years of Excellence" },
+  { value: "12+", label: "Years of Excellence in Warsaw" },
   { value: "20K+", label: "Happy Clients" },
   { value: "50+", label: "Beauty Experts" },
   { value: "4.9★", label: "Average Rating" },

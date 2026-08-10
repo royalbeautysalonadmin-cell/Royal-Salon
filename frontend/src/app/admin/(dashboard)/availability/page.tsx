@@ -1,4 +1,8 @@
-import { AvailabilityManager } from "@/components/admin/AvailabilityManager";
+import dynamic from "next/dynamic";
+
+const AvailabilityManager = dynamic(
+  () => import("@/components/admin/AvailabilityManager").then((m) => m.AvailabilityManager)
+);
 
 export default function AvailabilityPage() {
   return (

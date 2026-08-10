@@ -12,6 +12,7 @@ import {
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { RevealGroup, RevealItem } from "@/components/shared/Reveal";
 import { amenities } from "@/data/content";
+import { useTranslation } from "@/lib/i18n";
 
 const icons: Record<string, LucideIcon> = {
   Car,
@@ -23,15 +24,17 @@ const icons: Record<string, LucideIcon> = {
 };
 
 export function Amenities() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative overflow-hidden bg-luxury-black py-24">
       <div className="pointer-events-none absolute inset-0 bg-luxury-radial opacity-40" />
       <div className="container-luxury relative">
         <SectionHeading
           light
-          eyebrow="Salon Amenities"
-          title="Everything You Need"
-          description="We've thought of every detail to make your visit comfortable, convenient and truly luxurious."
+          eyebrow={t("amenities.heading")}
+          title={t("amenities.title")}
+          description={t("amenities.description")}
         />
 
         <RevealGroup className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

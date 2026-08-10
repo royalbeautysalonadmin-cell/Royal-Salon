@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Check, Sparkles } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { RevealGroup, RevealItem } from "@/components/shared/Reveal";
@@ -9,17 +10,19 @@ import { Badge } from "@/components/ui/badge";
 import { formatPrice } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
 import { packages } from "@/data/content";
+import { useTranslation } from "@/lib/i18n";
 
 export function Packages() {
   const openBooking = useBookingStore((s) => s.open);
+  const { t } = useTranslation();
 
   return (
     <section id="packages" className="bg-white py-24">
       <div className="container-luxury">
         <SectionHeading
-          eyebrow="Beauty Packages"
-          title="Curated Luxury Packages"
-          description="Thoughtfully bundled experiences offering exceptional value for brides, members and seasonal pampering."
+          eyebrow={t("packages.heading")}
+          title={t("packages.title")}
+          description={t("packages.description")}
         />
 
         <RevealGroup className="mt-12 grid gap-8 lg:grid-cols-3">
@@ -40,7 +43,7 @@ export function Packages() {
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={pkg.image}
-                    alt={pkg.name}
+                    alt={`${pkg.name} at Royal Beauty Salon Warsaw`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 33vw"
                     className="object-cover"
@@ -90,13 +93,22 @@ export function Packages() {
                     className="mt-6 w-full"
                     onClick={() => openBooking(pkg.slug)}
                   >
-                    Book This Package
+                    {t("packages.book")}
                   </Button>
                 </div>
               </div>
             </RevealItem>
           ))}
         </RevealGroup>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-medium text-brown hover:underline"
+          >
+            {t("viewAllServices")} →
+          </Link>
+        </div>
       </div>
     </section>
   );

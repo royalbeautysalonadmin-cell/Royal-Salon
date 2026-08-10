@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { Contact } from "@/components/sections/Contact";
-import { faqJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { faqJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,7 +15,13 @@ export const metadata: Metadata = {
     "book appointment Warsaw",
     "salon Warszawa",
   ],
-  alternates: { canonical: `${siteConfig.url}/contact` },
+  alternates: {
+    canonical: `${siteConfig.url}/contact`,
+    languages: {
+      "en-GB": `${siteConfig.url}/contact`,
+      "x-default": `${siteConfig.url}/contact`,
+    },
+  },
   openGraph: {
     type: "website",
     url: `${siteConfig.url}/contact`,
@@ -35,9 +42,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
+      <JsonLd
+        data={[
+          faqJsonLd(),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ]}
       />
       <PageHero
         eyebrow="Get In Touch"

@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn, formatPrice } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
 import { servicePath } from "@/data/seo-data";
+import { useTranslation } from "@/lib/i18n";
 import type { ServiceCategory, Service } from "@/types";
 
 const UNAVAILABLE_MESSAGE = "This service is currently unavailable. Please check back later or contact us for details.";
@@ -40,6 +41,7 @@ type SortOption = "popular" | "price-low" | "price-high" | "duration";
 function ServiceCard({ service }: { service: Service }) {
   const openBooking = useBookingStore((s) => s.open);
   const unavailable = service.active === false;
+  const { t } = useTranslation();
 
   return (
     <motion.article
@@ -115,12 +117,12 @@ function ServiceCard({ service }: { service: Service }) {
               className="px-2"
               onClick={() => toast.error(UNAVAILABLE_MESSAGE)}
             >
-              Unavailable
+              {t("services.unavailable")}
             </Button>
           ) : (
             <div className="flex items-center gap-1">
               <Button variant="ghost" size="sm" className="px-2" asChild>
-                <Link href={servicePath(service)}>Details</Link>
+                <Link href={servicePath(service)}>{t("services.details")}</Link>
               </Button>
               <Button
                 variant="ghost"
@@ -128,7 +130,7 @@ function ServiceCard({ service }: { service: Service }) {
                 className="group/btn -mr-2 px-2"
                 onClick={() => openBooking(service.slug)}
               >
-                Book Now
+                {t("services.bookNow")}
                 <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </Button>
             </div>
@@ -184,6 +186,7 @@ export function Services({
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState<SortOption>("popular");
   const [showFilters, setShowFilters] = useState(false);
+  const { t } = useTranslation();
 
   const filtered = useMemo(() => {
     let result = allServices.filter((s) => {
@@ -258,7 +261,7 @@ export function Services({
       <div className="container-luxury">
         {showHeader && (
           <SectionHeading
-            eyebrow="Our Services"
+            eyebrow={t("services.heading")}
             title="Premium Beauty Treatments"
             description="From hair artistry to advanced skincare, every service is delivered with luxury, precision and care. Browse our complete menu of treatments."
           />
@@ -268,7 +271,7 @@ export function Services({
             <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal/70" />
             <input
               type="text"
-              placeholder="Search services (e.g. keratin, facial, waxing...)"
+              placeholder={t("services.search")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full rounded-full border border-brown/15 bg-white py-3.5 pl-11 pr-12 text-sm text-charcoal shadow-sm placeholder:text-charcoal/70 focus:border-brown focus:outline-none focus:ring-2 focus:ring-brown/10"
@@ -290,7 +293,7 @@ export function Services({
               className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-charcoal shadow-sm transition-colors hover:bg-brown/5"
             >
               <SlidersHorizontal className="h-3.5 w-3.5" />
-              Filters
+              {t("services.filters")}
               {hasActiveFilters && (
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brown text-[0.6rem] font-bold text-white">
                   !
@@ -306,7 +309,7 @@ export function Services({
                 }}
                 className="text-xs font-medium text-brown hover:underline"
               >
-                Clear all
+                {t("services.clearAll")}
               </button>
             )}
           </div>
@@ -324,15 +327,15 @@ export function Services({
                 <div className="mt-4 rounded-2xl border border-brown/10 bg-white p-4 shadow-sm">
                   <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-charcoal/70">
                     <SlidersHorizontal className="h-3 w-3" />
-                    Sort by
+                    {t("services.sortBy")}
                   </div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {(
                       [
-                        { value: "popular", label: "Most Popular" },
-                        { value: "price-low", label: "Price: Low to High" },
-                        { value: "price-high", label: "Price: High to Low" },
-                        { value: "duration", label: "Shortest First" },
+                        { value: "popular", label: t("services.mostPopular") },
+                        { value: "price-low", label: t("services.priceLow") },
+                        { value: "price-high", label: t("services.priceHigh") },
+                        { value: "duration", label: t("services.shortest") },
                       ] as const
                     ).map((opt) => (
                       <button
@@ -366,7 +369,7 @@ export function Services({
                   : "bg-white text-charcoal/70 shadow-sm hover:bg-brown/10 hover:text-brown"
               }`}
             >
-              {cat === "All" ? "All Services" : cat}
+              {cat === "All" ? t("services.all") : cat}
               <span
                 className={`ml-1.5 text-xs ${
                   active === cat ? "text-white/70" : "text-charcoal/70"
@@ -380,9 +383,9 @@ export function Services({
 
         {/* Results count */}
         <p className="mt-6 text-center text-sm text-charcoal/70">
-          Showing{" "}
+          {t("services.showing")}{" "}
           <span className="font-medium text-charcoal/70">{filtered.length}</span>{" "}
-          service{filtered.length !== 1 ? "s" : ""}
+          {t("services.count")}{filtered.length !== 1 ? "s" : ""}
         </p>
 
         {/* View: grouped by category or filtered list */}
@@ -416,9 +419,9 @@ export function Services({
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-charcoal/5">
               <Search className="h-7 w-7 text-charcoal/70" />
             </div>
-            <p className="text-lg font-medium text-charcoal/70">No services found</p>
+            <p className="text-lg font-medium text-charcoal/70">{t("services.noResults")}</p>
             <p className="mt-1 text-sm text-charcoal/70">
-              Try adjusting your search or filters
+              {t("services.tryAdjusting")}
             </p>
             <Button
               variant="ghost"
@@ -429,7 +432,7 @@ export function Services({
                 setSortBy("popular");
               }}
             >
-              Clear all filters
+              {t("services.clearFilters")}
             </Button>
           </div>
         )}

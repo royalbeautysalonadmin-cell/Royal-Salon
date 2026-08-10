@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useBookingStore } from "@/store/booking";
 import { stats } from "@/data/content";
 import { HeroSlider } from "./HeroSlider";
+import { useTranslation } from "@/lib/i18n";
 
 const ParticleField = dynamic(() => import("@/components/three/ParticleField"), {
   ssr: false,
@@ -40,6 +41,7 @@ export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const showParticles = useIdleMount();
   const openBooking = useBookingStore((s) => s.open);
+  const { t } = useTranslation();
   // Scroll-linked parallax: content, slider and orbs drift apart at
   // different speeds while the visitor scrolls out of the hero.
   const { scrollYProgress } = useScroll({
@@ -88,7 +90,7 @@ export function Hero() {
             <motion.div variants={item}>
               <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium tracking-wide text-brown-700 shadow-soft">
                 <Sparkles className="h-4 w-4 text-gold-600" />
-                Warsaw&apos;s Premier Luxury Beauty Destination
+                {t("hero.badge")}
               </span>
             </motion.div>
 
@@ -96,25 +98,24 @@ export function Hero() {
               variants={item}
               className="mt-6 font-serif text-5xl font-semibold leading-[1.04] text-luxury-black sm:text-6xl lg:text-7xl text-balance"
             >
-              Luxury Beauty Salon <br />
-              in <span className="text-gradient-gold">Warsaw</span>
+              {t("hero.h1")} <br />
+              {t("hero.h1.city")} <span className="text-gradient-gold">{t("hero.h1.cityName")}</span>
             </motion.h1>
 
             <motion.p
               variants={item}
               className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal/70"
             >
-              Experience luxury beauty treatments, bridal makeovers, premium skincare, and
-              professional artistry — crafted by award-winning specialists in the heart of Warsaw.
+              {t("hero.desc")}
             </motion.p>
 
             <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
               <Button size="lg" variant="gold" onClick={() => openBooking()} className="group">
-                Book Appointment
+                {t("hero.book")}
                 <ArrowRight className="transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="/services">Explore Services</a>
+                <a href="/services">{t("hero.explore")}</a>
               </Button>
             </motion.div>
 
@@ -128,7 +129,7 @@ export function Hero() {
                 ))}
               </div>
               <p>
-                <span className="font-semibold text-luxury-black">4.9/5</span> from 1,280+ happy clients
+                <span className="font-semibold text-luxury-black">4.9/5</span> {t("hero.rating")}
               </p>
             </motion.div>
           </motion.div>
@@ -167,7 +168,7 @@ export function Hero() {
         style={{ opacity: indicatorOpacity }}
         className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-charcoal/70 transition-colors hover:text-brown sm:flex"
       >
-        <span className="text-[0.6rem] uppercase tracking-[0.3em]">Scroll</span>
+        <span className="text-[0.6rem] uppercase tracking-[0.3em]">{t("hero.scroll")}</span>
         <motion.span
           animate={{ y: [0, 7, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}

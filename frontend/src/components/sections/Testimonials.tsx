@@ -2,14 +2,17 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { useTranslation } from "@/lib/i18n";
 import type { Testimonial } from "@/types";
 
 export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const { t } = useTranslation();
 
   const next = useCallback(
     () => setIndex((i) => (i + 1) % testimonials.length),
@@ -38,9 +41,9 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
       <div className="container-luxury relative">
         <SectionHeading
           light
-          eyebrow="Testimonials"
-          title="Loved by Thousands"
-          description="Real words from the clients and graduates who trust us with their beauty."
+          eyebrow={t("testimonials.heading")}
+          title={t("testimonials.title")}
+          description={t("testimonials.description")}
         />
 
         <div className="relative mx-auto mt-12 max-w-3xl">
@@ -105,6 +108,15 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-medium text-gold hover:text-gold/80 transition-colors"
+          >
+            {t("viewAllServices")} →
+          </Link>
         </div>
       </div>
     </section>

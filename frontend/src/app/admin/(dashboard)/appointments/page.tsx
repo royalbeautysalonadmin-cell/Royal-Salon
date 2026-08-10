@@ -1,4 +1,8 @@
-import { AppointmentsTable } from "@/components/admin/AppointmentsTable";
+import dynamic from "next/dynamic";
+
+const AppointmentsTable = dynamic(
+  () => import("@/components/admin/AppointmentsTable").then((m) => m.AppointmentsTable)
+);
 
 export default function AppointmentsPage() {
   return (

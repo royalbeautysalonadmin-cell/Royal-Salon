@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site";
 import { Providers } from "@/components/providers";
 import { localBusinessJsonLd } from "@/lib/seo";
 import { Analytics, FacebookPixel } from "@/components/analytics";
+import { JsonLd } from "@/components/shared/JsonLd";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -68,13 +69,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${jost.variable}`}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }}
-        />
-      </head>
       <body>
+        <JsonLd data={localBusinessJsonLd()} />
         <Providers>{children}</Providers>
         <Analytics />
         <FacebookPixel />

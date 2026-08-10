@@ -23,7 +23,13 @@ const hub = localPageBySlug("warsaw")!;
 export const metadata: Metadata = {
   title: hub.title,
   description: hub.metaDescription,
-  alternates: { canonical: `${siteConfig.url}/warsaw` },
+  alternates: {
+    canonical: `${siteConfig.url}/warsaw`,
+    languages: {
+      "en-GB": `${siteConfig.url}/warsaw`,
+      "x-default": `${siteConfig.url}/warsaw`,
+    },
+  },
   openGraph: {
     type: "website",
     url: `${siteConfig.url}/warsaw`,

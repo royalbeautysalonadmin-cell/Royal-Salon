@@ -1,20 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, MapPin, Clock, Instagram, Facebook } from "lucide-react";
+import { Menu, X, Phone, MapPin, Clock, Instagram, Facebook, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navLinks, siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { useBookingStore } from "@/store/booking";
+import { useTranslation } from "@/lib/i18n";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const openBooking = useBookingStore((s) => s.open);
+  const { lang, toggle: toggleLang, t } = useTranslation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -25,6 +27,15 @@ export function Navbar() {
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href.split("#")[0]) && href !== "/";
+
+  const navLabels = useMemo(() => ({
+    "/": t("nav.home"),
+    "/about": t("nav.about"),
+    "/services": t("nav.services"),
+    "/packages": t("nav.packages"),
+    "/blog": t("nav.blog"),
+    "/contact": t("nav.contact"),
+  }), [t]);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -95,7 +106,7 @@ export function Navbar() {
                     active ? "text-brown" : "text-charcoal hover:text-brown"
                   )}
                 >
-                  {link.label}
+                  {navLabels[link.href] || link.label}
                   <span
                     className={cn(
                       "absolute -bottom-1 left-0 h-px bg-brown-gradient transition-all duration-300",
@@ -108,8 +119,17 @@ export function Navbar() {
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <button
+              type="button"
+              onClick={toggleLang}
+              className="flex items-center gap-1.5 rounded-full border border-brown/15 bg-white/70 px-3 py-1.5 text-xs font-medium text-charcoal shadow-soft transition-colors hover:bg-cream hover:text-brown"
+              aria-label={lang === "en" ? "Switch to Polish" : "Przełącz na angielski"}
+            >
+              <Globe className="h-3.5 w-3.5 text-gold-600" />
+              {lang === "en" ? "PL" : "EN"}
+            </button>
             <Button variant="gold" size="sm" onClick={() => openBooking()}>
-              Book Appointment
+              {t("booking.title")}
             </Button>
           </div>
 
@@ -140,7 +160,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="rounded-xl px-4 py-3 text-base font-medium text-charcoal transition-colors hover:bg-cream hover:text-brown"
                 >
-                  {link.label}
+                  {navLabels[link.href] || link.label}
                 </Link>
               ))}
               <a
@@ -157,8 +177,17 @@ export function Navbar() {
                   openBooking();
                 }}
               >
-                Book Appointment
+                {t("booking.title")}
               </Button>
+              <button
+                type="button"
+                onClick={() => { toggleLang(); setOpen(false); }}
+                className="mt-2 flex items-center justify-center gap-2 rounded-full border border-brown/15 bg-white/70 px-4 py-3 text-sm font-medium text-charcoal shadow-soft transition-colors hover:bg-cream hover:text-brown"
+                aria-label={lang === "en" ? "Switch to Polish" : "Przełącz na angielski"}
+              >
+                <Globe className="h-4 w-4 text-gold-600" />
+                {lang === "en" ? "Polski" : "English"}
+              </button>
             </div>
           </motion.div>
         )}

@@ -19,7 +19,23 @@ export const metadata: Metadata = {
   title: "Our Services — 55+ Beauty Treatments in Warsaw",
   description:
     "Explore our full menu of 55+ luxury beauty treatments in Warsaw — hair, makeup, threading, waxing, facials, manicure, pedicure and more at Royal Beauty Salon.",
-  alternates: { canonical: `${siteConfig.url}/services` },
+  keywords: [
+    "beauty treatments Warsaw",
+    "salon services Warsaw",
+    "hair salon Warsaw",
+    "makeup studio Warsaw",
+    "waxing Warsaw",
+    "facial treatment Warsaw",
+    "manicure pedicure Warsaw",
+    "beauty menu Warsaw",
+  ],
+  alternates: {
+    canonical: `${siteConfig.url}/services`,
+    languages: {
+      "en-GB": `${siteConfig.url}/services`,
+      "x-default": `${siteConfig.url}/services`,
+    },
+  },
   openGraph: {
     type: "website",
     url: `${siteConfig.url}/services`,
@@ -27,6 +43,13 @@ export const metadata: Metadata = {
     description:
       "Explore our full menu of luxury beauty treatments in Warsaw at Royal Beauty Salon.",
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: "Royal Beauty Salon Services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Services — 55+ Beauty Treatments in Warsaw",
+    description:
+      "Explore our full menu of luxury beauty treatments in Warsaw at Royal Beauty Salon.",
+    images: [siteConfig.ogImage],
   },
 };
 

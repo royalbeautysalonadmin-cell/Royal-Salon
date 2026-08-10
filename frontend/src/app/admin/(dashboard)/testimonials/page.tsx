@@ -1,4 +1,8 @@
-import { TestimonialsManager } from "@/components/admin/TestimonialsManager";
+import dynamic from "next/dynamic";
+
+const TestimonialsManager = dynamic(
+  () => import("@/components/admin/TestimonialsManager").then((m) => m.TestimonialsManager)
+);
 
 export default function TestimonialsAdminPage() {
   return (

@@ -29,6 +29,7 @@ AppointmentSchema.index(
   { date: 1, time: 1 },
   { unique: true, partialFilterExpression: { status: { $in: ["pending", "approved", "completed"] } } }
 );
+AppointmentSchema.index({ createdAt: -1 });
 
 export type AppointmentDoc = InferSchemaType<typeof AppointmentSchema>;
 

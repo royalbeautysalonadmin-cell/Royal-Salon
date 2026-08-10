@@ -14,7 +14,22 @@ export const metadata: Metadata = {
   title: "Beauty Blog — Expert Hair, Skin & Makeup Tips in Warsaw",
   description:
     "Beauty tips, guides and advice from the experts at Royal Beauty Salon in Warsaw — hair care, skincare, makeup, bridal prep, waxing and more.",
-  alternates: { canonical: `${siteConfig.url}/blog` },
+  keywords: [
+    "beauty blog Warsaw",
+    "hair tips Warsaw",
+    "skincare advice Warsaw",
+    "makeup tips Warsaw",
+    "bridal beauty tips",
+    "waxing advice Warsaw",
+    "beauty salon blog",
+  ],
+  alternates: {
+    canonical: `${siteConfig.url}/blog`,
+    languages: {
+      "en-GB": `${siteConfig.url}/blog`,
+      "x-default": `${siteConfig.url}/blog`,
+    },
+  },
   openGraph: {
     type: "website",
     url: `${siteConfig.url}/blog`,
@@ -22,6 +37,13 @@ export const metadata: Metadata = {
     description:
       "Expert beauty tips and guides from Royal Beauty Salon in Warsaw — hair, skin, makeup and bridal advice.",
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: "Royal Beauty Salon Blog" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Beauty Blog | Royal Beauty Salon Warsaw",
+    description:
+      "Expert beauty tips and guides from Royal Beauty Salon in Warsaw — hair, skin, makeup and bridal advice.",
+    images: [siteConfig.ogImage],
   },
 };
 

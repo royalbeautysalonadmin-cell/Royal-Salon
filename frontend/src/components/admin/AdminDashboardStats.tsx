@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   CalendarCheck,
   Clock,
@@ -40,6 +40,25 @@ export function AdminDashboardStats() {
       .finally(() => setLoading(false));
   }, []);
 
+  const { total, pending, completed, popular, maxPopular } = useMemo(() => {
+    const total = all.length;
+    const pending = all.filter((a) => a.status === "pending").length;
+    const completed = all.filter((a) => a.status === "completed").length;
+    const counts = new Map<string, number>();
+    all.forEach((a) => {
+      const key = a.serviceName || a.service;
+      counts.set(key, (counts.get(key) || 0) + 1);
+    });
+    const sorted = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+    return {
+      total,
+      pending,
+      completed,
+      popular: sorted,
+      maxPopular: sorted[0]?.[1] || 1,
+    };
+  }, [all]);
+
   if (loading) {
     return (
       <div className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-white py-16 text-sm text-charcoal/70">
@@ -48,24 +67,12 @@ export function AdminDashboardStats() {
     );
   }
 
-  const total = all.length;
-  const pending = all.filter((a) => a.status === "pending").length;
-  const completed = all.filter((a) => a.status === "completed").length;
-
-  const counts = new Map<string, number>();
-  all.forEach((a) => {
-    const key = a.serviceName || a.service;
-    counts.set(key, (counts.get(key) || 0) + 1);
-  });
-  const popular = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
-
   const cards = [
     { label: "Total Bookings", value: total, icon: CalendarCheck, color: "from-brown to-brown-600" },
     { label: "Pending", value: pending, icon: Clock, color: "from-amber-400 to-amber-600" },
     { label: "Completed", value: completed, icon: CheckCircle2, color: "from-emerald-400 to-emerald-600" },
-    { label: "Popular Services", value: counts.size, icon: TrendingUp, color: "from-gold to-gold-600" },
+    { label: "Popular Services", value: popular.length, icon: TrendingUp, color: "from-gold to-gold-600" },
   ];
-  const maxPopular = popular[0]?.[1] || 1;
 
   return (
     <div className="space-y-8">

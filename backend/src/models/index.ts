@@ -74,6 +74,7 @@ const ContactMessageSchema = new Schema(
   },
   { timestamps: true }
 );
+ContactMessageSchema.index({ read: 1 });
 export const ContactMessage =
   models.ContactMessage || model("ContactMessage", ContactMessageSchema);
 

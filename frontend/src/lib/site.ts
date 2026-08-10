@@ -17,8 +17,8 @@ export const siteConfig = {
   email: process.env.NEXT_PUBLIC_SALON_EMAIL || "warsawroyalbeauty@gmail.com",
   address: {
     line1: "Aleja Stanów Zjednoczonych 67/D7",
-    line2: "03-770 Warszawa, Poland",
-    full: "Aleja Stanów Zjednoczonych 67/D7, 03-770 Warszawa, Poland",
+    line2: "04-028 Warszawa, Poland",
+    full: "Aleja Stanów Zjednoczonych 67/D7, 04-028 Warszawa, Poland",
     mapsQuery: "Aleja+Stanów+Zjednoczonych+67+D7+Warszawa",
     lat: 52.2545,
     lng: 21.0538,
@@ -63,6 +63,10 @@ export const warsawLinks = [
   { label: "Facial Warsaw", href: "/warsaw/facial-warsaw" },
   { label: "Eyebrow Threading Warsaw", href: "/warsaw/eyebrow-threading-warsaw" },
   { label: "Waxing Warsaw", href: "/warsaw/waxing-warsaw" },
+  { label: "Salon Mokotów", href: "/warsaw/salon-kosmetyczny-mokotow" },
+  { label: "Salon Centrum", href: "/warsaw/salon-piekosci-centrum" },
+  { label: "Salon Ursynów", href: "/warsaw/salon-kosmetyczny-ursynow" },
+  { label: "Salon Praga", href: "/warsaw/salon-kosmetyczny-praga" },
 ] as const;
 
 /** Specialty / community landing pages for footer + internal linking. */
@@ -75,6 +79,19 @@ export const specialtyLinks = [
   { label: "Muslim Women Hairdresser Warsaw", href: "/muslim-women-hairdresser-warsaw" },
   { label: "Keratin for Hijab Hair Warsaw", href: "/keratin-nanoplasty-hijab-hair-warsaw" },
   { label: "Salon Kosmetyczny Warszawa", href: "/salon-kosmetyczny-warszawa" },
+  { label: "Salon Piękności Warszawa", href: "/salon-pieknosci-warszawa" },
+  { label: "Salon Urody Warszawa", href: "/salon-urody-warszawa" },
+  { label: "Fryzjer Warszawa", href: "/fryzjer-warszawa" },
+  { label: "Depilacja Warszawa", href: "/depilacja-warszawa" },
+  { label: "Manicure Warszawa", href: "/manicure-warszawa" },
+  { label: "Makijaż Ślubny Warszawa", href: "/makijaz-slubny-warszawa" },
+  { label: "Keratynowe Prostowanie Warszawa", href: "/keratynowe-prostowanie-warszawa" },
+  { label: "Baleaż Warszawa", href: "/baleaz-warszawa" },
+  { label: "Henna Brwi Warszawa", href: "/henna-brwi-warszawa" },
+  { label: "Przedłużanie Rzęs Warszawa", href: "/przedluzanie-rzes-warszawa" },
+  { label: "Salon Tylko dla Kobiet", href: "/salon-tylko-dla-kobiet-warszawa" },
+  { label: "Salon dla Muzułmanek", href: "/salon-dla-muzulmanek-warszawa" },
+  { label: "Fryzjer Dla Kobiet", href: "/fryzjer-dla-kobiet-warszawa" },
 ] as const;
 
 export function whatsappLink(message?: string) {

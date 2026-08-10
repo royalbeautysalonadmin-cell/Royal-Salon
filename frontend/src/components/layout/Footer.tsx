@@ -1,8 +1,23 @@
+"use client";
+
+import { useMemo } from "react";
 import Link from "next/link";
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { siteConfig, navLinks, serviceCategoryLinks, warsawLinks, specialtyLinks } from "@/lib/site";
+import { useTranslation } from "@/lib/i18n";
 
 export function Footer() {
+  const { t } = useTranslation();
+
+  const navLabels = useMemo(() => ({
+    "/": t("nav.home"),
+    "/about": t("nav.about"),
+    "/services": t("nav.services"),
+    "/packages": t("nav.packages"),
+    "/blog": t("nav.blog"),
+    "/contact": t("nav.contact"),
+  }), [t]);
+
   return (
     <footer className="relative overflow-hidden bg-luxury-black text-white">
       <div className="pointer-events-none absolute inset-0 bg-luxury-radial opacity-40" />
@@ -18,8 +33,7 @@ export function Footer() {
             </div>
           </div>
           <p className="text-sm leading-relaxed text-white/60">
-            {siteConfig.tagline}. Warsaw&apos;s destination for luxury beauty treatments, bridal
-            artistry and professional beauty training.
+            {siteConfig.tagline}. {t("footer.tagline")}
           </p>
           <div className="flex gap-3">
             {[
@@ -41,12 +55,12 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-5 font-serif text-lg">Explore</h4>
+          <h4 className="mb-5 font-serif text-lg">{t("footer.explore")}</h4>
           <ul className="space-y-3 text-sm text-white/60">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="transition-colors hover:text-gold">
-                  {link.label}
+                  {navLabels[link.href] || link.label}
                 </Link>
               </li>
             ))}
@@ -54,7 +68,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-5 font-serif text-lg">Services</h4>
+          <h4 className="mb-5 font-serif text-lg">{t("footer.services")}</h4>
           <ul className="space-y-3 text-sm text-white/60">
             {serviceCategoryLinks.map((link) => (
               <li key={link.href}>
@@ -67,7 +81,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-5 font-serif text-lg">In Warsaw</h4>
+          <h4 className="mb-5 font-serif text-lg">{t("footer.inWarsaw")}</h4>
           <ul className="space-y-3 text-sm text-white/60">
             {warsawLinks.map((link) => (
               <li key={link.href}>
@@ -80,7 +94,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-5 font-serif text-lg">Contact</h4>
+          <h4 className="mb-5 font-serif text-lg">{t("footer.contact")}</h4>
           <ul className="space-y-4 text-sm text-white/60">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />

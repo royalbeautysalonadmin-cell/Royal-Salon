@@ -49,21 +49,13 @@ function useAdminNotifications() {
 
     async function poll() {
       try {
-        const [bookingsRes, messagesRes] = await Promise.all([
-          fetch("/api/bookings", { cache: "no-store" }),
-          fetch("/api/messages", { cache: "no-store" }),
-        ]);
-        if (cancelled || !bookingsRes.ok || !messagesRes.ok) return;
-        const [bookingsData, messagesData]: [
-          { appointments?: { status: string }[] },
-          { messages?: { read?: boolean }[] },
-        ] = await Promise.all([bookingsRes.json(), messagesRes.json()]);
+        const res = await fetch("/api/admin/counts", { cache: "no-store" });
+        if (cancelled || !res.ok) return;
+        const data: { pending?: number; unread?: number } = await res.json();
         if (cancelled) return;
 
-        const newPending = (bookingsData.appointments || []).filter(
-          (a) => a.status === "pending"
-        ).length;
-        const newUnread = (messagesData.messages || []).filter((m) => !m.read).length;
+        const newPending = data.pending || 0;
+        const newUnread = data.unread || 0;
 
         if (initializedRef.current) {
           if (newPending > pendingRef.current) {

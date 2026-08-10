@@ -1,4 +1,8 @@
-import { GalleryManager } from "@/components/admin/GalleryManager";
+import dynamic from "next/dynamic";
+
+const GalleryManager = dynamic(
+  () => import("@/components/admin/GalleryManager").then((m) => m.GalleryManager)
+);
 
 export default function GalleryAdminPage() {
   return (

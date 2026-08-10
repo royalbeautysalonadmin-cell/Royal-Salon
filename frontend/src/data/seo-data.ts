@@ -39,7 +39,7 @@ export const categories: CategoryMeta[] = [
     slug: "hair",
     category: "Hair",
     label: "Hair",
-    title: "Hair Salon in Warsaw — Colour, Keratin, Cuts & Styling",
+    title: "Hair Salon Warsaw — Keratin, Colour & Styling",
     metaDescription:
       "Expert hair salon in Warsaw offering keratin treatments, balayage, highlights, root touch-ups, smoothing and precision cuts. Book your transformation at Royal Beauty Salon.",
     heading: "Hair Treatments & Styling in Warsaw",
@@ -88,7 +88,7 @@ export const categories: CategoryMeta[] = [
     slug: "makeup",
     category: "Makeup & Styling",
     label: "Makeup & Styling",
-    title: "Makeup Artist in Warsaw — Bridal, Party & HD Makeup",
+    title: "Makeup Artist Warsaw — Bridal & HD Makeup",
     metaDescription:
       "Professional makeup artist in Warsaw for bridal, party and HD makeup, plus hairstyling and saree draping. Camera-ready, long-wearing looks at Royal Beauty Salon.",
     heading: "Makeup & Styling in Warsaw",
@@ -137,7 +137,7 @@ export const categories: CategoryMeta[] = [
     slug: "threading",
     category: "Threading",
     label: "Threading & Brows",
-    title: "Eyebrow Threading in Warsaw — Brow Shaping & Facial Hair Removal",
+    title: "Eyebrow Threading Warsaw — Brow Shaping",
     metaDescription:
       "Precise eyebrow threading and facial hair removal in Warsaw. Brow shaping, upper lip, chin and full-face threading and waxing at Royal Beauty Salon.",
     heading: "Threading & Brow Shaping in Warsaw",
@@ -186,7 +186,7 @@ export const categories: CategoryMeta[] = [
     slug: "waxing",
     category: "Waxing",
     label: "Waxing & Hair Removal",
-    title: "Waxing in Warsaw — Brazilian, Full Body & Leg Waxing",
+    title: "Waxing Warsaw — Brazilian & Full Body",
     metaDescription:
       "Gentle, professional waxing in Warsaw — Brazilian, full body, legs, arms and underarms. Smooth, long-lasting results at Royal Beauty Salon.",
     heading: "Waxing & Hair Removal in Warsaw",
@@ -235,7 +235,7 @@ export const categories: CategoryMeta[] = [
     slug: "facials",
     category: "Facial & Skin Care",
     label: "Facials & Skincare",
-    title: "Facials in Warsaw — Hydra Facial, Skin Treatments & Glow",
+    title: "Facials Warsaw — Hydra Facial & Skin Care",
     metaDescription:
       "Advanced facials in Warsaw including HydraFacial, tan removal, and treatments for dry, oily and sensitive skin. Radiant results at Royal Beauty Salon.",
     heading: "Facials & Skincare in Warsaw",
@@ -284,7 +284,7 @@ export const categories: CategoryMeta[] = [
     slug: "nails",
     category: "Manicure & Pedicure",
     label: "Manicure & Pedicure",
-    title: "Manicure & Pedicure in Warsaw — Luxury Nail Care",
+    title: "Manicure & Pedicure Warsaw — Nail Care",
     metaDescription:
       "Luxury manicure and spa pedicure in Warsaw. Nourishing nail care, shaping and flawless polish at Royal Beauty Salon on Aleja Stanów Zjednoczonych.",
     heading: "Manicure & Pedicure in Warsaw",
@@ -643,7 +643,7 @@ export const localPages: LocalPage[] = [
     faqs: [
       {
         q: "Where is Royal Beauty Salon located in Warsaw?",
-        a: "We are on Aleja Stanów Zjednoczonych 67/D7, 03-770 Warszawa — easily reached by car, public transport or on foot.",
+        a: "We are on Aleja Stanów Zjednoczonych 67/D7, 04-028 Warszawa — easily reached by car, public transport or on foot.",
       },
       {
         q: "Do you offer parking?",
@@ -835,6 +835,357 @@ export const localPages: LocalPage[] = [
       },
     ],
     featureCategories: ["waxing"],
+  },
+  {
+    slug: "salon-kosmetyczny-mokotow",
+    title: "Salon Kosmetyczny Mokotów — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny w Mokotowie, Warszawa — fryzjer, kosmetyczka, manicure i depilacja. Royal Beauty Salon, dojazd z Mokotowa.",
+    heading: "Salon Kosmetyczny w Mokotowie",
+    eyebrow: "Mokotów • Warszawa",
+    tagline:
+      "Twój salon kosmetyczny blisko Mokotowa — profesjonalna pielęgnacja w centrum Warszawy.",
+    intro: [
+      "Szukasz salonu kosmetycznego w Mokotowie? Royal Beauty Salon na Alei Stanów Zjednoczonych to idealny wybór dla mieszkańców Mokotowa, którzy cenią profesjonalizm i komfort. Dojazd z Mokotowa zajmuje zaledwie kilkanaście minut samochodem lub komunikacją miejską.",
+      "Oferujemy pełen zakres usług — od fryzjerskich, przez kosmetyczne, po manicure i depilację. Nasz zespół to doświadczeni specjaliści, którzy dbają o najwyższą jakość usług.",
+      "Mokotów to jedna z najbardziej eleganckich dzielnic Warszawy, a nasz salon dorasta do tych oczekiwań — eleganckie wnętrza, produkty premium i indywidualne podejście do każdego klienta.",
+    ],
+    highlights: [
+      { title: "Blisko Mokotowa", desc: "Łatwy dojazd komunikacją miejską i samochodem." },
+      { title: "Pełen zakres usług", desc: "Fryzjer, kosmetyczka i manicure w jednym miejscu." },
+      { title: "Doświadczeni specjaliści", desc: "Zespół z wieloletnim doświadczeniem." },
+      { title: "Bezpłatny parking", desc: "Darmowy parking dla gości z Mokotowa." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Mokotowa do salonu?",
+        a: "Z Mokotowa do naszego salonu dojedziesz samochodem w kilkanaście minut lub komunikacją miejską — metro lub autobus do przystanku w pobliżu Alei Stanów Zjednoczonych.",
+      },
+      {
+        q: "Czy oferujecie usługi dla mieszkańców Mokotowa?",
+        a: "Tak — nasi klienci to mieszkańcy całej Warszawy, w tym Mokotowa, Ochoty, Wilanowa i Śródmieścia.",
+      },
+      {
+        q: "Czy mogę zaparkować przy salonie?",
+        a: "Tak — zapewniamy bezpłatny parking dla naszych gości.",
+      },
+    ],
+    featureCategories: ["hair", "nails", "facials"],
+  },
+  {
+    slug: "salon-piekosci-centrum",
+    title: "Salon Piękności Centrum Warszawa",
+    metaDescription:
+      "Salon piękności w centrum Warszawy — fryzjer, kosmetyczka, manicure i makijaż. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    heading: "Salon Piękności w Centrum Warszawy",
+    eyebrow: "Centrum • Warszawa",
+    tagline: "Elegancki salon piękności w sercu Warszawy — pełen zakres usług beauty.",
+    intro: [
+      "Centrum Warszawy to serce stolicy — a Royal Beauty Salon na Alei Stanów Zjednoczonych to serce piękna w tym centrum. Nasz salon oferuje kompleksową pielęgnację dla osób ceniących jakość, komfort i profesjonalizm.",
+      "Dojazd do naszego salonu z centrum Warszawy jest niezwykle prosty — metro, autobusy i tramwaje dowiozą Cię w kilkanaście minut. Jesteśmy idealnie skomunikowani z każdą częścią miasta.",
+      "Oferujemy fryzjerskie, kosmetyczne, manicure i makijaż — wszystko pod jednym dachem w eleganckim wnętrzu.",
+    ],
+    highlights: [
+      { title: "Serce Warszawy", desc: "Dogodna lokalizacja w centrum." },
+      { title: "Dobra komunikacja", desc: "Metro, autobusy i tramwaje w pobliżu." },
+      { title: "Eleganckie wnętrza", desc: "Piękne, nowoczesne wnętrza salonu." },
+      { title: "Kompleksowa obsługa", desc: "Wszystkie usługi beauty w jednym miejscu." },
+    ],
+    faqs: [
+      {
+        q: "Gdzie znajduje się salon w centrum Warszawy?",
+        a: "Na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa — w centrum, z łatwym dojazdem z każdej części miasta.",
+      },
+      {
+        q: "Czy jest parking w centrum?",
+        a: "Tak — zapewniamy bezpłatny parking dla naszych gości.",
+      },
+      {
+        q: "Jakie usługi oferujecie w centrum?",
+        a: "Pełen zakres — fryzjer, kosmetyczka, manicure, pedicure, depilacja i makijaż.",
+      },
+    ],
+    featureCategories: ["hair", "makeup", "nails"],
+  },
+  {
+    slug: "salon-urody-ochota",
+    title: "Salon Urody Ochota — Warszawa",
+    metaDescription:
+      "Salon urody na Ochocie, Warszawa — koloryzacja, keratyna, manicure i zabiegi na twarz. Royal Beauty Salon.",
+    heading: "Salon Urody na Ochocie",
+    eyebrow: "Ochota • Warszawa",
+    tagline: "Profesjonalna pielęgnacja urody dla mieszkańców Ochoty i okolic.",
+    intro: [
+      "Ochota to urocza, zielona dzielnica Warszawy — a Royal Beauty Salon jest idealnym miejscem dla jej mieszkańców. Nasz salon urody oferuje profesjonalne zabiegi fryzjerskie, kosmetyczne i pielęgnacyjne w eleganckim wnętrzu.",
+      "Dojazd z Ochoty do naszego salonu jest szybki i wygodny — metro i autobusy dowiozą Cię w kilkanaście minut. Warto odwiedzić nas dla jakości usług i komfortu, jaki oferujemy.",
+      "Nasz zespół specjalistów zadba o Twoje włosy, skórę i dłonie — zawsze z indywidualnym podejściem i dbałością o detale.",
+    ],
+    highlights: [
+      { title: "Blisko Ochoty", desc: "Szybki dojazd komunikacją miejską." },
+      { title: "Zabiegi na twarz", desc: "HydraFacial, anti-aging i nawilżanie." },
+      { title: "Keratyna i koloryzacja", desc: "Profesjonalna pielęgnacja włosów." },
+      { title: "Manicure i pedicure", desc: "Higiena i precyzja." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Ochoty do salonu?",
+        a: "Z Ochoty dojedziesz metro lub autobusem w kilkanaście minut. Salon znajduje się na Alei Stanów Zjednoczonych.",
+      },
+      {
+        q: "Jakie zabiegi polecacie dla mieszkańców Ochoty?",
+        a: "Polecamy keratynowe prostowanie, zabiegi na twarz i manicure hybrydowy — nasze bestsellery.",
+      },
+      {
+        q: "Czy mogę zaparkować przy salonie?",
+        a: "Tak — bezpłatny parking dostępny dla gości.",
+      },
+    ],
+    featureCategories: ["hair", "facials", "nails"],
+  },
+  {
+    slug: "salon-kosmetyczny-ursynow",
+    title: "Salon Kosmetyczny Ursynów — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny na Ursynowie, Warszawa — fryzjer, manicure, depilacja i zabiegi. Royal Beauty Salon.",
+    heading: "Salon Kosmetyczny na Ursynowie",
+    eyebrow: "Ursynów • Warszawa",
+    tagline: "Twój salon kosmetyczny blisko Ursynowa — profesjonalna obsługa i komfort.",
+    intro: [
+      "Ursynów to jedna z największych dzielnic Warszawy — a Royal Beauty Salon jest idealnym miejscem dla jej mieszkańców. Oferujemy kompleksowe usługi kosmetyczne i fryzjerskie w eleganckim wnętrzu.",
+      "Dojazd z Ursynowa do naszego salonu jest wygodny — metro M1 dowiezie Cię w kilkanaście minut. Jesteśmy blisko, a jednocześnie w spokojnej, komfortowej lokalizacji.",
+      "Nasi specjaliści zadbają o Twoje włosy, dłonie i skórę — zawsze z dbałością o higienę i najwyższą jakość usług.",
+    ],
+    highlights: [
+      { title: "Blisko Ursynowa", desc: "Metro M1 — szybki dojazd." },
+      { title: "Kompleksowe usługi", desc: "Fryzjer, kosmetyczka i manicure." },
+      { title: "Higiena", desc: "Sterylne warunki przy każdym zabiegu." },
+      { title: "Bezpłatny parking", desc: "Darmowy parking dla gości." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Ursynowa do salonu?",
+        a: "Metro M1 — kilka stacji do przystanku w pobliżu Alei Stanów Zjednoczonych. Dojazd zajmuje kilkanaście minut.",
+      },
+      {
+        q: "Czy oferujecie usługi dla klientów z Ursynowa?",
+        a: "Tak — nasi klienci to mieszkańcy całej Warszawy, w tym Ursynowa, Mokotowa i Wilanowa.",
+      },
+      {
+        q: "Jakie usługi polecacie?",
+        a: "Keratynowe prostowanie, manicure hybrydowy i zabiegi na twarz — nasze bestsellery.",
+      },
+    ],
+    featureCategories: ["hair", "nails", "facials"],
+  },
+  {
+    slug: "salon-kosmetyczny-zoliborz",
+    title: "Salon Kosmetyczny Żoliborz — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny na Żoliborzu, Warszawa — koloryzacja, manicure, depilacja. Royal Beauty Salon.",
+    heading: "Salon Kosmetyczny na Żoliborzu",
+    eyebrow: "Żoliborz • Warszawa",
+    tagline: "Elegancki salon kosmetyczny dla mieszkańców Żoliborza.",
+    intro: [
+      "Żoliborz to jedna z najpiękniejszych dzielnic Warszawy — a Royal Beauty Salon dorasta do jej standardów. Oferujemy profesjonalne usługi kosmetyczne i fryzjerskie w eleganckim wnętrzu na Alei Stanów Zjednoczonych.",
+      "Dojazd z Żoliborza do naszego salonu jest prosty — komunikacja miejska i samochodem dojedziesz w kilkanaście minut.",
+      "Nasz zespół specjalistów zadba o Twoje włosy, dłonie i skórę — zawsze z indywidualnym podejściem.",
+    ],
+    highlights: [
+      { title: "Blisko Żoliborza", desc: "Łatwy dojazd z dzielnicy." },
+      { title: "Koloryzacja i keratyna", desc: "Profesjonalna pielęgnacja włosów." },
+      { title: "Manicure i pedicure", desc: "Precyzyjna pielęgnacja dłoni." },
+      { title: "Depilacja", desc: "Wosk, nitka i laser." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Żoliborza do salonu?",
+        a: "Samochodem lub komunikacją miejską w kilkanaście minut. Salon na Alei Stanów Zjednoczonych.",
+      },
+      {
+        q: "Jakie usługi macie w ofercie?",
+        a: "Pełen zakres — fryzjer, kosmetyczka, manicure, pedicure i depilacja.",
+      },
+      {
+        q: "Czy jest parking?",
+        a: "Tak — bezpłatny parking dla gości.",
+      },
+    ],
+    featureCategories: ["hair", "nails", "waxing"],
+  },
+  {
+    slug: "salon-urody-wilanow",
+    title: "Salon Urody Wilanów — Warszawa",
+    metaDescription:
+      "Salon urody w Wilanowie, Warszawa — premium pielęgnacja włosów, skóry i dłoni. Royal Beauty Salon.",
+    heading: "Salon Urody w Wilanowie",
+    eyebrow: "Wilanów • Warszawa",
+    tagline: "Premium salon urody dla wymagających mieszkańców Wilanowa.",
+    intro: [
+      "Wilanów to jedna z najbardziej prestiżowych dzielnic Warszawy — a Royal Beauty Salon oferuje usługi na najwyższym poziomie dla jej mieszkańców. Nasz salon urody łączy eleganckie wnętrza z profesjonalizmem i dbałością o detale.",
+      "Dojazd z Wilanowa do naszego salonu jest wygodny — samochodem lub komunikacją miejską dojedziesz w kilkanaście minut.",
+      "Oferujemy premium usługi — od keratynowego prostowania po zaawansowane zabiegi na twarz — zawsze z produktami najwyższej jakości.",
+    ],
+    highlights: [
+      { title: "Premium usługi", desc: "Produkty najwyższej jakości." },
+      { title: "Blisko Wilanowa", desc: "Łatwy dojazd z dzielnicy." },
+      { title: "Eleganckie wnętrza", desc: "Piękne, nowoczesne wnętrza salonu." },
+      { title: "Indywidualne podejście", desc: "Zabiegi dopasowane do potrzeb." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Wilanowa do salonu?",
+        a: "Samochodem lub komunikacją miejską w kilkanaście minut. Salon na Alei Stanów Zjednoczonych.",
+      },
+      {
+        q: "Jakie usługi premium oferujecie?",
+        a: "Keratynowe prostowanie, nanoplastia, zaawansowane zabiegi na twarz i profesjonalny makijaż.",
+      },
+      {
+        q: "Czy mogę zaparkować?",
+        a: "Tak — bezpłatny parking dla gości.",
+      },
+    ],
+    featureCategories: ["hair", "facials", "makeup"],
+  },
+  {
+    slug: "salon-kosmetyczny-wola",
+    title: "Salon Kosmetyczny Wola — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny na Woli, Warszawa — fryzjer, manicure, depilacja i zabiegi. Royal Beauty Salon.",
+    heading: "Salon Kosmetyczny na Woli",
+    eyebrow: "Wola • Warszawa",
+    tagline: "Twój salon kosmetyczny blisko Woli — profesjonalna obsługa w centrum.",
+    intro: [
+      "Wola to dynamicznie rozwijająca się dzielnica Warszawy — a Royal Beauty Salon jest idealnym miejscem dla jej mieszkańców. Oferujemy kompleksowe usługi kosmetyczne i fryzjerskie w eleganckim wnętrzu.",
+      "Dojazd z Woli do naszego salonu jest szybki — metro, autobusy i tramwaje dowiozą Cię w kilkanaście minut.",
+      "Nasi specjaliści zadbają o Twoje włosy, dłonie i skórę — zawsze z dbałością o higienę i jakość.",
+    ],
+    highlights: [
+      { title: "Blisko Woli", desc: "Szybki dojazd komunikacją miejską." },
+      { title: "Fryzjer i kosmetyczka", desc: "Kompleksowa obsługa." },
+      { title: "Manicure i pedicure", desc: "Precyzyjna pielęgnacja dłoni." },
+      { title: "Depilacja", desc: "Wosk, nitka i laser." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Woli do salonu?",
+        a: "Metro lub autobus w kilkanaście minut. Salon na Alei Stanów Zjednoczonych.",
+      },
+      {
+        q: "Jakie usługi polecacie?",
+        a: "Keratynowe prostowanie, manicure hybrydowy i depilacja woskiem.",
+      },
+      {
+        q: "Czy jest parking?",
+        a: "Tak — bezpłatny parking dla gości.",
+      },
+    ],
+    featureCategories: ["hair", "nails", "waxing"],
+  },
+  {
+    slug: "salon-fryzjerski-bemowo",
+    title: "Salon Fryzjerski Bemowo — Warszawa",
+    metaDescription:
+      "Salon fryzjerski na Bemowie, Warszawa — koloryzacja, keratyna, strzyżenie. Royal Beauty Salon.",
+    heading: "Salon Fryzjerski na Bemowie",
+    eyebrow: "Bemowo • Warszawa",
+    tagline: "Profesjonalny fryzjer dla mieszkańców Bemowa.",
+    intro: [
+      "Bemowo to spokojna, rodzinna dzielnica Warszawy — a Royal Beauty Salon oferuje jej mieszkańcom profesjonalne usługi fryzjerskie na najwyższym poziomie.",
+      "Dojazd z Bemowa do naszego salonu jest wygodny — metro, autobusy lub samochodem w kilkanaście minut.",
+      "Nasi fryzjerzy specjalizują się w koloryzacji, keratynowym prostowaniu i precyzyjnym strzyżeniu — zawsze z konsultacją i dbałością o zdrowie włosów.",
+    ],
+    highlights: [
+      { title: "Blisko Bemowa", desc: "Łatwy dojazd z dzielnicy." },
+      { title: "Koloryzacja", desc: "Balayage, globalna i pasemka." },
+      { title: "Keratyna", desc: "Gładkie włosy na miesiące." },
+      { title: "Strzyżenie", desc: "Dopasowane do kształtu twarzy." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Bemowa do salonu?",
+        a: "Metro lub autobus w kilkanaście minut. Salon na Alei Stanów Zjednoczonych.",
+      },
+      {
+        q: "Jakie usługi fryzjerskie oferujecie?",
+        a: "Koloryzacja, keratyna, nanoplastia, strzyżenie i modelowanie.",
+      },
+      {
+        q: "Czy mogę zaparkować?",
+        a: "Tak — bezpłatny parking dla gości.",
+      },
+    ],
+    featureCategories: ["hair"],
+  },
+  {
+    slug: "salon-kosmetyczny-bielany",
+    title: "Salon Kosmetyczny Bielany — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny na Bielanach, Warszawa — fryzjer, manicure, zabiegi na twarz. Royal Beauty Salon.",
+    heading: "Salon Kosmetyczny na Bielanach",
+    eyebrow: "Bielany • Warszawa",
+    tagline: "Profesjonalna pielęgnacja dla mieszkańców Bielan.",
+    intro: [
+      "Bielany to zielona, spokojna dzielnica Warszawy — a Royal Beauty Salon jest idealnym miejscem dla jej mieszkańców. Oferujemy kompleksowe usługi kosmetyczne i fryzjerskie.",
+      "Dojazd z Bielan do naszego salonu jest prosty — metro lub autobus dowiozę Cię w kilkanaście minut.",
+      "Nasz zespół specjalistów zadba o Twoje włosy, skórę i dłonie — zawsze z dbałością o jakość i higienę.",
+    ],
+    highlights: [
+      { title: "Blisko Bielan", desc: "Metro i autobusy w pobliżu." },
+      { title: "Fryzjer", desc: "Koloryzacja, keratyna i strzyżenie." },
+      { title: "Zabiegi na twarz", desc: "HydraFacial i nawilżanie." },
+      { title: "Manicure", desc: "Hybrydowy, klasyczny i SPA." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Bielan do salonu?",
+        a: "Metro lub autobus w kilkanaście minut. Salon na Alei Stanów Zjednoczonych.",
+      },
+      {
+        q: "Jakie usługi polecacie?",
+        a: "Keratynowe prostowanie, zabieg na twarz i manicure hybrydowy.",
+      },
+      {
+        q: "Czy jest parking?",
+        a: "Tak — bezpłatny parking dla gości.",
+      },
+    ],
+    featureCategories: ["hair", "facials", "nails"],
+  },
+  {
+    slug: "salon-kosmetyczny-praga",
+    title: "Salon Kosmetyczny Praga — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny na Pradze, Warszawa — fryzjer, manicure, depilacja. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    heading: "Salon Kosmetyczny na Pradze",
+    eyebrow: "Praga • Warszawa",
+    tagline: "Twój salon kosmetyczny na Pragze — profesjonalna obsługa blisko domu.",
+    intro: [
+      "Praga to nasza dzielnica — Royal Beauty Salon znajduje się na Alei Stanów Zjednoczonych w sercu Pragi-Północ. Oferujemy kompleksowe usługi kosmetyczne i fryzjerskie dla mieszkańców Pragi i okolic.",
+      "Jako lokalny salon, znamy potrzeby naszych klientów i dbamy o to, aby każda wizyta była komfortowa i satysfakcjonująca.",
+      "Oferujemy fryzjerskie, kosmetyczne, manicure i depilację — wszystko w eleganckim wnętrzu z bezpłatnym parkingiem.",
+    ],
+    highlights: [
+      { title: "Na Pradze", desc: "Twoja dzielnica — nasz salon." },
+      { title: "Lokalny salon", desc: "Znamy potrzeby mieszkańców Pragi." },
+      { title: "Kompleksowe usługi", desc: "Fryzjer, kosmetyczka i manicure." },
+      { title: "Bezpłatny parking", desc: "Darmowy parking dla gości." },
+    ],
+    faqs: [
+      {
+        q: "Gdzie dokładnie jesteście na Pradze?",
+        a: "Na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa — w sercu Pragi-Północ.",
+      },
+      {
+        q: "Jakie usługi oferujecie?",
+        a: "Pełen zakres — fryzjer, kosmetyczka, manicure, pedicure, depilacja i makijaż.",
+      },
+      {
+        q: "Czy mogę zaparkować?",
+        a: "Tak — bezpłatny parking tuż przy salonie.",
+      },
+    ],
+    featureCategories: ["hair", "nails", "waxing"],
   },
 ];
 

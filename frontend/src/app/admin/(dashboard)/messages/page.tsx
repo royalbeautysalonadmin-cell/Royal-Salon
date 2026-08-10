@@ -1,4 +1,8 @@
-import { MessagesManager } from "@/components/admin/MessagesManager";
+import dynamic from "next/dynamic";
+
+const MessagesManager = dynamic(
+  () => import("@/components/admin/MessagesManager").then((m) => m.MessagesManager)
+);
 
 export default function MessagesAdminPage() {
   return (

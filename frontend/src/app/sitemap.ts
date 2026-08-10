@@ -20,15 +20,15 @@ export const revalidate = 300;
  * `new Date()`. Update the relevant constant when you actually edit that
  * file's content — `git log -1 --format=%aI -- <file>` gives the value.
  */
-const SEO_DATA_UPDATED = new Date("2026-07-08T12:37:41-07:00"); // seo-data.ts (categories, localPages, blogPosts fallback)
-const NICHE_DATA_UPDATED = new Date("2026-07-08T12:37:41-07:00"); // niche-seo.ts
-const HOMEPAGE_UPDATED = new Date("2026-07-08T14:52:35-07:00"); // page.tsx (homepage)
-const ABOUT_UPDATED = new Date("2026-07-08T12:37:41-07:00");
-const SERVICES_PAGE_UPDATED = new Date("2026-07-08T14:52:35-07:00");
-const PACKAGES_UPDATED = new Date("2026-07-08T14:52:35-07:00");
-const CONTACT_UPDATED = new Date("2026-07-08T12:37:41-07:00");
-const WARSAW_HUB_UPDATED = new Date("2026-07-08T14:52:35-07:00");
-const BLOG_INDEX_UPDATED = new Date("2026-07-08T12:37:41-07:00");
+const SEO_DATA_UPDATED = new Date("2026-08-09T10:00:00-07:00"); // seo-data.ts (categories, localPages, blogPosts fallback)
+const NICHE_DATA_UPDATED = new Date("2026-08-09T10:00:00-07:00"); // niche-seo.ts
+const HOMEPAGE_UPDATED = new Date("2026-08-08T10:00:00-07:00"); // page.tsx (homepage)
+const ABOUT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
+const SERVICES_PAGE_UPDATED = new Date("2026-08-08T10:00:00-07:00");
+const PACKAGES_UPDATED = new Date("2026-08-08T10:00:00-07:00");
+const CONTACT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
+const WARSAW_HUB_UPDATED = new Date("2026-08-08T10:00:00-07:00");
+const BLOG_INDEX_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const LEGAL_UPDATED = new Date("2026-07-08T12:37:41-07:00");
 
 type Entry = {
