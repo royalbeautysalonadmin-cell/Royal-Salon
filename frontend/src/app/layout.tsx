@@ -6,6 +6,7 @@ import { Providers } from "@/components/providers";
 import { localBusinessJsonLd } from "@/lib/seo";
 import { Analytics, FacebookPixel } from "@/components/analytics";
 import { JsonLd } from "@/components/shared/JsonLd";
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>{children}</Providers>
         <Analytics />
         <FacebookPixel />
+        <VercelAnalytics />
       </body>
     </html>
   );
