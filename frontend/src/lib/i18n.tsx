@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback, useMemo, type ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, useMemo, useEffect, type ReactNode } from "react";
 
 type Lang = "en" | "pl";
 
@@ -32,6 +32,8 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Services
   "services.heading": { en: "Our Services", pl: "Nasze Usługi" },
+  "services.title": { en: "Premium Beauty Treatments", pl: "Premium Zabiegi Piękności" },
+  "services.description": { en: "From hair artistry to advanced skincare, every service is delivered with luxury, precision and care. Browse our complete menu of treatments.", pl: "Od sztuki fryzjerskiej po zaawansowaną pielęgnację skóry, każdy zabieg jest wykonywany z luksusem, precyzją i troską. Przeglądaj nasze pełne menu zabiegów." },
   "services.subtitle": { en: "Discover our full menu of luxury beauty treatments in Warsaw", pl: "Odkryj nasz pełen menu luksusowych zabiegów pielęgnacyjnych w Warszawie" },
   "services.all": { en: "All Services", pl: "Wszystkie Usługi" },
   "services.bookNow": { en: "Book Now", pl: "Rezerwuj" },
@@ -39,6 +41,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "services.popular": { en: "Popular", pl: "Popularne" },
   "services.details": { en: "Details", pl: "Szczegóły" },
   "services.unavailable": { en: "Unavailable", pl: "Niedostępne" },
+  "services.unavailableMsg": { en: "This service is currently unavailable. Please check back later or contact us for details.", pl: "Ta usługa jest obecnie niedostępna. Sprawdź ponownie później lub skontaktuj się z nami." },
   "services.search": { en: "Search services (e.g. keratin, facial, waxing...)", pl: "Szukaj usług (np. keratyna, facial, woskowanie...)" },
   "services.filters": { en: "Filters", pl: "Filtry" },
   "services.clearAll": { en: "Clear all", pl: "Wyczyść wszystko" },
@@ -48,14 +51,37 @@ const translations: Record<string, Record<Lang, string>> = {
   "services.priceHigh": { en: "Price: High to Low", pl: "Cena: od najwyższej" },
   "services.shortest": { en: "Shortest First", pl: "Najkrótsze" },
   "services.showing": { en: "Showing", pl: "Wyświetlanie" },
+  "services.count": { en: "service", pl: "usługa" },
   "services.noResults": { en: "No services found", pl: "Nie znaleziono usług" },
   "services.tryAdjusting": { en: "Try adjusting your search or filters", pl: "Spróbuj zmienić wyszukiwanie lub filtry" },
   "services.clearFilters": { en: "Clear all filters", pl: "Wyczyść wszystkie filtry" },
-  "services.count": { en: "service", pl: "usługa" },
+  "services.quickView": { en: "Quick View", pl: "Szybki Podgląd" },
+  "services.signature": { en: "Signature", pl: "Sygnatura" },
+  "services.save": { en: "Save", pl: "Oszczędź" },
+  "services.addedFav": { en: "Added to favorites", pl: "Dodano do ulubionych" },
+  "services.removedFav": { en: "Removed from favorites", pl: "Usunięto z ulubionych" },
+  "services.category": {
+    en: "Category",
+    pl: "Kategoria",
+  },
+  "services.cat.hair": { en: "Hair", pl: "Włosy" },
+  "services.cat.makeup": { en: "Makeup & Styling", pl: "Makijaż & Stylizacja" },
+  "services.cat.threading": { en: "Threading", pl: "Nitkowanie" },
+  "services.cat.waxing": { en: "Waxing", pl: "Woskowanie" },
+  "services.cat.facial": { en: "Facial & Skin Care", pl: "Twarz & Pielęgnacja Skóry" },
+  "services.cat.nails": { en: "Manicure & Pedicure", pl: "Manicure & Pedicure" },
+  "services.tagline.hair": { en: "Styling, colouring, treatments & more", pl: "Stylizacja, koloryzacja, zabiegi i więcej" },
+  "services.tagline.makeup": { en: "Party, bridal & HD makeup artistry", pl: "Makijaż imprezowy, ślubny i HD" },
+  "services.tagline.threading": { en: "Precision shaping for brows & face", pl: "Precyzyjne modelowanie brwi i twarzy" },
+  "services.tagline.waxing": { en: "Smooth, hair-free skin all year", pl: "Gładka skóra bez włosów przez cały rok" },
+  "services.tagline.facial": { en: "Glow with our signature facials", pl: "Błyszcz dzięki naszym sygnałowym zabiegom na twarz" },
+  "services.tagline.nails": { en: "Nail care & pampering for hands & feet", pl: "Pielęgnacja paznokci i rozpieszczanie dłoni i stóp" },
 
   // Contact
   "contact.heading": { en: "Get in Touch", pl: "Skontaktuj Się" },
   "contact.subtitle": { en: "Visit us or send a message — we'd love to hear from you", pl: "Odwiedź nas lub napisz — chętnie usłyszymy od Ciebie" },
+  "contact.title": { en: "Visit Our Luxury Salon", pl: "Odwiedź Nasz Luksusowy Salon" },
+  "contact.titleDesc": { en: "We'd love to welcome you. Reach out, book a visit, or simply say hello.", pl: "Chętnie Cię powitamy. Skontaktuj się, umów wizytę lub po prostu powiedz cześć." },
   "contact.name": { en: "Your Name", pl: "Twoje Imię" },
   "contact.email": { en: "Email", pl: "Email" },
   "contact.phone": { en: "Phone (optional)", pl: "Telefon (opcjonalnie)" },
@@ -64,6 +90,18 @@ const translations: Record<string, Record<Lang, string>> = {
   "contact.sending": { en: "Sending...", pl: "Wysyłanie..." },
   "contact.visit": { en: "Visit our salon", pl: "Odwiedź nasz salon" },
   "contact.whatsapp": { en: "Chat on WhatsApp", pl: "Napisz na WhatsApp" },
+  "contact.callUs": { en: "Call Us", pl: "Zadzwoń" },
+  "contact.emailUs": { en: "Email Us", pl: "Napisz Email" },
+  "contact.openMaps": { en: "Open in Google Maps", pl: "Otwórz w Google Maps" },
+  "contact.openingHours": { en: "Opening Hours", pl: "Godziny Otwarcia" },
+  "contact.sendMessage": { en: "Send Us a Message", pl: "Wyślij Wiadomość" },
+  "contact.namePlaceholder": { en: "Your name", pl: "Twoje imię" },
+  "contact.phonePlaceholder": { en: "+48 ...", pl: "+48 ..." },
+  "contact.emailPlaceholder": { en: "you@email.com", pl: "ty@email.com" },
+  "contact.helpPlaceholder": { en: "How can we help you?", pl: "Jak możemy Ci pomóc?" },
+  "contact.faq": { en: "Frequently Asked", pl: "Najczęściej Zadawane" },
+  "contact.successMsg": { en: "Message sent! We'll be in touch shortly.", pl: "Wiadomość wysłana! Wkrótce się odezwiemy." },
+  "contact.errorMsg": { en: "Something went wrong. Please try again or WhatsApp us.", pl: "Coś poszło nie tak. Spróbuj ponownie lub napisz na WhatsApp." },
 
   // Footer
   "footer.explore": { en: "Explore", pl: "Odkrywaj" },
@@ -71,6 +109,11 @@ const translations: Record<string, Record<Lang, string>> = {
   "footer.inWarsaw": { en: "In Warsaw", pl: "W Warszawie" },
   "footer.contact": { en: "Contact", pl: "Kontakt" },
   "footer.tagline": { en: "Warsaw's destination for luxury beauty treatments, bridal artistry and professional beauty training.", pl: "Warszawski adres dla luksusowych zabiegów pielęgnacyjnych, sztuki ślubnej i profesjonalnego szkolenia beauty." },
+  "footer.popular": { en: "Popular in Warsaw", pl: "Popularne w Warszawie" },
+  "footer.rights": { en: "All rights reserved.", pl: "Wszelkie prawa zastrzeżone." },
+  "footer.privacy": { en: "Privacy Policy", pl: "Polityka Prywatności" },
+  "footer.terms": { en: "Terms of Service", pl: "Regulamin" },
+  "footer.admin": { en: "Admin", pl: "Admin" },
 
   // Stats
   "stats.years": { en: "Years Experience", pl: "Lat Doświadczenia" },
@@ -80,6 +123,8 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Booking
   "booking.title": { en: "Book Appointment", pl: "Umów Wizytę" },
+  "booking.dialogTitle": { en: "Book Your Appointment", pl: "Umów Swoją Wizytę" },
+  "booking.srTitle": { en: "Book an Appointment", pl: "Umów Wizytę" },
   "booking.name": { en: "Full Name", pl: "Imię i Nazwisko" },
   "booking.email": { en: "Email", pl: "Email" },
   "booking.phone": { en: "Phone", pl: "Telefon" },
@@ -89,6 +134,53 @@ const translations: Record<string, Record<Lang, string>> = {
   "booking.notes": { en: "Notes (optional)", pl: "Notatki (opcjonalnie)" },
   "booking.submit": { en: "Confirm Booking", pl: "Potwierdź Rezerwację" },
   "booking.creating": { en: "Booking...", pl: "Rezerwowanie..." },
+  "booking.stepService": { en: "Service", pl: "Usługa" },
+  "booking.stepDate": { en: "Date", pl: "Data" },
+  "booking.stepTime": { en: "Time", pl: "Godzina" },
+  "booking.stepDetails": { en: "Details", pl: "Szczegóły" },
+  "booking.stepConfirm": { en: "Confirm", pl: "Potwierdź" },
+  "booking.chooseTreatment": { en: "Choose your treatment", pl: "Wybierz zabieg" },
+  "booking.loadingServices": { en: "Loading services...", pl: "Ładowanie usług..." },
+  "booking.noServices": { en: "No services are available to book right now. Please call or WhatsApp us directly.", pl: "Brak dostępnych usług do rezerwacji. Zadzwoń lub napisz na WhatsApp." },
+  "booking.searchServices": { en: "Search services...", pl: "Szukaj usług..." },
+  "booking.selectDate": { en: "Select a date", pl: "Wybierz datę" },
+  "booking.chooseTime": { en: "Choose a time", pl: "Wybierz godzinę" },
+  "booking.checkingAvail": { en: "Checking availability...", pl: "Sprawdzanie dostępności..." },
+  "booking.closedDay": { en: "We're closed on this date. Please go back and pick another day.", pl: "Jesteśmy zamknięci w tym dniu. Wróć i wybierz inny dzień." },
+  "booking.greyedHint": { en: "Greyed-out times are already booked or unavailable.", pl: "Przygaszone godziny są już zarezerwowane lub niedostępne." },
+  "booking.fullName": { en: "Full Name *", pl: "Imię i Nazwisko *" },
+  "booking.yourName": { en: "Your name", pl: "Twoje imię" },
+  "booking.phoneLabel": { en: "Phone *", pl: "Telefon *" },
+  "booking.phonePlaceholder": { en: "+48 ...", pl: "+48 ..." },
+  "booking.emailLabel": { en: "Email *", pl: "Email *" },
+  "booking.emailPlaceholder": { en: "you@email.com", pl: "ty@email.com" },
+  "booking.notesLabel": { en: "Notes (optional)", pl: "Notatki (opcjonalnie)" },
+  "booking.notesPlaceholder": { en: "Any preferences or requests...", pl: "Wszelkie preferencje lub prośby..." },
+  "booking.confirmDetails": { en: "Please confirm your details", pl: "Potwierdź swoje dane" },
+  "booking.labelService": { en: "Service", pl: "Usługa" },
+  "booking.labelPrice": { en: "Price", pl: "Cena" },
+  "booking.labelDate": { en: "Date", pl: "Data" },
+  "booking.labelTime": { en: "Time", pl: "Godzina" },
+  "booking.labelName": { en: "Name", pl: "Imię" },
+  "booking.labelPhone": { en: "Phone", pl: "Telefon" },
+  "booking.labelEmail": { en: "Email", pl: "Email" },
+  "booking.labelNotes": { en: "Notes", pl: "Notatki" },
+  "booking.cancel": { en: "Cancel", pl: "Anuluj" },
+  "booking.back": { en: "Back", pl: "Wstecz" },
+  "booking.continue": { en: "Continue", pl: "Dalej" },
+  "booking.confirmed": { en: "Booking Confirmed!", pl: "Rezerwacja Potwierdzona!" },
+  "booking.thankYou": { en: "Thank you for booking with Royal Beauty Salon. We've received your request and sent a confirmation to your email. Our team will contact you shortly.", pl: "Dziękujemy za rezerwację w Royal Beauty Salon. Otrzymaliśmy Twoje zgłoszenie i wysłaliśmy potwierdzenie na Twój email. Nasz team skontaktuje się wkrótce." },
+  "booking.done": { en: "Done", pl: "Gotowe" },
+
+  // Quick View Modal
+  "quickView.viewDetails": { en: "View Full Details", pl: "Zobacz Pełne Szczegóły" },
+  "quickView.bookNow": { en: "Book Now", pl: "Rezerwuj" },
+  "quickView.unavailable": { en: "Currently Unavailable", pl: "Obecnie Niedostępne" },
+
+  // Sticky Book Bar
+  "stickyBar.desktop": { en: "Ready to book your beauty appointment?", pl: "Gotowa na rezerwację wizyty?" },
+  "stickyBar.mobile": { en: "Book your appointment", pl: "Umów wizytę" },
+  "stickyBar.bookNow": { en: "Book Now", pl: "Rezerwuj" },
 
   // Why Choose Us
   "why.heading": { en: "Why Choose Us", pl: "Dlaczego My" },
@@ -107,6 +199,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "packages.includes": { en: "Includes", pl: "Zawiera" },
   "packages.select": { en: "Select Package", pl: "Wybierz Pakiet" },
   "packages.book": { en: "Book This Package", pl: "Zarezerwuj Ten Pakiet" },
+  "packages.mostPopular": { en: "Most Popular", pl: "Najpopularniejszy" },
 
   // Gallery
   "gallery.heading": { en: "Our Gallery", pl: "Nasza Galeria" },
@@ -135,6 +228,15 @@ const translations: Record<string, Record<Lang, string>> = {
   "viewAllServices": { en: "View all services", pl: "Zobacz wszystkie usługi" },
 };
 
+const STORAGE_KEY = "royal-lang";
+
+function getInitialLang(): Lang {
+  if (typeof window === "undefined") return "en";
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored === "pl" || stored === "en") return stored;
+  return "en";
+}
+
 const LanguageContext = createContext<LanguageCtx>({
   lang: "en",
   toggle: () => {},
@@ -142,7 +244,12 @@ const LanguageContext = createContext<LanguageCtx>({
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useState<Lang>(getInitialLang);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, lang);
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const toggle = useCallback(() => {
     setLang((prev) => (prev === "en" ? "pl" : "en"));

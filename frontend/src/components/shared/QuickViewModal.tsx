@@ -15,6 +15,7 @@ import { Badge } from "@/components/ui/badge";
 import { StarRating } from "@/components/shared/StarRating";
 import { cn, formatPrice } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
+import { useTranslation } from "@/lib/i18n";
 import { servicePath } from "@/data/seo-data";
 import type { Service } from "@/types";
 
@@ -28,6 +29,7 @@ export function QuickViewModal({
   onClose: () => void;
 }) {
   const openBooking = useBookingStore((s) => s.open);
+  const { t } = useTranslation();
 
   if (!service) return null;
 
@@ -51,12 +53,12 @@ export function QuickViewModal({
           {service.featured && (
             <Badge variant="gold" className="absolute right-4 top-4 text-xs">
               <Sparkles className="mr-1 h-3 w-3" />
-              Signature
+              {t("services.signature")}
             </Badge>
           )}
           {service.originalPrice && (
             <div className="absolute bottom-4 right-4 rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
-              Save{" "}
+              {t("services.save")}{" "}
               {Math.round(
                 ((service.originalPrice - service.price) /
                   service.originalPrice) *
@@ -107,7 +109,7 @@ export function QuickViewModal({
           <div className="mt-5 flex gap-3">
             {unavailable ? (
               <Button disabled className="flex-1 rounded-full">
-                Currently Unavailable
+                {t("quickView.unavailable")}
               </Button>
             ) : (
               <>
@@ -117,7 +119,7 @@ export function QuickViewModal({
                   asChild
                 >
                   <Link href={servicePath(service)}>
-                    View Full Details
+                    {t("quickView.viewDetails")}
                     <ArrowUpRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
@@ -128,7 +130,7 @@ export function QuickViewModal({
                     openBooking(service.slug);
                   }}
                 >
-                  Book Now
+                  {t("quickView.bookNow")}
                 </Button>
               </>
             )}

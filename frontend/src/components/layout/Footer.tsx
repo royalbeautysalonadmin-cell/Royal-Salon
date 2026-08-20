@@ -130,7 +130,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-luxury py-8">
           <h4 className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-gold">
-            Popular in Warsaw
+            {t("footer.popular")}
           </h4>
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/50">
             {[...warsawLinks, ...specialtyLinks].map((link) => (
@@ -144,12 +144,25 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-luxury flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {siteConfig.name}. {t("footer.rights")}</p>
           <p className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-gold">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-gold">Terms of Service</Link>
-            <Link href="/admin" className="hover:text-gold">Admin</Link>
+            <Link href="/privacy" className="hover:text-gold">{t("footer.privacy")}</Link>
+            <Link href="/terms" className="hover:text-gold">{t("footer.terms")}</Link>
+            <Link href="/admin" className="hover:text-gold">{t("footer.admin")}</Link>
           </p>
+        </div>
+        <div className="border-t border-white/5">
+          <div className="container-luxury py-4 text-center text-[0.65rem] text-white/30">
+            Developed by{" "}
+            <a
+              href="https://www.orbitrixsolutions.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 underline decoration-white/20 transition-colors hover:text-gold hover:decoration-gold"
+            >
+              Orbitrix Solutions
+            </a>
+          </div>
         </div>
       </div>
     </footer>

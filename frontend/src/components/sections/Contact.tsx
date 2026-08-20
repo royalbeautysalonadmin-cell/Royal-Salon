@@ -37,7 +37,6 @@ export function Contact() {
       });
       if (!res.ok) throw new Error();
 
-      // Send email via EmailJS (client-side)
       if (isEmailJSConfigured) {
         try {
           await sendContactEmailJS({
@@ -51,10 +50,10 @@ export function Contact() {
         }
       }
 
-      toast.success("Message sent! We'll be in touch shortly.");
+      toast.success(t("contact.successMsg"));
       form.reset();
     } catch {
-      toast.error("Something went wrong. Please try again or WhatsApp us.");
+      toast.error(t("contact.errorMsg"));
     } finally {
       setLoading(false);
     }
@@ -62,8 +61,8 @@ export function Contact() {
 
   const contactItems = [
     { icon: MapPin, label: t("contact.visit"), value: siteConfig.address.full },
-    { icon: Phone, label: "Call Us", value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, "")}` },
-    { icon: Mail, label: "Email Us", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+    { icon: Phone, label: t("contact.callUs"), value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, "")}` },
+    { icon: Mail, label: t("contact.emailUs"), value: siteConfig.email, href: `mailto:${siteConfig.email}` },
   ];
 
   return (
@@ -71,8 +70,8 @@ export function Contact() {
       <div className="container-luxury">
         <SectionHeading
           eyebrow={t("contact.heading")}
-          title="Visit Our Luxury Salon"
-          description="We'd love to welcome you. Reach out, book a visit, or simply say hello."
+          title={t("contact.title")}
+          description={t("contact.titleDesc")}
         />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2">
@@ -104,14 +103,14 @@ export function Contact() {
                 <MapPin className="h-5 w-5 text-brown" />
                 <div>
                   <p className="text-sm font-medium text-luxury-black">{siteConfig.address.full}</p>
-                  <p className="text-xs text-charcoal/70">Open in Google Maps</p>
+                  <p className="text-xs text-charcoal/70">{t("contact.openMaps")}</p>
                 </div>
               </div>
             </a>
 
             <div className="rounded-2xl border border-brown/10 bg-cream/40 p-6">
               <h3 className="mb-2 flex items-center gap-2 font-serif text-lg">
-                <Clock className="h-5 w-5 text-brown" /> Opening Hours
+                <Clock className="h-5 w-5 text-brown" /> {t("contact.openingHours")}
               </h3>
               <ul className="space-y-1.5 text-sm text-charcoal/70">
                 {siteConfig.hours.map((h) => (
@@ -130,24 +129,24 @@ export function Contact() {
               onSubmit={onSubmit}
               className="rounded-3xl border border-brown/10 bg-white p-7 shadow-luxury"
             >
-              <h3 className="font-serif text-2xl font-semibold">Send Us a Message</h3>
+              <h3 className="font-serif text-2xl font-semibold">{t("contact.sendMessage")}</h3>
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="c-name">{t("contact.name")}</Label>
-                  <Input id="c-name" name="name" required placeholder="Your name" />
+                  <Input id="c-name" name="name" required placeholder={t("contact.namePlaceholder")} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="c-phone">{t("contact.phone")}</Label>
-                  <Input id="c-phone" name="phone" required placeholder="+971 ..." />
+                  <Input id="c-phone" name="phone" required placeholder={t("contact.phonePlaceholder")} />
                 </div>
               </div>
               <div className="mt-4 space-y-2">
                 <Label htmlFor="c-email">{t("contact.email")}</Label>
-                <Input id="c-email" name="email" type="email" required placeholder="you@email.com" />
+                <Input id="c-email" name="email" type="email" required placeholder={t("contact.emailPlaceholder")} />
               </div>
               <div className="mt-4 space-y-2">
                 <Label htmlFor="c-message">{t("contact.message")}</Label>
-                <Textarea id="c-message" name="message" required placeholder="How can we help you?" />
+                <Textarea id="c-message" name="message" required placeholder={t("contact.helpPlaceholder")} />
               </div>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <Button type="submit" variant="gold" disabled={loading} className="flex-1">
@@ -162,7 +161,7 @@ export function Contact() {
             </form>
 
             <div className="rounded-3xl border border-brown/10 bg-cream/40 p-7">
-              <h3 className="mb-2 font-serif text-2xl font-semibold">Frequently Asked</h3>
+              <h3 className="mb-2 font-serif text-2xl font-semibold">{t("contact.faq")}</h3>
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((f, i) => (
                   <AccordionItem key={i} value={`item-${i}`}>

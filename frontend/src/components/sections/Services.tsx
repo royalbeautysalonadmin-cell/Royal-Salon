@@ -29,38 +29,13 @@ import { servicePath } from "@/data/seo-data";
 import { useTranslation } from "@/lib/i18n";
 import type { ServiceCategory, Service } from "@/types";
 
-const UNAVAILABLE_MESSAGE =
-  "This service is currently unavailable. Please check back later or contact us for details.";
-
-const categories: (ServiceCategory | "All")[] = [
-  "All",
-  "Hair",
-  "Makeup & Styling",
-  "Threading",
-  "Waxing",
-  "Facial & Skin Care",
-  "Manicure & Pedicure",
-];
-
-const categoryMeta: Record<
-  ServiceCategory,
-  { emoji: string; tagline: string }
-> = {
-  Hair: { emoji: "", tagline: "Styling, colouring, treatments & more" },
-  "Makeup & Styling": {
-    emoji: "",
-    tagline: "Party, bridal & HD makeup artistry",
-  },
-  Threading: { emoji: "", tagline: "Precision shaping for brows & face" },
-  Waxing: { emoji: "", tagline: "Smooth, hair-free skin all year" },
-  "Facial & Skin Care": {
-    emoji: "",
-    tagline: "Glow with our signature facials",
-  },
-  "Manicure & Pedicure": {
-    emoji: "",
-    tagline: "Nail care & pampering for hands & feet",
-  },
+const categoryKeys: Record<ServiceCategory, { name: string; tagline: string }> = {
+  Hair: { name: "services.cat.hair", tagline: "services.tagline.hair" },
+  "Makeup & Styling": { name: "services.cat.makeup", tagline: "services.tagline.makeup" },
+  Threading: { name: "services.cat.threading", tagline: "services.tagline.threading" },
+  Waxing: { name: "services.cat.waxing", tagline: "services.tagline.waxing" },
+  "Facial & Skin Care": { name: "services.cat.facial", tagline: "services.tagline.facial" },
+  "Manicure & Pedicure": { name: "services.cat.nails", tagline: "services.tagline.nails" },
 };
 
 type SortOption = "popular" | "price-low" | "price-high" | "duration";
@@ -101,7 +76,7 @@ function ServiceCard({
         <button
           onClick={() => onQuickView(service)}
           className="absolute inset-0 z-10"
-          aria-label={`Quick view ${service.name}`}
+          aria-label={`${t("services.quickView")} ${service.name}`}
         >
           <Image
             src={service.image}
@@ -116,9 +91,8 @@ function ServiceCard({
         {/* Badges row */}
         <div className="absolute left-3 top-3 flex items-center gap-2">
           <Badge variant="dark" className="text-[0.6rem]">
-            {service.category}
+            {t(categoryKeys[service.category]?.name || "")}
           </Badge>
-          {/* Duration badge */}
           <Badge
             variant="outline"
             className="border-white/30 bg-luxury-black/40 text-[0.6rem] text-white backdrop-blur-sm"
@@ -132,13 +106,13 @@ function ServiceCard({
         <div className="absolute right-3 top-3 flex flex-col items-end gap-2">
           {unavailable ? (
             <Badge variant="danger" className="text-[0.6rem]">
-              Unavailable
+              {t("services.unavailable")}
             </Badge>
           ) : (
             service.featured && (
               <Badge variant="gold" className="text-[0.6rem]">
                 <Sparkles className="mr-1 h-2.5 w-2.5" />
-                Signature
+                {t("services.signature")}
               </Badge>
             )
           )}
@@ -149,7 +123,7 @@ function ServiceCard({
                 e.stopPropagation();
                 toggle(service.slug);
                 toast(
-                  isFav ? "Removed from favorites" : "Added to favorites",
+                  isFav ? t("services.removedFav") : t("services.addedFav"),
                   { icon: isFav ? "💔" : "❤️" }
                 );
               }}
@@ -159,7 +133,7 @@ function ServiceCard({
                   ? "bg-red-500 text-white"
                   : "bg-luxury-black/40 text-white/80 hover:bg-red-500 hover:text-white"
               )}
-              aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+              aria-label={isFav ? t("services.removedFav") : t("services.addedFav")}
             >
               <Heart
                 className={cn("h-3.5 w-3.5", isFav && "fill-current")}
@@ -174,13 +148,13 @@ function ServiceCard({
           className="pointer-events-auto absolute bottom-3 left-3 flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[0.65rem] font-medium text-charcoal shadow-sm backdrop-blur-sm transition-colors hover:bg-white"
         >
           <Eye className="h-3 w-3" />
-          Quick View
+          {t("services.quickView")}
         </button>
 
         {/* Discount badge */}
         {!unavailable && service.originalPrice && (
           <div className="absolute bottom-3 right-3 rounded-full bg-red-500 px-2.5 py-1 text-[0.65rem] font-bold text-white shadow-lg">
-            Save{" "}
+            {t("services.save")}{" "}
             {Math.round(
               ((service.originalPrice - service.price) /
                 service.originalPrice) *
@@ -233,7 +207,7 @@ function ServiceCard({
               variant="ghost"
               size="sm"
               className="px-2"
-              onClick={() => toast.error(UNAVAILABLE_MESSAGE)}
+              onClick={() => toast.error(t("services.unavailableMsg"))}
             >
               {t("services.unavailable")}
             </Button>
@@ -306,6 +280,8 @@ function CategorySection({
   services: Service[];
   onQuickView: (s: Service) => void;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div
       className="scroll-mt-24"
@@ -322,12 +298,12 @@ function CategorySection({
         </div>
         <div>
           <h3 className="font-serif text-xl font-semibold text-luxury-black sm:text-2xl">
-            {title}
+            {t(categoryKeys[title as ServiceCategory]?.name || "")}
           </h3>
-          <p className="text-xs text-charcoal/70 sm:text-sm">{tagline}</p>
+          <p className="text-xs text-charcoal/70 sm:text-sm">{t(tagline)}</p>
         </div>
         <span className="ml-auto rounded-full bg-brown/8 px-3 py-1 text-xs font-medium text-brown">
-          {services.length} service{services.length !== 1 ? "s" : ""}
+          {services.length} {t("services.count")}{services.length !== 1 ? "s" : ""}
         </span>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
@@ -342,6 +318,19 @@ function CategorySection({
     </div>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/*  Category meta (emojis only — labels come from i18n)                */
+/* ------------------------------------------------------------------ */
+
+const categoryMeta: Record<ServiceCategory, { emoji: string; tagline: string }> = {
+  Hair: { emoji: "", tagline: "services.tagline.hair" },
+  "Makeup & Styling": { emoji: "", tagline: "services.tagline.makeup" },
+  Threading: { emoji: "", tagline: "services.tagline.threading" },
+  Waxing: { emoji: "", tagline: "services.tagline.waxing" },
+  "Facial & Skin Care": { emoji: "", tagline: "services.tagline.facial" },
+  "Manicure & Pedicure": { emoji: "", tagline: "services.tagline.nails" },
+};
 
 /* ------------------------------------------------------------------ */
 /*  Main Services Component                                            */
@@ -407,6 +396,16 @@ export function Services({
     return result;
   }, [allServices, active, search, sortBy]);
 
+  const categories: (ServiceCategory | "All")[] = [
+    "All",
+    "Hair",
+    "Makeup & Styling",
+    "Threading",
+    "Waxing",
+    "Facial & Skin Care",
+    "Manicure & Pedicure",
+  ];
+
   const categoryCount = (cat: ServiceCategory | "All") =>
     cat === "All"
       ? allServices.length
@@ -440,13 +439,13 @@ export function Services({
   const hasActiveFilters = search || active !== "All" || sortBy !== "popular";
 
   return (
-    <section id="services" className="relative bg-cream py-16 sm:py-24">
+    <section id="services" className="relative bg-cream py-16 pb-24 sm:py-24 sm:pb-32">
       <div className="container-luxury">
         {showHeader && (
           <SectionHeading
             eyebrow={t("services.heading")}
-            title="Premium Beauty Treatments"
-            description="From hair artistry to advanced skincare, every service is delivered with luxury, precision and care. Browse our complete menu of treatments."
+            title={t("services.title")}
+            description={t("services.description")}
           />
         )}
         <div className="mx-auto mt-8 max-w-2xl">
@@ -558,7 +557,7 @@ export function Services({
                   : "bg-white text-charcoal/70 shadow-sm hover:bg-brown/10 hover:text-brown"
               }`}
             >
-              {cat === "All" ? t("services.all") : cat}
+              {cat === "All" ? t("services.all") : t(categoryKeys[cat]?.name || cat)}
               <span
                 className={`ml-1.5 text-xs ${
                   active === cat ? "text-white/70" : "text-charcoal/70"
@@ -596,7 +595,7 @@ export function Services({
                 <CategorySection
                   key={cat}
                   title={cat}
-                  tagline={categoryMeta[cat].tagline}
+                  tagline={categoryMeta[cat]?.tagline || ""}
                   services={catServices}
                   onQuickView={handleQuickView}
                 />

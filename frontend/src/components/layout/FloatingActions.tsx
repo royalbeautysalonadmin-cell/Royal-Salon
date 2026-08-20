@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ArrowUp } from "lucide-react";
 import { siteConfig, whatsappLink } from "@/lib/site";
+import { useStickyBarStore } from "@/store/stickyBar";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -15,6 +16,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function FloatingActions() {
   const [showTop, setShowTop] = useState(false);
+  const stickyVisible = useStickyBarStore((s) => s.visible);
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 600);
@@ -23,7 +25,10 @@ export function FloatingActions() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-5 z-40 flex flex-col items-center gap-3">
+    <div
+      className="fixed right-5 z-40 flex flex-col items-center gap-3 transition-all duration-300"
+      style={{ bottom: stickyVisible ? "5rem" : "1.5rem" }}
+    >
       <AnimatePresence>
         {showTop && (
           <motion.button
