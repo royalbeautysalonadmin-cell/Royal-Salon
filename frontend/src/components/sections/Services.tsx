@@ -105,7 +105,7 @@ function ServiceCard({ service }: { service: Service }) {
         <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-charcoal/70">
           {service.description}
         </p>
-        <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3">
           <span className="flex items-center gap-1.5 text-xs text-charcoal/70">
             <Clock className="h-3 w-3 text-brown" />
             {service.duration}
@@ -121,7 +121,7 @@ function ServiceCard({ service }: { service: Service }) {
             </Button>
           ) : (
             <div className="flex items-center gap-1">
-              <Button variant="ghost" size="sm" className="px-2" asChild>
+              <Button variant="ghost" size="sm" className="hidden px-2 sm:inline-flex" asChild>
                 <Link href={servicePath(service)}>{t("services.details")}</Link>
               </Button>
               <Button
@@ -130,8 +130,8 @@ function ServiceCard({ service }: { service: Service }) {
                 className="group/btn -mr-2 px-2"
                 onClick={() => openBooking(service.slug)}
               >
-                {t("services.bookNow")}
-                <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                <span className="truncate">{t("services.bookNow")}</span>
+                <ArrowUpRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </Button>
             </div>
           )}
