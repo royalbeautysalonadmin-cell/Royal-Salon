@@ -651,7 +651,7 @@ export const localPages: LocalPage[] = [
       },
       {
         q: "What are your opening hours?",
-        a: "We're open Monday to Friday 9:00–21:00, Saturday 9:00–20:00 and Sunday 10:00–18:00. Booking ahead is recommended for weekends.",
+        a: "We're open every day from 11:00 AM to 6:00 PM. Booking ahead is recommended.",
       },
     ],
     featureCategories: ["hair", "makeup", "facials", "waxing", "threading", "nails"],

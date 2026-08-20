@@ -24,9 +24,7 @@ export const siteConfig = {
     lng: 21.0538,
   },
   hours: [
-    { day: "Monday – Friday", time: "9:00 – 21:00" },
-    { day: "Saturday", time: "9:00 – 20:00" },
-    { day: "Sunday", time: "10:00 – 18:00" },
+    { day: "Monday – Sunday", time: "11:00 – 18:00" },
   ],
   socials: {
     instagram: "https://instagram.com/royalbeautywarsaw",

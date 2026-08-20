@@ -52,7 +52,7 @@ export function Navbar() {
               <MapPin className="h-3.5 w-3.5 text-gold" /> {siteConfig.address.full}
             </span>
             <span className="flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5 text-gold" /> Mon–Fri 9:00–21:00
+              <Clock className="h-3.5 w-3.5 text-gold" /> Mon–Sun 11:00–18:00
             </span>
           </div>
           <div className="flex items-center gap-4">
