@@ -19,7 +19,7 @@ export function Footer() {
   }), [t]);
 
   return (
-    <footer className="relative overflow-hidden bg-luxury-black text-white">
+    <footer className="relative overflow-hidden bg-luxury-black pb-16 text-white sm:pb-0">
       <div className="pointer-events-none absolute inset-0 bg-luxury-radial opacity-40" />
       <div className="container-luxury relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-6">
         <div className="space-y-5 lg:col-span-2">
@@ -152,13 +152,13 @@ export function Footer() {
           </p>
         </div>
         <div className="border-t border-white/5">
-          <div className="container-luxury py-4 text-center text-[0.65rem] text-white/30">
+          <div className="container-luxury py-4 text-center text-[0.65rem] text-white/40">
             Developed by{" "}
             <a
               href="https://www.orbitrixsolutions.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/50 underline decoration-white/20 transition-colors hover:text-gold hover:decoration-gold"
+              className="text-white/60 underline decoration-white/20 transition-colors hover:text-gold hover:decoration-gold"
             >
               Orbitrix Solutions
             </a>
