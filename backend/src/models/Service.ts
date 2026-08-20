@@ -14,6 +14,8 @@ const ServiceSchema = new Schema(
     originalPrice: { type: Number },
     priceOnRequest: { type: Boolean, default: false },
     variant: { type: String, default: "" },
+    rating: { type: Number, default: 0 },
+    reviewCount: { type: Number, default: 0 },
   },
   { timestamps: true }
 );

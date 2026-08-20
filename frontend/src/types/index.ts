@@ -19,6 +19,8 @@ export interface Service {
   originalPrice?: number;
   priceOnRequest?: boolean;
   active?: boolean;
+  rating?: number;
+  reviewCount?: number;
   /** ISO timestamp from Mongo — used for the sitemap's per-page lastmod. */
   updatedAt?: string;
 }

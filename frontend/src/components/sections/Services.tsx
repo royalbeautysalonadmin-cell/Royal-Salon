@@ -1,21 +1,36 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
-import { Clock, ArrowUpRight, Search, SlidersHorizontal, X, Sparkles } from "lucide-react";
+import {
+  Clock,
+  ArrowUpRight,
+  Search,
+  SlidersHorizontal,
+  X,
+  Sparkles,
+  Heart,
+  Eye,
+} from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { StarRating } from "@/components/shared/StarRating";
+import { QuickViewModal } from "@/components/shared/QuickViewModal";
+import { StickyBookBar } from "@/components/shared/StickyBookBar";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn, formatPrice } from "@/lib/utils";
 import { useBookingStore } from "@/store/booking";
+import { useFavoritesStore } from "@/store/favorites";
 import { servicePath } from "@/data/seo-data";
 import { useTranslation } from "@/lib/i18n";
 import type { ServiceCategory, Service } from "@/types";
 
-const UNAVAILABLE_MESSAGE = "This service is currently unavailable. Please check back later or contact us for details.";
+const UNAVAILABLE_MESSAGE =
+  "This service is currently unavailable. Please check back later or contact us for details.";
 
 const categories: (ServiceCategory | "All")[] = [
   "All",
@@ -27,20 +42,44 @@ const categories: (ServiceCategory | "All")[] = [
   "Manicure & Pedicure",
 ];
 
-const categoryMeta: Record<ServiceCategory, { emoji: string; tagline: string }> = {
+const categoryMeta: Record<
+  ServiceCategory,
+  { emoji: string; tagline: string }
+> = {
   Hair: { emoji: "", tagline: "Styling, colouring, treatments & more" },
-  "Makeup & Styling": { emoji: "", tagline: "Party, bridal & HD makeup artistry" },
+  "Makeup & Styling": {
+    emoji: "",
+    tagline: "Party, bridal & HD makeup artistry",
+  },
   Threading: { emoji: "", tagline: "Precision shaping for brows & face" },
   Waxing: { emoji: "", tagline: "Smooth, hair-free skin all year" },
-  "Facial & Skin Care": { emoji: "", tagline: "Glow with our signature facials" },
-  "Manicure & Pedicure": { emoji: "", tagline: "Nail care & pampering for hands & feet" },
+  "Facial & Skin Care": {
+    emoji: "",
+    tagline: "Glow with our signature facials",
+  },
+  "Manicure & Pedicure": {
+    emoji: "",
+    tagline: "Nail care & pampering for hands & feet",
+  },
 };
 
 type SortOption = "popular" | "price-low" | "price-high" | "duration";
 
-function ServiceCard({ service }: { service: Service }) {
+/* ------------------------------------------------------------------ */
+/*  Service Card                                                       */
+/* ------------------------------------------------------------------ */
+
+function ServiceCard({
+  service,
+  onQuickView,
+}: {
+  service: Service;
+  onQuickView: (s: Service) => void;
+}) {
   const openBooking = useBookingStore((s) => s.open);
+  const { toggle, favorites } = useFavoritesStore();
   const unavailable = service.active === false;
+  const isFav = favorites.includes(service.slug);
   const { t } = useTranslation();
 
   return (
@@ -52,40 +91,107 @@ function ServiceCard({ service }: { service: Service }) {
       transition={{ duration: 0.35 }}
       className={cn(
         "group overflow-hidden rounded-2xl border border-brown/10 bg-white shadow-soft transition-all duration-300",
-        unavailable ? "opacity-60 grayscale" : "hover:shadow-luxury hover:-translate-y-1"
+        unavailable
+          ? "opacity-60 grayscale"
+          : "hover:shadow-luxury hover:-translate-y-1"
       )}
     >
+      {/* Image area */}
       <div className="relative h-48 overflow-hidden sm:h-56">
-        <Image
-          src={service.image}
-          alt={service.name}
-          fill
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/70 via-luxury-black/10 to-transparent" />
-        <Badge variant="dark" className="absolute left-3 top-3 text-[0.6rem]">
-          {service.category}
-        </Badge>
-        {unavailable ? (
-          <Badge variant="danger" className="absolute right-3 top-3 text-[0.6rem]">
-            Unavailable
+        <button
+          onClick={() => onQuickView(service)}
+          className="absolute inset-0 z-10"
+          aria-label={`Quick view ${service.name}`}
+        >
+          <Image
+            src={service.image}
+            alt={service.name}
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        </button>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-luxury-black/70 via-luxury-black/10 to-transparent" />
+
+        {/* Badges row */}
+        <div className="absolute left-3 top-3 flex items-center gap-2">
+          <Badge variant="dark" className="text-[0.6rem]">
+            {service.category}
           </Badge>
-        ) : (
-          service.featured && (
-            <Badge variant="gold" className="absolute right-3 top-3 text-[0.6rem]">
-              <Sparkles className="mr-1 h-2.5 w-2.5" />
-              Signature
+          {/* Duration badge */}
+          <Badge
+            variant="outline"
+            className="border-white/30 bg-luxury-black/40 text-[0.6rem] text-white backdrop-blur-sm"
+          >
+            <Clock className="mr-1 h-2.5 w-2.5" />
+            {service.duration}
+          </Badge>
+        </div>
+
+        {/* Right badges */}
+        <div className="absolute right-3 top-3 flex flex-col items-end gap-2">
+          {unavailable ? (
+            <Badge variant="danger" className="text-[0.6rem]">
+              Unavailable
             </Badge>
-          )
-        )}
+          ) : (
+            service.featured && (
+              <Badge variant="gold" className="text-[0.6rem]">
+                <Sparkles className="mr-1 h-2.5 w-2.5" />
+                Signature
+              </Badge>
+            )
+          )}
+          {/* Favorite heart */}
+          {!unavailable && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggle(service.slug);
+                toast(
+                  isFav ? "Removed from favorites" : "Added to favorites",
+                  { icon: isFav ? "💔" : "❤️" }
+                );
+              }}
+              className={cn(
+                "flex h-7 w-7 items-center justify-center rounded-full backdrop-blur-sm transition-all",
+                isFav
+                  ? "bg-red-500 text-white"
+                  : "bg-luxury-black/40 text-white/80 hover:bg-red-500 hover:text-white"
+              )}
+              aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+            >
+              <Heart
+                className={cn("h-3.5 w-3.5", isFav && "fill-current")}
+              />
+            </button>
+          )}
+        </div>
+
+        {/* Quick view button (bottom-left) */}
+        <button
+          onClick={() => onQuickView(service)}
+          className="pointer-events-auto absolute bottom-3 left-3 flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[0.65rem] font-medium text-charcoal shadow-sm backdrop-blur-sm transition-colors hover:bg-white"
+        >
+          <Eye className="h-3 w-3" />
+          Quick View
+        </button>
+
+        {/* Discount badge */}
         {!unavailable && service.originalPrice && (
           <div className="absolute bottom-3 right-3 rounded-full bg-red-500 px-2.5 py-1 text-[0.65rem] font-bold text-white shadow-lg">
-            Save {Math.round(((service.originalPrice - service.price) / service.originalPrice) * 100)}%
+            Save{" "}
+            {Math.round(
+              ((service.originalPrice - service.price) /
+                service.originalPrice) *
+                100
+            )}
+            %
           </div>
         )}
       </div>
 
+      {/* Content */}
       <div className="p-4 sm:p-5">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-serif text-sm font-semibold leading-snug text-luxury-black sm:text-base">
@@ -102,9 +208,21 @@ function ServiceCard({ service }: { service: Service }) {
             </span>
           </div>
         </div>
+
+        {/* Star rating */}
+        {service.rating ? (
+          <StarRating
+            rating={service.rating}
+            count={service.reviewCount}
+            className="mt-1.5"
+          />
+        ) : null}
+
         <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-charcoal/70">
           {service.description}
         </p>
+
+        {/* Footer */}
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3">
           <span className="flex items-center gap-1.5 text-xs text-charcoal/70">
             <Clock className="h-3 w-3 text-brown" />
@@ -121,8 +239,15 @@ function ServiceCard({ service }: { service: Service }) {
             </Button>
           ) : (
             <div className="flex items-center gap-1">
-              <Button variant="ghost" size="sm" className="hidden px-2 sm:inline-flex" asChild>
-                <Link href={servicePath(service)}>{t("services.details")}</Link>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hidden px-2 sm:inline-flex"
+                asChild
+              >
+                <Link href={servicePath(service)}>
+                  {t("services.details")}
+                </Link>
               </Button>
               <Button
                 variant="ghost"
@@ -141,20 +266,59 @@ function ServiceCard({ service }: { service: Service }) {
   );
 }
 
+/* ------------------------------------------------------------------ */
+/*  Skeleton Card                                                      */
+/* ------------------------------------------------------------------ */
+
+function ServiceCardSkeleton() {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-brown/10 bg-white shadow-soft">
+      <Skeleton className="h-48 w-full rounded-none sm:h-56" />
+      <div className="p-4 sm:p-5">
+        <div className="flex items-start justify-between">
+          <Skeleton className="h-4 w-2/3" />
+          <Skeleton className="h-4 w-16" />
+        </div>
+        <Skeleton className="mt-2 h-3 w-1/3" />
+        <Skeleton className="mt-2 h-3 w-full" />
+        <Skeleton className="mt-1 h-3 w-4/5" />
+        <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+          <Skeleton className="h-3 w-16" />
+          <Skeleton className="h-6 w-20" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Category Section                                                   */
+/* ------------------------------------------------------------------ */
+
 function CategorySection({
   title,
   tagline,
   services,
+  onQuickView,
 }: {
   title: string;
   tagline: string;
   services: Service[];
+  onQuickView: (s: Service) => void;
 }) {
   return (
-    <div className="scroll-mt-24" id={`cat-${title.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}`}>
+    <div
+      className="scroll-mt-24"
+      id={`cat-${title
+        .toLowerCase()
+        .replace(/ & /g, "-")
+        .replace(/ /g, "-")}`}
+    >
       <div className="mb-6 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brown/10">
-          <span className="text-lg">{categoryMeta[title as ServiceCategory]?.emoji}</span>
+          <span className="text-lg">
+            {categoryMeta[title as ServiceCategory]?.emoji}
+          </span>
         </div>
         <div>
           <h3 className="font-serif text-xl font-semibold text-luxury-black sm:text-2xl">
@@ -166,14 +330,22 @@ function CategorySection({
           {services.length} service{services.length !== 1 ? "s" : ""}
         </span>
       </div>
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
         {services.map((service) => (
-          <ServiceCard key={service.slug} service={service} />
+          <ServiceCard
+            key={service.slug}
+            service={service}
+            onQuickView={onQuickView}
+          />
         ))}
       </div>
     </div>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/*  Main Services Component                                            */
+/* ------------------------------------------------------------------ */
 
 export function Services({
   services: allServices,
@@ -186,7 +358,15 @@ export function Services({
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState<SortOption>("popular");
   const [showFilters, setShowFilters] = useState(false);
+  const [quickViewService, setQuickViewService] = useState<Service | null>(
+    null
+  );
+  const [isLoading] = useState(false);
   const { t } = useTranslation();
+
+  const handleQuickView = useCallback((s: Service) => {
+    setQuickViewService(s);
+  }, []);
 
   const filtered = useMemo(() => {
     let result = allServices.filter((s) => {
@@ -209,7 +389,8 @@ export function Services({
         result = [...result].sort((a, b) => {
           const toMin = (d: string) => {
             const h = parseInt(d) || 0;
-            const m = parseInt(d.split(" ")[0]?.replace(/\D/g, "") || "0") || 0;
+            const m =
+              parseInt(d.split(" ")[0]?.replace(/\D/g, "") || "0") || 0;
             return h * 60 + m;
           };
           return toMin(a.duration) - toMin(b.duration);
@@ -217,7 +398,9 @@ export function Services({
         break;
       case "popular":
       default:
-        result = [...result].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+        result = [...result].sort(
+          (a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0)
+        );
         break;
     }
 
@@ -332,9 +515,15 @@ export function Services({
                   <div className="mt-3 flex flex-wrap gap-2">
                     {(
                       [
-                        { value: "popular", label: t("services.mostPopular") },
+                        {
+                          value: "popular",
+                          label: t("services.mostPopular"),
+                        },
                         { value: "price-low", label: t("services.priceLow") },
-                        { value: "price-high", label: t("services.priceHigh") },
+                        {
+                          value: "price-high",
+                          label: t("services.priceHigh"),
+                        },
                         { value: "duration", label: t("services.shortest") },
                       ] as const
                     ).map((opt) => (
@@ -384,12 +573,21 @@ export function Services({
         {/* Results count */}
         <p className="mt-6 text-center text-sm text-charcoal/70">
           {t("services.showing")}{" "}
-          <span className="font-medium text-charcoal/70">{filtered.length}</span>{" "}
-          {t("services.count")}{filtered.length !== 1 ? "s" : ""}
+          <span className="font-medium text-charcoal/70">
+            {filtered.length}
+          </span>{" "}
+          {t("services.count")}
+          {filtered.length !== 1 ? "s" : ""}
         </p>
 
         {/* View: grouped by category or filtered list */}
-        {active === "All" && !search ? (
+        {isLoading ? (
+          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <ServiceCardSkeleton key={i} />
+            ))}
+          </div>
+        ) : active === "All" && !search ? (
           <div className="mt-12 space-y-16">
             {serviceOrder.map((cat) => {
               const catServices = groupedByCategory?.[cat];
@@ -400,26 +598,36 @@ export function Services({
                   title={cat}
                   tagline={categoryMeta[cat].tagline}
                   services={catServices}
+                  onQuickView={handleQuickView}
                 />
               );
             })}
           </div>
         ) : (
-          <motion.div layout className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+          <motion.div
+            layout
+            className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4"
+          >
             <AnimatePresence mode="popLayout">
               {filtered.map((service) => (
-                <ServiceCard key={service.slug} service={service} />
+                <ServiceCard
+                  key={service.slug}
+                  service={service}
+                  onQuickView={handleQuickView}
+                />
               ))}
             </AnimatePresence>
           </motion.div>
         )}
 
-        {filtered.length === 0 && (
+        {filtered.length === 0 && !isLoading && (
           <div className="mt-16 text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-charcoal/5">
               <Search className="h-7 w-7 text-charcoal/70" />
             </div>
-            <p className="text-lg font-medium text-charcoal/70">{t("services.noResults")}</p>
+            <p className="text-lg font-medium text-charcoal/70">
+              {t("services.noResults")}
+            </p>
             <p className="mt-1 text-sm text-charcoal/70">
               {t("services.tryAdjusting")}
             </p>
@@ -437,6 +645,16 @@ export function Services({
           </div>
         )}
       </div>
+
+      {/* Quick View Modal */}
+      <QuickViewModal
+        service={quickViewService}
+        open={!!quickViewService}
+        onClose={() => setQuickViewService(null)}
+      />
+
+      {/* Sticky Book Bar */}
+      <StickyBookBar />
     </section>
   );
 }
