@@ -93,9 +93,6 @@ export default async function ServiceDetailPage({
   const content = getServiceContent(allServices, service);
   const path = servicePath(service);
   const unavailable = service.active === false;
-  const savings = service.originalPrice
-    ? Math.round(((service.originalPrice - service.price) / service.originalPrice) * 100)
-    : 0;
 
   const breadcrumb = breadcrumbJsonLd([
     { name: "Home", path: "/" },
@@ -162,14 +159,6 @@ export default async function ServiceDetailPage({
               <span className="flex items-center gap-2 text-white/80">
                 <Tag className="h-4 w-4 text-gold" />
                 {service.price > 1 ? `from ${formatPrice(service.price)}` : formatPrice(service.price)}
-                {service.originalPrice && (
-                  <span className="text-white/50 line-through">{formatPrice(service.originalPrice)}</span>
-                )}
-                {savings > 0 && (
-                  <span className="rounded-full bg-red-500 px-2 py-0.5 text-[0.65rem] font-bold">
-                    Save {savings}%
-                  </span>
-                )}
               </span>
               <span className="flex items-center gap-2 text-white/80">
                 <MapPin className="h-4 w-4 text-gold" /> Aleja Stanów Zjednoczonych 67/D7, Warszawa
@@ -262,11 +251,6 @@ export default async function ServiceDetailPage({
                 <span className="font-serif text-3xl font-bold text-brown">
                   {formatPrice(service.price)}
                 </span>
-                {service.originalPrice && (
-                  <span className="text-charcoal/70 line-through">
-                    {formatPrice(service.originalPrice)}
-                  </span>
-                )}
               </div>
               <dl className="mt-5 space-y-3 text-sm">
                 <div className="flex items-center justify-between border-b border-border pb-3">

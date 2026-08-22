@@ -18,7 +18,6 @@ const rawServiceSchema = z.object({
   image: z.string().default(""),
   featured: z.boolean().optional(),
   active: z.boolean().optional(),
-  originalPrice: z.number().optional(),
   priceOnRequest: z.boolean().optional(),
   variant: z.string().optional(),
   updatedAt: z.string().optional(),

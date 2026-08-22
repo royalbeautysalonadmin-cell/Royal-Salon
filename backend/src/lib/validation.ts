@@ -39,7 +39,6 @@ export const serviceSchema = z.object({
   image: z.string().optional(),
   featured: z.boolean().optional(),
   active: z.boolean().optional(),
-  originalPrice: z.number().nonnegative().optional(),
   priceOnRequest: z.boolean().optional(),
   variant: z.string().optional(),
 });

@@ -56,17 +56,6 @@ export function QuickViewModal({
               {t("services.signature")}
             </Badge>
           )}
-          {service.originalPrice && (
-            <div className="absolute bottom-4 right-4 rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
-              {t("services.save")}{" "}
-              {Math.round(
-                ((service.originalPrice - service.price) /
-                  service.originalPrice) *
-                  100
-              )}
-              %
-            </div>
-          )}
         </div>
 
         <div className="p-5 sm:p-6">
@@ -76,11 +65,6 @@ export function QuickViewModal({
                 {service.name}
               </DialogTitle>
               <div className="flex shrink-0 flex-col items-end gap-0.5">
-                {service.originalPrice && (
-                  <span className="text-xs text-charcoal/60 line-through">
-                    {formatPrice(service.originalPrice)}
-                  </span>
-                )}
                 <span className="font-serif text-lg font-bold text-brown">
                   {formatPrice(service.price)}
                 </span>

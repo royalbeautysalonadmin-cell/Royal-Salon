@@ -60,11 +60,6 @@ export function Packages() {
                     <span className="font-serif text-4xl font-semibold text-brown">
                       {formatPrice(pkg.price)}
                     </span>
-                    {pkg.originalPrice && (
-                      <span className="mb-1 text-sm text-charcoal/70 line-through">
-                        {formatPrice(pkg.originalPrice)}
-                      </span>
-                    )}
                   </div>
                   <p className="mt-3 text-sm text-charcoal/70">{pkg.description}</p>
 

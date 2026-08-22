@@ -30,7 +30,6 @@ export interface AdminService {
   image?: string;
   featured?: boolean;
   active?: boolean;
-  originalPrice?: number;
   priceOnRequest?: boolean;
   variant?: string;
 }
@@ -43,7 +42,6 @@ type ServiceFormValues = {
   image: string;
   description: string;
   featured: boolean;
-  originalPrice?: string | number;
   priceOnRequest?: boolean;
   variant?: string;
 };
@@ -135,18 +133,6 @@ function ServiceForm({
             name="duration"
             placeholder="1 hr"
             defaultValue={defaults?.duration}
-          />
-        </div>
-        <div className="space-y-1.5">
-          <Label htmlFor="s-originalPrice">Original Price (zł, optional)</Label>
-          <Input
-            id="s-originalPrice"
-            name="originalPrice"
-            type="number"
-            min="0"
-            step="1"
-            placeholder="Leave blank if not discounted"
-            defaultValue={defaults?.originalPrice}
           />
         </div>
         <div className="space-y-1.5">
@@ -242,7 +228,6 @@ export function ServicesManager() {
       image: String(data.image || ""),
       description: String(data.description || ""),
       featured: data.featured === "on",
-      originalPrice: data.originalPrice ? Number(data.originalPrice) : undefined,
       priceOnRequest: data.priceOnRequest === "on",
       variant: String(data.variant || ""),
     };
@@ -359,7 +344,6 @@ export function ServicesManager() {
                 image: editing.image,
                 description: editing.description,
                 featured: editing.featured,
-                originalPrice: editing.originalPrice,
                 priceOnRequest: editing.priceOnRequest,
                 variant: editing.variant,
               }}
@@ -404,13 +388,6 @@ export function ServicesManager() {
                 <span className="font-semibold text-brown">
                   {s.priceOnRequest ? (
                     "Price on request"
-                  ) : s.originalPrice ? (
-                    <>
-                      <span className="mr-1.5 text-xs text-charcoal/40 line-through">
-                        {formatPrice(s.originalPrice)}
-                      </span>
-                      {formatPrice(s.price)}
-                    </>
                   ) : (
                     formatPrice(s.price)
                   )}

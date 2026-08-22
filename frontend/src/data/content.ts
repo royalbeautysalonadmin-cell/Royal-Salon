@@ -22,7 +22,6 @@ export const packages: Package[] = [
     name: "Royal Bridal Package",
     type: "Bridal",
     price: 3500,
-    originalPrice: 4800,
     description: "The complete head-to-toe bridal transformation for your wedding day.",
     includes: [
       "Bridal HD makeup",
@@ -41,7 +40,6 @@ export const packages: Package[] = [
     name: "Glow Monthly Membership",
     type: "Monthly",
     price: 900,
-    originalPrice: 1400,
     description: "Stay radiant all month with our curated self-care membership.",
     includes: [
       "2 signature facials",
@@ -58,7 +56,6 @@ export const packages: Package[] = [
     name: "Seasonal Radiance Package",
     type: "Seasonal",
     price: 1600,
-    originalPrice: 2200,
     description: "A seasonal reset pampering experience for skin, hair and nails.",
     includes: [
       "Hydra facial",

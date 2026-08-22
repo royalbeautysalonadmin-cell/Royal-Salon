@@ -34,7 +34,6 @@ const PackageSchema = new Schema(
     name: { type: String, required: true },
     type: { type: String, required: true },
     price: { type: Number, required: true },
-    originalPrice: { type: Number },
     description: { type: String, default: "" },
     includes: { type: [String], default: [] },
     benefits: { type: [String], default: [] },

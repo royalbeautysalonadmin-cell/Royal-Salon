@@ -11,7 +11,6 @@ const ServiceSchema = new Schema(
     image: { type: String, default: "" },
     featured: { type: Boolean, default: false },
     active: { type: Boolean, default: true },
-    originalPrice: { type: Number },
     priceOnRequest: { type: Boolean, default: false },
     variant: { type: String, default: "" },
     rating: { type: Number, default: 0 },

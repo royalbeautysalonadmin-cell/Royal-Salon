@@ -151,18 +151,6 @@ function ServiceCard({
           {t("services.quickView")}
         </button>
 
-        {/* Discount badge */}
-        {!unavailable && service.originalPrice && (
-          <div className="absolute bottom-3 right-3 rounded-full bg-red-500 px-2.5 py-1 text-[0.65rem] font-bold text-white shadow-lg">
-            {t("services.save")}{" "}
-            {Math.round(
-              ((service.originalPrice - service.price) /
-                service.originalPrice) *
-                100
-            )}
-            %
-          </div>
-        )}
       </div>
 
       {/* Content */}
@@ -172,11 +160,6 @@ function ServiceCard({
             {service.name}
           </h3>
           <div className="flex shrink-0 items-baseline gap-1.5">
-            {service.originalPrice && (
-              <span className="text-xs text-charcoal/70 line-through">
-                {formatPrice(service.originalPrice)}
-              </span>
-            )}
             <span className="whitespace-nowrap font-serif text-sm font-bold text-brown sm:text-base">
               {formatPrice(service.price)}
             </span>

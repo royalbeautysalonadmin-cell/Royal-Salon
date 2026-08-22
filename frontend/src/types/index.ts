@@ -16,7 +16,6 @@ export interface Service {
   image: string;
   featured?: boolean;
   variant?: string;
-  originalPrice?: number;
   priceOnRequest?: boolean;
   active?: boolean;
   rating?: number;
@@ -30,7 +29,6 @@ export interface Package {
   name: string;
   type: "Bridal" | "Monthly" | "Seasonal";
   price: number;
-  originalPrice?: number;
   description: string;
   includes: string[];
   benefits: string[];

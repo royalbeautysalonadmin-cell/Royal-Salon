@@ -48,13 +48,7 @@ export function ServiceLinkCard({
           <Badge variant="danger" className="absolute right-3 top-3 text-[0.6rem]">
             {locale === "pl" ? "Niedostępne" : "Unavailable"}
           </Badge>
-        ) : (
-          service.originalPrice && (
-            <div className="absolute bottom-3 right-3 rounded-full bg-red-500 px-2.5 py-1 text-[0.65rem] font-bold text-white shadow-lg">
-              Save {Math.round(((service.originalPrice - service.price) / service.originalPrice) * 100)}%
-            </div>
-          )
-        )}
+        ) : null}
       </div>
 
       <div className="p-4 sm:p-5">
@@ -63,11 +57,6 @@ export function ServiceLinkCard({
             {service.name}
           </h3>
           <div className="flex shrink-0 items-baseline gap-1.5">
-            {service.originalPrice && (
-              <span className="text-xs text-charcoal/70 line-through">
-                {formatPrice(service.originalPrice)}
-              </span>
-            )}
             <span className="whitespace-nowrap font-serif text-sm font-bold text-brown sm:text-base">
               {formatPrice(service.price)}
             </span>
