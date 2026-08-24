@@ -531,7 +531,7 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "hair-cutting-advanced",
-      "fashion-shade-global-color",
+      "fashion-shade-global-color-medium",
       "hair-highlights-medium",
       "keratin-treatment-medium",
       "blow-dry",
@@ -634,7 +634,7 @@ export const nichePages: NichePage[] = [
       "keratin-treatment-medium",
       "royal-nanoplasty",
       "hair-spa-blow-dry",
-      "fashion-shade-global-color",
+      "fashion-shade-global-color-medium",
       "hair-oil-massage",
     ],
     relatedNicheSlugs: [
@@ -843,7 +843,7 @@ export const nichePages: NichePage[] = [
       "threading-combo",
       "royal-nanoplasty",
       "keratin-treatment-medium",
-      "fashion-shade-global-color",
+      "fashion-shade-global-color-medium",
       "manicure",
       "pedicure",
       "bridal-makeup",
@@ -1137,7 +1137,7 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "hair-cutting-advanced",
-      "fashion-shade-global-color",
+      "fashion-shade-global-color-medium",
       "royal-nanoplasty",
       "keratin-treatment-medium",
       "blow-dry",
@@ -1605,7 +1605,7 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "hair-highlights-medium",
-      "fashion-shade-global-color",
+      "fashion-shade-global-color-medium",
       "hair-cutting-advanced",
     ],
     relatedNicheSlugs: ["fryzjer-warszawa", "salon-urody-warszawa"],
@@ -2076,7 +2076,7 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "hair-cutting-advanced",
-      "fashion-shade-global-color",
+      "fashion-shade-global-color-medium",
       "royal-nanoplasty",
       "keratin-treatment-medium",
       "blow-dry",
