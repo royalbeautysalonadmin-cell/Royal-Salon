@@ -24,11 +24,15 @@ const rawServiceSchema = z.object({
 });
 const responseSchema = z.object({ services: z.array(rawServiceSchema) });
 
-async function fetchWithRetry(url: string, attempts = 3): Promise<Response> {
+async function fetchWithRetry(
+  url: string,
+  fetchOptions?: RequestInit & { next?: { revalidate?: number | false; tags?: string[] } },
+  attempts = 3,
+): Promise<Response> {
   let lastErr: unknown;
   for (let i = 0; i < attempts; i++) {
     try {
-      return await fetch(url, { cache: "force-cache", signal: AbortSignal.timeout(20_000) });
+      return await fetch(url, { ...fetchOptions, signal: AbortSignal.timeout(20_000) });
     } catch (err) {
       lastErr = err;
       if (i < attempts - 1) await new Promise((r) => setTimeout(r, 2000 * 2 ** i));
@@ -46,7 +50,9 @@ async function fetchWithRetry(url: string, attempts = 3): Promise<Response> {
  */
 export async function getBackendServices(): Promise<Service[]> {
   if (!BACKEND_URL) throw new Error("BACKEND_URL is not set — cannot build service pages.");
-  const res = await fetchWithRetry(`${BACKEND_URL}/api/services`);
+  const res = await fetchWithRetry(`${BACKEND_URL}/api/services`, {
+    next: { tags: ["services"], revalidate: 300 },
+  });
   if (!res.ok) throw new Error(`Backend returned ${res.status} for /api/services — refusing to build.`);
   const parsed = responseSchema.safeParse(await res.json());
   if (!parsed.success) {
@@ -86,7 +92,7 @@ const rawTestimonialSchema = z.object({
 export async function getBackendTestimonials(): Promise<Testimonial[]> {
   if (!BACKEND_URL) return [];
   try {
-    const res = await fetchWithRetry(`${BACKEND_URL}/api/testimonials`, 2);
+    const res = await fetchWithRetry(`${BACKEND_URL}/api/testimonials`, undefined, 2);
     if (!res.ok) return [];
     const parsed = z.object({ testimonials: z.array(rawTestimonialSchema) }).safeParse(await res.json());
     return parsed.success ? parsed.data.testimonials : [];
@@ -104,7 +110,7 @@ const rawGalleryImageSchema = z.object({
 export async function getBackendGallery(): Promise<GalleryImage[]> {
   if (!BACKEND_URL) return [];
   try {
-    const res = await fetchWithRetry(`${BACKEND_URL}/api/gallery`, 2);
+    const res = await fetchWithRetry(`${BACKEND_URL}/api/gallery`, undefined, 2);
     if (!res.ok) return [];
     const parsed = z.object({ images: z.array(rawGalleryImageSchema) }).safeParse(await res.json());
     return parsed.success ? parsed.data.images : [];
@@ -123,7 +129,7 @@ const settingsSchema = z.object({
 export async function getBackendClosedDays(): Promise<WeekdayKey[]> {
   if (!BACKEND_URL) return [];
   try {
-    const res = await fetchWithRetry(`${BACKEND_URL}/api/settings`, 2);
+    const res = await fetchWithRetry(`${BACKEND_URL}/api/settings`, undefined, 2);
     if (!res.ok) return [];
     const parsed = settingsSchema.safeParse(await res.json());
     return parsed.success ? parsed.data.closedDays : [];

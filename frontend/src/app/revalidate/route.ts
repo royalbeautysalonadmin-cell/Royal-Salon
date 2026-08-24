@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 /**
  * Called by the backend right after a service/testimonial/gallery mutation
@@ -22,5 +22,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid secret" }, { status: 401 });
   }
   revalidatePath("/", "layout");
+  revalidateTag("services");
   return NextResponse.json({ revalidated: true, now: Date.now() });
 }
