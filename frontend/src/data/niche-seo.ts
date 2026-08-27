@@ -2119,7 +2119,7 @@ export const nichePages: NichePage[] = [
     eyebrow: "Mezoterapia • Warszawa",
     tagline:
       "Odmładzanie i regeneracja skóry twarzy — mezoterapia igłowa i mikroigłowa w centrum Warszawy.",
-    heroImage: U("photo-1612349317150-e413f6a5b16d"),
+    heroImage: U("photo-1519415943484-9fa1612ea2b4"),
     heroAlt: "Profesjonalna mezoterapia igłowa twarzy w salonie w Warszawie",
     intro: [
       "Mezoterapia to jeden z najbardziej poszukiwanych zabiegów anti-aging w Warszawie — i słusznie. Dzięki mikronakłaniom wprowadza substancje odżywcze, witaminy i kwas hialuronowy bezpośrednio w głębsze warstwy skóry, stymulując produkcję kolagenu i elastyny.",
