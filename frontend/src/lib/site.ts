@@ -39,9 +39,9 @@ export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Packages", href: "/packages" },
-  { label: "Tools", href: "/tools" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+  { label: "Free Tools", href: "/tools" },
 ] as const;
 
 /** Service category links for footer / internal linking. */
