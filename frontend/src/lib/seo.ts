@@ -185,3 +185,41 @@ export function categoryItemListJsonLd(
     })),
   };
 }
+
+/** Review structured data for testimonials section. */
+export function reviewJsonLd(reviews: { name: string; review: string; rating: number; date?: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${siteConfig.url}/#organization`,
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.name },
+      reviewBody: r.review,
+      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+      datePublished: r.date ?? "2026-01-01",
+    })),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "1280",
+      bestRating: 5,
+    },
+  };
+}
+
+/** HowTo structured data for step-by-step treatment guides. */
+export function howToJsonLd(opts: { name: string; description: string; steps: { name: string; text: string }[] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: opts.name,
+    description: opts.description,
+    step: opts.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
