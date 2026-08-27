@@ -2099,6 +2099,1319 @@ export const nichePages: NichePage[] = [
     ctaMessage:
       "Dzień dobry, chciałabym umówić wizytę u fryzjerkę w Royal Beauty Salon w Warszawie.",
   },
+
+  /* ─────────────────────────── mezoterapia-warszawa ─────────────────────────── */
+  {
+    slug: "mezoterapia-warszawa",
+    locale: "pl",
+    primaryKeyword: "mezoterapia Warszawa",
+    secondaryKeywords: [
+      "mezoterapia igłowa Warszawa",
+      "mezoterapia mikroigłowa Warszawa",
+      "mezoterapia skóry twarzy Warszawa",
+      "Dermapen Warszawa",
+      "stymulacja skóry Warszawa",
+    ],
+    title: "Mezoterapia w Warszawie — Igłowa, Mikroigłowa, Dermapen",
+    metaDescription:
+      "Profesjonalna mezoterapia igłowa i mikroigłowa w Warszawie — odmładzanie, nawilżanie i regeneracja skóry. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Mezoterapia w Warszawie",
+    eyebrow: "Mezoterapia • Warszawa",
+    tagline:
+      "Odmładzanie i regeneracja skóry twarzy — mezoterapia igłowa i mikroigłowa w centrum Warszawy.",
+    heroImage: U("photo-1612349317150-e413f6a5b16d"),
+    heroAlt: "Profesjonalna mezoterapia igłowa twarzy w salonie w Warszawie",
+    intro: [
+      "Mezoterapia to jeden z najbardziej poszukiwanych zabiegów anti-aging w Warszawie — i słusznie. Dzięki mikronakłaniom wprowadza substancje odżywcze, witaminy i kwas hialuronowy bezpośrednio w głębsze warstwy skóry, stymulując produkcję kolagenu i elastyny.",
+      "W Royal Beauty Salon w Warszawie oferujemy mezoterapię igłową, mezoterapię mikroigłową (Dermapen) oraz mezoterapię bezigłową — dobierając metodę do Twojego rodzaju skóry i celów zabiegu. Każdy zabieg poprzedza konsultacja kosmetologiczna.",
+      "Rezultaty są widoczne już po pierwszym zabiegu — skóra staje się bardziej napięta, nawilżona i rozświetlona. Seria zabiegów przynosi trwałe odmłodzenie i poprawę jakości skóry.",
+    ],
+    sections: [
+      {
+        heading: "Mezoterapia igłowa — jak to działa?",
+        body: [
+          "Cienkie igły wprowadzają koktajl odżywczy (witaminy, aminokwasy, kwas hialuronowy) bezpośrednio w skórę, omijając barierę naskórka. Mikrouszkodzenia stymulują naturalne procesy regeneracyjne i produkcję kolagenu.",
+        ],
+      },
+      {
+        heading: "Mezoterapia mikroigłowa — Dermapen",
+        body: [
+          "Dermapen to urządzenie zsurname igły, które tworzy mikrokanwały w skórze, umożliwiając głębszą penetrację substancji aktywnych. Zabieg jest mniej bolesny i daje szybsze efekty niż tradycyjna mezoterapia igłowa.",
+        ],
+      },
+      {
+        heading: "Na co pomaga mezoterapia?",
+        body: [
+          "Mezoterapia skutecznie zwalcza: zmarszczki i utratę elastyczności, przebarwienia i nierówny koloryt, suchość i odwodnienie skóry, blizny potrądzikowe, wypadanie włosów (mezoterapia skóry głowy) i cienie pod oczami.",
+        ],
+      },
+      {
+        heading: "Seria zabiegów i pielęgnacja domowa",
+        body: [
+          "Dla optymalnych efektów zalecamy serię 4-6 zabiegów co 2-4 tygodnie. Między zabiegami dbaj o nawilżenie, ochronę przeciwsłoneczną i unikanie silnych kwasów.",
+        ],
+      },
+      {
+        heading: "Połączenie zabiegów — co łączyć z mezoterapią?",
+        body: [
+          "Mezoterapia najlepiej działa w połączeniu z innymi zabiegami. Oczyszczanie twarzy przed mezoterapią otwiera pory i umożliwia głębszą penetrację substancji aktywnych. Peeling chemiczny (np. kwas migdałowy lub glikolowy) przygotowuje skórę i wzmacnia efekty mezoterapii. Po zabiegu warto skorzystać z relaksującego masażu twarzy, który poprawia krążenie i przyspiesza regenerację. Nasi kosmetolodzy tworzą spersonalizowane protokoły łączące zabiegi dla maksymalnych rezultatów.",
+        ],
+      },
+      {
+        heading: "Mezoterapia skóry głowy — wypadanie włosów",
+        body: [
+          "Mezoterapia skóry głowy to skuteczna metoda walki z wypadaniem włosów. Koktajl witaminowy, peptydy i substancje stymulujące (np. biotyna, krzemionka, czynniki wzrostu) wprowadzane są bezpośrednio w skórę głowy, odżywiając cebulki włosów i pobudzając porost. Zabieg jest polecany przy łysieniu androgenowym, po porodzie, przy strese i nedoborach witaminowych. Seria 6-8 zabiegów widocznie zmniejsza wypadanie i poprawia gęstość włosów.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Widoczne efekty", desc: "Skóra bardziej napięta i rozświetlona po pierwszym zabiegu." },
+      { title: "Stymulacja kolagenu", desc: "Naturalne odmłodzenie i regeneracja skóry." },
+      { title: "Bezpieczeństwo", desc: "Sterylne warunki i certyfikowane urządzenia." },
+      { title: "Indywidualny protokół", desc: "Dobieramy koktajl do Twojej skóry." },
+      { title: "Łączenie zabiegów", desc: "Mezoterapia + oczyszczanie + peeling = maksymalne efekty." },
+      { title: "Wypadanie włosów", desc: "Mezoterapia skóry głowy wzmacnia cebulki." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje mezoterapia igłowa w Warszawie?",
+        a: "Ceny mezoterapii igłowej w naszym salonie zaczynają się od 200 zł za zabieg. Dokładna cena zależy od obszaru zabiegowego i użytego koktajlu.",
+      },
+      {
+        q: "Czy mezoterapia igłowa boli?",
+        a: "Zabieg może powodować lekkie dyskomfort, ale stosujemy znieczulenie topicalne, które minimalizuje ból. Większość klientek opisuje to jako tolerowalne mrowienie.",
+      },
+      {
+        q: "Ile zabiegów mezoterapii potrzebuję?",
+        a: "Zalecamy serię 4-6 zabiegów co 2-4 tygodnie dla optymalnych rezultatów. Po serii podtrzymującej wystarczy 1 zabieg co 2-3 miesiące.",
+      },
+      {
+        q: "Kiedy widać efekty mezoterapii?",
+        a: "Pierwsze efekty (rozświetlenie, nawilżenie) widoczne są po 3-5 dniach. Pełne odmłodzenie następuje po 2-3 tygodniach od każdego zabiegu.",
+      },
+      {
+        q: "Czy mezoterapia jest bezpieczna w ciąży?",
+        a: "Ze względów bezpieczeństwa nie wykonujemy mezoterapii igłowej w ciąży i okresie karmienia. Zapraszamy po poradę — dobierzemy alternatywny zabieg pielęgnacyjny.",
+      },
+      {
+        q: "Jakie są przeciwwskazania do mezoterapii?",
+        a: "Przeciwwskazania to: ciąża, karmienie piersią, aktywne infekcje skóry, choroby autoimmunologiczne, stosowanie leków rozrzedzających krew i epilepsja. Konsultacja wyklucza przeciwwskazania.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "royal-facial",
+      "hydra-facial",
+      "facial-dry-skin",
+      "facial-oily-skin",
+    ],
+    relatedNicheSlugs: [
+      "oczyszczanie-twarzy-warszawa",
+      "laminacja-brwi-rzes-warszawa",
+      "salon-urody-warszawa",
+      "pedicure-warszawa",
+    ],
+    relatedCategorySlugs: ["facials"],
+    serviceName: "Mezoterapia w Warszawie",
+    serviceDescription:
+      "Profesjonalna mezoterapia igłowa i mikroigłowa w Warszawie — odmładzanie, nawilżanie i regeneracja skóry twarzy i głowy.",
+    imageAltRecommendations: [
+      "Mezoterapia igłowa twarzy w salonie kosmetycznym Warszawa",
+      "Dermapen — mezoterapia mikroigłowa w Warszawie",
+      "Zabieg mezoterapii na skórze twarzy — efekt przed i po",
+      "Koktajl odżywczy do mezoterapii w profesjonalnym salonie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na mezoterapię igłową w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── oczyszczanie-twarzy-warszawa ─────────────────────────── */
+  {
+    slug: "oczyszczanie-twarzy-warszawa",
+    locale: "pl",
+    primaryKeyword: "oczyszczanie twarzy Warszawa",
+    secondaryKeywords: [
+      "oczyszczanie wodorowe Warszawa",
+      "peeling kawitacyjny Warszawa",
+      "oczyszczanie manualne twarzy Warszawa",
+      "mikrodermabrazja Warszawa",
+      "zabieg na trądzik Warszawa",
+    ],
+    title: "Oczyszczanie Twarzy w Warszawie — Wodorowe, Kawitacyjne, Manualne",
+    metaDescription:
+      "Profesjonalne oczyszczanie twarzy w Warszawie — wodorowe, kawitacyjne, manualne i mikrodermabrazja. Czysta, zdrowa skóra. Royal Beauty Salon.",
+    h1: "Oczyszczanie Twarzy w Warszawie",
+    eyebrow: "Oczyszczanie • Twarz • Warszawa",
+    tagline:
+      "Czysta, zdrowa skóra — profesjonalne oczyszczanie twarzy w centrum Warszawy.",
+    heroImage: U("photo-1570172619644-dfd03ed5d881"),
+    heroAlt: "Profesjonalne oczyszczanie twarzy w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Oczyszczanie twarzy to fundament zdrowej skóry — a w Warszawie Royal Beauty Salon oferuje pełen zakres profesjonalnych oczyszczeń: wodorowe, kawitacyjne, manualne i mikrodermabrazję. Każdy zabieg dobieramy do Twojego rodzaju skóry i problemów dermatologicznych.",
+      "Regularne oczyszczanie zapobiega zaskórnikom, przebarwieniom i stanom zapalnym, a także poprawia wchłanianie kosmetyków pielęgnacyjnych. To najważniejszy krok w rutynie pielęgnacyjnej, którego nie pomija żaden profesjonalista.",
+      "Nasi kosmetolodzy przeprowadzają szczegółową analizę skóry przed każdym zabiegiem, aby dobrać metodę oczyszczania najlepszą dla Ciebie — od delikatnego peelingu kawitacyjnego po zaawansowaną mikrodermabrazję.",
+    ],
+    sections: [
+      {
+        heading: "Oczyszczanie wodorowe — hit w Warszawie",
+        body: [
+          "Oczyszczanie wodorowe to najnowszy trend w pielęgnacji skóry — za pomocą strumienia wodoru i aktywnego tlenu usuwamy zanieczyszczenia, martwy naskórek i toksyny, jednocześnie nawilżając skórę. Zabieg jest bezbolesny i nie powoduje podrażnień.",
+        ],
+      },
+      {
+        heading: "Peeling kawitacyjny",
+        body: [
+          "Fale ultradźwiękowe tworzą mikrowibracje, które delikatnie usuwają martwy naskórek i zanieczyszczenia z porów. Skóra staje się gładka, rozświetlona i lepiej wchłania kosmetyki. Idealny dla każdego rodzaju skóry.",
+        ],
+      },
+      {
+        heading: "Oczyszczanie manualne",
+        body: [
+          "Klasyczne oczyszczanie manualne to sprawdzona metoda usuwania zaskórników, wągrów i zanieczyszczeń. Po parowaniu i odkażaniu skóry nasz kosmetolog precyzyjnie usuwa zanieczyszczenia, a następnie nakłada kojącą maskę.",
+        ],
+      },
+      {
+        heading: "Mikrodermabrazja",
+        body: [
+          "Mechaniczne złuszczanie naskórka za pomocą kryształków tlenku glinu lub diamentowej głowicy. Skutecznie redukuje blizny, przebarwienia i zmarszczki, stymulując produkcję nowych komórek skóry.",
+        ],
+      },
+      {
+        heading: "Zabieg oczyszczający krok po kroku",
+        body: [
+          "Krok 1: Demakijaż i oczyszczanie powierzchowne.",
+          "Krok 2: Parowanie lub sonoforeza dla otwarcia porów.",
+          "Krok 3: Główne oczyszczanie — wodorowe, kawitacyjne lub manualne.",
+          "Krok 4: Tonizowanie i dezynfekcja skóry.",
+          "Krok 5: Nałożenie maski i kremu ochronnego.",
+        ],
+      },
+      {
+        heading: "Oczyszczanie twarzy a trądzik",
+        body: [
+          "Regularne oczyszczanie to podstawa walki z trądzikiem — usuwa sebum, bakterie i zanieczyszczenia z porów. Przy trądziku zalecamy oczyszczanie co 2-3 tygodnie w połączeniu z odpowiednią pielęgnacją domową.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Różne metody", desc: "Wodorowe, kawitacyjne, manualne i mikrodermabrazja." },
+      { title: "Bezbolesne", desc: "Komfortowe zabiegi bez rekonwalescencji." },
+      { title: "Efekty od razu", desc: "Skóra czystsza, gładsza i bardziej rozświetlona." },
+      { title: "Analiza skóry", desc: "Każdy zabieg poprzedza konsultacja." },
+      { title: "Krok po kroku", desc: "5-etapowy protokół oczyszczania." },
+      { title: "Anti-trądzik", desc: "Specjalne protokoły dla cery trądzikowej." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje oczyszczanie twarzy w Warszawie?",
+        a: "Ceny zaczynają się od 50 zł za cleanup, 120 zł za oczyszczanie kawitacyjne i 200 zł za HydraFacial (oczyszczanie wodorowe).",
+      },
+      {
+        q: "Jak często należy robić oczyszczanie twarzy?",
+        a: "Dla większości rodzajów skóry zalecamy oczyszczanie co 4-6 tygodni. Przy trądziku lub tłustej skórze — co 2-3 tygodnie.",
+      },
+      {
+        q: "Czy oczyszczanie wodorowe jest lepsze od manualnego?",
+        a: "Oczyszczanie wodorowe jest delikatniejsze i nie powoduje zaczerwienienia, dlatego jest lepsze dla wrażliwej skóry. Oczyszczanie manualne jest skuteczniejsze przy głębokich zanieczyszczeniach.",
+      },
+      {
+        q: "Kiedy widać efekty oczyszczania?",
+        a: "Efekty są widoczne natychmiast — skóra jest czystsza, gładsza i bardziej rozświetlona. Pełna regeneracja następuje w ciągu 2-3 dni.",
+      },
+      {
+        q: "Czy po oczyszczaniu twarzy mogę się malować?",
+        a: "Zalecamy powstrzymanie się od makijażu przez kilka godzin po zabiegu, aby skóra mogła się zregenerować. Następnego dnia można się spokojnie malować.",
+      },
+      {
+        q: "Jaki zabieg oczyszczający jest najlepszy na trądzik?",
+        a: "Dla cery trądzikowej polecamy oczyszczanie wodorowe w połączeniu z peelingiem kawitacyjnym — delikatnie usuwają zanieczyszczenia bez podrażnień.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hydra-facial",
+      "cleanup",
+      "royal-facial",
+      "facial-oily-skin",
+      "face-bleach",
+      "face-detan",
+    ],
+    relatedNicheSlugs: [
+      "mezoterapia-warszawa",
+      "laminacja-brwi-rzes-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["facials"],
+    serviceName: "Oczyszczanie Twarzy w Warszawie",
+    serviceDescription:
+      "Profesjonalne oczyszczanie twarzy w Warszawie — wodorowe, kawitacyjne, manualne i mikrodermabrazja dla czystej, zdrowej skóry.",
+    imageAltRecommendations: [
+      "Oczyszczanie wodorowe twarzy w salonie Warszawa",
+      "Peeling kawitacyjny — zabieg na twarz Warszawa",
+      "Oczyszczanie manualne twarzy u kosmetologa Warszawa",
+      "Mikrodermabrazja — profesjonalny zabieg Warszawa",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na oczyszczanie twarzy w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── laminacja-brwi-rzes-warszawa ─────────────────────────── */
+  {
+    slug: "laminacja-brwi-rzes-warszawa",
+    locale: "pl",
+    primaryKeyword: "laminacja brwi Warszawa",
+    secondaryKeywords: [
+      "laminacja rzęs Warszawa",
+      "lifting rzęs Warszawa",
+      "botox na rzęsy Warszawa",
+      "henna brwi i rzęs Warszawa",
+      "stylizacja brwi Warszawa",
+    ],
+    title: "Laminacja Brwi i Rzęs w Warszawie — Lifting, Botox, Henna",
+    metaDescription:
+      "Laminacja brwi i rzęs w Warszawie — lifting, botox, henna i profesjonalna stylizacja. Piękne, naturalne brwi i rzęsy. Royal Beauty Salon.",
+    h1: "Laminacja Brwi i Rzęs w Warszawie",
+    eyebrow: "Laminacja • Brwi • Rzęsy • Warszawa",
+    tagline:
+      "Uporządkowane, lśniące brwi i podkręcone rzęsy — laminacja i stylizacja w centrum Warszawy.",
+    heroImage: U("photo-1516975080664-ed2fc6a32937"),
+    heroAlt: "Profesjonalna laminacja brwi w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Laminacja brwi to zabieg, który zdobywa Warszawę — i trudno się dziwić. W kilkadziesiąt minut Twoje brwi stają się idealnie uporządkowane, uniesione i lśniące, z efektem utrzymującym się kilka tygodni.",
+      "W Royal Beauty Salon w Warszawie oferujemy laminację brwi, laminację rzęs (lifting), botox na rzęsy oraz kompleksową stylizację brwi z henną i regulacją. Każdy zabieg wykonujemy precyzyjnie, z dbałością o naturalny efekt.",
+      "To idealne rozwiązanie dla osób, które chcą pięknych, zadbanych brwi bez codziennego malowania — laminacja nadaje kształt i utrzymuje go nawet do 6 tygodni.",
+    ],
+    sections: [
+      {
+        heading: "Laminacja brwi — co to jest?",
+        body: [
+          "Laminacja brwi to zabieg chemiczny, który zmienia strukturę włosa, nadając mu pożądany kierunek i kształt. Brwi stają się bardziej płaskie, lśniące i uporządkowane. Efekt utrzymuje się 4-6 tygodni.",
+        ],
+      },
+      {
+        heading: "Lifting i laminacja rzęs",
+        body: [
+          "Lifting rzęs to zabieg, który podkręca i pogrubia naturalne rzęsy, nadając im efekt sztucznych rzęs bez przedłużania. Botox na rzęsy dodatkowo odżywia i wzmacnia rzęsy keratyną i witaminami.",
+        ],
+      },
+      {
+        heading: "Henna brwi i rzęs",
+        body: [
+          "Henna to naturalne barwienie brwi i rzęs, które podkreśla ich kolor i gęstość na 2-3 tygodnie. Po hennie brwi wyglądają na pełniejsze i bardziej zdefiniowane nawet bez makijażu.",
+        ],
+      },
+      {
+        heading: "Regulacja i stylizacja brwi",
+        body: [
+          "Precyzyjna regulacja brwi nitką lub woskiem, dopasowana do kształtu twarzy. Oferujemy kompleksową stylizację — od projektu po wykonanie, aby Twoje brwi wyglądały idealnie.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Efekt utrzymuje się", desc: "Laminacja brwi 4-6 tygodni, lifting rzęs 6-8 tygodni." },
+      { title: "Naturalny wygląd", desc: "Podkreślamy piękno bez sztuczności." },
+      { title: "Odżywienie", desc: "Botox na rzęsy wzmacnia i regeneruje." },
+      { title: "Szybki zabieg", desc: "Laminacja brwi w 30-40 minut." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje laminacja brwi w Warszawie?",
+        a: "Laminacja brwi w naszym salonie kosztuje od 80 zł, lifting rzęs od 100 zł, botox na rzęsy od 120 zł. Pakiet laminacja + henna — od 100 zł.",
+      },
+      {
+        q: "Jak długo utrzymuje się laminacja brwi?",
+        a: "Efekt laminacji utrzymuje się 4-6 tygodni, w zależności od typu włosa i pielęgnacji. Regularne stosowanie odżywki wydłuża trwałość.",
+      },
+      {
+        q: "Czy laminacja rzęs niszczy rzęsy?",
+        a: "Nie — profesjonalna laminacja jest bezpieczna. Dodatkowo botox na rzęsy odżywia i wzmacnia rzęsy keratyną i witaminami.",
+      },
+      {
+        q: "Czy mogę zrobić laminację brwi i rzęs tego samego dnia?",
+        a: "Tak — oba zabiegi można wykonać podczas jednej wizyty, co zajmie około godziny. To popularny zestaw przed ślubem lub wyjazdem.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "henna-eyebrows",
+      "threading-combo",
+      "full-face-eyebrows-threading",
+    ],
+    relatedNicheSlugs: [
+      "henna-brwi-warszawa",
+      "przedluzanie-rzes-warszawa",
+      "salon-pieknosci-warszawa",
+    ],
+    relatedCategorySlugs: ["threading"],
+    serviceName: "Laminacja Brwi i Rzęs w Warszawie",
+    serviceDescription:
+      "Laminacja brwi i rzęs w Warszawie — lifting, botox, henna i profesjonalna stylizacja dla pięknych, naturalnych brwi.",
+    imageAltRecommendations: [
+      "Laminacja brwi — efekt przed i po w salonie Warszawa",
+      "Lifting rzęs w profesjonalnym salonie kosmetycznym",
+      "Henna brwi i regulacja — kompleksowa stylizacja Warszawa",
+      "Botox na rzęsy — odżywianie i pogrubianie w Warszawie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na laminację brwi w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── pedicure-warszawa ─────────────────────────── */
+  {
+    slug: "pedicure-warszawa",
+    locale: "pl",
+    primaryKeyword: "pedicure Warszawa",
+    secondaryKeywords: [
+      "pedicure hybrydowy Warszawa",
+      "pedicure SPA Warszawa",
+      "pedicure kwasowy Warszawa",
+      "pielęgnacja stóp Warszawa",
+      "salon pedicure Warszawa",
+    ],
+    title: "Pedicure w Warszawie — Hybrydowy, SPA, Leczniczy",
+    metaDescription:
+      "Profesjonalny pedicure w Warszawie — hybrydowy, SPA, klasyczny i leczniczy. Higiena i komfort. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    h1: "Pedicure w Warszawie",
+    eyebrow: "Pedicure • Stopy • Warszawa",
+    tagline:
+      "Piękne, zadbane stopy — profesjonalny pedicure w eleganckim salonie w Warszawie.",
+    heroImage: U("photo-1604654892683-403ddb220dce"),
+    heroAlt: "Profesjonalny pedicure SPA w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Zadbane stopy to podstawa komfortu i dobrego samopoczucia. W Royal Beauty Salon w Warszawie oferujemy pedicure w pełnym zakresie — od klasycznego, przez hybrydowy, po SPA i leczniczy — zawsze w sterylnych warunkach i z dbałością o każdy detal.",
+      "Nasi specjaliści od pedicure znają się na pielęgnacji skórek, opracowaniu pętli i pięt, a także na trwałych kolorach, które utrzymują się tygodniami bez odprysków. Każdy pedicure obejmuje relaksujący masaż stóp.",
+      "Oferujemy również pedicure leczniczy dla osób z problemami skórnymi stóp — modzele, odciski, wrastające paznokcie.Profesjonalna pielęgnacja stóp w Warszawie.",
+    ],
+    sections: [
+      {
+        heading: "Pedicure hybrydowy",
+        body: [
+          "Trwały kolor bez odprysków na 2-3 tygodnie. Oferujemy szeroką paletę kolorów i efektów — od klasycznych po trendowe. Hybryda na stopach jest idealna na lato i wakacje.",
+        ],
+      },
+      {
+        heading: "Pedicure SPA",
+        body: [
+          "Relaksujący zabieg obejmujący peeling, maskę, masaż stóp i nawilżenie. Idealny po długim dniu lub jako element kompleksowej pielęgnacji stóp. Ciesz się gładkimi, miękkimi stopami.",
+        ],
+      },
+      {
+        heading: "Pedicure klasyczny",
+        body: [
+          "Opracowanie skórek, pętli i pięt z precyzyjnym malowaniem. Podstawowa pielęgnacja stóp w sterylnych warunkach — szybko, profesjonalnie i higienicznie.",
+        ],
+      },
+      {
+        heading: "Pedicure leczniczy",
+        body: [
+          "Profesjonalna pielęgnacja stóp z problemami — modzele, odciski, wrastające paznokcie, pękające pięty. Wykonujemy z dbałością o komfort i sterylność.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Higiena", desc: "Sterylne narzędzia i jednorazowe pilniki." },
+      { title: "Trwałość", desc: "Hybryda utrzymuje się 2-3 tygodnie." },
+      { title: "Relaks", desc: "Masaż stóp przy każdym pedicure." },
+      { title: "Pielęgnacja lecznicza", desc: "Modzele, odciski i wrastające paznokcie." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje pedicure w Warszawie?",
+        a: "Pedicure klasyczny od 90 zł, pedicure hybrydowy od 110 zł, pedicure SPA od 130 zł. Pedicure leczyczy — cena do ustalenia na konsultacji.",
+      },
+      {
+        q: "Jak często należy robić pedicure?",
+        a: "Zalecamy pedicure co 4-6 tygodni dla utrzymania stóp w dobrej kondycji. Przy problemach skórnych — częściej, według zaleceń specjalisty.",
+      },
+      {
+        q: "Czy pedicure jest bolesny?",
+        a: "Nie — nasze zabiegi są komfortowe. Nawet pedicure leczniczy wykonujemy delikatnie, z minimalnym dyskomfortem.",
+      },
+      {
+        q: "Czy mogę zrobić manicure i pedicure tego samego dnia?",
+        a: "Tak — to nasza najpopularniejsza kombinacja. Bookowanie obu zabiegów podczas jednej wizyty to idealny sposób na kompleksową pielęgnację.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "pedicure",
+      "manicure",
+    ],
+    relatedNicheSlugs: [
+      "manicure-warszawa",
+      "salon-pieknosci-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["nails"],
+    serviceName: "Pedicure w Warszawie",
+    serviceDescription:
+      "Profesjonalny pedicure w Warszawie — hybrydowy, SPA, klasyczny i leczniczy. Higiena, komfort i piękne stopy.",
+    imageAltRecommendations: [
+      "Pedicure hybrydowy w salonie kosmetycznym Warszawa",
+      "Pedicure SPA — relaksujący zabieg na stopy Warszawa",
+      "Profesjonalna pielęgnacja stóp w eleganckim salonie",
+      "Pedicure leczniczy — opracowanie pięt i skórek",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na pedicure w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── strzyzenie-meskie-warszawa ─────────────────────────── */
+  {
+    slug: "strzyzenie-meskie-warszawa",
+    locale: "pl",
+    primaryKeyword: "strzyżenie męskie Warszawa",
+    secondaryKeywords: [
+      "fryzjer męski Warszawa",
+      "barber Warszawa",
+      "strzyżenie włosów męskich Warszawa",
+      "trymer brody Warszawa",
+      "salon męski Warszawa",
+    ],
+    title: "Strzyżenie Męskie w Warszawie — Fryzjer Męski, Barber",
+    metaDescription:
+      "Profesjonalne strzyżenie męskie w Warszawie — fryzjer męski, barber, trymowanie brody. Nowoczesne i klasyczne fryzury. Royal Beauty Salon.",
+    h1: "Strzyżenie Męskie w Warszawie",
+    eyebrow: "Fryzjer Męski • Warszawa",
+    tagline:
+      "Profesjonalne strzyżenie męskie — od klasycznych po nowoczesne fryzury, w centrum Warszawy.",
+    heroImage: U("photo-1503951914875-452162b0f3f1"),
+    heroAlt: "Profesjonalne strzyżenie męskie w salonie fryzjerskim w Warszawie",
+    intro: [
+      "Szukasz fryzjera męskiego w Warszawie, który rozumie Twoje potrzeby? Royal Beauty Salon oferuje profesjonalne strzyżenie męskie — od klasycznych cięć po nowoczesne, trendowe fryzury. Nasi fryzjerzy specjalizują się w strzyżeniu włosów męskich, trymowaniu brody i stylizacji.",
+      "Każda wizyta zaczyna się od konsultacji — wysłuchamy Twoich oczekiwań, doradzimy fryzurę dopasowaną do kształtu twarzy i stylu życia, a następnie wykonujemy precyzyjne cięcie.",
+      "Oferujemy również trymowanie brody, modelowanie i stylizację — abyś wychodził z salonu z perfekcyjnym lookiem. Doświadczeni fryzjerzy męscy, nowoczesne narzędzia i atmosfera, w której poczujesz się komfortowo.",
+    ],
+    sections: [
+      {
+        heading: "Strzyżenie męskie — klasyczne i nowoczesne",
+        body: [
+          "Od klasycznego crew cut po modern fade, textured crop czy undercut — nasi fryzjerzy znają najnowsze trendy i potrafią dopasować fryzurę do Twojego stylu, włosów i okazji.",
+        ],
+      },
+      {
+        heading: "Trymowanie i stylizacja brody",
+        body: [
+          "Profesjonalne trymowanie brody, modelowanie i contouring. Dobrze dobrana broda podkreśla rysy twarzy i nadaje charakter. Oferujemy również golenie gorącym ręcznikiem.",
+        ],
+      },
+      {
+        heading: "Strzyżenie dziecięce",
+        body: [
+          "Strzyżenie włosów dla chłopców — cierpliwie, profesjonalnie i w przyjaznej atmosferze. Dbamy o komfort młodego klienta.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja i produkty",
+        body: [
+          "Dobieramy produkty do stylizacji — matowe, błyszczące, forte czy pasta — abyś mógł odtworzyć fryzurę w domu. Doradzamy pielęgnację włosów i brody.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Doświadczeni fryzjerzy", desc: "Specjaliści od męskich fryzur i brody." },
+      { title: "Nowoczesne trendy", desc: "Fade, undercut, textured crop i więcej." },
+      { title: "Trymowanie brody", desc: "Profesjonalna stylizacja i contouring." },
+      { title: "Szybko i precyzyjnie", desc: "Strzyżenie męskie w 30-45 minut." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje strzyżenie męskie w Warszawie?",
+        a: "Strzyżenie męskie w naszym salonie zaczyna się od 70 zł za strzyżenie podstawowe i 120 zł za strzyżenie zaawansowane z modelowaniem. Trymowanie brody — od 50 zł.",
+      },
+      {
+        q: "Czy musicie rezerwować termin?",
+        a: "Zalecamy rezerwację telefoniczną lub online, aby uniknąć czekania. Możesz też wpaść, jeśli mamy wolny termin.",
+      },
+      {
+        q: "Jakie fryzury męskie są modne w 2026?",
+        a: "Modne fryzury to: modern fade, textured crop, messy fringe, curtain bangs i klasyczny side part. Doradzimy, która sprawdzi się najlepiej.",
+      },
+      {
+        q: "Czy strzyżecie również dzieci?",
+        a: "Tak — oferujemy strzyżenie dziecięce w przyjaznej atmosferze. Skontaktuj się z nami, aby umówić wizytę dla dziecka.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-basic",
+      "hair-cutting-advanced",
+      "kids-haircut",
+    ],
+    relatedNicheSlugs: [
+      "fryzjer-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Strzyżenie Męskie w Warszawie",
+    serviceDescription:
+      "Profesjonalne strzyżenie męskie w Warszawie — fryzjer męski, barber, trymowanie brody i nowoczesne fryzury.",
+    imageAltRecommendations: [
+      "Strzyżenie męskie fade w salonie fryzjerskim Warszawa",
+      "Trymowanie brody — profesjonalna stylizacja męska",
+      "Fryzjer męski przy pracy w nowoczesnym salonie Warszawa",
+      "Klasyczne strzyżenie męskie z modelowaniem",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałbym umówić się na strzyżenie męskie w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────────── salon-kosmetyczny-blisko-mnie-warszawa ─────────────────────────── */
+  {
+    slug: "salon-kosmetyczny-blisko-mnie-warszawa",
+    locale: "pl",
+    primaryKeyword: "salon kosmetyczny blisko mnie Warszawa",
+    secondaryKeywords: [
+      "salon urody blisko mnie Warszawa",
+      "fryzjer blisko mnie Warszawa",
+      "kosmetyczka blisko mnie Warszawa",
+      "salon beauty blisko mnie Warszawa",
+      "najbliższy salon kosmetyczny Warszawa",
+    ],
+    title: "Salon Kosmetyczny Blisko Mnie w Warszawie — Royal Beauty Salon",
+    metaDescription:
+      "Salon kosmetyczny blisko Ciebie w Warszawie — fryzjer, kosmetyczka, manicure, depilacja. Dogodna lokalizacja, bezpłatny parking. Royal Beauty Salon.",
+    h1: "Salon Kosmetyczny Blisko Mnie w Warszawie",
+    eyebrow: "Blisko Ciebie • Warszawa",
+    tagline:
+      "Twój najbliższy salon kosmetyczny w Warszawie — pełen zakres usług beauty w dogodnej lokalizacji.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt: "Wejście do salonu kosmetycznego Royal Beauty Salon w Warszawie",
+    intro: [
+      "Szukasz salonu kosmetycznego blisko siebie w Warszawie? Royal Beauty Salon na Alei Stanów Zjednoczonych to idealny wybór — łatwo dojedziesz z każdej dzielnicy miasta, a my oferujemy pełen zakres usług beauty pod jednym dachem.",
+      "Nasz salon łączy usługi fryzjerskie, kosmetyczne, manicure, pedicure, depilację i makijaż — wszystko w eleganckim wnętrzu, z doświadczonym zespołem specjalistów i bezpłatnym parkingiem dla gości.",
+      "Nie musisz szukać daleko — Royal Beauty Salon jest tuż obok, z szerokim menu zabiegów, elastycznymi godzinami i atmosferą, w której poczujesz się komfortowo. Umów wizytę online lub telefonicznie.",
+    ],
+    sections: [
+      {
+        heading: "Pełen zakres usług beauty",
+        body: [
+          "Fryzjer: koloryzacja, keratyna, strzyżenie. Kosmetyczka: zabiegi na twarz, oczyszczanie, mezoterapia. Manicure i pedicure: hybryda, SPA, klasyczny. Depilacja: wosk, nitka, laser. Makijaż: ślubny, okazjonalny, dzienny.",
+        ],
+      },
+      {
+        heading: "Dogodna lokalizacja w Warszawie",
+        body: [
+          "Znajdujemy się na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa — łatwo dojedziesz metro, autobusem, tramwajem lub samochodem. Bezpłatny parking dla gości.",
+        ],
+      },
+      {
+        heading: "Elastyczne godziny otwarcia",
+        body: [
+          "Jesteśmy otwarci codziennie od 11:00 do 18:00, w tym w weekendy. Oferujemy elastyczne terminy, abyś mógł wkomponować wizytę w swój grafik.",
+        ],
+      },
+      {
+        heading: "Doświadczenie i jakość",
+        body: [
+          "Nasz zespół to doświadczeni specjaliści z wieloletnim doświadczeniem, którzy łączą europejskie techniki z azjatyckimi metodami pielęgnacji. Stawiamy na higienę, komfort i produkty najwyższej jakości.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Blisko Ciebie", desc: "Łatwy dojazd z każdej dzielnicy Warszawy." },
+      { title: "Pełen zakres usług", desc: "Fryzjer, kosmetyczka, manicure, depilacja." },
+      { title: "Bezpłatny parking", desc: "Darmowy parking dla gości." },
+      { title: "Elastyczne terminy", desc: "Codziennie 11:00-18:00, w tym weekendy." },
+    ],
+    faqs: [
+      {
+        q: "Gdzie znajduje się Royal Beauty Salon?",
+        a: "Na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa — łatwo dojedziesz z każdej dzielnicy. Bezpłatny parking dostępny.",
+      },
+      {
+        q: "Jakie usługi oferujecie?",
+        a: "Pełen zakres — fryzjer, kosmetyczka, manicure, pedicure, depilacja, makijaż i zabiegi na twarz. Wszystko pod jednym dachem.",
+      },
+      {
+        q: "Czy mogę umówić się online?",
+        a: "Tak — rezerwacja online lub telefoniczna. Zalecamy rezerwację z wyprzedzeniem, szczególnie w weekendy.",
+      },
+      {
+        q: "Czy macie parking?",
+        a: "Tak — bezpłatny parking dla naszych gości, co ułatwia dojazd samochodem.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "threading-combo",
+      "manicure",
+      "royal-facial",
+      "hair-cutting-advanced",
+    ],
+    relatedNicheSlugs: [
+      "salon-kosmetyczny-warszawa",
+      "salon-urody-warszawa",
+      "salon-pieknosci-warszawa",
+    ],
+    relatedCategorySlugs: ["hair", "nails", "facials"],
+    serviceName: "Salon Kosmetyczny Blisko Mnie w Warszawie",
+    serviceDescription:
+      "Salon kosmetyczny blisko Ciebie w Warszawie — pełen zakres usług beauty w dogodnej lokalizacji z bezpłatnym parkingiem.",
+    imageAltRecommendations: [
+      "Salon kosmetyczny Royal Beauty Salon — wejście Warszawa",
+      "Wnętrze eleganckiego salonu piękności w Warszawie",
+      "Bezpłatny parking przy salonie kosmetycznym Warszawa",
+      "Zespół specjalistów w salonie beauty Warszawa",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę w salonie kosmetycznym blisko mnie w Warszawie.",
+  },
+
+  /* ─────────────────────────── salon-kosmetyczny-wilanow ─────────────────────────── */
+  {
+    slug: "salon-kosmetyczny-wilanow",
+    locale: "pl",
+    primaryKeyword: "salon kosmetyczny Wilanów",
+    secondaryKeywords: [
+      "fryzjer Wilanów",
+      "salon urody Wilanów",
+      "manicure Wilanów",
+      "kosmetyczka Wilanów",
+      "salon fryzjerski Wilanów",
+    ],
+    title: "Salon Kosmetyczny Wilanów — Dojazd z Wilanowa do Royal Beauty Salon",
+    metaDescription:
+      "Salon kosmetyczny blisko Wilanowa w Warszawie — fryzjer, kosmetyczka, manicure i depilacja. Łatwy dojazd z Wilanowa. Royal Beauty Salon.",
+    h1: "Salon Kosmetyczny dla Mieszkańców Wilanowa",
+    eyebrow: "Wilanów • Warszawa",
+    tagline:
+      "Profesjonalny salon kosmetyczny łatwo dostępny z Wilanowa — pełen zakres usług beauty.",
+    heroImage: U("photo-1600948836101-f9ffda59d250"),
+    heroAlt: "Elegancki salon kosmetyczny dostępny z Wilanowa w Warszawie",
+    intro: [
+      "Mieszkasz w Wilanowie i szukasz profesjonalnego salonu kosmetycznego? Royal Beauty Salon na Alei Stanów Zjednoczonych to idealny wybór dla mieszkańców Wilanowa — dojazd samochodem zajmuje zaledwie kilkanaście minut, a komunikacją miejską — kilkanaście minut metro lub autobusem.",
+      "Oferujemy pełen zakres usług — od fryzjerskich, przez kosmetyczne, po manicure i depilację. Nasz zespół to doświadczeni specjaliści, którzy dbają o najwyższą jakość usług w eleganckim wnętrzu.",
+      "Wilanów to jedna z najbardziej prestiżowych dzielnic Warszawy, a nasz salon dorasta do tych oczekiwań — produkty premium, indywidualne podejście i bezpłatny parking dla gości z Wilanowa.",
+    ],
+    sections: [
+      {
+        heading: "Łatwy dojazd z Wilanowa",
+        body: [
+          "Z Wilanowa do naszego salonu dojedziesz samochodem ulicami Wilanowską lub Aleją Wilanowską w kilkanaście minut. Komunikacją miejską — metro linii M1 do przystanku w pobliżu Alei Stanów Zjednoczonych. Bezpłatny parking dla gości.",
+        ],
+      },
+      {
+        heading: "Usługi fryzjerskie",
+        body: [
+          "Koloryzacja, balayage, keratynowe prostowanie, nanoplastia, strzyżenie i modelowanie. Każdy zabieg zaczyna się od konsultacji, aby dobrać metodę najlepszą dla Twoich włosów.",
+        ],
+      },
+      {
+        heading: "Zabiegi na twarz i manicure",
+        body: [
+          "Oczyszczanie wodorowe, HydraFacial, mezoterapia, zabiegi nawilżające i anti-aging. Manicure hybrydowy, SPA i pedicure — wszystko w sterylnych warunkach.",
+        ],
+      },
+      {
+        heading: "Depilacja i makijaż",
+        body: [
+          "Depilacja woskiem, nitką i laserowa. Profesjonalny makijaż ślubny, okazjonalny i dzienny. Dojazd do klientki na terenie Wilanowa i okolic.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Blisko Wilanowa", desc: "Kilkanaście minut dojazdu samochodem." },
+      { title: "Bezpłatny parking", desc: "Darmowy parking dla gości z Wilanowa." },
+      { title: "Pełen zakres usług", desc: "Fryzjer, kosmetyczka, manicure i depilacja." },
+      { title: "Premium produkty", desc: "Stawiamy na jakość i komfort." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Wilanowa do salonu?",
+        a: "Z Wilanowa do naszego salonu dojedziesz samochodem w kilkanaście minut lub komunikacją miejską — metro lub autobus do przystanku w pobliżu Alei Stanów Zjednoczonych.",
+      },
+      {
+        q: "Czy oferujecie usługi dla mieszkańców Wilanowa?",
+        a: "Tak — nasi klienci to mieszkańcy całej Warszawy, w tym Wilanowa, Mokotowa, Ochoty i Śródmieścia. Oferujemy bezpłatny parking.",
+      },
+      {
+        q: "Jakie usługi polecacie mieszkańcom Wilanowa?",
+        a: "Pełen zakres — koloryzacja, keratyna, manicure, zabiegi na twarz i depilacja. Doradzimy zabieg dopasowany do Twoich potrzeb.",
+      },
+      {
+        q: "Czy mogę zaparkować przy salonie?",
+        a: "Tak — zapewniamy bezpłatny parking dla naszych gości, co ułatwia dojazd z Wilanowa i innych dzielnic.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "manicure",
+      "pedicure",
+      "royal-facial",
+      "royal-nanoplasty",
+    ],
+    relatedNicheSlugs: [
+      "salon-kosmetyczny-warszawa",
+      "salon-pieknosci-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["hair", "nails", "facials"],
+    serviceName: "Salon Kosmetyczny Wilanów — Dojazd z Wilanowa",
+    serviceDescription:
+      "Salon kosmetyczny łatwo dostępny z Wilanowa w Warszawie — fryzjer, kosmetyczka, manicure i depilacja z bezpłatnym parkingiem.",
+    imageAltRecommendations: [
+      "Salon kosmetyczny Royal Beauty Salon — dojazd z Wilanowa",
+      "Wnętrze salonu fryzjerskiego w centrum Warszawy",
+      "Manicure hybrydowy w salonie blisko Wilanowa",
+      "Zabieg na twarz w eleganckim salonie kosmetycznym",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę w salonie kosmetycznym — mieszkam w Wilanowie.",
+  },
+  {
+    slug: "peeling-chemiczny-warszawa",
+    locale: "pl",
+    primaryKeyword: "peeling chemiczny Warszawa",
+    secondaryKeywords: [
+      "peeling kwasowy Warszawa",
+      "peeling na trądzik Warszawa",
+      "peeling na przebarwienia Warszawa",
+      "eksfoliacja kwasami Warszawa",
+      "peeling glikolowy Warszawa",
+    ],
+    title:
+      "Peeling Chemiczny w Warszawie — Kwasowy, Glikolowy, Migdałowy",
+    metaDescription:
+      "Profesjonalny peeling chemiczny w Warszawie — kwasowy, glikolowy, migdałowy. Odmładzanie i redukcja przebarwień. Royal Beauty Salon.",
+    h1: "Peeling Chemiczny w Warszawie",
+    eyebrow: "Peeling • Kwasy • Warszawa",
+    tagline:
+      "Odmładzanie i regeneracja skóry kwasami — peeling chemiczny w centrum Warszawy.",
+    heroImage: U("photo-1570172619644-dfd03ed5d881"),
+    heroAlt:
+      "Profesjonalny peeling chemiczny twarzy w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Peeling chemiczny to zabieg, który wykorzystuje_kwasy owocowe lub medyczne do złuszczania martwego naskórka i stymulacji regeneracji skóry. W Royal Beauty Salon w Warszawie oferujemy peelingi chemiczne dostosowane do każdego rodzaju skóry — od delikatnych po zaawansowane.",
+      "Dzięki zastosowaniu kwasów glikolowego, migdałowego, salicylowego i mlekowego skutecznie redukujemy przebarwienia, zmarszczki, trądzik i nierówny koloryt skóry. Każdy peeling poprzedza konsultacja kosmetologiczna.",
+      "Efekty peelingu chemicznego są widoczne już po pierwszym zabiegu — skóra staje się gładsza, bardziej rozświetlona i młodsza. Seria zabiegów przynosi trwałą poprawę jakości skóry.",
+    ],
+    sections: [
+      {
+        heading: "Rodzaje peelingów chemicznych",
+        body: [
+          "Oferujemy peelingi kwasowe: glikolowy (AHA) — złuszczanie i odmładzanie, migdałowy — delikatny dla wrażliwej skóry, salicylowy (BHA) — oczyszczanie porów i trądzik, mlekowy — nawilżanie i rozjaśnianie. Dobieramy kwas do Twojego rodzaju skóry i problemów.",
+        ],
+      },
+      {
+        heading: "Na co pomaga peeling chemiczny?",
+        body: [
+          "Peeling chemiczny skutecznie redukuje: przebarwienia i nierówny koloryt, zmarszczki i utratę elastyczności, trądzik i zaskórniki, blizny potrądzikowe, suchość i szorstkość skóry.",
+        ],
+      },
+      {
+        heading: "Przebieg zabiegu",
+        body: [
+          "Zaczynamy od analizy skóry i doboru odpowiedniego kwasu. Następnie nakładamy preparat na 5-15 minut, w zależności od stężenia i rodzaju skóry. Po zneutralizowaniu nakładamy maskę kojącą i krem ochronny z SPF.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja po peelingu",
+        body: [
+          "Po peelingu chemicznym unikaj słońca przez 7 dni, stosuj krem z SPF 50+, nawilżaj skórę i unikaj silnych kosmetyków z retinolem lub kwasami. Złuszczanie trwa 3-7 dni — nie usuwaj go ręcznie.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Dobór kwasu", desc: "Indywidualnie do Twojej skóry." },
+      {
+        title: "Widoczne efekty",
+        desc: "Gładka, rozświetlona skóra po pierwszym zabiegu.",
+      },
+      {
+        title: "Redukcja przebarwień",
+        desc: "Wyrównanie kolorytu skóry.",
+      },
+      { title: "Anti-aging", desc: "Stymulacja produkcji kolagenu." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje peeling chemiczny w Warszawie?",
+        a: "Ceny zaczynają się od 100 zł za peeling kwasowy, 150 zł za peeling glikolowy i 200 zł za peeling medyczny.",
+      },
+      {
+        q: "Czy peeling chemiczny boli?",
+        a: "Zabieg może powodować lekkie mrowienie i pieczenie, które mija po kilku minutach. Stosujemy neutralizatory, aby minimalizować dyskomfort.",
+      },
+      {
+        q: "Ile zabiegów peelingu potrzebuję?",
+        a: "Dla optymalnych rezultatów zalecamy serię 4-6 zabiegów co 2-4 tygodnie. Po serii podtrzymującej wystarczy 1 zabieg co 2-3 miesiące.",
+      },
+      {
+        q: "Kiedy mogę wrócić do pracy po peelingu?",
+        a: "Po delikatnym peelingu — natychmiast. Po peelingu medycznym — po 1-2 dniach, gdy złuszczanie jest intensywne.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hydra-facial",
+      "royal-facial",
+      "facial-dry-skin",
+      "facial-oily-skin",
+    ],
+    relatedNicheSlugs: [
+      "oczyszczanie-twarzy-warszawa",
+      "mezoterapia-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["facials"],
+    serviceName: "Peeling Chemiczny w Warszawie",
+    serviceDescription:
+      "Profesjonalny peeling chemiczny w Warszawie — kwasowy, glikolowy, migdałowy dla odmładzania i redukcji przebarwień.",
+    imageAltRecommendations: [
+      "Peeling chemiczny twarzy w salonie kosmetycznym Warszawa",
+      "Zabieg kwasowy na twarz — efekt przed i po",
+      "Nakładanie kwasu glikolowego na twarz",
+      "Skóra po peelingu chemicznym — gładka i rozświetlona",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na peeling chemiczny w Royal Beauty Salon w Warszawie.",
+  },
+  {
+    slug: "koloryzacja-wlosow-warszawa",
+    locale: "pl",
+    primaryKeyword: "koloryzacja włosów Warszawa",
+    secondaryKeywords: [
+      "koloryzacja włosów Warszawa cena",
+      "farbowanie włosów Warszawa",
+      "rozjaśnianie włosów Warszawa",
+      "koloryzacja permanentna Warszawa",
+      "koloryzacja odrostów Warszawa",
+    ],
+    title:
+      "Koloryzacja Włosów w Warszawie — Farbowanie, Rozjaśnianie, Odrosty",
+    metaDescription:
+      "Profesjonalna koloryzacja włosów w Warszawie — farbowanie, rozjaśnianie, zakrywanie siwizny. Niskiamonijowe produkty. Royal Beauty Salon.",
+    h1: "Koloryzacja Włosów w Warszawie",
+    eyebrow: "Koloryzacja • Farbowanie • Warszawa",
+    tagline:
+      "Piękny kolor włosów — profesjonalna koloryzacja w centrum Warszawy.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt:
+      "Profesjonalna koloryzacja włosów w salonie fryzjerskim w Warszawie",
+    intro: [
+      "Koloryzacja włosów to jeden z najpopularniejszych zabiegów fryzjerskich w Warszawie — i w Royal Beauty Salon wykonujemy ją z najwyższą precyzją. Oferujemy koloryzację permanentną, półpermanentną, zakrywanie siwizny i delikatne rozjaśnianie.",
+      "Używamy niskiamonijowych, chroniących wiązania linii koloryzujących, aby Twoje włosy pozostały zdrowe i lśniące po zabiegu. Każdy kolor dobieramy indywidualnie — do Twojej karnacji, stylu i osobowości.",
+      "Od subtelnego odświeżenia koloru po dramatyczną metamorfozę — nasi koloryści tworzą looki, które kochasz. Każda koloryzacja poprzedza konsultację i test na pasemku.",
+    ],
+    sections: [
+      {
+        heading: "Rodzaje koloryzacji",
+        body: [
+          "Oferujemy: koloryzację permanentną (trwałą) — pełna zmiana koloru, koloryzację półpermanentną — odświeżenie bez zobowiązań, zakrywanie siwizny — naturalne pokrycie siwych włosów, tonowanie — delikatne odcienie i refleksy.",
+        ],
+      },
+      {
+        heading: "Koloryzacja a zdrowie włosów",
+        body: [
+          "Stosujemy niskiamonijowe, bezpieczne linie koloryzujące z keratyną i proteinami jedwabiu. Każda koloryzacja lightening jest połączona z zabiegiem regenerującym, aby chronić strukturę włosa.",
+        ],
+      },
+      {
+        heading: "Cennik koloryzacji",
+        body: [
+          "Koloryzacja odrostów: od 100 zł. Koloryzacja globalna: od 180 zł. Rozjaśnianie: od 200 zł. Koloryzacja + keratyna: cena pakietowa.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja po koloryzacji",
+        body: [
+          "Po koloryzacji używaj szamponów i odżywek dedykowanych włosom farbowanym. Unikaj gorącej wody i codziennego mycia — 2-3 razy w tygodniu wystarczy. Stosuj maskę raz w tygodniu.",
+        ],
+      },
+    ],
+    highlights: [
+      {
+        title: "Niskiamonijowe",
+        desc: "Bezpieczne kolory bez uszkodzeń.",
+      },
+      {
+        title: "Indywidualny kolor",
+        desc: "Dobieramy odcień do Ciebie.",
+      },
+      {
+        title: "Zakrywanie siwizny",
+        desc: "Naturalne pokrycie siwych włosów.",
+      },
+      {
+        title: "Regeneracja",
+        desc: "Keratyna i proteiny przy każdej koloryzacji.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje koloryzacja włosów w Warszawie?",
+        a: "Koloryzacja odrostów od 100 zł, globalna od 180 zł, rozjaśnianie od 200 zł. Dokładna cena zależy od długości i gęstości włosów.",
+      },
+      {
+        q: "Czy koloryzacja niszczy włosy?",
+        a: "Profesjonalna koloryzacja niskiamonijowa jest bezpieczna. Stosujemy produkty chroniące wiązania i dodajemy zabieg regenerujący.",
+      },
+      {
+        q: "Jak często można farbować włosy?",
+        a: "Odrosty — co 4-6 tygodni. Koloryzacja globalna — rzadziej, według potrzeb. Doradzimy optymalny harmonogram.",
+      },
+      {
+        q: "Jaki kolor będzie dla mnie odpowiedni?",
+        a: "Podczas konsultacji dobieramy kolor do Twojej karnacji, oczu i stylu życia. Możemy pokazać wizualizację przed zabiegiem.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "fashion-shade-global-color-medium",
+      "hair-highlights-medium",
+      "hair-cutting-advanced",
+      "keratin-treatment-medium",
+    ],
+    relatedNicheSlugs: [
+      "fryzjer-warszawa",
+      "baleaz-warszawa",
+      "keratynowe-prostowanie-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Koloryzacja Włosów w Warszawie",
+    serviceDescription:
+      "Profesjonalna koloryzacja włosów w Warszawie — farbowanie, rozjaśnianie i zakrywanie siwizny niskiamonijowymi produktami.",
+    imageAltRecommendations: [
+      "Koloryzacja włosów w salonie fryzjerskim Warszawa",
+      "Farbowanie włosów — efekt przed i po",
+      "Rozjaśnianie włosów w profesjonalnym salonie",
+      "Zakrywanie siwizny — naturalny efekt koloryzacji",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na koloryzację włosów w Royal Beauty Salon w Warszawie.",
+  },
+  {
+    slug: "strzyzenie-damskie-warszawa",
+    locale: "pl",
+    primaryKeyword: "strzyżenie damskie Warszawa",
+    secondaryKeywords: [
+      "fryzjer damski Warszawa",
+      "strzyżenie włosów damskich Warszawa",
+      "strzyżenie z modelowaniem Warszawa",
+      "strzyżenie krótkich włosów Warszawa",
+      "strzyżenie długich włosów Warszawa",
+    ],
+    title:
+      "Strzyżenie Damskie w Warszawie — Profesjonalne Strzyżenie Włosów",
+    metaDescription:
+      "Profesjonalne strzyżenie damskie w Warszawie — krótkie, długie, z modelowaniem. Doświadczone fryzjerki. Royal Beauty Salon.",
+    h1: "Strzyżenie Damskie w Warszawie",
+    eyebrow: "Fryzjer Damski • Warszawa",
+    tagline:
+      "Precyzyjne strzyżenie damskie — dopasowane do Twojej twarzy i stylu.",
+    heroImage: U("photo-1560066984-138dadb4c035"),
+    heroAlt:
+      "Profesjonalne strzyżenie damskie w salonie fryzjerskim w Warszawie",
+    intro: [
+      "Strzyżenie damskie to sztuka dopasowania fryzury do kształtu twarzy, faktury włosów i stylu życia. W Royal Beauty Salon w Warszawie nasze fryzjerki tworzą looki, które podkreślają Twoją urodę i są łatwe w codziennej pielęgnacji.",
+      "Każda wizyta zaczyna się od konsultacji — wysłuchamy Twoich oczekiwań, doradzimy fryzurę i pokażemy wizualizację. Następnie wykonujemy precyzyjne strzyżenie, modelowanie i stylizację.",
+      "Od krótkich, dynamicznych cięć po długie, warstwowe boby — nasze fryzjerki znają najnowsze trendy i potrafią dopasować je do Twojego stylu.",
+    ],
+    sections: [
+      {
+        heading: "Strzyżenie dopasowane do twarzy",
+        body: [
+          "Owalna twarz — pasuje większość fryzur. Okrągła — wydłużające warstwy i objętość na górze. Kwadratowa — miękkie fale i asymetria. Trójkątna — objętość na dole i boki.",
+        ],
+      },
+      {
+        heading: "Strzyżenie krótkich włosów",
+        body: [
+          "Pixie cut, bob, blunt cut, undercut — short hair, don't care! Krótkie fryzury wymagają precyzyjnego cięcia i regularnych wizyt co 4-6 tygodni.",
+        ],
+      },
+      {
+        heading: "Strzyżenie długich włosów",
+        body: [
+          "Warstwy, cieniowanie, long bob, proste cięcie — długie włosy dają wiele możliwości. Doradzimy cięcie, które zapewni objętość i łatwość stylizacji.",
+        ],
+      },
+      {
+        heading: "Modelowanie i stylizacja",
+        body: [
+          "Po strzyżeniu modelujemy fryzurę — blow-dry, lokówka, prostownica — abyś wyszła z salonu z perfekcyjnym lookiem. Pokażemy, jak odtworzyć fryzurę w domu.",
+        ],
+      },
+    ],
+    highlights: [
+      {
+        title: "Konsultacja",
+        desc: "Doradzamy fryzurę dopasowaną do Ciebie.",
+      },
+      {
+        title: "Precyzja",
+        desc: "Każde cięcie jest przemyślane i dokładne.",
+      },
+      {
+        title: "Trendy",
+        desc: "Znamy najnowsze trendy i techniki.",
+      },
+      {
+        title: "Modelowanie",
+        desc: "Wychodzisz z perfekcyjną fryzurą.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje strzyżenie damskie w Warszawie?",
+        a: "Strzyżenie podstawowe od 70 zł, zaawansowane z modelowaniem od 120 zł. Strzyżenie + koloryzacja — cena pakietowa.",
+      },
+      {
+        q: "Jak często należy strzyc włosy?",
+        a: "Co 6-8 tygodni dla krótkich włosów, co 8-12 tygodni dla długich. Regularne strzyżenie zapobiega rozdwajaniu.",
+      },
+      {
+        q: "Czy mogę umówić się na strzyżenie i koloryzację tego samego dnia?",
+        a: "Tak — to nasza najpopularniejsza kombinacja. Rezerwujemy więcej czasu, abyś nie byłaQLa.",
+      },
+      {
+        q: "Czy doradzacie fryzury?",
+        a: "Tak — konsultacja jest częścią każdej wizyty. Doradzimy fryzurę dopasowaną do twarzy, włosów i stylu życia.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "hair-cutting-basic",
+      "blow-dry",
+      "hair-spa-blow-dry",
+    ],
+    relatedNicheSlugs: [
+      "fryzjer-warszawa",
+      "koloryzacja-wlosow-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Strzyżenie Damskie w Warszawie",
+    serviceDescription:
+      "Profesjonalne strzyżenie damskie w Warszawie — krótkie, długie, z modelowaniem i doradztwem.",
+    imageAltRecommendations: [
+      "Strzyżenie damskie w salonie fryzjerskim Warszawa",
+      "Fryzjerka strzyżąca włosy klientce",
+      "Efekt strzyżenia — nowa fryzura damska",
+      "Modelowanie włosów po strzyżeniu w Warszawie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na strzyżenie damskie w Royal Beauty Salon w Warszawie.",
+  },
+  {
+    slug: "salon-fryzjerski-blisko-mnie-warszawa",
+    locale: "pl",
+    primaryKeyword: "salon fryzjerski blisko mnie Warszawa",
+    secondaryKeywords: [
+      "fryzjer blisko mnie Warszawa",
+      "najbliższy salon fryzjerski Warszawa",
+      "fryzjer w pobliżu Warszawa",
+      "salon fryzjerski centrum Warszawa",
+      "fryzjer easily Warszawa",
+    ],
+    title:
+      "Salon Fryzjerski Blisko Mnie w Warszawie — Łatwy Dojazd",
+    metaDescription:
+      "Salon fryzjerski blisko Ciebie w Warszawie — koloryzacja, keratyna, strzyżenie. Łatwy dojazd, bezpłatny parking. Royal Beauty Salon.",
+    h1: "Salon Fryzjerski Blisko Mnie w Warszawie",
+    eyebrow: "Blisko Ciebie • Fryzjer • Warszawa",
+    tagline:
+      "Twój najbliższy salon fryzjerski w Warszawie — profesjonalne usługi w dogodnej lokalizacji.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt:
+      "Salon fryzjerski Royal Beauty Salon w centrum Warszawy",
+    intro: [
+      "Szukasz salonu fryzjerskiego blisko siebie w Warszawie? Royal Beauty Salon na Alei Stanów Zjednoczonych to idealny wybór — łatwo dojedziesz z każdej dzielnicy miasta.",
+      "Oferujemy pełen zakres usług fryzjerskich: koloryzację, balayage, keratynowe prostowanie, nanoplastię, strzyżenie i modelowanie. Doświadczeni styliści, produkty premium i eleganckie wnętrze.",
+      "Dojazd z Mokotowa, Ochoty, Pragi, Wilanowa i Centrum — kilkanaście minut samochodem lub komunikacją miejską. Bezpłatny parking dla gości.",
+    ],
+    sections: [
+      {
+        heading: "Dogodna lokalizacja",
+        body: [
+          "Aleja Stanów Zjednoczonych 67/D7, 04-028 Warszawa — metro, autobusy, tramwaje. Bezpłatny parking. Łatwy dojazd z każdej dzielnicy.",
+        ],
+      },
+      {
+        heading: "Usługi fryzjerskie",
+        body: [
+          "Koloryzacja, balayage, pasemka, keratynowe prostowanie, nanoplastia, strzyżenie damskie i męskie, modelowanie, fryzury okazjonalne i ślubne.",
+        ],
+      },
+      {
+        heading: "Doświadczeni styliści",
+        body: [
+          "Nasz zespół to certyfikowani styliści z wieloletnim doświadczeniem. Szkolimy się regularnie, aby być na bieżąco z trendami.",
+        ],
+      },
+      {
+        heading: "Rezerwacja online",
+        body: [
+          "Zarezerwuj wizytę online lub telefonicznie. Elastyczne godziny, w tym weekendy. Potwierdzenie natychmiast.",
+        ],
+      },
+    ],
+    highlights: [
+      {
+        title: "Blisko Ciebie",
+        desc: "Łatwy dojazd z każdej dzielnicy.",
+      },
+      {
+        title: "Bezpłatny parking",
+        desc: "Darmowy parking dla gości.",
+      },
+      {
+        title: "Pełen zakres usług",
+        desc: "Koloryzacja, keratyna, strzyżenie.",
+      },
+      {
+        title: "Rezerwacja online",
+        desc: "Zarezerwuj w kilka sekund.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Gdzie znajduje się salon fryzjerski?",
+        a: "Na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa — z bezpłatnym parkingiem i łatwym dojazdem komunikacją miejską.",
+      },
+      {
+        q: "Jakie usługi fryzjerskie oferujecie?",
+        a: "Koloryzację, balayage, keratynowe prostowanie, nanoplastię, strzyżenie i modelowanie. Wszystko w jednym miejscu.",
+      },
+      {
+        q: "Czy mogę umówić się online?",
+        a: "Tak — rezerwacja online lub telefoniczna. Zalecamy rezerwację z wyprzedzeniem.",
+      },
+      {
+        q: "Czy macie parking?",
+        a: "Tak — bezpłatny parking dla naszych gości.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "royal-nanoplasty",
+      "fashion-shade-global-color-medium",
+      "blow-dry",
+    ],
+    relatedNicheSlugs: [
+      "fryzjer-warszawa",
+      "salon-kosmetyczny-blisko-mnie-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Salon Fryzjerski Blisko Mnie w Warszawie",
+    serviceDescription:
+      "Salon fryzjerski blisko Ciebie w Warszawie — koloryzacja, keratyna, strzyżenie z łatwym dojazdem i bezpłatnym parkingiem.",
+    imageAltRecommendations: [
+      "Salon fryzjerski Royal Beauty Salon — wejście Warszawa",
+      "Wnętrze nowoczesnego salonu fryzjerskiego",
+      "Fryzjer przy pracy w salonie w Warszawie",
+      "Bezpłatny parking przy salonie fryzjerskim",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę w salonie fryzjerskim blisko mnie w Warszawie.",
+  },
+  {
+    slug: "zabiegi-anti-aging-warszawa",
+    locale: "pl",
+    primaryKeyword: "zabiegi anti-aging Warszawa",
+    secondaryKeywords: [
+      "zabiegi odmładzające Warszawa",
+      "anti-aging twarz Warszawa",
+      "zabiegi na zmarszczki Warszawa",
+      "lifting twarzy bez skalpela Warszawa",
+      "odmładzanie skóry Warszawa",
+    ],
+    title:
+      "Zabiegi Anti-Aging w Warszawie — Odmładzanie, Lifting, Regeneracja",
+    metaDescription:
+      "Profesjonalne zabiegi anti-aging w Warszawie — mezoterapia, peeling, lifting bez skalpela. Odmładzanie skóry. Royal Beauty Salon.",
+    h1: "Zabiegi Anti-Aging w Warszawie",
+    eyebrow: "Anti-Aging • Odmładzanie • Warszawa",
+    tagline:
+      "Przywróć skórze młodość — profesjonalne zabiegi anti-aging w centrum Warszawy.",
+    heroImage: U("photo-1612349317150-e413f6a5b16d"),
+    heroAlt:
+      "Zabieg anti-aging na twarz w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Zmarszczki, utrata elastyczności, przebarwienia — to naturalne oznaki starzenia, ale nie musisz się z nimi godzić. W Royal Beauty Salon w Warszawie oferujemy profesjonalne zabiegi anti-aging, które przywracają skórze młodość i witalność.",
+      "Od mezoterapii igłowej, przez peelingi chemiczne, po zaawansowane zabiegi regenerujące — każdy zabieg dobieramy do Twojego wieku, rodzaju skóry i celów. Zwalczamy zmarszczki, utratę elastyczności i nierówny koloryt.",
+      "Efekty anti-aging są widoczne już po pierwszym zabiegu — skóra staje się bardziej napięta, rozświetlona i młodsza. Seria zabiegów przynosi trwałe odmłodzenie.",
+    ],
+    sections: [
+      {
+        heading: "Zabiegi anti-aging — co oferujemy?",
+        body: [
+          "Mezoterapia igłowa — stymulacja kolagenu i elastyny. Peelingi chemiczne — złuszczanie i odnowa. Zabiegi nawilżające — głębokie nawodnienie skóry. Zabiegi regenerujące — odbudowa bariery ochronnej.",
+        ],
+      },
+      {
+        heading: "Anti-aging w不同nym wieku",
+        body: [
+          "25-35 lat: profilaktyka, nawilżanie, pierwsze zmarszczki. 35-45 lat: mezoterapia, peelingi, utrata elastyczności. 45+ lat: intensywne zabiegi regenerujące, lifting, głębokie odmładzanie.",
+        ],
+      },
+      {
+        heading: "Połączenie zabiegów",
+        body: [
+          "Najlepsze efekty daje połączenie mezoterapii z peelingiem chemicznym i zabiegiem nawilżającym. Oferujemy pakiety anti-aging dostosowane do Twoich potrzeb.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja domowa anti-aging",
+        body: [
+          "Po zabiegu w salonie kontynuuj pielęgnację w domu: krem z SPF, serum z witaminą C, retinol na noc, nawilżanie. Doradzimy najlepsze produkty.",
+        ],
+      },
+    ],
+    highlights: [
+      {
+        title: "Widoczne efekty",
+        desc: "Młodsza skóra po pierwszym zabiegu.",
+      },
+      {
+        title: "Indywidualny protokół",
+        desc: "Dobieramy zabieg do Twojego wieku.",
+      },
+      {
+        title: "Stymulacja kolagenu",
+        desc: "Naturalne odmłodzenie skóry.",
+      },
+      {
+        title: "Pielęgnacja domowa",
+        desc: "Doradztwo po zabiegu.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Jaki zabieg anti-aging jest najlepszy?",
+        a: "Zależy od wieku i problemów skóry. Dla 25-35 lat — nawilżanie i peelingi. Dla 35-45 — mezoterapia. Dla 45+ — intensywne zabiegi regenerujące. Doradzimy podczas konsultacji.",
+      },
+      {
+        q: "Ile kosztują zabiegi anti-aging w Warszawie?",
+        a: "Mezoterapia od 200 zł, peeling chemiczny od 100 zł, zabieg nawilżający od 120 zł. Pakiety anti-aging — atrakcyjne ceny.",
+      },
+      {
+        q: "Czy zabiegi anti-aging są bolesne?",
+        a: "Większość zabiegów jest komfortowa. Mezoterapia może powodować lekkie mrowienie, które mija po kilku minutach.",
+      },
+      {
+        q: "Jak często robić zabiegi anti-aging?",
+        a: "Zalecamy serię 4-6 zabiegów co 2-4 tygodnie, a potem 1 zabieg podtrzymujący co 2-3 miesiące.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "royal-facial",
+      "hydra-facial",
+      "royal-nanoplasty",
+      "keratin-treatment-medium",
+    ],
+    relatedNicheSlugs: [
+      "mezoterapia-warszawa",
+      "oczyszczanie-twarzy-warszawa",
+      "salon-urody-warszawa",
+    ],
+    relatedCategorySlugs: ["facials", "hair"],
+    serviceName: "Zabiegi Anti-Aging w Warszawie",
+    serviceDescription:
+      "Profesjonalne zabiegi anti-aging w Warszawie — mezoterapia, peelingi, lifting bez skalpela dla młodszej skóry.",
+    imageAltRecommendations: [
+      "Zabieg anti-aging na twarz w salonie Warszawa",
+      "Mezoterapia igłowa — odmładzanie skóry",
+      "Skóra po zabiegu anti-aging — efekt przed i po",
+      "Profesjonalny zabieg regenerujący w salonie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na zabieg anti-aging w Royal Beauty Salon w Warszawie.",
+  },
 ];
 
 export const nicheBySlug = (slug: string) =>
