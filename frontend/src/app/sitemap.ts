@@ -66,7 +66,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "tools", priority: 0.8, changeFrequency: "monthly", lastModified: TOOLS_UPDATED },
     { path: "tools/face-shape-finder", priority: 0.7, changeFrequency: "monthly", lastModified: TOOLS_UPDATED },
     { path: "tools/hair-color-simulator", priority: 0.7, changeFrequency: "monthly", lastModified: TOOLS_UPDATED },
-    { path: "tools/bridal-beauty-timeline", priority: 0.7, changeFrequency: "monthly", lastModified: TOOLS_UPDATED },
     { path: "tools/treatment-recommender", priority: 0.7, changeFrequency: "monthly", lastModified: TOOLS_UPDATED },
     { path: "tools/skin-undertone-analyzer", priority: 0.7, changeFrequency: "monthly", lastModified: TOOLS_UPDATED },
 

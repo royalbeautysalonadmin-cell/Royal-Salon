@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles, Scissors, Calendar, ClipboardList, Palette, ArrowRight } from "lucide-react";
+import { Sparkles, Scissors, ClipboardList, Palette, ArrowRight } from "lucide-react";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -26,13 +26,6 @@ const tools = [
     description: "Virtually try on hair colours before you commit — find your perfect shade.",
     icon: Palette,
     color: "from-violet-500 to-purple-600",
-  },
-  {
-    slug: "bridal-beauty-timeline",
-    title: "Bridal Beauty Timeline",
-    description: "Plan your pre-wedding beauty appointments with our interactive countdown calculator.",
-    icon: Calendar,
-    color: "from-amber-500 to-orange-600",
   },
   {
     slug: "treatment-recommender",
