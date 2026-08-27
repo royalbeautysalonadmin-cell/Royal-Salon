@@ -14,6 +14,7 @@ export function Footer() {
     "/about": t("nav.about"),
     "/services": t("nav.services"),
     "/packages": t("nav.packages"),
+    "/tools": t("nav.tools"),
     "/blog": t("nav.blog"),
     "/contact": t("nav.contact"),
   }), [t]);
@@ -152,16 +153,18 @@ export function Footer() {
           </p>
         </div>
         <div className="border-t border-white/5">
-          <div className="container-luxury py-4 text-center text-[0.65rem] text-white/40">
-            Developed by{" "}
+          <div className="container-luxury flex flex-wrap items-center justify-center gap-1.5 py-4 text-center text-xs text-white/60">
+            Developed by
             <a
               href="https://www.orbitrixsolutions.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 underline decoration-white/20 transition-colors hover:text-gold hover:decoration-gold"
+              className="inline-flex items-center gap-1.5 font-semibold text-gold transition-colors hover:text-gold-300"
             >
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gold/20 text-[0.6rem] font-bold text-gold">O</span>
               Orbitrix Solutions
             </a>
+            — Website Design & SEO
           </div>
         </div>
       </div>
