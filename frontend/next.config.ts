@@ -30,6 +30,12 @@ const nextConfig: NextConfig = {
       { source: "/about-us", destination: "/about", permanent: true },
       { source: "/category/hair-care", destination: "/services/hair", permanent: true },
       { source: "/treading", destination: "/services/threading", permanent: true },
+      // Local SEO pages — root-level URLs that should resolve under /warsaw/
+      { source: "/hair-salon-warsaw", destination: "/warsaw/hair-salon-warsaw", permanent: true },
+      { source: "/eyebrow-threading-warsaw", destination: "/warsaw/eyebrow-threading-warsaw", permanent: true },
+      { source: "/bridal-makeup-warsaw", destination: "/warsaw/bridal-makeup-warsaw", permanent: true },
+      { source: "/facial-warsaw", destination: "/warsaw/facial-warsaw", permanent: true },
+      { source: "/waxing-warsaw", destination: "/warsaw/waxing-warsaw", permanent: true },
     ];
   },
   async rewrites() {
