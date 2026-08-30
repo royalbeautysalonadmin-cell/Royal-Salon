@@ -250,7 +250,7 @@ export default function BlogPost() {
           <h2 className="mb-3 font-playfair text-2xl font-bold">Umów się na keratynowe prostowanie</h2>
           <p className="mb-6 text-gray-300">Royal Beauty Salon, Aleja Stanów Zjednoczonych 67/D7, Warszawa</p>
           <a
-            href={`https://wa.me/48221234567?text=${encodeURIComponent("Dzień dobry, chciałabym umówić się na keratynowe prostowanie włosów.")}`}
+            href={`https://wa.me/48573377659?text=${encodeURIComponent("Dzień dobry, chciałabym umówić się na keratynowe prostowanie włosów.")}`}
             className="inline-block rounded-full bg-luxury-gold px-8 py-3 font-semibold text-luxury-black transition hover:bg-luxury-gold/90"
           >
             Umów wizytę przez WhatsApp

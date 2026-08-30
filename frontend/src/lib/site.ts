@@ -12,8 +12,8 @@ export const siteConfig = {
   // makes every canonical/sitemap URL a redirect and Google refuses to index.
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.royalbeautysaloon.com",
   ogImage: "/og.jpg",
-  phone: process.env.NEXT_PUBLIC_SALON_PHONE || "+48 22 123 45 67",
-  whatsapp: process.env.NEXT_PUBLIC_SALON_WHATSAPP || "48221234567",
+  phone: process.env.NEXT_PUBLIC_SALON_PHONE || "+48 573 377 659",
+  whatsapp: process.env.NEXT_PUBLIC_SALON_WHATSAPP || "48573377659",
   email: process.env.NEXT_PUBLIC_SALON_EMAIL || "warsawroyalbeauty@gmail.com",
   address: {
     line1: "Aleja Stanów Zjednoczonych 67/D7",
