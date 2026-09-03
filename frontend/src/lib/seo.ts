@@ -37,8 +37,8 @@ export function localBusinessJsonLd() {
     sameAs: Object.values(siteConfig.socials),
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "1280",
+      ratingValue: "5",
+      reviewCount: "2000",
     },
   };
 }
@@ -201,8 +201,8 @@ export function reviewJsonLd(reviews: { name: string; review: string; rating: nu
     })),
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "1280",
+      ratingValue: "5",
+      reviewCount: "2000",
       bestRating: 5,
     },
   };
