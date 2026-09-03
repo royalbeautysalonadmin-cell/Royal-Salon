@@ -30,15 +30,14 @@ const values = [
   {
     icon: Gem,
     title: "Timeless Elegance",
-    desc: "A serene, five-star sanctuary in the heart of Warsaw where refinement meets warmth.",
+    desc: "A serene, five-star sanctuary where refinement meets warmth.",
   },
 ];
 
 const team = [
-  { name: "Aleksandra Wójcik", role: "Founder & Creative Director", img: U("photo-1494790108377-be9c29b29330") },
-  { name: "Natalia Kamińska", role: "Lead Bridal Artist", img: U("photo-1438761681033-6461ffad8d80") },
-  { name: "Weronika Dąbrowska", role: "Senior Colourist", img: U("photo-1534528741775-53994a69daeb") },
-  { name: "Julia Lewandowska", role: "Master Aesthetician", img: U("photo-1544005313-94ddf0286df2") },
+  { name: "Kinjal", role: "Founder & Creative Director", img: U("photo-1494790108377-be9c29b29330") },
+  { name: "Kiran", role: "Lead Beauty Expert", img: U("photo-1438761681033-6461ffad8d80") },
+  { name: "Darpan", role: "Senior Colourist", img: U("photo-1534528741775-53994a69daeb") },
 ];
 
 export function AboutExtras() {
@@ -62,7 +61,7 @@ export function AboutExtras() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-6 text-sm uppercase tracking-[0.3em] text-gold">
-              Aleksandra Wójcik · Founder
+              Kinjal, Kiran &amp; Darpan · Founders
             </p>
           </Reveal>
         </div>
@@ -74,7 +73,7 @@ export function AboutExtras() {
           <SectionHeading
             eyebrow="What We Stand For"
             title="The Values Behind Every Visit"
-            description="Four principles guide everything we do — from your first consultation to the final flawless reveal."
+            description="Three principles guide everything we do — from your first consultation to the final flawless reveal."
           />
           <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (

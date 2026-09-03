@@ -210,7 +210,7 @@ export const whyChooseUs = [
   {
     icon: "Heart",
     title: "Customer Satisfaction",
-    desc: "Thousands of delighted clients and a 4.9-star average rating — Warsaw's most loved beauty salon.",
+    desc: "2000+ delighted clients and a 5-star average rating — our most loved beauty salon.",
     link: "/packages",
   },
   {
@@ -257,8 +257,8 @@ export const faqs = [
 
 /* ─── Stats ─── */
 export const stats = [
-  { value: "12+", label: "Years of Excellence in Warsaw" },
-  { value: "20K+", label: "Happy Clients" },
-  { value: "50+", label: "Beauty Experts" },
-  { value: "4.9★", label: "Average Rating" },
+  { value: "1+", label: "Year of Excellence" },
+  { value: "2K+", label: "Happy Clients" },
+  { value: "3", label: "Beauty Experts" },
+  { value: "5★", label: "Average Rating" },
 ];

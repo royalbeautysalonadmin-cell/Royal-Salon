@@ -117,7 +117,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "footer.admin": { en: "Admin", pl: "Admin" },
 
   // Stats
-  "stats.years": { en: "Years Experience", pl: "Lat Doświadczenia" },
+  "stats.years": { en: "Year Experience", pl: "Lat Doświadczenia" },
   "stats.clients": { en: "Happy Clients", pl: "Zadowolonych Klientek" },
   "stats.services": { en: "Services", pl: "Usług" },
   "stats.rating": { en: "Average Rating", pl: "Średnia Ocena" },

@@ -129,7 +129,7 @@ export function Hero() {
                 ))}
               </div>
               <p>
-                <span className="font-semibold text-luxury-black">4.9/5</span> {t("hero.rating")}
+                <span className="font-semibold text-luxury-black">5/5</span> {t("hero.rating")}
               </p>
             </motion.div>
           </motion.div>

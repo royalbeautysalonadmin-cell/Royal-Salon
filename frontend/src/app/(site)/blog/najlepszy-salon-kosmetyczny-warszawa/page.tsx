@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Jaki jest najlepszy salon kosmetyczny w Warszawie?",
-    a: "Wybór najlepszego salonu zależy od Twoich potrzeb. Royal Beauty Salon wyróżnia się szerokim zakresem usług (55+ zabiegów), lokalizacją w centrum Warszawy, doświadczonym zespołem i oceną 4.9/5 na podstawie 1280 opinii.",
+    a: "Wybór najlepszego salonu zależy od Twoich potrzeb. Royal Beauty Salon wyróżnia się szerokim zakresem usług (55+ zabiegów), doświadczonym zespołem i oceną 5/5 na podstawie 2000+ opinii.",
   },
   {
     q: "Ile kosztuje wizyta w salonie kosmetycznym w Warszawie?",
@@ -52,7 +52,7 @@ const comparisonData = [
   { criterion: "Zakres usług", royal: "55+ zabiegów", avg: "15-25 zabiegów" },
   { criterion: "Lokalizacja", royal: "Centrum Warszawy", avg: "Różne dzielnice" },
   { criterion: "Parking", royal: "Bezpłatny", avg: "Brak lub płatny" },
-  { criterion: "Ocena Google", royal: "4.9/5 (1280 opinii)", avg: "4.5-4.8/5" },
+  { criterion: "Ocena Google", royal: "5/5 (2000+ opinii)", avg: "4.5-4.8/5" },
   { criterion: "Godziny otwarcia", royal: "Pon-Nd 11-18", avg: "Pon-Pt 9-19" },
   { criterion: "Języki", royal: "PL, EN, Hindi", avg: "PL" },
 ];
@@ -157,8 +157,8 @@ export default function BlogPost() {
               <p className="text-sm text-gray-600">Aleja Stanów Zjednoczonych 67/D7 — łatwy dojazd metro, autobusem lub samochodem. Bezpłatny parking.</p>
             </div>
             <div className="rounded-xl border border-gray-200 p-6">
-              <h3 className="mb-2 font-playfair text-lg font-bold">4.9/5 ocena Google</h3>
-              <p className="text-sm text-gray-600">1280+ opinii od zadowolonych klientów. Najwyżej oceniany salon w okolicy.</p>
+              <h3 className="mb-2 font-playfair text-lg font-bold">5/5 ocena Google</h3>
+              <p className="text-sm text-gray-600">2000+ opinii od zadowolonych klientów. Najwyżej oceniany salon w okolicy.</p>
             </div>
             <div className="rounded-xl border border-gray-200 p-6">
               <h3 className="mb-2 font-playfair text-lg font-bold">Otwarty codziennie</h3>
