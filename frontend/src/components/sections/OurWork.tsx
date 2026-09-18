@@ -79,9 +79,6 @@ export function OurWork() {
                     preload="metadata"
                     className="h-full w-full object-cover"
                   />
-                  {/* Subtle gradient bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-
                   {/* Mute toggle */}
                   <button
                     onClick={toggleMute}
