@@ -55,19 +55,19 @@ export function OurWork() {
           light
         />
 
-        <div className="relative mt-14 mx-auto max-w-5xl">
-          {/* Video carousel — horizontal cards with peek */}
+        <div className="relative mt-14 mx-auto max-w-3xl">
+          {/* Video carousel */}
           <div className="relative overflow-hidden">
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={current}
-                initial={{ opacity: 0, x: 80 }}
+                initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -80 }}
-                transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+                exit={{ opacity: 0, x: -60 }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                 className="flex justify-center"
               >
-                <div className="relative aspect-[9/16] w-[280px] sm:w-[320px] md:w-[360px] overflow-hidden rounded-[2rem] bg-black shadow-2xl ring-1 ring-white/10 md:aspect-[16/10] md:w-full md:aspect-auto md:rounded-3xl">
+                <div className="relative w-full aspect-video overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-white/10">
                   <video
                     ref={(el) => { videoRefs.current[current] = el; }}
                     src={workVideos[current].src}
@@ -112,7 +112,7 @@ export function OurWork() {
           </button>
 
           {/* Dot indicators */}
-          <div className="mt-8 flex items-center justify-center gap-2.5">
+          <div className="mt-6 flex items-center justify-center gap-2.5">
             {workVideos.map((_, i) => (
               <button
                 key={i}
