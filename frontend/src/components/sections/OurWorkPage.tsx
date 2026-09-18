@@ -159,7 +159,7 @@ export function OurWorkPage({ services = [] }: { services?: Service[] }) {
                     preload="metadata"
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute top-5 left-5 rounded-full bg-black/40 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
                     {current + 1} / {workVideos.length}
                   </div>
@@ -170,20 +170,10 @@ export function OurWorkPage({ services = [] }: { services?: Service[] }) {
                   >
                     {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
                   </button>
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <div className="flex items-end justify-between">
-                      <div>
-                        <h2 className="font-serif text-xl font-semibold text-white md:text-2xl">
-                          {lang === "pl" ? video.titlePl : video.title}
-                        </h2>
-                        <p className="mt-1.5 max-w-xs text-sm leading-relaxed text-white/60">
-                          {lang === "pl" ? video.descriptionPl : video.description}
-                        </p>
-                      </div>
-                      <Button variant="gold" size="sm" onClick={() => openBooking()} className="shrink-0 ml-3">
-                        {t("ourWork.bookCTA")}
-                      </Button>
-                    </div>
+                  <div className="absolute bottom-5 left-0 right-0 flex justify-center">
+                    <Button variant="gold" size="sm" onClick={() => openBooking()}>
+                      {t("ourWork.bookCTA")}
+                    </Button>
                   </div>
                 </motion.div>
               </AnimatePresence>
