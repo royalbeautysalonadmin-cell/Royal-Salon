@@ -1,8 +1,19 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronUp, ChevronDown, Volume2, VolumeX, Share2 } from "lucide-react";
+import {
+  ChevronUp,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Volume2,
+  VolumeX,
+  Clock,
+  ArrowUpRight,
+} from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CtaBand } from "@/components/shared/CtaBand";
 import { FaqSection } from "@/components/shared/FaqSection";
@@ -10,7 +21,8 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/lib/i18n";
 import { useBookingStore } from "@/store/booking";
 import { workVideos } from "@/data/our-work";
-import { cn } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
+import type { Service } from "@/types";
 
 const faqs = [
   {
@@ -39,11 +51,21 @@ const faqs = [
   },
 ];
 
-export function OurWorkPage() {
+const categoryColors: Record<string, string> = {
+  Hair: "bg-amber-100 text-amber-800",
+  "Makeup & Styling": "bg-pink-100 text-pink-800",
+  Threading: "bg-purple-100 text-purple-800",
+  Waxing: "bg-rose-100 text-rose-800",
+  "Facial & Skin Care": "bg-emerald-100 text-emerald-800",
+  "Manicure & Pedicure": "bg-sky-100 text-sky-800",
+};
+
+export function OurWorkPage({ services = [] }: { services?: Service[] }) {
   const [current, setCurrent] = useState(0);
   const [muted, setMuted] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const { t, lang } = useTranslation();
   const openBooking = useBookingStore((s) => s.open);
 
@@ -57,7 +79,6 @@ export function OurWorkPage() {
   const next = useCallback(() => goTo(current + 1), [current, goTo]);
   const prev = useCallback(() => goTo(current - 1), [current, goTo]);
 
-  // Sync muted + play/pause
   useEffect(() => {
     videoRefs.current.forEach((v, i) => {
       if (!v) return;
@@ -71,7 +92,6 @@ export function OurWorkPage() {
     });
   }, [current, muted]);
 
-  // Keyboard nav
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); prev(); }
@@ -82,7 +102,6 @@ export function OurWorkPage() {
     return () => window.removeEventListener("keydown", handler);
   }, [next, prev]);
 
-  // Touch/swipe support
   const touchStart = useRef(0);
   const handleTouchStart = (e: React.TouchEvent) => { touchStart.current = e.touches[0].clientY; };
   const handleTouchEnd = (e: React.TouchEvent) => {
@@ -93,6 +112,13 @@ export function OurWorkPage() {
   };
 
   const toggleMute = () => setMuted((m) => !m);
+
+  // Services carousel scroll
+  const scrollServices = (dir: "left" | "right") => {
+    if (!carouselRef.current) return;
+    const amount = 320;
+    carouselRef.current.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -112,7 +138,6 @@ export function OurWorkPage() {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Video card */}
             <div className="relative w-full aspect-[9/16] max-h-[75vh] overflow-hidden rounded-[2rem] bg-black shadow-2xl ring-1 ring-white/10">
               <AnimatePresence mode="popLayout">
                 <motion.div
@@ -134,16 +159,10 @@ export function OurWorkPage() {
                     preload="metadata"
                     className="h-full w-full object-cover"
                   />
-
-                  {/* Bottom gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
-
-                  {/* Video counter */}
                   <div className="absolute top-5 left-5 rounded-full bg-black/40 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
                     {current + 1} / {workVideos.length}
                   </div>
-
-                  {/* Mute toggle */}
                   <button
                     onClick={toggleMute}
                     className="absolute top-5 right-5 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white/80 backdrop-blur-sm transition-all hover:bg-black/60 hover:text-white"
@@ -151,8 +170,6 @@ export function OurWorkPage() {
                   >
                     {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
                   </button>
-
-                  {/* Bottom info bar */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <div className="flex items-end justify-between">
                       <div>
@@ -163,20 +180,13 @@ export function OurWorkPage() {
                           {lang === "pl" ? video.descriptionPl : video.description}
                         </p>
                       </div>
-                      <Button
-                        variant="gold"
-                        size="sm"
-                        onClick={() => openBooking()}
-                        className="shrink-0 ml-3"
-                      >
+                      <Button variant="gold" size="sm" onClick={() => openBooking()} className="shrink-0 ml-3">
                         {t("ourWork.bookCTA")}
                       </Button>
                     </div>
                   </div>
                 </motion.div>
               </AnimatePresence>
-
-              {/* Up/Down arrows */}
               {current > 0 && (
                 <button
                   onClick={prev}
@@ -196,8 +206,6 @@ export function OurWorkPage() {
                 </button>
               )}
             </div>
-
-            {/* Dot indicators */}
             <div className="mt-6 flex items-center gap-2">
               {workVideos.map((_, i) => (
                 <button
@@ -215,55 +223,121 @@ export function OurWorkPage() {
         </div>
       </section>
 
-      {/* Detail cards — all treatments */}
-      <section className="bg-cream py-20">
-        <div className="container-luxury">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-brown-600">
-              <span className="h-px w-6 bg-gold" />
-              Our Expertise
-            </span>
-            <h2 className="mt-4 font-serif text-3xl font-semibold text-luxury-black md:text-4xl">
-              {lang === "pl" ? "Nasze Usługi" : "Our Services"}
-            </h2>
-            <p className="mt-4 text-base text-charcoal/60 md:text-lg">
-              {lang === "pl"
-                ? "Każdy film przedstawia prawdziwą pracę wykonaną w naszym salonie. Od stylizacji włosów po makijaż ślubny — nasza sztuka mówi sama za siebie."
-                : "Every video shows real work done at our salon. From hair styling to bridal makeovers — our artistry speaks for itself."}
-            </p>
-          </div>
+      {/* All Services — horizontal carousel */}
+      {services.length > 0 && (
+        <section className="bg-cream py-20">
+          <div className="container-luxury">
+            <div className="flex items-end justify-between">
+              <div className="max-w-xl">
+                <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-brown-600">
+                  <span className="h-px w-6 bg-gold" />
+                  {lang === "pl" ? "Nasze Usługi" : "Our Services"}
+                </span>
+                <h2 className="mt-4 font-serif text-3xl font-semibold text-luxury-black md:text-4xl">
+                  {lang === "pl" ? "Pełna Lista Zabiegów" : "Every Treatment We Offer"}
+                </h2>
+                <p className="mt-3 text-base text-charcoal/60 md:text-lg">
+                  {lang === "pl"
+                    ? "Przeglądaj wszystkie usługi dostępne w naszym salonie. Każda z nich jest prezentowana w naszych filmach transformacji."
+                    : "Browse every service available at our salon — each one showcased in our transformation videos."}
+                </p>
+              </div>
+              <div className="hidden gap-2 md:flex">
+                <button
+                  onClick={() => scrollServices("left")}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-brown/15 bg-white text-charcoal transition-all hover:bg-brown hover:text-white hover:shadow-luxury"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={() => scrollServices("right")}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-brown/15 bg-white text-charcoal transition-all hover:bg-brown hover:text-white hover:shadow-luxury"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {workVideos.map((v, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                className={cn(
-                  "group relative overflow-hidden rounded-2xl bg-white shadow-soft transition-all duration-300 hover:shadow-luxury hover:-translate-y-1",
-                  i === current && "ring-2 ring-gold shadow-luxury"
-                )}
-              >
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
-                    src={v.poster}
-                    alt={lang === "pl" ? v.titlePl : v.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-left">
-                    <h3 className="font-serif text-lg font-semibold text-white">
-                      {lang === "pl" ? v.titlePl : v.title}
-                    </h3>
-                    <p className="mt-1 text-xs text-white/60 line-clamp-2">
-                      {lang === "pl" ? v.descriptionPl : v.description}
-                    </p>
+            {/* Horizontal scrollable carousel */}
+            <div
+              ref={carouselRef}
+              className="mt-10 flex gap-5 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {services.filter((s) => s.active !== false).map((service) => (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.category.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}/${service.slug}`}
+                  className="group snap-start shrink-0 w-[280px] overflow-hidden rounded-2xl border border-brown/8 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-luxury hover:border-gold/30"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-cream">
+                    {service.image ? (
+                      <Image
+                        src={service.image}
+                        alt={service.name}
+                        fill
+                        sizes="280px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-cream to-brown/10 text-brown/30">
+                        <span className="text-4xl">✦</span>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                    <span className={cn(
+                      "absolute top-3 left-3 rounded-full px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide",
+                      categoryColors[service.category] || "bg-gray-100 text-gray-800"
+                    )}>
+                      {service.category}
+                    </span>
+                    {service.featured && (
+                      <span className="absolute top-3 right-3 rounded-full bg-gold px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white">
+                        ★ {lang === "pl" ? "Sygnatura" : "Signature"}
+                      </span>
+                    )}
                   </div>
-                </div>
-              </button>
-            ))}
+                  <div className="p-4">
+                    <h3 className="font-serif text-base font-semibold text-luxury-black line-clamp-1 group-hover:text-brown transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="mt-1.5 text-xs text-charcoal/55 line-clamp-2 leading-relaxed">
+                      {service.description || "Premium beauty treatment at Royal Beauty Salon Warsaw"}
+                    </p>
+                    <div className="mt-3 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-sm font-semibold text-brown">
+                          {service.priceOnRequest ? (lang === "pl" ? "Cena na zapytanie" : "Price on request") : formatPrice(service.price)}
+                        </span>
+                        {service.duration && (
+                          <span className="flex items-center gap-1 text-xs text-charcoal/45">
+                            <Clock className="h-3 w-3" />
+                            {service.duration}
+                          </span>
+                        )}
+                      </div>
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-cream text-brown/40 transition-all group-hover:bg-brown group-hover:text-white">
+                        <ArrowUpRight className="h-3.5 w-3.5" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* View all link */}
+            <div className="mt-8 text-center">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-sm font-medium text-brown hover:underline"
+              >
+                {lang === "pl" ? "Zobacz wszystkie usługi" : "View all services"} →
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <FaqSection
         eyebrow={lang === "pl" ? "Najczęściej Zadawane" : "Frequently Asked"}

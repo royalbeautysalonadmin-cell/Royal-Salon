@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 import { OurWorkPage } from "@/components/sections/OurWorkPage";
+import { getBackendServices } from "@/lib/backend-api";
+import type { Service } from "@/types";
+
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Our Work — Beauty Transformations | Royal Beauty Salon Warsaw",
@@ -44,6 +48,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function OurWorkRoute() {
-  return <OurWorkPage />;
+export default async function OurWorkRoute() {
+  let services: Service[] = [];
+  try {
+    services = await getBackendServices();
+  } catch {
+    // Graceful fallback — services carousel will be empty
+  }
+  return <OurWorkPage services={services} />;
 }
