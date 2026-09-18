@@ -55,8 +55,8 @@ export function OurWork() {
           light
         />
 
-        <div className="relative mt-14 mx-auto max-w-3xl">
-          {/* Video carousel */}
+        <div className="relative mt-14 mx-auto max-w-xs sm:max-w-sm">
+          {/* Video carousel — YouTube Shorts size */}
           <div className="relative overflow-hidden">
             <AnimatePresence mode="popLayout">
               <motion.div
@@ -67,7 +67,7 @@ export function OurWork() {
                 transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                 className="flex justify-center"
               >
-                <div className="relative w-full aspect-video overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-white/10">
+                <div className="relative w-full aspect-[9/16] overflow-hidden rounded-[2rem] bg-black shadow-2xl ring-1 ring-white/10">
                   <video
                     ref={(el) => { videoRefs.current[current] = el; }}
                     src={workVideos[current].src}
