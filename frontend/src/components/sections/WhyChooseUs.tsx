@@ -48,10 +48,10 @@ export function WhyChooseUs() {
                       <Icon className="h-7 w-7" />
                     </span>
                     <h3 className="relative mt-5 font-serif text-xl font-semibold text-luxury-black">
-                      {t(`why.${i}.title`) || item.title}
+                      {item.title}
                     </h3>
                     <p className="relative mt-2 text-sm leading-relaxed text-charcoal/70">
-                      {t(`why.${i}.desc`) || item.desc}
+                      {item.desc}
                     </p>
                   </div>
                 </Link>
