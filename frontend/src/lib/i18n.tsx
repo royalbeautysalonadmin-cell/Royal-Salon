@@ -19,6 +19,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.tools": { en: "Free Tools", pl: "Darmowe Narzędzia" },
   "nav.blog": { en: "Blog", pl: "Blog" },
   "nav.contact": { en: "Contact", pl: "Kontakt" },
+  "nav.ourWork": { en: "Our Work", pl: "Nasza Praca" },
 
   // Hero
   "hero.badge": { en: "Warsaw's Premier Luxury Beauty Destination", pl: "Premierowy Luksusowy Salon Piękności w Warszawie" },
@@ -201,6 +202,15 @@ const translations: Record<string, Record<Lang, string>> = {
   "packages.select": { en: "Select Package", pl: "Wybierz Pakiet" },
   "packages.book": { en: "Book This Package", pl: "Zarezerwuj Ten Pakiet" },
   "packages.mostPopular": { en: "Most Popular", pl: "Najpopularniejszy" },
+
+  // Our Work
+  "ourWork.heading": { en: "Our Work", pl: "Nasza Praca" },
+  "ourWork.title": { en: "See Our Artistry in Action", pl: "Zobacz Naszą Sztukę w Działaniu" },
+  "ourWork.description": { en: "Watch real transformations from our salon — every cut, colour and makeover crafted with passion and precision.", pl: "Obejrzyj prawdziwe metamorfozy z naszego salonu — każde cięcie, koloryzacja i makeover tworzone z pasją i precyzją." },
+  "ourWork.bookCTA": { en: "Book Your Transformation", pl: "Zarezerwuj Swoją Metamorfozę" },
+  "ourWork.play": { en: "Play", pl: "Odtwórz" },
+  "ourWork.mute": { en: "Mute", pl: "Wycisz" },
+  "ourWork.unmute": { en: "Unmute", pl: "Włącz dźwięk" },
 
   // Gallery
   "gallery.heading": { en: "Our Gallery", pl: "Nasza Galeria" },
