@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   // NOTE: no `alternates.canonical` here — a canonical in the root layout is
   // inherited by every page that doesn't override it, which made /about,
-  // /packages, /contact etc. all claim the homepage as their canonical and
+  // /contact etc. all claim the homepage as their canonical and
   // blocked them from being indexed. Each page declares its own canonical.
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }

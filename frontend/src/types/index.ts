@@ -24,18 +24,6 @@ export interface Service {
   updatedAt?: string;
 }
 
-export interface Package {
-  slug: string;
-  name: string;
-  type: "Bridal" | "Monthly" | "Seasonal";
-  price: number;
-  description: string;
-  includes: string[];
-  benefits: string[];
-  image: string;
-  popular?: boolean;
-}
-
 export interface Course {
   slug: string;
   name: string;

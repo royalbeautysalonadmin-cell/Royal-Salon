@@ -1,5 +1,4 @@
 import type {
-  Package,
   Course,
   Testimonial,
   GalleryImage,
@@ -14,60 +13,6 @@ const U = (id: string, w = 800) =>
 // from `backend/scripts/seed-data.ts`, and are fetched at build time via
 // `@/lib/backend-api`'s `getBackendServices()` — see that file for why a
 // local static fallback is deliberately not kept here.
-
-/* ─── Packages ─── */
-export const packages: Package[] = [
-  {
-    slug: "royal-bridal",
-    name: "Royal Bridal Package",
-    type: "Bridal",
-    price: 3500,
-    description: "The complete head-to-toe bridal transformation for your wedding day.",
-    includes: [
-      "Bridal HD makeup",
-      "Hair styling & extensions",
-      "Bridal mehndi (hands & feet)",
-      "Pre-bridal facial & cleanup",
-      "Manicure & pedicure",
-      "Draping & accessories",
-    ],
-    benefits: ["Dedicated lead artist", "Trial session included", "On-location available"],
-    image: U("photo-1519741497674-611481863552"),
-    popular: true,
-  },
-  {
-    slug: "glow-monthly",
-    name: "Glow Monthly Membership",
-    type: "Monthly",
-    price: 900,
-    description: "Stay radiant all month with our curated self-care membership.",
-    includes: [
-      "2 signature facials",
-      "1 hydra facial",
-      "2 blow-dry sessions",
-      "1 manicure & pedicure",
-      "Threading (unlimited)",
-    ],
-    benefits: ["Priority booking", "15% off add-ons", "Free skin consultation"],
-    image: U("photo-1596178065887-1198b6148b2b"),
-  },
-  {
-    slug: "seasonal-radiance",
-    name: "Seasonal Radiance Package",
-    type: "Seasonal",
-    price: 1600,
-    description: "A seasonal reset pampering experience for skin, hair and nails.",
-    includes: [
-      "Hydra facial",
-      "Keratin treatment",
-      "Hair spa",
-      "Full-body waxing",
-      "Spa pedicure",
-    ],
-    benefits: ["Complimentary head massage", "Seasonal gift box", "Refreshments"],
-    image: U("photo-1616394584738-fc6e612e71b9"),
-  },
-];
 
 /* ─── Courses ─── */
 export const courses: Course[] = [
@@ -205,13 +150,13 @@ export const whyChooseUs = [
     icon: "Crown",
     title: "Luxury Experience",
     desc: "A serene five-star ambience designed for total relaxation in the heart of Warsaw.",
-    link: "/packages",
+    link: "/services",
   },
   {
     icon: "Heart",
     title: "Customer Satisfaction",
     desc: "2000+ delighted clients and a 5-star average rating — our most loved beauty salon.",
-    link: "/packages",
+    link: "/services",
   },
   {
     icon: "Award",

@@ -26,7 +26,6 @@ const TOOLS_UPDATED = new Date("2026-08-27T10:00:00-07:00"); // tools pages
 const HOMEPAGE_UPDATED = new Date("2026-08-08T10:00:00-07:00"); // page.tsx (homepage)
 const ABOUT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const SERVICES_PAGE_UPDATED = new Date("2026-08-08T10:00:00-07:00");
-const PACKAGES_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const CONTACT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const WARSAW_HUB_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const BLOG_INDEX_UPDATED = new Date("2026-08-08T10:00:00-07:00");
@@ -53,7 +52,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "", priority: 1, changeFrequency: "weekly", lastModified: HOMEPAGE_UPDATED },
     { path: "about", priority: 0.7, changeFrequency: "monthly", lastModified: ABOUT_UPDATED },
     { path: "services", priority: 0.9, changeFrequency: "weekly", lastModified: SERVICES_PAGE_UPDATED },
-    { path: "packages", priority: 0.8, changeFrequency: "monthly", lastModified: PACKAGES_UPDATED },
     { path: "contact", priority: 0.7, changeFrequency: "monthly", lastModified: CONTACT_UPDATED },
 
     // Local SEO hub

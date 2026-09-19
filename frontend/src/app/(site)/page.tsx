@@ -27,9 +27,6 @@ const BridalShowcase = dynamic(() =>
 const OurWork = dynamic(() =>
   import("@/components/sections/OurWork").then((m) => m.OurWork)
 );
-const Packages = dynamic(() =>
-  import("@/components/sections/Packages").then((m) => m.Packages)
-);
 const WhyChooseUs = dynamic(() =>
   import("@/components/sections/WhyChooseUs").then((m) => m.WhyChooseUs)
 );
@@ -105,7 +102,6 @@ export default async function HomePage() {
       <Services services={services} />
       <BridalShowcase />
       <OurWork />
-      <Packages />
       <WhyChooseUs />
       <Amenities />
       <Testimonials testimonials={testimonials} />

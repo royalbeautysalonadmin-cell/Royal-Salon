@@ -15,7 +15,6 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.home": { en: "Home", pl: "Strona Główna" },
   "nav.about": { en: "About", pl: "O Nas" },
   "nav.services": { en: "Services", pl: "Usługi" },
-  "nav.packages": { en: "Packages", pl: "Pakiety" },
   "nav.tools": { en: "Free Tools", pl: "Darmowe Narzędzia" },
   "nav.blog": { en: "Blog", pl: "Blog" },
   "nav.contact": { en: "Contact", pl: "Kontakt" },
@@ -193,15 +192,6 @@ const translations: Record<string, Record<Lang, string>> = {
   "testimonials.heading": { en: "What Our Clients Say", pl: "Co Mówią Nasi Klienci" },
   "testimonials.title": { en: "Loved by Thousands", pl: "Pokochani przez Tysiące" },
   "testimonials.description": { en: "Real words from the clients and graduates who trust us with their beauty in Warsaw.", pl: "Prawdziwe słowa od klientów i absolwentów, którzy powierzają nam swoją urodę w Warszawie." },
-
-  // Packages
-  "packages.heading": { en: "Beauty Packages", pl: "Pakiety Urodowe" },
-  "packages.title": { en: "Curated Luxury Packages", pl: "Kurowane Pakiety Luksusowe" },
-  "packages.description": { en: "Thoughtfully bundled experiences offering exceptional value for brides, members and seasonal pampering in Warsaw.", pl: "Starannie dobrane pakiety oferujące wyjątkową wartość dla panien młodych, członków i sezonowych zabiegów w Warszawie." },
-  "packages.includes": { en: "Includes", pl: "Zawiera" },
-  "packages.select": { en: "Select Package", pl: "Wybierz Pakiet" },
-  "packages.book": { en: "Book This Package", pl: "Zarezerwuj Ten Pakiet" },
-  "packages.mostPopular": { en: "Most Popular", pl: "Najpopularniejszy" },
 
   // Our Work
   "ourWork.heading": { en: "Our Work", pl: "Nasza Praca" },

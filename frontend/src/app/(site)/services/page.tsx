@@ -4,7 +4,6 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { Services } from "@/components/sections/Services";
-import { Packages } from "@/components/sections/Packages";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Contact } from "@/components/sections/Contact";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -126,7 +125,6 @@ export default async function ServicesPage() {
       </section>
 
       <Services services={services} showHeader={false} />
-      <Packages />
       <WhyChooseUs />
       <Contact />
     </>
