@@ -852,6 +852,7 @@ export const nichePages: NichePage[] = [
       "indian-salon-warsaw",
       "hijab-friendly-salon-warsaw",
       "women-only-hair-salon-warsaw",
+      "zabiegi-na-twarz-warszawa",
     ],
     relatedCategorySlugs: ["hair", "threading", "nails"],
     serviceName: "Salon Kosmetyczny i Fryzjerski w Warszawie",
@@ -1048,6 +1049,8 @@ export const nichePages: NichePage[] = [
       "salon-pieknosci-warszawa",
       "salon-kosmetyczny-warszawa",
       "hijab-friendly-salon-warsaw",
+      "zabiegi-na-twarz-warszawa",
+      "depilacja-woskiem-warszawa",
     ],
     relatedCategorySlugs: ["hair", "facials", "nails"],
     serviceName: "Salon Urody w Warszawie",
@@ -1147,6 +1150,8 @@ export const nichePages: NichePage[] = [
       "salon-pieknosci-warszawa",
       "salon-urody-warszawa",
       "salon-kosmetyczny-warszawa",
+      "barber-warszawa",
+      "strzyzenie-meskie-z-broda-warszawa",
     ],
     relatedCategorySlugs: ["hair"],
     serviceName: "Fryzjer w Warszawie",
@@ -1240,7 +1245,7 @@ export const nichePages: NichePage[] = [
       "threading-combo",
       "full-arms-wax",
     ],
-    relatedNicheSlugs: ["salon-pieknosci-warszawa", "indian-parlour-warsaw"],
+    relatedNicheSlugs: ["salon-pieknosci-warszawa", "indian-parlour-warsaw", "depilacja-woskiem-warszawa"],
     relatedCategorySlugs: ["waxing", "threading"],
     serviceName: "Depilacja w Warszawie",
     serviceDescription:
@@ -1331,6 +1336,7 @@ export const nichePages: NichePage[] = [
     relatedNicheSlugs: [
       "salon-pieknosci-warszawa",
       "salon-urody-warszawa",
+      "manicure-hybrydowy-warszawa",
     ],
     relatedCategorySlugs: ["nails"],
     serviceName: "Manicure i Pedicure w Warszawie",
@@ -1516,6 +1522,7 @@ export const nichePages: NichePage[] = [
       "keratin-nanoplasty-hijab-hair-warsaw",
       "fryzjer-warszawa",
       "salon-urody-warszawa",
+      "botox-wlosow-warszawa",
     ],
     relatedCategorySlugs: ["hair"],
     serviceName: "Keratynowe Prostowanie Włosów w Warszawie",
@@ -1794,6 +1801,7 @@ export const nichePages: NichePage[] = [
     relatedNicheSlugs: [
       "salon-pieknosci-warszawa",
       "salon-urody-warszawa",
+      "przedluzanie-rzes-warszawa-1-1",
     ],
     relatedCategorySlugs: ["makeup"],
     serviceName: "Przedłużanie Rzęs w Warszawie",
@@ -2636,6 +2644,8 @@ export const nichePages: NichePage[] = [
     relatedNicheSlugs: [
       "fryzjer-warszawa",
       "salon-urody-warszawa",
+      "strzyzenie-meskie-z-broda-warszawa",
+      "barber-warszawa",
     ],
     relatedCategorySlugs: ["hair"],
     serviceName: "Strzyżenie Męskie w Warszawie",
@@ -3059,6 +3069,7 @@ export const nichePages: NichePage[] = [
       "fryzjer-warszawa",
       "baleaz-warszawa",
       "keratynowe-prostowanie-warszawa",
+      "koloryzacja-ombre-warszawa",
     ],
     relatedCategorySlugs: ["hair"],
     serviceName: "Koloryzacja Włosów w Warszawie",
@@ -3411,6 +3422,957 @@ export const nichePages: NichePage[] = [
     ],
     ctaMessage:
       "Dzień dobry, chciałabym umówić się na zabieg anti-aging w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────── barber warszawa ─────────────────────── */
+  {
+    slug: "barber-warszawa",
+    locale: "pl",
+    primaryKeyword: "barber Warszawa",
+    secondaryKeywords: [
+      "barber shop Warszawa",
+      "barber warszawa centrum",
+      "najlepszy barber warszawa",
+      "fryzjer męski barber warszawa",
+      "barber wola warszawa",
+      "barber praga warszawa",
+      "barber near me warszawa",
+    ],
+    title: "Barber Warszawa — Profesjonalny Barber Shop | Royal Beauty Salon",
+    metaDescription:
+      "Szukasz barbera w Warszawie? Royal Beauty Salon oferuje strzyżenie męskie, trymowanie brody, golenie brzytwą i stylizację. Profesjonalni barberzy, centrum Warszawy. Umów wizytę!",
+    h1: "Barber Warszawa — Profesjonalny Barber Shop",
+    eyebrow: "Barber • Warszawa",
+    tagline:
+      "Profesjonalny barber w centrum Warszawy — strzyżenie męskie, broda, golenie brzytwą i stylizacja w jednym miejscu.",
+    heroImage: U("photo-1503951914875-452162b0f3f1"),
+    heroAlt: "Profesjonalny barber strzyże mężczyznę w barber shopie w Warszawie",
+    intro: [
+      "Szukasz sprawdzonego barbera w Warszawie, który profesjonalnie zadba o Twoje włosy i brodę? Royal Beauty Salon na Alei Stanów Zjednoczonych to miejsce, gdzie tradycyjny barbering spotyka się z nowoczesnym stylem.",
+      "Nasi barberzy to doświadczeni specjaliści, którzy znają się na męskich fryzurach — od klasycznych cięć po nowoczesne style jak fade, undercut czy pompadour. Strzyżemy nożyczkami, maszynką i brzytwą, dobierając fryzurę do kształtu twarzy i stylu życia.",
+      "W naszym barber shopie w Warszawie nie tylko wychodzisz z idealną fryzurą — czujesz się jak klient premium. Dobra kawa, miła atmosfera i pełen profesjonalizm na każdym kroku.",
+    ],
+    sections: [
+      {
+        heading: "Usługi barberskie w Warszawie",
+        body: [
+          "Oferujemy kompleksowe usługi barberskie: strzyżenie męskie nożyczkami i maszynką, trymowanie i modelowanie brody, golenie brzytwą z gorącym ręcznikiem, odsiwianie włosów i brody, a także pielęgnację zarostu olejkami i balsamami.",
+          "Każda wizyta zaczyna się od konsultacji — doradzimy fryzurę dopasowaną do Twojego stylu, twarzy i okazji. Pracujemy na profesjonalnych kosmetykach barberskich najwyższej jakości.",
+        ],
+      },
+      {
+        heading: "Strzyżenie męskie Warszawa",
+        body: [
+          "Strzyżenie męskie to nasza specjalność. Wykonujemy klasyczne cięcia, nowoczesne formy (fade, skin fade, crop, quiff, slick back), strzyżenie maszynką na jedną długość oraz precyzyjne cięcia nożyczkami dla dłuższych włosów.",
+          "Strzyżenie trwa 30-60 minut w zależności od wybranej usługi. Każde strzyżenie obejmuje mycie, cięcie i stylizację — wychodzisz gotowy na każdy dzień.",
+        ],
+      },
+      {
+        heading: "Strzyżenie brody i golenie brzytwą",
+        body: [
+          "Broda wymaga profesjonalnej pielęgnacji. Trymujemy, modelujemy i nadajemy kształt brody, dbając o linie i symetrię. Używamy olejków, balsamów i toników, które nawilżają skórę i zarost.",
+          "Dla miłośników klasyki oferujemy golenie brzytwą na mokro z gorącym ręcznikiem — tradycyjna usługa barberska, która zapewnia absolutnie gładką skórę i niezapomniane doznania.",
+        ],
+      },
+      {
+        heading: "Dlaczego nasz barber shop w Warszawie?",
+        body: [
+          "Łączymy barbering z obsługą premium. Nasi barberzy są przeszkoleni w tradycyjnych i nowoczesnych technikach, stale podnoszą kwalifikacje i śledzą męskie trendy. Salon jest czysty, stylowy i przyjazny.",
+          "Znajdujemy się w centrum Warszawy, z dogodnym dojazdem i bezpłatnym parkingiem. Rezerwacja online lub telefoniczna — bez kolejek i czekania.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Doświadczeni barberzy", desc: "Specjaliści od męskich fryzur i brody." },
+      { title: "Golenie brzytwą", desc: "Tradycyjne golenie z gorącym ręcznikiem." },
+      { title: "Centrum Warszawy", desc: "Dogodna lokalizacja i bezpłatny parking." },
+      { title: "Kosmetyki premium", desc: "Pracujemy na najlepszych markach barberskich." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje strzyżenie męskie u barbera w Warszawie?",
+        a: "W Royal Beauty Salon strzyżenie męskie kosztuje od 70 zł, combo (włosy + broda) od 120 zł, a golenie brzytwą od 100 zł. Ceny zależą od wybranej usługi i długości włosów.",
+      },
+      {
+        q: "Jak umówić się do barbera w Warszawie?",
+        a: "Możesz zarezerwować wizytę online przez naszą stronę, zadzwonić pod numer +48 573 377 659 lub napisać na WhatsApp. Rezerwacja zajmuje kilka sekund.",
+      },
+      {
+        q: "Czy wasz barber shop przyjmuje bez rezerwacji?",
+        a: "Zalecamy rezerwację, aby mieć pewność terminu. Możliwe są wizyty bez rezerwacji, ale w godzinach szczytu mogą wystąpić opóźnienia.",
+      },
+      {
+        q: "Czy strzyżecie also długie włosy męskie?",
+        a: "Tak, strzyżemy męskie włosy każdej długości — od bardzo krótkich po długie. Dobieramy technikę do rodzaju włosów i oczekiwanego efektu.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-basic",
+      "hair-cutting-advanced",
+      "hair-oil-massage-steam",
+    ],
+    relatedNicheSlugs: [
+      "strzyzenie-meskie-warszawa",
+      "fryzjer-warszawa",
+      "salon-fryzjerski-blisko-mnie-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Barber Shop Services in Warsaw",
+    serviceDescription:
+      "Profesjonalny barber shop w Warszawie — strzyżenie męskie, broda, golenie brzytwą, stylizacja i pielęgnacja zarostu.",
+    imageAltRecommendations: [
+      "Barber strzyże mężczyznę w barber shopie Warszawa",
+      "Strzyżenie brody brzytwą w warszawskim barber shopie",
+      "Nowoczesna męska fryzura — efekt po strzyżeniu",
+      "Golenie brzytwą z gorącym ręcznikiem w salonie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałbym umówić się na strzyżenie męskie w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────── manicure hybrydowy warszawa ─────────────────── */
+  {
+    slug: "manicure-hybrydowy-warszawa",
+    locale: "pl",
+    primaryKeyword: "manicure hybrydowy Warszawa",
+    secondaryKeywords: [
+      "manicure hybrydowy cennik warszawa",
+      "hybrydy warszawa",
+      "manicure warszawa centrum",
+      "paznokcie hybrydowe warszawa",
+      "manicure gel polish warszawa",
+      "najlepszy manicure warszawa",
+      "manicure hybrydowy blisko mnie warszawa",
+    ],
+    title: "Manicure Hybrydowy Warszawa — Cennik i Rezerwacja | Royal Beauty Salon",
+    metaDescription:
+      "Manicure hybrydowy w Warszawie od 90 zł. Royal Beauty Salon — trwały kolor, precyzyjne wykonanie, догодна lokalizacja. Umów wizytę online lub telefonicznie!",
+    h1: "Manicure Hybrydowy Warszawa — Profesjonalny Zabieg",
+    eyebrow: "Manicure Hybrydowy • Warszawa",
+    tagline:
+      "Trwały, lśniący manicure hybrydowy w centrum Warszawy — precyzyjne wykonanie, bogata paleta kolorów, dogodna rezerwacja.",
+    heroImage: U("photo-1604654898616-70224388db3f"),
+    heroAlt: "Profesjonalny manicure hybrydowy wykonywany w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Manicure hybrydowy to najczęściej wybierany zabieg kosmetyczny w Polsce — i nic dziwnego. Trwały kolor, lustrzany połysk i odporność na odpryski nawet przez 2-3 tygodnie. W Royal Beauty Salon w Warszawie wykonujemy manicure hybrydowy na najwyższym poziomie.",
+      "Nasze stylistki pracują wyłącznie na markowych lakierach hybrydowych, które gwarantują bezpieczeństwo płytki paznokcia i trwałość koloru. Dobieramy kształt i kolor indywidualnie do Twoich potrzeb — od klasycznego french po najnowsze trendy zdobnicze.",
+      "Salon znajduje się w centrum Warszawy, z łatwym dojazdem komunikacją miejską i samochodem. Rezerwacja online lub telefoniczna — bez długiego czekania.",
+    ],
+    sections: [
+      {
+        heading: "Co to jest manicure hybrydowy?",
+        body: [
+          "Manicure hybrydowy to technika malowania paznokci lakierem hybrydowym, który utwardza się pod lampą UV/LED. Dzięki temu kolor utrzymuje się 2-3 tygodnie bez odpryskiwania, blaknięcia i żółknięcia.",
+          "Przed nałożeniem lakieru hybrydowego płytka paznokcia jest odpowiednio przygotowywana — opiłowywana, matowiona i odtłuszczana. Następnie nakładana jest baza, kolor i top, z utwardzeniem każdej warstwy pod lampą.",
+        ],
+      },
+      {
+        heading: "Manicure hybrydowy cennik Warszawa",
+        body: [
+          "W Royal Beauty Salon manicure hybrydowy kosztuje od 90 zł. W cenę wchodzi: zdjęcie poprzedniej hybrydy, manicure kombinowany (opracowanie skórek i kształtu), nałożenie bazy, koloru i topu oraz odżywka pielęgnacyjna.",
+          "Dodatkowe usługi: zdobienia od 20 zł, french hybrydowy 110 zł, przedłużanie paznokci żelem od 130 zł. Pełny cennik dostępny na stronie i w salonie.",
+        ],
+      },
+      {
+        heading: "Jak pielęgnować manicure hybrydowy?",
+        body: [
+          "Aby hybryda utrzymała się jak najdłużej, unikaj bezpośredniego kontaktu z detergentami (noś rękawiczki), nawilżaj skórki oliwką po każdym myciu rąk i unikaj używania paznokci jako narzędzi.",
+          "Nie obgryzaj i nie odrywaj hybrydy — może to uszkodzić płytkę paznokcia. Zdjęcie hybrydy w salonie jest bezpieczne i trwa kilkanaście minut.",
+        ],
+      },
+      {
+        heading: "Dlaczego warto wybrać nasz salon w Warszawie?",
+        body: [
+          "Nasze stylistki mają wieloletnie doświadczenie w manicure hybrydowym i stale podnoszą kwalifikacje. Pracujemy na certyfikowanych, bezpiecznych produktach. Salon jest czysty, sterylny i przyjazny.",
+          "Oferujemy szeroką paletę kolorów — ponad 300 odcieni do wyboru. Do tego zdobienia, efekty specjalne (kocie oko, syreni pył, chrome) i sezonowe kolekcje.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Od 90 zł", desc: "Atrakcyjny cennik manicure hybrydowego." },
+      { title: "300+ kolorów", desc: "Bogata paleta odcieni i efektów." },
+      { title: "Bezpieczeństwo", desc: "Certyfikowane lakiery i sterylne narzędzia." },
+      { title: "Centrum Warszawy", desc: "Łatwy dojazd i rezerwacja online." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje manicure hybrydowy w Warszawie?",
+        a: "W Royal Beauty Salon manicure hybrydowy kosztuje od 90 zł. Cena obejmuje zdjęcie starej hybrydy, manicure kombinowany i nałożenie trzech warstw (baza, kolor, top).",
+      },
+      {
+        q: "Jak długo trzyma się manicure hybrydowy?",
+        a: "Profesjonalnie wykonany manicure hybrydowy utrzymuje się 2-3 tygodnie bez odpryskiwania. Trwałość zależy od tempa wzrostu paznokci i codziennej pielęgnacji.",
+      },
+      {
+        q: "Czy manicure hybrydowy niszczy paznokcie?",
+        a: "Nie, jeśli jest wykonywany prawidłowo i na profesjonalnych produktach. Zdejmowanie hybrydy w salonie jest bezpieczne — nie odrywamy, tylkonamaczamy i delikatnie usuwamy.",
+      },
+      {
+        q: "Czy mogę umówić się na manicure hybrydowy online?",
+        a: "Tak — rezerwacja online jest dostępna na naszej stronie. Możesz też zadzwonić pod numer +48 573 377 659 lub napisać na WhatsApp.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "manicure",
+      "pedicure",
+    ],
+    relatedNicheSlugs: [
+      "manicure-warszawa",
+      "pedicure-warszawa",
+      "salon-kosmetyczny-warszawa",
+    ],
+    relatedCategorySlugs: ["nails"],
+    serviceName: "Manicure Hybrydowy w Warszawie",
+    serviceDescription:
+      "Profesjonalny manicure hybrydowy w Warszawie — trwały kolor, precyzyjne wykonanie, 300+ odcieni do wyboru.",
+    imageAltRecommendations: [
+      "Manicure hybrydowy — efekt końcowy w salonie Warszawa",
+      "Paznokcie hybrydowe w kolorze nude — stylizacja",
+      "Manicurystka nakłada lakier hybrydowy na paznokcie",
+      "Paleta kolorów lakierów hybrydowych w salonie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na manicure hybrydowy w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────── przedłużanie rzęs warszawa ─────────────────── */
+  {
+    slug: "przedluzanie-rzes-warszawa-1-1",
+    locale: "pl",
+    primaryKeyword: "przedłużanie rzęs 1:1 Warszawa",
+    secondaryKeywords: [
+      "przedłużanie rzęs warszawa cennik",
+      "rzęsy 1:1 warszawa",
+      "rzęsy objętościowe warszawa",
+      "przedłużanie rzęs metoda 1:1 warszawa",
+      "rzęsy 2d 3d warszawa",
+      "najlepsze przedłużanie rzęs warszawa",
+      "salon rzęs warszawa",
+    ],
+    title: "Przedłużanie Rzęs 1:1 Warszawa — Cennik | Royal Beauty Salon",
+    metaDescription:
+      "Przedłużanie rzęs 1:1 w Warszawie od 160 zł. Naturalny efekt, trwałość 2-3 tygodnie. Royal Beauty Salon — profesjonalna stylizacja rzęs. Umów wizytę!",
+    h1: "Przedłużanie Rzęs 1:1 Warszawa — Naturalny Efekt",
+    eyebrow: "Przedłużanie Rzęs • Warszawa",
+    tagline:
+      "Piękne, długie rzęsy bez tuszu — profesjonalne przedłużanie 1:1, 2D, 3D w centrum Warszawy.",
+    heroImage: U("photo-1560750588-73207b1ef5b8"),
+    heroAlt: "Przedłużanie rzęs metodą 1:1 wykonywane w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Marzysz o długich, gęstych rzęsach bez konieczności malowania tuszem? Przedłużanie rzęs w Royal Beauty Salon w Warszawie to profesjonalny zabieg, który daje naturalny, piękny efekt na co dzień i na specjalne okazje.",
+      "Stosujemy metodę 1:1 (jedna sztuczna rzęsa na jedną naturalną), a także 2D, 3D i Volume dla osób pragnących bardziej spektakularnego efektu. Dobieramy długość, grubość i skręt indywidualnie do kondycji Twoich rzęs.",
+      "Zabieg trwa 1,5-2 godziny, a efekt utrzymuje się 2-3 tygodnie. Regularne uzupełnienia przedłużają trwałość i utrzymują piękny wygląd spojrzenia.",
+    ],
+    sections: [
+      {
+        heading: "Metody przedłużania rzęs",
+        body: [
+          "1:1 — najbardziej naturalna metoda. Jedna sztuczna rzęsa doklejana do jednej naturalnej. Efekt: dłuższe, gęstsze rzęsy bez efektu sztuczności.",
+          "2D/3D — dwie lub trzy sztuczne rzęsy na jedną naturalną. Efekt: wyraźniejsze zagęszczenie, bardziej spektakularne spojrzenie. Idealne na specjalne okazje.",
+          "Volume/Mega Volume — dla osób chcących maksymalnego efektu. Cienkie, lekkie rzęsy układane w wachlarze dają efekt glamour.",
+        ],
+      },
+      {
+        heading: "Przedłużanie rzęs cennik Warszawa",
+        body: [
+          "W Royal Beauty Salon przedłużanie rzęs 1:1 kosztuje od 160 zł, 2D od 180 zł, 3D od 200 zł. Uzupełnienie (do 3 tygodni) od 140 zł.",
+          "W cenę wchodzi konsultacja, dobór kształtu i stylizacji, a także pigmentacja dolnych rzęs gratis. Stosujemy wyłącznie hipoalergiczne kleje i rzęsy najwyższej jakości.",
+        ],
+      },
+      {
+        heading: "Pielęgnacja przedłużonych rzęs",
+        body: [
+          "Unikaj wody przez 24 godziny po zabiegu. Nie pocieraj oczu i nie używaj tłustych kosmetyków w okolicy oczu. Do demakijażu używaj patyczków kosmetycznych z delikatnym płynem.",
+          "Czesz rzęsy miękką szczoteczką rano i wieczorem. Unikaj sauny, basenu i solarium przez 48 godzin po aplikacji. Regularne uzupełnienia co 2-3 tygodnie zapewniają trwały efekt.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Od 160 zł", desc: "Atrakcyjny cennik przedłużania rzęs." },
+      { title: "Metoda 1:1, 2D, 3D", desc: "Dobieramy efekt do Twoich oczekiwań." },
+      { title: "Hipoalergiczne kleje", desc: "Bezpieczeństwo i komfort noszenia." },
+      { title: "Efekt 2-3 tygodnie", desc: "Trwały efekt bez codziennego malowania." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje przedłużanie rzęs 1:1 w Warszawie?",
+        a: "W Royal Beauty Salon przedłużanie rzęs 1:1 kosztuje od 160 zł. Uzupełnienie do 3 tygodni — od 140 zł. Cena obejmuje konsultację i dobór stylizacji.",
+      },
+      {
+        q: "Jak długo utrzymują się przedłużone rzęsy?",
+        a: "Efekt przedłużania utrzymuje się 2-3 tygodnie. Po tym czasie zalecamy uzupełnienie, aby utrzymać estetyczny wygląd. Trwałość zależy od cyklu wzrostu rzęs i pielęgnacji.",
+      },
+      {
+        q: "Czy przedłużanie rzęs niszczy naturalne rzęsy?",
+        a: "Profesjonalnie wykonane przedłużanie nie niszczy naturalnych rzęs. Dobieramy długość i objętość do kondycji rzęs klientki, aby nie obciążać naturalnych.",
+      },
+      {
+        q: "Jak często robić uzupełnienie rzęs?",
+        a: "Zalecamy uzupełnienie co 2-3 tygodnie. Regularne wizyty pomagają utrzymać estetyczny wygląd i komfort noszenia przedłużonych rzęs.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "eyebrow-threading-combo",
+      "henna-eyebrows",
+    ],
+    relatedNicheSlugs: [
+      "przedluzanie-rzes-warszawa",
+      "laminacja-brwi-rzes-warszawa",
+      "henna-brwi-warszawa",
+    ],
+    relatedCategorySlugs: ["threading"],
+    serviceName: "Przedłużanie Rzęs w Warszawie",
+    serviceDescription:
+      "Profesjonalne przedłużanie rzęs 1:1, 2D, 3D w Warszawie — naturalny efekt, hipoalergiczne kleje, trwałość 2-3 tygodnie.",
+    imageAltRecommendations: [
+      "Przedłużanie rzęs 1:1 — efekt końcowy",
+      "Rzęsy po przedłużeniu w salonie Warszawa",
+      "Stylizacja rzęs — porównanie przed i po",
+      "Profesjonalna aplikacja rzęs w salonie kosmetycznym",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na przedłużanie rzęs 1:1 w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────── strzyzenie meskie z broda warszawa ─────────────── */
+  {
+    slug: "strzyzenie-meskie-z-broda-warszawa",
+    locale: "pl",
+    primaryKeyword: "strzyżenie męskie z brodą Warszawa",
+    secondaryKeywords: [
+      "strzyżenie męskie warszawa cennik",
+      "strzyżenie z brodą warszawa",
+      "combo strzyżenie broda warszawa",
+      "fryzjer męski z brodą warszawa",
+      "strzyżenie brody warszawa",
+      "trymowanie brody warszawa",
+      "fryzjer męski centrum warszawa",
+    ],
+    title: "Strzyżenie Męskie z Brodą Warszawa — Cennik | Royal Beauty Salon",
+    metaDescription:
+      "Strzyżenie męskie z brodą w Warszawie od 120 zł. Royal Beauty Salon — kompleksowa obsługa włosów i brody. Doświadczeni fryzjerzy, centrum Warszawy. Umów się!",
+    h1: "Strzyżenie Męskie z Brodą Warszawa",
+    eyebrow: "Strzyżenie Męskie • Warszawa",
+    tagline:
+      "Kompleksowa obsługa męskich włosów i brody — od klasycznych cięć po nowoczesne stylizacje w centrum Warszawy.",
+    heroImage: U("photo-1599351431202-1e0f0137899a"),
+    heroAlt: "Mężczyzna po strzyżeniu włosów i brody w salonie fryzjerskim w Warszawie",
+    intro: [
+      "Strzyżenie męskie z brodą to kompleksowa usługa, która zadba o Twój pełny wygląd w jednej wizycie. W Royal Beauty Salon w Warszawie strzyżemy włosy i brodę w ramach jednego terminu — oszczędzasz czas i wychodzisz z idealnie dopasowaną stylizacją.",
+      "Nasi fryzjerzy męscy znają się zarówno na cięciach włosów, jak i na pielęgnacji zarostu. Dobierają fryzurę i kształt brody do owalu twarzy, stylu życia i osobistych preferencji.",
+      "Salon znajduje się w centrum Warszawy, z dogodnym dojazdem. Rezerwacja online lub telefoniczna — bez kolejek i stresu.",
+    ],
+    sections: [
+      {
+        heading: "Strzyżenie męskie w Warszawie",
+        body: [
+          "Wykonujemy strzyżenie męskie w każdym stylu — od klasycznego po nowoczesne: fade, skin fade, crop, quiff, undercut, pompadour. Pracujemy nożyczkami, maszynką i grzebieniem, dobierając technikę do rodzaju włosów i oczekiwanego efektu.",
+          "Każde strzyżenie obejmuje mycie włosów, precyzyjne cięcie i stylizację. Doradzamy również pielęgnację domową — dobieramy szampon, balsam lub pomadę do Twojego typu włosów.",
+        ],
+      },
+      {
+        heading: "Strzyżenie i modelowanie brody",
+        body: [
+          "Broda to wizytówka współczesnego mężczyzny. Trymujemy, modelujemy i nadajemy kształt brody, dbając o symetrię i ostrość linii. Używamy olejków, balsamów i toników, które nawilżają skórę pod zarostem.",
+          "Oferujemy również golenie brzytwą na mokro z gorącym ręcznikiem — dla tych, którzy cenią tradycyjny barbering i absolutnie gładką skórę.",
+        ],
+      },
+      {
+        heading: "Combo — strzyżenie włosów + broda",
+        body: [
+          "Najpopularniejsza usługa w naszym salonie to combo: strzyżenie włosów połączone z trymowaniem brody. W ramach jednej wizyty zadbasz o pełny wygląd — oszczędzasz czas i pieniądze.",
+          "Combo trwa 60-90 minut i obejmuje: konsultację, strzyżenie włosów, trymowanie/modelowanie brody, stylizację i pielęgnację zarostu. Cena od 120 zł.",
+        ],
+      },
+      {
+        heading: "Dlaczego nasz salon w Warszawie?",
+        body: [
+          "Nasi fryzjerzy mają wieloletnie doświadczenie w męskim fryzjerstwie i barberingiu. Stale podnoszą kwalifikacje, śledzą trendy i pracują na profesjonalnych kosmetykach.",
+          "Salon jest czysty, stylowy i przyjazny. Znajduje się w centrum Warszawy, z bezpłatnym parkingiem i łatwym dojazdem komunikacją miejską.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Combo od 120 zł", desc: "Strzyżenie włosów + broda w jednej cenie." },
+      { title: "Doświadczeni fryzjerzy", desc: "Specjaliści od męskich fryzur i zarostu." },
+      { title: "Golenie brzytwą", desc: "Tradycyjna usługa barberska." },
+      { title: "Centrum Warszawy", desc: "Dogodna lokalizacja i bezpłatny parking." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje strzyżenie męskie z brodą w Warszawie?",
+        a: "W Royal Beauty Salon combo (włosy + broda) kosztuje od 120 zł. Samo strzyżenie włosów od 70 zł, samo strzyżenie brody od 50 zł. Golenie brzytwą od 100 zł.",
+      },
+      {
+        q: "Jak długo trwa strzyżenie męskie z brodą?",
+        a: "Combo trwa 60-90 minut w zależności od grubości włosów i brody oraz stopnia skomplikowania fryzury. Samo strzyżenie włosów — 30-45 minut.",
+      },
+      {
+        q: "Czy mogę umówić się na strzyżenie męskie online?",
+        a: "Tak — rezerwacja online jest dostępna na naszej stronie. Możesz też zadzwonić pod numer +48 573 377 659 lub napisać na WhatsApp.",
+      },
+      {
+        q: "Jak często powinienem strzyc włosy i brodę?",
+        a: "Zalecamy strzyżenie włosów co 3-4 tygodnie, a brody co 2-3 tygodnie, aby utrzymać schludny i zadbany wygląd.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-basic",
+      "hair-cutting-advanced",
+    ],
+    relatedNicheSlugs: [
+      "barber-warszawa",
+      "strzyzenie-meskie-warszawa",
+      "fryzjer-dla-kobiet-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Strzyżenie Męskie z Brodą w Warszawie",
+    serviceDescription:
+      "Kompleksowe strzyżenie męskie z brodą w Warszawie — włosy + broda w jednej wizycie, od 120 zł.",
+    imageAltRecommendations: [
+      "Strzyżenie męskie z brodą — efekt końcowy",
+      "Fryzjer męski modeluje brodę brzytwą",
+      "Mężczyzna po combo strzyżeniu w salonie",
+      "Nowoczesna męska fryzura z brodą — stylizacja",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałbym umówić się na strzyżenie męskie z brodą w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────── zabiegi na twarz warszawa ─────────────────── */
+  {
+    slug: "zabiegi-na-twarz-warszawa",
+    locale: "pl",
+    primaryKeyword: "zabiegi na twarz Warszawa",
+    secondaryKeywords: [
+      "zabiegi kosmetyczne na twarz warszawa",
+      "zabieg na twarz cennik warszawa",
+      "pielęgnacja twarzy warszawa",
+      "zabiegi anti-aging warszawa",
+      "zabieg nawilżający twarz warszawa",
+      "salon kosmetyczny zabiegi na twarz warszawa",
+      "zabiegi na twarz blisko mnie warszawa",
+    ],
+    title: "Zabiegi na Twarz Warszawa — Pielęgnacja i Cennik | Royal Beauty Salon",
+    metaDescription:
+      "Profesjonalne zabiegi na twarz w Warszawie — nawilżanie, oczyszczanie, anti-aging, peelingi. Royal Beauty Salon, centrum Warszawy. Umów wizytę!",
+    h1: "Zabiegi na Twarz Warszawa — Profesjonalna Pielęgnacja",
+    eyebrow: "Zabiegi na Twarz • Warszawa",
+    tagline:
+      "Zdrowa, promienna skóra dzięki profesjonalnym zabiegom na twarz — nawilżanie, oczyszczanie, regeneracja w centrum Warszawy.",
+    heroImage: U("photo-1570172619644-dfd03ed5d881"),
+    heroAlt: "Profesjonalny zabieg na twarz w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Twoja skóra zasługuje na profesjonalną pielęgnację. W Royal Beauty Salon w Warszawie oferujemy szeroką gamę zabiegów na twarz — od klasycznego oczyszczania po zaawansowane terapie anti-aging i nawilżające.",
+      "Każdy zabieg zaczynamy od analizy skóry i konsultacji, aby dobrać protokół indywidualnie do Twojego typu cery, problemów i oczekiwań. Pracujemy na sprawdzonych, profesjonalnych kosmetykach.",
+      "Zabiegi na twarz to nie tylko pielęgnacja — to chwila relaksu i regeneracji. W naszym salonie zadbasz o skórę i o siebie w przyjemnej, spokojnej atmosferze.",
+    ],
+    sections: [
+      {
+        heading: "Rodzaje zabiegów na twarz",
+        body: [
+          "Oczyszczanie twarzy — wieloetapowy zabieg oczyszczający z peelingiem, ekstrakcją i maską. Idealny dla cery tłustej, mieszanej i trądzikowej.",
+          "Zabieg nawilżający — intensywne nawilżanie kwasem hialuronowym, witaminami i serum. Dla cery suchej, odwodnionej i zmęczonej.",
+          "Zabieg anti-aging — mezoterapia, peelingi chemiczne i terapie regenerujące dla skóry dojrzałej. Redukcja zmarszczek, poprawa elastyczności.",
+        ],
+      },
+      {
+        heading: "Zabiegi na twarz cennik Warszawa",
+        body: [
+          "W Royal Beauty Salon zabiegi na twarz zaczynają się od 120 zł. Oczyszczanie twarzy — od 120 zł, zabieg nawilżający — od 120 zł, hydra facial — 200 zł, royal facial — 150 zł.",
+          "Każdy zabieg obejmuje konsultację, oczyszczenie skóry, główny etap zabiegu, maskę i pielęgnację końcową. Czas trwania: 45-90 minut.",
+        ],
+      },
+      {
+        heading: "Jak często robić zabiegi na twarz?",
+        body: [
+          "Zalecamy serię 4-6 zabiegów co 2-4 tygodnie dla osiągnięcia optymalnych efektów, a potem 1 zabieg podtrzymujący co 1-2 miesiące.",
+          "Regularna pielęgnacja w salonie w połączeniu z codzienną rutyną domową daje najlepsze rezultaty. Doradzimy produkty do pielęgnacji domowej po każdym zabiegu.",
+        ],
+      },
+      {
+        heading: "Dlaczego nasz salon w Warszawie?",
+        body: [
+          "Nasze kosmetyczki mają wykształcenie i doświadczenie w kosmetologii. Stale podnoszą kwalifikacje, uczestniczą w szkoleniach i znają najnowsze trendy w pielęgnacji skóry.",
+          "Salon jest czysty, sterylny i wyposażony w nowoczesny sprzęt. Pracujemy na certyfikowanych, bezpiecznych produktach. Centrum Warszawy, łatwy dojazd.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Od 120 zł", desc: "Atrakcyjny cennik zabiegów na twarz." },
+      { title: "Indywidualna konsultacja", desc: "Dobieramy zabieg do Twojej cery." },
+      { title: "Profesjonalne kosmetyki", desc: "Sprawdzone, certyfikowane produkty." },
+      { title: "Relaks i regeneracja", desc: "Chwila dla siebie w spokojnej atmosferze." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje zabieg na twarz w Warszawie?",
+        a: "W Royal Beauty Salon zabiegi na twarz zaczynają się od 120 zł. Oczyszczanie — od 120 zł, nawilżanie — od 120 zł, hydra facial — 200 zł, royal facial — 150 zł.",
+      },
+      {
+        q: "Jaki zabieg na twarz jest najlepszy?",
+        a: "Zależy od typu cery i problemów. Dla cery tłustej — oczyszczanie. Dla suchej — nawilżanie. Dla dojrzałej — anti-aging. Doradzimy podczas bezpłatnej konsultacji.",
+      },
+      {
+        q: "Jak często robić zabiegi na twarz?",
+        a: "Zalecamy serię 4-6 zabiegów co 2-4 tygodnie, potem 1 zabieg podtrzymujący co 1-2 miesiące. Regularność jest kluczowa dla widocznych efektów.",
+      },
+      {
+        q: "Czy zabiegi na twarz są bolesne?",
+        a: "Większość zabiegów jest komfortowa. Peelingi chemiczne mogą powodować lekkie mrowienie, które mija po kilku minutach. Oczyszczanie może być delikatnie niekomfortowe w obszarach z zaskórnikiem.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "royal-facial",
+      "hydra-facial",
+      "tan-removal-facial",
+      "cleanup",
+    ],
+    relatedNicheSlugs: [
+      "oczyszczanie-twarzy-warszawa",
+      "mezoterapia-warszawa",
+      "peeling-chemiczny-warszawa",
+    ],
+    relatedCategorySlugs: ["facials"],
+    serviceName: "Zabiegi na Twarz w Warszawie",
+    serviceDescription:
+      "Profesjonalne zabiegi na twarz w Warszawie — oczyszczanie, nawilżanie, anti-aging, peelingi i regeneracja skóry.",
+    imageAltRecommendations: [
+      "Zabieg oczyszczający na twarz w salonie Warszawa",
+      "Nawilżający zabieg na twarz — efekt promiennej skóry",
+      "Profesjonalna kosmetyczka wykonuje zabieg na twarz",
+      "Skóra po zabiegu — gładka i promienna cera",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na zabieg na twarz w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────── depilacja woskiem warszawa ─────────────────── */
+  {
+    slug: "depilacja-woskiem-warszawa",
+    locale: "pl",
+    primaryKeyword: "depilacja woskiem Warszawa",
+    secondaryKeywords: [
+      "depilacja woskiem cennik warszawa",
+      "depilacja bikini warszawa",
+      "depilacja nóg woskiem warszawa",
+      "depilacja pach woskiem warszawa",
+      "depilacja woskiem centrum warszawa",
+      "woskowanie nóg warszawa",
+      "depilacja woskiem blisko mnie warszawa",
+    ],
+    title: "Depilacja Woskiem Warszawa — Cennik | Royal Beauty Salon",
+    metaDescription:
+      "Depilacja woskiem w Warszawie — nogi, pachy, bikini, twarz. Royal Beauty Salon, profesjonalna depilacja, dogodna lokalizacja. Umów wizytę!",
+    h1: "Depilacja Woskiem Warszawa — Gładka Skóra",
+    eyebrow: "Depilacja Woskiem • Warszawa",
+    tagline:
+      "Profesjonalna depilacja woskiem w centrum Warszawy — gładka skóra na długo, bez podrażnień i wrastających włosków.",
+    heroImage: U("photo-1519824145371-296894a0daa9"),
+    heroAlt: "Depilacja woskiem nóg w salonie kosmetycznym w Warszawie",
+    intro: [
+      "Depilacja woskiem to jedna z najskuteczniejszych metod usuwania owłosienia — daje gładką skórę na 3-6 tygodni. W Royal Beauty Salon w Warszawie wykonujemy depilację woskiem wszystkich partii ciała: nóg, pach, bikini, rąk, brzucha i twarzy.",
+      "Używamy wysokiej jakości wosków naturalnych, które delikatnie usuwają włoski wraz z cebulkami. Zabieg jest wykonywany przez doświadczone kosmetyczki, które dbają o higienę i komfort klientki.",
+      "Depilacja woskiem w naszym salonie to szybka, skuteczna i bezpieczna metoda na gładką skórę — idealna przed wakacjami, ślubem lub na co dzień.",
+    ],
+    sections: [
+      {
+        heading: "Rodzaje depilacji woskiem",
+        body: [
+          "Depilacja nóg — łydki, uda lub całe nogi. Najpopularniejszy zabieg depilacyjny, szczególnie przed sezonem letnim.",
+          "Depilacja pach — szybki i skuteczny zabieg trwający 15 minut. Gładka skóra pod pachami na 3-6 tygodni.",
+          "Depilacja bikini — klasyczne, brazylijskie lub głębokie. Dobieramy zakres zabiegu do preferencji klientki.",
+          "Depilacja twarzy — wąsik, broda, baki, cała twarz. Delikatny wosk do skóry twarzy, minimalne podrażnienia.",
+        ],
+      },
+      {
+        heading: "Depilacja woskiem cennik Warszawa",
+        body: [
+          "W Royal Beauty Salon depilacja woskiem zaczyna się od 35 zł (pachy). Depilacja nóg — od 70 zł (pół nogi), 110 zł (całe nogi). Depilacja bikini — od 120 zł. Depilacja twarzy — od 35 zł.",
+          "Oferujemy pakiety rabatowe: depilacja 3 partii — 10% zniżki, depilacja 5 partii — 15% zniżki. Zapytaj o pakiety podczas rezerwacji.",
+        ],
+      },
+      {
+        heading: "Jak przygotować się do depilacji woskiem?",
+        body: [
+          "Włoski powinny mieć 0,5-1 cm długości — zbyt krótkie nie zostaną usunięte, zbyt długie mogą powodować dyskomfort. Nie opalaj się na 2 tygodnie przed zabiegiem.",
+          "Na 24 godziny przed depilacją nie stosuj kremów ani balsamów w miejscu zabiegu. Po depilacji unikaj sauny, basenu i solarium przez 24-48 godzin.",
+        ],
+      },
+      {
+        heading: "Depilacja woskiem a depilacja laserowa",
+        body: [
+          "Depilacja woskiem daje tymczasowy efekt (3-6 tygodni), ale jest bezpieczna i dostępna od ręki. Depilacja laserowa daje trwałe efekty, ale wymaga serii zabiegów i jest droższa.",
+          "W Royal Beauty Salon oferujemy obie metody — pomożemy wybrać najlepszą dla Ciebie podczas konsultacji.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Od 35 zł", desc: "Atrakcyjny cennik depilacji woskiem." },
+      { title: "Woski naturalne", desc: "Delikatne dla skóry, skuteczne usuwanie." },
+      { title: "Doświadczone kosmetyczki", desc: "Szybko, profesjonalnie, bezboleśnie." },
+      { title: "Pakiety rabatowe", desc: "Oszczędność przy depilacji wielu partii." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje depilacja woskiem nóg w Warszawie?",
+        a: "W Royal Beauty Salon depilacja pół nóg kosztuje od 70 zł, a całych nóg od 110 zł. Depilacja bikini — od 120 zł, pach — od 35 zł.",
+      },
+      {
+        q: "Jak długo utrzymuje się efekt depilacji woskiem?",
+        a: "Efekt depilacji woskiem utrzymuje się 3-6 tygodni, w zależności od tempa wzrostu włosów. Po tym czasie włoski odrastają cieńsze i słabsze.",
+      },
+      {
+        q: "Czy depilacja woskiem jest bolesna?",
+        a: "Depilacja woskiem może powodować dyskomfort, szczególnie przy pierwszym zabiegu. Z każdym kolejnym zabiegiem ból jest mniejszy, a włoski słabsze. Stosujemy woski hypoalergiczne.",
+      },
+      {
+        q: "Jak często robić depilację woskiem?",
+        a: "Depilację woskiem zalecamy co 3-6 tygodni, w zależności od partii ciała i tempa wzrostu włosów. Regularna depilacja sprawia, że włoski stają się cieńsze i rzadsze.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "brazilian-bikini-wax",
+      "full-legs-wax",
+      "underarms-wax",
+      "full-arms-wax",
+    ],
+    relatedNicheSlugs: [
+      "depilacja-warszawa",
+      "salon-kosmetyczny-warszawa",
+      "salon-tylko-dla-kobiet-warszawa",
+    ],
+    relatedCategorySlugs: ["waxing"],
+    serviceName: "Depilacja Woskiem w Warszawie",
+    serviceDescription:
+      "Profesjonalna depilacja woskiem w Warszawie — nogi, pachy, bikini, twarz. Naturalne woski, doświadczone kosmetyczki.",
+    imageAltRecommendations: [
+      "Depilacja woskiem nóg w salonie kosmetycznym",
+      "Woskowanie pach — gładka skóra na długo",
+      "Depilacja bikini w profesjonalnym salonie",
+      "Kosmetyczka wykonuje depilację woskiem twarzy",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na depilację woskiem w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────── botox włosów warszawa ─────────────────── */
+  {
+    slug: "botox-wlosow-warszawa",
+    locale: "pl",
+    primaryKeyword: "botox włosów Warszawa",
+    secondaryKeywords: [
+      "botox na włosy warszawa cennik",
+      "keratynowy botox włosów warszawa",
+      "regeneracja włosów botox warszawa",
+      "botox do włosów warszawa",
+      "zabieg botox na włosy warszawa",
+      "odżywka do włosów botox warszawa",
+      "najlepszy botox włosów warszawa",
+    ],
+    title: "Botox Włosów Warszawa — Cennik i Rezerwacja | Royal Beauty Salon",
+    metaDescription:
+      "Botox włosów w Warszawie od 500 zł. Royal Beauty Salon — głęboka regeneracja, nawilżenie i wygładzenie zniszczonych włosów. Umów wizytę!",
+    h1: "Botox Włosów Warszawa — Głęboka Regeneracja",
+    eyebrow: "Botox Włosów • Warszawa",
+    tagline:
+      "Ratunek dla zniszczonych, suchych włosów — botox keratynowy przywraca miękkość, blask i zdrowy wygląd.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt: "Zabieg botox włosów w salonie fryzjerskim w Warszawie — regeneracja i nawilżenie",
+    intro: [
+      "Botox włosów to intensywny zabieg regenerujący, który działa jak \"zastrzyk młodości\" dla zniszczonych, suchych i matowych włosów. W Royal Beauty Salon w Warszawie stosujemy botox keratynowy, który wnika w głąb włosa i odbudowuje go od środka.",
+      "Zabieg jest idealny po koloryzacji, prostowaniu, trwałej ondulacji lub jako kuracja regenerująca po lecie. Po botoxie włosy stają się miękkie, gładkie, lśniące i łatwe do ułożenia.",
+      "Efekt botoxu utrzymuje się 4-6 tygodni. Zabieg trwa 1-2 godziny i jest całkowicie bezbolesny — to chwila relaksu i regeneracji dla Twoich włosów.",
+    ],
+    sections: [
+      {
+        heading: "Co to jest botox włosów?",
+        body: [
+          "Botox włosów to nieinwazyjny zabieg kosmetyczny, który polega na nałożeniu na włosy preparatu bogatego w keratynę, proteiny, witaminy i olejki. Składniki aktywne wnikają w strukturę włosa i wypełniają ubytki.",
+          "W przeciwieństwie do keratynowego prostowania, botox włosów nie prostuje — regeneruje i nawilża. Możesz go stosować na każdym rodzaju włosów, niezależnie od ich naturalnej struktury.",
+        ],
+      },
+      {
+        heading: "Botox włosów cennik Warszawa",
+        body: [
+          "W Royal Beauty Salon botox włosów kosztuje od 500 zł za włosy średniej długości. Cena zależy od długości i gęstości włosów: krótkie — od 500 zł, średnie — od 550 zł, długie — od 600 zł.",
+          "W cenę wchodzi: konsultacja, mycie szamponem głęboko oczyszczającym, nałożenie preparatu botox, saunę parową lub folię, spłukiwanie i stylizacja. Zabieg trwa 1-2 godziny.",
+        ],
+      },
+      {
+        heading: "Efekty botoxu włosów",
+        body: [
+          "Po zabiegu włosy są miękkie, gładkie i lśniące. Odbudowane zostają zniszczone partie włosa, zamykane są łuski, a włosy stają się bardziej odporne na uszkodzenia mechaniczne i termiczne.",
+          "Botox włosów redukuje puszenie się, ułatwia rozczesywanie i stylizację. Włosy wyglądają zdrowiej, są bardziej elastyczne i mniej podatne na łamanie.",
+        ],
+      },
+      {
+        heading: "Dla kogo jest botox włosów?",
+        body: [
+          "Botox jest idealny dla włosów zniszczonych koloryzacją, prostowaniem, trwałą ondulacją lub działaniem słońca i chloru. Sprawdza się również na włosach naturalnych, suchych i matowych.",
+          "Zabieg jest bezpieczny dla włosów farbowanych i nie wpływa na kolor. Można go powtarzać co 4-6 tygodni jako kurację regenerującą.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Od 500 zł", desc: "Atrakcyjny cennik botoxu włosów." },
+      { title: "Efekt 4-6 tygodni", desc: "Trwała regeneracja i nawilżenie." },
+      { title: "Bez prostowania", desc: "Regeneracja bez zmiany struktury włosów." },
+      { title: "Bezpieczny dla farb", desc: "Nie wpływa na kolor włosów." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje botox włosów w Warszawie?",
+        a: "W Royal Beauty Salon botox włosów kosztuje od 500 zł (włosy krótkie) do 650 zł (włosy bardzo długie). Cena obejmuje konsultację, zabieg i stylizację.",
+      },
+      {
+        q: "Czym botox włosów różni się od keratynowego prostowania?",
+        a: "Botox regeneruje i nawilża bez prostowania — zachowujesz naturalną strukturę włosów. Keratynowe prostowanie wygładza i trwale prostuje. Botox jest lżejszy i bezpieczniejszy.",
+      },
+      {
+        q: "Jak często robić botox włosów?",
+        a: "Zalecamy serię 3-4 zabiegów co 4-6 tygodni dla optymalnych efektów, potem 1 zabieg podtrzymujący co 2-3 miesiące. Regularność wzmacnia efekt.",
+      },
+      {
+        q: "Czy botox włosów niszczy włosy?",
+        a: "Nie, botox włosów jest zabiegiem regenerującym i odżywczym. Nie zawiera formaldehydu ani szkodliwych substancji. Jest bezpieczny dla każdego rodzaju włosów.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "royal-nanoplasty",
+      "keratin-treatment-medium",
+      "silk-botox-smoothing-medium",
+      "hair-oil-massage-steam",
+    ],
+    relatedNicheSlugs: [
+      "keratynowe-prostowanie-warszawa",
+      "koloryzacja-wlosow-warszawa",
+      "salon-fryzjerski-blisko-mnie-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Botox Włosów w Warszawie",
+    serviceDescription:
+      "Profesjonalny botox włosów w Warszawie — głęboka regeneracja, nawilżenie i wygładzenie zniszczonych włosów.",
+    imageAltRecommendations: [
+      "Botox włosów — zabieg regenerujący w salonie",
+      "Włosy po botoxie — gładkie i lśniące",
+      "Nakładanie preparatu botox na włosy",
+      "Efekt przed i po botoxie włosów",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na botox włosów w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────── koloryzacja ombre warszawa ─────────────────── */
+  {
+    slug: "koloryzacja-ombre-warszawa",
+    locale: "pl",
+    primaryKeyword: "koloryzacja ombre Warszawa",
+    secondaryKeywords: [
+      "ombre warszawa cennik",
+      "sombre warszawa",
+      "koloryzacjaombre sombre warszawa",
+      "refleksy warszawa",
+      "baleyage ombre warszawa",
+      "rozjaśnianie włosów ombre warszawa",
+      "ombre hair warszawa",
+    ],
+    title: "Koloryzacja Ombre Warszawa — Cennik | Royal Beauty Salon",
+    metaDescription:
+      "Koloryzacja ombre i sombre w Warszawie od 400 zł. Royal Beauty Salon — profesjonalne rozjaśnianie i koloryzacja włosów. Umów wizytę!",
+    h1: "Koloryzacja Ombre Warszawa — Profesjonalne Rozjaśnianie",
+    eyebrow: "Koloryzacja Ombre • Warszawa",
+    tagline:
+      "Piękne przejścia kolorystyczne ombre i sombre w centrum Warszawy — profesjonalna koloryzacja dla każdego rodzaju włosów.",
+    heroImage: U("photo-1560869713-7d0a29430803"),
+    heroAlt: "Koloryzacja ombre włosów w salonie fryzjerskim w Warszawie",
+    intro: [
+      "Ombre i sombre to jedne z najpopularniejszych technik koloryzacji włosów na świecie. Delikatne przejście od ciemniejszych korzeni do jaśniejszych końców tworzy naturalny, efektowny wygląd, który imituje naturalne rozjaśnienie przez słońce.",
+      "W Royal Beauty Salon w Warszawie wykonujemy ombre, sombre, baleyage i refleksy z dbałością o każdy detal. Nasze koloryzacjistki dobierają kolory indywidualnie do karnacji, stylu życia i oczekiwań klientki.",
+      "Profesjonalna koloryzacja ombre to inwestycja w piękny wygląd — efekt utrzymuje się kilka miesięcy, aRegularne odświeżanie pozwala cieszyć się idealnym kolorem przez cały rok.",
+    ],
+    sections: [
+      {
+        heading: "Ombre vs. sombre — czym się różnią?",
+        body: [
+          "Ombre to wyraźne, kontrastowe przejście od ciemnych korzeni do jasnych końców. Efekt jest bardziej dramatyczny i zauważalny. Idealny dla osób lubiących wyraziste koloryzacje.",
+          "Sombre to delikatniejsza wersja ombre — przejście jest łagodniejsze, bardziej naturalne. Sombre imituje naturalne rozjaśnienie i sprawia wrażenie, jakby włosy były rozjaśnione przez słońce.",
+          "Baleyage to technika hand-painted, która tworzy subtelne, trójwymiarowe refleksy. Baleyage jest bardziej wszechstronny niż ombre i pasuje do każdego typu urody.",
+        ],
+      },
+      {
+        heading: "Koloryzacja ombre cennik Warszawa",
+        body: [
+          "W Royal Beauty Salon koloryzacja ombre kosztuje od 400 zł za włosy średniej długości. Sombre — od 350 zł. Baleyage — od 400 zł. Refleksy — od 400 zł.",
+          "Cena zależy od długości i gęstości włosów, stopnia rozjaśnienia i liczby użytych produktów. Dokładny cennik dostępny na stronie i podczas konsultacji w salonie.",
+        ],
+      },
+      {
+        heading: "Jak pielęgnować włosy po koloryzacji ombre?",
+        body: [
+          "Po koloryzacji ombre używaj szamponu i odżywki do włosów farbowanych. Unikaj mycia gorącą wodą — ciepła lub chłodna woda chroni kolor. Stosuj maski regenerujące co 1-2 tygodnie.",
+          "Unikaj bezpośredniego działania słońca i chloru — noszenie kapelusza i stosowanie sprayu z filtrem UV chroni kolor. Odświeżaj koloryzację co 3-4 miesiące.",
+        ],
+      },
+      {
+        heading: "Dlaczego nasz salon w Warszawie?",
+        body: [
+          "Nasze koloryzacjistki mają wieloletnie doświadczenie w technikach ombre, sombre i baleyage. Stale podnoszą kwalifikacje i znają najnowsze trendy kolorystyczne.",
+          "Pracujemy na profesjonalnych, bezpiecznych produktach koloryzujących, które nie niszczą struktury włosa. Doradzamy pielęgnację domową po koloryzacji.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Od 400 zł", desc: "Atrakcyjny cennik koloryzacji ombre." },
+      { title: "Ombre, sombre, baleyage", desc: "Dobieramy technikę do Twojego stylu." },
+      { title: "Bezpieczne produkty", desc: "Koloryzacja bez uszkodzenia włosów." },
+      { title: "Efekt kilka miesięcy", desc: "Trwały kolor i naturalne przejścia." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje koloryzacja ombre w Warszawie?",
+        a: "W Royal Beauty Salon ombre kosztuje od 400 zł, sombre od 350 zł, baleyage od 400 zł. Cena zależy od długości i gęstości włosów.",
+      },
+      {
+        q: "Czym ombre różni się od sombre?",
+        a: "Ombre to wyraźne przejście od ciemnych do jasnych, sombre jest delikatniejszy i bardziej naturalny. Dobieramy technikę do preferencji klientki.",
+      },
+      {
+        q: "Jak często odświeżać koloryzację ombre?",
+        a: "Koloryzację ombre zalecamy odświeżać co 3-4 miesiące, aby utrzymać piękny kolor i naturalne przejścia. Między wizytami zalecamy pielęgnację chroniącą kolor.",
+      },
+      {
+        q: "Czy ombre niszczy włosy?",
+        a: "Profesjonalnie wykonane ombre nie niszczy włosów. Pracujemy na bezpiecznych produktach i dobieramy siłę rozjaśniania do kondycji włosów klientki.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "fashion-shade-global-hair-color-medium",
+      "hair-highlights-medium",
+      "hair-cutting-basic",
+    ],
+    relatedNicheSlugs: [
+      "koloryzacja-wlosow-warszawa",
+      "baleaz-warszawa",
+      "keratynowe-prostowanie-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Koloryzacja Ombre w Warszawie",
+    serviceDescription:
+      "Profesjonalna koloryzacja ombre i sombre w Warszawie — piękne przejścia kolorystyczne, bezpieczne produkty, trwały efekt.",
+    imageAltRecommendations: [
+      "Koloryzacja ombre — efekt na długich włosach",
+      "Sombre na włosach średniej długości — naturalne przejście",
+      "Baleyage w salonie fryzjerskim Warszawa",
+      "Włosy po koloryzacji ombre — efekt przed i po",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na koloryzację ombre w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────── strzyżenie dzieci warszawa ─────────────────── */
+  {
+    slug: "strzyzenie-dzieci-warszawa",
+    locale: "pl",
+    primaryKeyword: "strzyżenie dzieci Warszawa",
+    secondaryKeywords: [
+      "strzyżenie dziecięce warszawa",
+      "fryzjer dla dzieci warszawa",
+      "strzyżenie chłopca warszawa",
+      "strzyżenie dziewczynki warszawa",
+      "fryzjer dziecięcy warszawa centrum",
+      "pierwsze strzyżenie dziecka warszawa",
+      "salon fryzjerski dla dzieci warszawa",
+    ],
+    title: "Strzyżenie Dzieci Warszawa — Profesjonalny Fryzjer Dziecięcy | Royal Beauty Salon",
+    metaDescription:
+      "Strzyżenie dzieci w Warszawie od 100 zł. Royal Beauty Salon — przyjazna atmosfera, cierpliwi fryzjerzy, bezstresowa wizyta. Umów wizytę!",
+    h1: "Strzyżenie Dzieci Warszawa — Przyjazny Fryzjer Dziecięcy",
+    eyebrow: "Strzyżenie Dzieci • Warszawa",
+    tagline:
+      "Bezstresowe strzyżenie dziecięce w centrum Warszawy — cierpliwi fryzjerzy, miła atmosfera, Effects które spodobają się maluchom.",
+    heroImage: U("photo-1596609548086-85bbf8ddb6b9"),
+    heroAlt: "Fryzjer dziecięcy strzyże dziecko w przyjaznej atmosferze w salonie w Warszawie",
+    intro: [
+      "Pierwsze strzyżenie to ważne wydarzenie w życiu dziecka — i rodzica. W Royal Beauty Salon w Warszawie dbamy o to, aby wizyta u fryzjera była przyjemna, bezstresowa i pełna uśmiechów.",
+      "Nasi fryzjerzy mają doświadczenie w pracy z dziećmi w każdym wieku — od niemowląt po nastolatków. Są cierpliwi, delikatni i potrafią zająć uwagę malucha podczas strzyżenia.",
+      "Salon jest przyjazny dzieciom — kolorowe akcenty, wygodne fotele i atmosfera, w której dziecko czuje się komfortowo. Strzyżenie odbywa się w spokojnym tempie, bez pośpiechu.",
+    ],
+    sections: [
+      {
+        heading: "Strzyżenie dziecięce w Warszawie",
+        body: [
+          "Wykonujemy strzyżenie dziecięce dla chłopców i dziewcząt w każdym wieku. Dla chłopców — klasyczne cięcia, fade, maszynka. Dla dziewcząt — strzyżenie, modelowanie, opinanie włosów.",
+          "Każde strzyżenie zaczyna się od rozmowy z dzieckiem i rodzicem — ustalamy oczekiwania, dobieramy fryzurę i zapewniamy komfortową atmosferę.",
+        ],
+      },
+      {
+        heading: "Strzyżenie dziecięce cennik Warszawa",
+        body: [
+          "W Royal Beauty Salon strzyżenie dziecięce kosztuje od 100 zł. W cenę wchodzi: konsultacja, mycie włosów, strzyżenie i modelowanie. Czas trwania: 30-60 minut.",
+          "Dla dzieci poniżej 3. roku życia oferujemy strzyżenie z dodatkową opieką — cierpliwy fryzjer i elastyczne podejście do potrzeb malucha.",
+        ],
+      },
+      {
+        heading: "Jak przygotować dziecko do wizyty u fryzjera?",
+        body: [
+          "Rozmawiaj z dzieckiem o wizycie u fryzjera pozytywnie — opowiedz, co się będzie działo, używając prostych słów. Unikaj słów \"ból\" czy \"obcinanie\".",
+          "Przynieś ulubioną zabawkę lub książeczkę, która zajmie dziecko podczas strzyżenia. Możesz też pokazać dziecku zdjęcia fryzur, które mu się podobają.",
+        ],
+      },
+      {
+        heading: "Dlaczego nasz salon jest przyjazny dzieciom?",
+        body: [
+          "Nasz salon ma przyjazną, kolorową atmosferę. Fryzjerzy mają doświadczenie w pracy z dziećmi i wiedzą, jak zapewnić komfort maluchom. Nie spieszymy się — każde dziecko jest traktowane indywidualnie.",
+          "Oferujemy też strzyżenie dla całej rodziny — mama, tata i dziecko mogą przyjść razem i wyjść z idealnymi fryzurami. Rezerwacja online lub telefoniczna.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Od 100 zł", desc: "Atrakcyjny cennik strzyżenia dziecięcego." },
+      { title: "Cierpliwi fryzjerzy", desc: "Doświadczenie w pracy z dziećmi." },
+      { title: "Przyjazna atmosfera", desc: "Kolorowy salon i bezstresowa wizyta." },
+      { title: "Strzyżenie rodzinne", desc: "Cała rodzina może strzyc się razem." },
+    ],
+    faqs: [
+      {
+        q: "W jakim wieku przyprowadzić dziecko na pierwsze strzyżenie?",
+        a: "Nie ma ustalonego wieku — zależy od tempa wzrostu włosów i potrzeb dziecka. Większość dzieci przychodzi na pierwsze strzyżenie między 1. a 3. rokiem życia.",
+      },
+      {
+        q: "Ile kosztuje strzyżenie dziecięce w Warszawie?",
+        a: "W Royal Beauty Salon strzyżenie dziecięce kosztuje od 100 zł. Cena obejmuje konsultację, mycie, strzyżenie i modelowanie.",
+      },
+      {
+        q: "Czy strzyżenie dziecięce trwa długo?",
+        a: "Strzyżenie dziecięce trwa 30-60 minut, w zależności od wieku dziecka, grubości włosów i stopnia skomplikowania fryzury. Nie spieszymy się — dbamy o komfort malucha.",
+      },
+      {
+        q: "Czy mogę być z dzieckiem podczas strzyżenia?",
+        a: "Tak, rodzic zawsze może być z dzieckiem podczas strzyżenia. Zapewniamy wygodne miejsce dla rodzica obok fotela fryzjerskiego.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "kids-haircut",
+      "hair-cutting-basic",
+    ],
+    relatedNicheSlugs: [
+      "strzyzenie-damskie-warszawa",
+      "fryzjer-warszawa",
+      "salon-fryzjerski-blisko-mnie-warszawa",
+    ],
+    relatedCategorySlugs: ["hair"],
+    serviceName: "Strzyżenie Dzieci w Warszawie",
+    serviceDescription:
+      "Przyjazne strzyżenie dziecięce w Warszawie — cierpliwi fryzjerzy, bezstresowa atmosfera, profesjonalne cięcia.",
+    imageAltRecommendations: [
+      "Dziecko po strzyżeniu w salonie fryzjerskim Warszawa",
+      "Fryzjer dziecięcy strzyże chłopca — przyjazna atmosfera",
+      "Strzyżenie dziewczynki w salonie z kolorowym wystrojem",
+      "Rodzina strzyże się razem w salonie fryzjerskim",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić dziecko na strzyżenie w Royal Beauty Salon w Warszawie.",
   },
 ];
 

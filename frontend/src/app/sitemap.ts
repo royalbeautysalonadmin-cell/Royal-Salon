@@ -21,7 +21,7 @@ export const revalidate = 300;
  * file's content — `git log -1 --format=%aI -- <file>` gives the value.
  */
 const SEO_DATA_UPDATED = new Date("2026-08-09T10:00:00-07:00"); // seo-data.ts (categories, localPages, blogPosts fallback)
-const NICHE_DATA_UPDATED = new Date("2026-08-09T10:00:00-07:00"); // niche-seo.ts
+const NICHE_DATA_UPDATED = new Date("2026-09-20T10:00:00-07:00"); // niche-seo.ts
 const TOOLS_UPDATED = new Date("2026-08-27T10:00:00-07:00"); // tools pages
 const HOMEPAGE_UPDATED = new Date("2026-08-08T10:00:00-07:00"); // page.tsx (homepage)
 const ABOUT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
