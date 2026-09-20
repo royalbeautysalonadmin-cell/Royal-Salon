@@ -3445,8 +3445,8 @@ export const nichePages: NichePage[] = [
     eyebrow: "Barber • Warszawa",
     tagline:
       "Profesjonalny barber w centrum Warszawy — strzyżenie męskie, broda, golenie brzytwą i stylizacja w jednym miejscu.",
-    heroImage: U("photo-1503951914875-452162b0f3f1"),
-    heroAlt: "Profesjonalny barber strzyże mężczyznę w barber shopie w Warszawie",
+    heroImage: U("photo-1560066984-138dadb4c035"),
+    heroAlt: "Profesjonalna stylizacja włosów w salonie fryzjerskim w Warszawie",
     intro: [
       "Szukasz sprawdzonego barbera w Warszawie, który profesjonalnie zadba o Twoje włosy i brodę? Royal Beauty Salon na Alei Stanów Zjednoczonych to miejsce, gdzie tradycyjny barbering spotyka się z nowoczesnym stylem.",
       "Nasi barberzy to doświadczeni specjaliści, którzy znają się na męskich fryzurach — od klasycznych cięć po nowoczesne style jak fade, undercut czy pompadour. Strzyżemy nożyczkami, maszynką i brzytwą, dobierając fryzurę do kształtu twarzy i stylu życia.",
@@ -3546,12 +3546,12 @@ export const nichePages: NichePage[] = [
     ],
     title: "Manicure Hybrydowy Warszawa — Cennik i Rezerwacja | Royal Beauty Salon",
     metaDescription:
-      "Manicure hybrydowy w Warszawie od 90 zł. Royal Beauty Salon — trwały kolor, precyzyjne wykonanie, догодна lokalizacja. Umów wizytę online lub telefonicznie!",
+      "Manicure hybrydowy w Warszawie od 90 zł. Royal Beauty Salon — trwały kolor, precyzyjne wykonanie, dogodna lokalizacja. Umów wizytę online lub telefonicznie!",
     h1: "Manicure Hybrydowy Warszawa — Profesjonalny Zabieg",
     eyebrow: "Manicure Hybrydowy • Warszawa",
     tagline:
       "Trwały, lśniący manicure hybrydowy w centrum Warszawy — precyzyjne wykonanie, bogata paleta kolorów, dogodna rezerwacja.",
-    heroImage: U("photo-1604654898616-70224388db3f"),
+    heroImage: U("photo-1632345031435-8727f6897d53"),
     heroAlt: "Profesjonalny manicure hybrydowy wykonywany w salonie kosmetycznym w Warszawie",
     intro: [
       "Manicure hybrydowy to najczęściej wybierany zabieg kosmetyczny w Polsce — i nic dziwnego. Trwały kolor, lustrzany połysk i odporność na odpryski nawet przez 2-3 tygodnie. W Royal Beauty Salon w Warszawie wykonujemy manicure hybrydowy na najwyższym poziomie.",
@@ -3656,7 +3656,7 @@ export const nichePages: NichePage[] = [
     eyebrow: "Przedłużanie Rzęs • Warszawa",
     tagline:
       "Piękne, długie rzęsy bez tuszu — profesjonalne przedłużanie 1:1, 2D, 3D w centrum Warszawy.",
-    heroImage: U("photo-1560750588-73207b1ef5b8"),
+    heroImage: U("photo-1516975080664-ed2fc6a32937"),
     heroAlt: "Przedłużanie rzęs metodą 1:1 wykonywane w salonie kosmetycznym w Warszawie",
     intro: [
       "Marzysz o długich, gęstych rzęsach bez konieczności malowania tuszem? Przedłużanie rzęs w Royal Beauty Salon w Warszawie to profesjonalny zabieg, który daje naturalny, piękny efekt na co dzień i na specjalne okazje.",
@@ -3755,8 +3755,8 @@ export const nichePages: NichePage[] = [
     eyebrow: "Strzyżenie Męskie • Warszawa",
     tagline:
       "Kompleksowa obsługa męskich włosów i brody — od klasycznych cięć po nowoczesne stylizacje w centrum Warszawy.",
-    heroImage: U("photo-1599351431202-1e0f0137899a"),
-    heroAlt: "Mężczyzna po strzyżeniu włosów i brody w salonie fryzjerskim w Warszawie",
+    heroImage: U("photo-1521590832167-7bcbfaa6381f"),
+    heroAlt: "Strzyżenie włosów w salonie fryzjerskim w Warszawie",
     intro: [
       "Strzyżenie męskie z brodą to kompleksowa usługa, która zadba o Twój pełny wygląd w jednej wizycie. W Royal Beauty Salon w Warszawie strzyżemy włosy i brodę w ramach jednego terminu — oszczędzasz czas i wychodzisz z idealnie dopasowaną stylizacją.",
       "Nasi fryzjerzy męscy znają się zarówno na cięciach włosów, jak i na pielęgnacji zarostu. Dobierają fryzurę i kształt brody do owalu twarzy, stylu życia i osobistych preferencji.",
@@ -4291,7 +4291,7 @@ export const nichePages: NichePage[] = [
     eyebrow: "Strzyżenie Dzieci • Warszawa",
     tagline:
       "Bezstresowe strzyżenie dziecięce w centrum Warszawy — cierpliwi fryzjerzy, miła atmosfera, Effects które spodobają się maluchom.",
-    heroImage: U("photo-1596609548086-85bbf8ddb6b9"),
+    heroImage: U("photo-1519019121994-4968526f7dba"),
     heroAlt: "Fryzjer dziecięcy strzyże dziecko w przyjaznej atmosferze w salonie w Warszawie",
     intro: [
       "Pierwsze strzyżenie to ważne wydarzenie w życiu dziecka — i rodzica. W Royal Beauty Salon w Warszawie dbamy o to, aby wizyta u fryzjera była przyjemna, bezstresowa i pełna uśmiechów.",
