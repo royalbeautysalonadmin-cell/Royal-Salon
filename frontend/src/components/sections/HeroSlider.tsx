@@ -1,25 +1,43 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80",
+    src: "/videos/IMG_7287.mp4",
+    poster: "/videos/IMG_7287.jpg",
     label: "Signature Hair Artistry",
   },
   {
-    src: "https://images.unsplash.com/photo-1457972729786-0411a3b2b626?auto=format&fit=crop&w=1000&q=80",
+    src: "/videos/IMG_6254_1.mp4",
+    poster: "/videos/IMG_6254_1.jpg",
     label: "Bridal Makeovers",
   },
   {
-    src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80",
+    src: "/videos/IMG_7021.mp4",
+    poster: "/videos/IMG_7021.jpg",
     label: "Luxury Skincare",
   },
   {
-    src: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1000&q=80",
+    src: "/videos/IMG_3014_1.mp4",
+    poster: "/videos/IMG_3014_1.jpg",
     label: "Premium Treatments",
+  },
+  {
+    src: "/videos/IMG_2129.mp4",
+    poster: "/videos/IMG_2129.jpg",
+    label: "Hair Styling & Treatment",
+  },
+  {
+    src: "/videos/IMG_2283.mp4",
+    poster: "/videos/IMG_2283.jpg",
+    label: "Complete Makeover",
+  },
+  {
+    src: "/videos/IMG_7230.mp4",
+    poster: "/videos/IMG_7230.jpg",
+    label: "Royal Beauty Experience",
   },
 ];
 
@@ -27,7 +45,7 @@ export function HeroSlider() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 4000);
+    const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 6000);
     return () => clearInterval(id);
   }, []);
 
@@ -47,13 +65,16 @@ export function HeroSlider() {
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0"
           >
-            <Image
+            <video
               src={slides[index].src}
-              alt={slides[index].label}
-              fill
-              priority
-              sizes="(max-width: 1024px) 90vw, 45vw"
-              className="object-cover"
+              poster={slides[index].poster}
+              aria-label={slides[index].label}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </motion.div>
         </AnimatePresence>

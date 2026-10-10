@@ -4291,7 +4291,7 @@ export const nichePages: NichePage[] = [
     eyebrow: "Strzyżenie Dzieci • Warszawa",
     tagline:
       "Bezstresowe strzyżenie dziecięce w centrum Warszawy — cierpliwi fryzjerzy, miła atmosfera, Effects które spodobają się maluchom.",
-    heroImage: U("photo-1519019121994-4968526f7dba"),
+    heroImage: U("photo-1621605815971-fbc98d665033"),
     heroAlt: "Fryzjer dziecięcy strzyże dziecko w przyjaznej atmosferze w salonie w Warszawie",
     intro: [
       "Pierwsze strzyżenie to ważne wydarzenie w życiu dziecka — i rodzica. W Royal Beauty Salon w Warszawie dbamy o to, aby wizyta u fryzjera była przyjemna, bezstresowa i pełna uśmiechów.",

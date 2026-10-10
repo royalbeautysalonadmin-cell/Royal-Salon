@@ -7,10 +7,8 @@ import { MoveHorizontal } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Reveal } from "@/components/shared/Reveal";
 
-const BEFORE =
-  "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=1000&q=80";
-const AFTER =
-  "https://images.unsplash.com/photo-1457972729786-0411a3b2b626?auto=format&fit=crop&w=1000&q=80";
+const BEFORE = "/b-a/before.png";
+const AFTER = "/b-a/after.png";
 
 function BeforeAfter() {
   const [pos, setPos] = useState(50);
