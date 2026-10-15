@@ -25,7 +25,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "hero.h1": { en: "Luxury Beauty Salon", pl: "Luksusowy Salon Piękności" },
   "hero.h1.city": { en: "in", pl: "w" },
   "hero.h1.cityName": { en: "Warsaw", pl: "Warszawie" },
-  "hero.desc": { en: "Experience luxury beauty treatments, bridal makeovers, premium skincare, and professional artistry — crafted by award-winning specialists in the heart of Warsaw.", pl: "Doświadcz luksusowych zabiegów pielęgnacyjnych, makijażu ślubnego, premium skincare i profesjonalnej sztuki — tworzonych przez nagradzanych specjalistów w sercu Warszawy." },
+  "hero.desc": { en: "Experience luxury beauty treatments, bridal makeovers, premium skincare, and professional artistry — crafted by expert specialists in the heart of Warsaw.", pl: "Doświadcz luksusowych zabiegów pielęgnacyjnych, makijażu ślubnego, premium skincare i profesjonalnej sztuki — tworzonych przez doświadczonych specjalistów w sercu Warszawy." },
   "hero.book": { en: "Book Appointment", pl: "Umów Wizytę" },
   "hero.explore": { en: "Explore Services", pl: "Zobacz Usługi" },
   "hero.rating": { en: "from 1,280+ happy clients", pl: "od ponad 1280 zadowolonych klientek" },

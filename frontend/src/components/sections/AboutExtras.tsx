@@ -15,7 +15,7 @@ const values = [
   {
     icon: Wand2,
     title: "Artistry First",
-    desc: "Every look is a bespoke creation, sculpted by award-winning specialists with an obsessive eye for detail.",
+    desc: "Every look is a bespoke creation, sculpted by skilled specialists with an obsessive eye for detail.",
   },
   {
     icon: Leaf,

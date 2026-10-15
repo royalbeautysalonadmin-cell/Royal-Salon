@@ -118,7 +118,7 @@ export function HeroSlider() {
         className="absolute -left-4 top-10 hidden rounded-2xl border border-white/40 bg-white/70 px-4 py-3 shadow-luxury backdrop-blur-md sm:block"
       >
         <p className="font-serif text-2xl font-semibold text-gradient-brown">5★</p>
-        <p className="text-[0.65rem] uppercase tracking-wider text-charcoal/70">2,000+ Reviews</p>
+        <p className="text-[0.65rem] uppercase tracking-wider text-charcoal/70">2,000+ Google Reviews</p>
       </motion.div>
     </div>
   );

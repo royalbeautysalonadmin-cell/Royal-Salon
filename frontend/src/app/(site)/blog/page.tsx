@@ -10,6 +10,18 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 
+/** Blog pages with their own route files (see app/(site)/blog/<slug>/page.tsx). */
+const STANDALONE_GUIDES = [
+  {
+    slug: "najlepszy-salon-kosmetyczny-warszawa",
+    title: "Najlepszy Salon Kosmetyczny w Warszawie — Ranking 2026",
+  },
+  {
+    slug: "keratynowe-prostowanie-cennik-warszawa",
+    title: "Ile Kosztuje Keratynowe Prostowanie Włosów w Warszawie? Cennik 2026",
+  },
+] as const;
+
 export const metadata: Metadata = {
   title: "Beauty Blog — Expert Hair, Skin & Makeup Tips in Warsaw",
   description:
@@ -58,13 +70,20 @@ export default function BlogIndexPage() {
     "@type": "Blog",
     name: "Royal Beauty Salon Blog",
     url: `${siteConfig.url}/blog`,
-    blogPost: posts.map((p) => ({
-      "@type": "BlogPosting",
-      headline: p.title,
-      url: `${siteConfig.url}/blog/${p.slug}`,
-      datePublished: p.date,
-      image: p.image,
-    })),
+    blogPost: [
+      ...posts.map((p) => ({
+        "@type": "BlogPosting",
+        headline: p.title,
+        url: `${siteConfig.url}/blog/${p.slug}`,
+        datePublished: p.date,
+        image: p.image,
+      })),
+      ...STANDALONE_GUIDES.map((g) => ({
+        "@type": "BlogPosting",
+        headline: g.title,
+        url: `${siteConfig.url}/blog/${g.slug}`,
+      })),
+    ],
   };
 
   return (
@@ -162,6 +181,28 @@ export default function BlogIndexPage() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Standalone guides — their own route files, linked here so they aren't orphaned */}
+          <div className="mt-12 border-t border-brown/10 pt-10">
+            <h2 className="font-serif text-2xl font-semibold text-luxury-black">
+              Popular guides
+            </h2>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {STANDALONE_GUIDES.map((g) => (
+                <li key={g.slug}>
+                  <Link
+                    href={`/blog/${g.slug}`}
+                    className="group flex items-center justify-between gap-3 rounded-2xl border border-brown/10 bg-cream/40 px-5 py-4 transition-colors hover:border-gold/40 hover:bg-white"
+                  >
+                    <span className="text-sm font-medium text-luxury-black group-hover:text-brown">
+                      {g.title}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-brown transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

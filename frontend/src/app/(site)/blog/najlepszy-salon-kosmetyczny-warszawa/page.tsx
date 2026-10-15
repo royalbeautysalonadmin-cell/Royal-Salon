@@ -161,8 +161,8 @@ export default function BlogPost() {
               <p className="text-sm text-gray-600">2000+ opinii od zadowolonych klientów. Najwyżej oceniany salon w okolicy.</p>
             </div>
             <div className="rounded-xl border border-gray-200 p-6">
-              <h3 className="mb-2 font-playfair text-lg font-bold">Otwarty codziennie</h3>
-              <p className="text-sm text-gray-600">Poniedziałek–Niedziela 11:00–18:00. Elastyczne terminy, w tym weekendy.</p>
+              <h3 className="mb-2 font-playfair text-lg font-bold">Otwarty w weekendy</h3>
+              <p className="text-sm text-gray-600">Poniedziałek i środa–niedziela 11:00–18:00 (wtorek zamknięte). Elastyczne terminy, w tym weekendy.</p>
             </div>
           </div>
         </section>

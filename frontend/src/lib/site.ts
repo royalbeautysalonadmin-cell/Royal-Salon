@@ -24,7 +24,8 @@ export const siteConfig = {
     lng: 21.0538,
   },
   hours: [
-    { day: "Monday – Sunday", time: "11:00 – 18:00" },
+    { day: "Monday, Wednesday – Sunday", time: "11:00 – 18:00" },
+    { day: "Tuesday", time: "Closed" },
   ],
   socials: {
     instagram: "https://instagram.com/royalbeautywarsaw",
@@ -66,6 +67,12 @@ export const warsawLinks = [
   { label: "Salon Centrum", href: "/warsaw/salon-piekosci-centrum" },
   { label: "Salon Ursynów", href: "/warsaw/salon-kosmetyczny-ursynow" },
   { label: "Salon Praga", href: "/warsaw/salon-kosmetyczny-praga" },
+  { label: "Salon Wilanów", href: "/warsaw/salon-urody-wilanow" },
+  { label: "Salon Ochota", href: "/warsaw/salon-urody-ochota" },
+  { label: "Salon Żoliborz", href: "/warsaw/salon-kosmetyczny-zoliborz" },
+  { label: "Salon Wola", href: "/warsaw/salon-kosmetyczny-wola" },
+  { label: "Salon Bemowo", href: "/warsaw/salon-fryzjerski-bemowo" },
+  { label: "Salon Bielany", href: "/warsaw/salon-kosmetyczny-bielany" },
 ] as const;
 
 /** Specialty / community landing pages for footer + internal linking. */
@@ -91,6 +98,10 @@ export const specialtyLinks = [
   { label: "Salon Tylko dla Kobiet", href: "/salon-tylko-dla-kobiet-warszawa" },
   { label: "Salon dla Muzułmanek", href: "/salon-dla-muzulmanek-warszawa" },
   { label: "Fryzjer Dla Kobiet", href: "/fryzjer-dla-kobiet-warszawa" },
+  { label: "Fryzura Ślubna Warszawa", href: "/fryzura-slubna-warszawa" },
+  { label: "HydraFacial Warszawa", href: "/hydrafacial-warszawa" },
+  { label: "Beauty Salon Near Me Warsaw", href: "/beauty-salon-near-me-warsaw" },
+  { label: "Salon Otwarty w Niedzielę Warszawa", href: "/salon-otwarty-w-niedziele-warszawa" },
 ] as const;
 
 export function whatsappLink(message?: string) {

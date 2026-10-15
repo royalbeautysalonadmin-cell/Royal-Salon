@@ -131,7 +131,7 @@ export const whyChooseUs = [
   {
     icon: "Users",
     title: "Professional Team",
-    desc: "Award-winning artists and certified beauticians with global experience, serving Warsaw's elite clientele.",
+    desc: "Certified beauticians and experienced artists with international training, serving Warsaw's clientele.",
     link: "/about",
   },
   {

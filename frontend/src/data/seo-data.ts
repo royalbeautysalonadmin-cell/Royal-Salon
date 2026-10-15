@@ -94,7 +94,7 @@ export const categories: CategoryMeta[] = [
     heading: "Makeup & Styling in Warsaw",
     eyebrow: "Makeup & Styling",
     tagline:
-      "Bridal, party and HD makeup plus event hairstyling by award-winning artists.",
+      "Bridal, party and HD makeup plus event hairstyling by experienced artists.",
     intro: [
       "Great makeup should look like you on your best day — not like a mask. Our makeup artists in Warsaw specialise in skin-first, long-wearing looks that photograph beautifully under any light, from intimate evening events to full HD bridal photography.",
       "We start with skin prep tailored to your complexion, then build colour, definition and glow using premium, photo-tested products. Whether you want a soft natural flush or a bold editorial finish, every look is customised to your features, outfit and occasion.",
@@ -630,7 +630,7 @@ export const localPages: LocalPage[] = [
     tagline:
       "A five-star beauty destination in the heart of Warsaw on Aleja Stanów Zjednoczonych.",
     intro: [
-      "Royal Beauty Salon is a luxury beauty destination in the heart of Warsaw, perfectly placed on Aleja Stanów Zjednoczonych in the Praga-Północ district. We bring hair, skin, makeup, nails and bridal artistry together under one elegant roof, served by an award-winning team.",
+      "Royal Beauty Salon is a luxury beauty destination in the heart of Warsaw, perfectly placed on Aleja Stanów Zjednoczonych in the Praga-Południe district. We bring hair, skin, makeup, nails and bridal artistry together under one elegant roof, served by an experienced team.",
       "Whether you live in central Warsaw or are visiting the city, our salon is easy to reach and built around your comfort — with free parking, card payments, accessible facilities and a calm, five-star atmosphere from the moment you arrive.",
       "From quick threading appointments to full bridal transformations, we are Warsaw's address for premium beauty done with care, hygiene and genuine expertise.",
     ],
@@ -638,7 +638,7 @@ export const localPages: LocalPage[] = [
       { title: "Central location", desc: "On Aleja Stanów Zjednoczonych in Warsaw, easy to reach from across the city." },
       { title: "Free parking", desc: "Convenient parking for guests arriving by car." },
       { title: "Full-service salon", desc: "Hair, skin, makeup, nails and bridal — all in one place." },
-      { title: "Award-winning team", desc: "Internationally trained, certified beauty professionals." },
+      { title: "Expert team", desc: "Internationally trained, certified beauty professionals." },
     ],
     faqs: [
       {
@@ -651,7 +651,7 @@ export const localPages: LocalPage[] = [
       },
       {
         q: "What are your opening hours?",
-        a: "We're open every day from 11:00 AM to 6:00 PM. Booking ahead is recommended.",
+        a: "We're open Monday and Wednesday to Sunday from 11:00 AM to 6:00 PM (closed Tuesdays). Booking ahead is recommended.",
       },
     ],
     featureCategories: ["hair", "makeup", "facials", "waxing", "threading", "nails"],
@@ -660,7 +660,7 @@ export const localPages: LocalPage[] = [
     slug: "bridal-makeup-warsaw",
     title: "Bridal Makeup in Warsaw — Wedding Makeup Artist",
     metaDescription:
-      "Bridal makeup in Warsaw by award-winning artists. Long-wearing, HD wedding makeup with trials and on-location service. Book your bridal look at Royal Beauty Salon.",
+      "Bridal makeup in Warsaw by experienced artists. Long-wearing, HD wedding makeup with trials and on-location service. Book your bridal look at Royal Beauty Salon.",
     heading: "Bridal Makeup in Warsaw",
     eyebrow: "Bridal • Warsaw",
     tagline:

@@ -26,9 +26,17 @@ const TOOLS_UPDATED = new Date("2026-08-27T10:00:00-07:00"); // tools pages
 const HOMEPAGE_UPDATED = new Date("2026-08-08T10:00:00-07:00"); // page.tsx (homepage)
 const ABOUT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const SERVICES_PAGE_UPDATED = new Date("2026-08-08T10:00:00-07:00");
+const OUR_WORK_UPDATED = new Date("2026-08-08T10:00:00-07:00"); // our-work/page.tsx
 const CONTACT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const WARSAW_HUB_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const BLOG_INDEX_UPDATED = new Date("2026-08-08T10:00:00-07:00");
+const STANDALONE_BLOG_UPDATED = new Date("2026-08-27T10:00:00-07:00"); // static blog pages (not in blogPosts)
+
+/** Blog pages that have their own route file instead of living in blogPosts. */
+const STANDALONE_BLOG_SLUGS = [
+  "najlepszy-salon-kosmetyczny-warszawa",
+  "keratynowe-prostowanie-cennik-warszawa",
+] as const;
 const LEGAL_UPDATED = new Date("2026-07-08T12:37:41-07:00");
 
 type Entry = {
@@ -52,6 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "", priority: 1, changeFrequency: "weekly", lastModified: HOMEPAGE_UPDATED },
     { path: "about", priority: 0.7, changeFrequency: "monthly", lastModified: ABOUT_UPDATED },
     { path: "services", priority: 0.9, changeFrequency: "weekly", lastModified: SERVICES_PAGE_UPDATED },
+    { path: "our-work", priority: 0.8, changeFrequency: "monthly", lastModified: OUR_WORK_UPDATED },
     { path: "contact", priority: 0.7, changeFrequency: "monthly", lastModified: CONTACT_UPDATED },
 
     // Local SEO hub
@@ -122,6 +131,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
       changeFrequency: "monthly",
       lastModified: new Date(post.date),
+    });
+  }
+
+  // Standalone blog pages with their own route files (not part of blogPosts).
+  for (const slug of STANDALONE_BLOG_SLUGS) {
+    entries.push({
+      path: `blog/${slug}`,
+      priority: 0.6,
+      changeFrequency: "monthly",
+      lastModified: STANDALONE_BLOG_UPDATED,
     });
   }
 

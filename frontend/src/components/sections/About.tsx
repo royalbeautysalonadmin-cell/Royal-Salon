@@ -10,7 +10,7 @@ const highlights = [
   "Certified, internationally trained beauticians",
   "Premium, cruelty-free luxury products",
   "Bespoke treatments tailored to you",
-  "Award-winning bridal & editorial artistry",
+  "Bridal & editorial artistry with a meticulous eye",
 ];
 
 export function About() {

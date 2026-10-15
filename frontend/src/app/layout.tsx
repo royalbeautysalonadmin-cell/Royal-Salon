@@ -3,7 +3,7 @@ import { Playfair_Display, Jost } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { Providers } from "@/components/providers";
-import { localBusinessJsonLd } from "@/lib/seo";
+import { localBusinessJsonLd, websiteJsonLd } from "@/lib/seo";
 import { Analytics, FacebookPixel } from "@/components/analytics";
 import { JsonLd } from "@/components/shared/JsonLd";
 
@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${playfair.variable} ${jost.variable}`}>
       <body>
-        <JsonLd data={localBusinessJsonLd()} />
+        <JsonLd data={[localBusinessJsonLd(), websiteJsonLd()]} />
         <Providers>{children}</Providers>
         <Analytics />
         <FacebookPixel />

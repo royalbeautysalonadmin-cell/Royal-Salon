@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Discover the story, philosophy and award-winning team behind Royal Beauty Salon — Warsaw's destination for luxury beauty and bridal artistry.",
+    "Discover the story, philosophy and expert team behind Royal Beauty Salon — Warsaw's destination for luxury beauty and bridal artistry.",
   keywords: [
     "about Royal Beauty Salon",
     "beauty salon Warsaw",
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     url: `${siteConfig.url}/about`,
     title: "About Royal Beauty Salon — Warsaw's Luxury Beauty Destination",
     description:
-      "Discover the story, philosophy and award-winning team behind Royal Beauty Salon — Warsaw's destination for luxury beauty and bridal artistry.",
+      "Discover the story, philosophy and expert team behind Royal Beauty Salon — Warsaw's destination for luxury beauty and bridal artistry.",
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: "About Royal Beauty Salon" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "About Royal Beauty Salon — Warsaw's Luxury Beauty Destination",
     description:
-      "Discover the story, philosophy and award-winning team behind Royal Beauty Salon.",
+      "Discover the story, philosophy and expert team behind Royal Beauty Salon.",
     images: [siteConfig.ogImage],
   },
 };
@@ -52,7 +52,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Our Story"
         title="A Royal Legacy of Beauty"
-        description="For over a decade, Royal Beauty Salon has been Warsaw's sanctuary for those who expect nothing less than perfection."
+        description="Since opening, Royal Beauty Salon has become Warsaw's sanctuary for those who expect nothing less than perfection."
         breadcrumb="About"
       />
       <About />

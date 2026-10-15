@@ -47,13 +47,18 @@ export function nicheMetadata(slug: string): Metadata {
   const page = nicheBySlug(slug);
   if (!page) return {};
   const canonical = `${siteConfig.url}/${page.slug}`;
-  // The Polish hub page and the English homepage reciprocally declare each
-  // other as language alternates — required for Google to honour hreflang.
-  // English niche pages also link to the Polish hub for cross-language signals.
-  const languages =
-    page.locale === "pl"
-      ? { "en-GB": siteConfig.url, "x-default": siteConfig.url }
-      : { "pl-PL": `${siteConfig.url}/salon-kosmetyczny-warszawa` };
+  // Hreflang must be reciprocal or Google ignores the whole annotation.
+  // - /salon-kosmetyczny-warszawa is the Polish counterpart of the English
+  //   homepage: the two are a genuine translation pair and declare each other
+  //   (the homepage does this in app/(site)/page.tsx via `pl-PL`).
+  // - Every other niche page is single-language: it self-references and sets
+  //   x-default to itself rather than pointing at unrelated pages.
+  const isPolishHome = page.slug === "salon-kosmetyczny-warszawa";
+  const languages = isPolishHome
+    ? { "pl-PL": canonical, "en-GB": siteConfig.url, "x-default": siteConfig.url }
+    : page.locale === "pl"
+      ? { "pl-PL": canonical, "x-default": canonical }
+      : { "en-GB": canonical, "x-default": canonical };
   return {
     title: page.title,
     description: page.metaDescription,

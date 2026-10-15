@@ -853,6 +853,7 @@ export const nichePages: NichePage[] = [
       "hijab-friendly-salon-warsaw",
       "women-only-hair-salon-warsaw",
       "zabiegi-na-twarz-warszawa",
+      "salon-otwarty-w-niedziele-warszawa",
     ],
     relatedCategorySlugs: ["hair", "threading", "nails"],
     serviceName: "Salon Kosmetyczny i Fryzjerski w Warszawie",
@@ -1425,7 +1426,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: ["bridal-makeup", "party-makeup", "bridal-hairstyle"],
-    relatedNicheSlugs: ["desi-salon-warsaw", "salon-pieknosci-warszawa"],
+    relatedNicheSlugs: ["desi-salon-warsaw", "salon-pieknosci-warszawa", "fryzura-slubna-warszawa"],
     relatedCategorySlugs: ["makeup"],
     serviceName: "Makijaż Ślubny w Warszawie",
     serviceDescription:
@@ -2346,6 +2347,7 @@ export const nichePages: NichePage[] = [
       "mezoterapia-warszawa",
       "laminacja-brwi-rzes-warszawa",
       "salon-urody-warszawa",
+      "hydrafacial-warszawa",
     ],
     relatedCategorySlugs: ["facials"],
     serviceName: "Oczyszczanie Twarzy w Warszawie",
@@ -2703,7 +2705,7 @@ export const nichePages: NichePage[] = [
       {
         heading: "Elastyczne godziny otwarcia",
         body: [
-          "Jesteśmy otwarci codziennie od 11:00 do 18:00, w tym w weekendy. Oferujemy elastyczne terminy, abyś mógł wkomponować wizytę w swój grafik.",
+          "Jesteśmy otwarci w poniedziałek oraz od środy do niedzieli (wtorek zamknięte) w godzinach 11:00-18:00, w tym w weekendy. Oferujemy elastyczne terminy, abyś mógł wkomponować wizytę w swój grafik.",
         ],
       },
       {
@@ -2717,7 +2719,7 @@ export const nichePages: NichePage[] = [
       { title: "Blisko Ciebie", desc: "Łatwy dojazd z każdej dzielnicy Warszawy." },
       { title: "Pełen zakres usług", desc: "Fryzjer, kosmetyczka, manicure, depilacja." },
       { title: "Bezpłatny parking", desc: "Darmowy parking dla gości." },
-      { title: "Elastyczne terminy", desc: "Codziennie 11:00-18:00, w tym weekendy." },
+      { title: "Elastyczne terminy", desc: "Pon. i śr.-niedz. 11:00-18:00, w tym weekendy." },
     ],
     faqs: [
       {
@@ -2747,6 +2749,7 @@ export const nichePages: NichePage[] = [
       "salon-kosmetyczny-warszawa",
       "salon-urody-warszawa",
       "salon-pieknosci-warszawa",
+      "beauty-salon-near-me-warsaw",
     ],
     relatedCategorySlugs: ["hair", "nails", "facials"],
     serviceName: "Salon Kosmetyczny Blisko Mnie w Warszawie",
@@ -4373,6 +4376,418 @@ export const nichePages: NichePage[] = [
     ],
     ctaMessage:
       "Dzień dobry, chciałabym umówić dziecko na strzyżenie w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────── Fryzura ślubna (bridal hair) ─────────────────────── */
+  {
+    slug: "fryzura-slubna-warszawa",
+    locale: "pl",
+    primaryKeyword: "fryzura ślubna Warszawa",
+    secondaryKeywords: [
+      "fryzjer ślubny Warszawa",
+      "upięcie ślubne Warszawa",
+      "fryzura na wesele Warszawa",
+      "uczesanie ślubne Warszawa",
+      "stylizacja włosów ślubnych Warszawa",
+      "fryzjer dla panny młodej Warszawa",
+    ],
+    title: "Fryzura Ślubna Warszawa — Upięcia i Stylizacje Ślubne",
+    metaDescription:
+      "Fryzura ślubna w Warszawie: upięcia, fale, loki i gładkie stylizacje dopasowane do sukni i welonu. Fryzjer ślubny na Alejach Stanów Zjednoczonych. Umów konsultację.",
+    h1: "Fryzura Ślubna w Warszawie",
+    eyebrow: "Fryzura Ślubna • Warszawa",
+    tagline:
+      "Upięcia, fale i stylizacje ślubne dobrane do sukni, welonu i Twojego typu urody.",
+    heroImage: U("photo-1522337360788-8b13dee7a37e"),
+    heroAlt: "Fryzura ślubna i upięcie włosów w salonie Royal Beauty Salon w Warszawie",
+    intro: [
+      "Fryzura ślubna to element, który trzyma całą stylizację panny młodej w ryzach — od pierwszego zdjęcia do ostatniego tańca. W Royal Beauty Salon w Warszawie tworzymy upięcia, fale i gładkie stylizacje, które wyglądają dobrze przez cały dzień i pasują do sukni, welonu oraz dodatków.",
+      "Każdą fryzurę ślubną zaczynamy od konsultacji i próbnego upięcia. Analizujemy długość, gęstość i strukturę włosów, dopasowujemy objętość, kształt i sposób mocowania, aby fryzura przetrwała ceremonię, sesję i przyjęcie — nawet w gorące dni.",
+      "Jesteśmy na Alejach Stanów Zjednoczonych 67/D7 w Warszawie i obsługujemy panny młode z Mokotowa, Pragi, Śródmieścia, Wilanowa i całej stolicy. Umów wizytę telefonicznie, na WhatsApp lub online.",
+    ],
+    sections: [
+      {
+        heading: "Upięcia ślubne i fryzury na wesele",
+        body: [
+          "Wykonujemy klasyczne, romantyczne i nowoczesne upięcia ślubne: kok, warkocze, niskie koki z luźnymi pasmami, wysokie upięcia z objętością oraz miękkie fale. Dobieramy fryzurę tak, aby podkreśliła rysy twarzy i współgrała z dekoltem sukni oraz welonem.",
+          "Fryzura ślubna (Bridal Hairstyle) w naszym salonie trwa około 2,5 godziny i kosztuje 230 zł. Zaawansowane stylizacje (Hair Do – Advanced) to 200 zł, a prostsze modelowanie (Hair Do – Basic) 100 zł.",
+        ],
+      },
+      {
+        heading: "Próbne upięcie przed ślubem",
+        body: [
+          "Zawsze polecamy próbne upięcie — najlepiej 2-4 tygodnie przed ślubem. Na próbne spotkanie przynieś zdjęcia inspiracji, welon oraz informację, jaką biżuterię i suknię wybrałaś. Wspólnie ustalimy finalną fryzurę, która nie sprawi niespodzianek w dniu ślubu.",
+        ],
+      },
+      {
+        heading: "Fryzura ślubna dopasowana do Twoich włosów",
+        body: [
+          "Cienkie włosy wymagają innego przygotowania niż gęste i ciężkie. Dobieramy preparaty i techniki tak, aby fryzura była stabilna, ale naturalna — bez efektu sklejonych włosów. Dodajemy objętość tam, gdzie trzeba, i wygładzamy tam, gdzie ma błyszczeć.",
+          "Oferujemy również drapowanie sari i dupatty (Saree / Dupatta Draping) za 60 zł — szczególnie doceniane przez klientki ślubów hinduskich i południowoazjatyckich.",
+        ],
+      },
+      {
+        heading: "Fryzura ślubna a makijaż — kompletny look",
+        body: [
+          "Najlepszy efekt powstaje, gdy fryzurę i makijaż tworzy ten sam zespół. Oferujemy makijaż ślubny HD za 450 zł, dzięki czemu fryzura i makijaż są idealnie spójne — od próby aż po dzień ślubu. Możemy również dojechać do hotelu lub miejsca ceremonii na terenie Warszawy.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Upięcia i fale", desc: "Fryzury ślubne trwałe przez cały dzień." },
+      { title: "Próbne upięcie", desc: "Bez niespodzianek w dniu ślubu." },
+      { title: "Od 100 zł", desc: "Upięcie ślubne 230 zł, drapowanie sari 60 zł." },
+      { title: "Fryzura + makijaż", desc: "Spójny look ślubny w jednym salonie." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje fryzura ślubna w Warszawie?",
+        a: "W Royal Beauty Salon upięcie ślubne (Bridal Hairstyle) kosztuje 230 zł, zaawansowana stylizacja 200 zł, a podstawowe modelowanie 100 zł. Drapowanie sari lub dupatty to 60 zł.",
+      },
+      {
+        q: "Kiedy umówić próbne upięcie ślubne?",
+        a: "Zalecamy próbne upięcie 2-4 tygodnie przed ślubem, aby spokojnie dopracować fryzurę i dopasować ją do sukni, welonu i biżuterii.",
+      },
+      {
+        q: "Czy wykonujecie fryzury ślubne na miejscu, w hotelu lub miejscu ceremonii?",
+        a: "Tak. Nasz zespół ślubny może dojechać na terenie Warszawy do domu, hotelu lub miejsca ceremonii. Koszt dojazdu ustalamy indywidualnie.",
+      },
+      {
+        q: "Czy możecie zrobić fryzurę i makijaż ślubny razem?",
+        a: "Tak. Oferujemy makijaż ślubny HD (450 zł) oraz fryzurę ślubną, więc fryzura i makijaż tworzą spójny look dopasowany do Twojej urody.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "bridal-hairstyle",
+      "hair-do-advanced",
+      "hair-do-basic",
+      "saree-dupatta-draping",
+    ],
+    relatedNicheSlugs: [
+      "makijaz-slubny-warszawa",
+      "salon-kosmetyczny-warszawa",
+      "fryzjer-dla-kobiet-warszawa",
+    ],
+    relatedCategorySlugs: ["hair", "makeup"],
+    serviceName: "Fryzura Ślubna w Warszawie",
+    serviceDescription:
+      "Profesjonalne fryzury ślubne w Warszawie — upięcia, fale i stylizacje ślubne dopasowane do sukni i typu urody, z możliwością próbnego upięcia.",
+    imageAltRecommendations: [
+      "Fryzura ślubna — upięcie włosów u panny młodej w Warszawie",
+      "Fryzjer ślubny układa fale na długich włosach",
+      "Upięcie ślubne z welonem w salonie fryzjerskim Warszawa",
+      "Drapowanie sari i dupatty na ślub w Warszawie",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na fryzurę ślubną w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────── HydraFacial ─────────────────────── */
+  {
+    slug: "hydrafacial-warszawa",
+    locale: "pl",
+    primaryKeyword: "HydraFacial Warszawa",
+    secondaryKeywords: [
+      "hydra facial Warszawa",
+      "oczyszczanie hydrafacial Warszawa",
+      "hydrafacial cena Warszawa",
+      "zabieg nawilżający twarz Warszawa",
+      "facial Warszawa",
+    ],
+    title: "HydraFacial Warszawa — Cena i Efekty | Royal Beauty Salon",
+    metaDescription:
+      "HydraFacial w Warszawie: oczyszczenie, delikatny peeling i intensywne nawilżenie w jednym zabiegu. Cena 200 zł. Umów HydraFacial na Alejach Stanów Zjednoczonych.",
+    h1: "HydraFacial w Warszawie",
+    eyebrow: "HydraFacial • Warszawa",
+    tagline:
+      "Oczyszczenie, peeling i nawilżenie w jednym zabiegu — promienna skóra bez przestoju.",
+    heroImage: U("photo-1570172619644-dfd03ed5d881"),
+    heroAlt: "Zabieg HydraFacial na twarzy w salonie kosmetycznym w Warszawie",
+    intro: [
+      "HydraFacial to jeden z najczęściej wybieranych zabiegów na twarz w Warszawie — łączy oczyszczanie, delikatny peeling i intensywne nawilżenie w jednym, komfortowym spotkaniu. W Royal Beauty Salon na Alejach Stanów Zjednoczonych wykonujemy HydraFacial dla każdego typu skóry.",
+      "Zabieg polega na stopniowym, wieloetapowym oczyszczeniu skóry z zanieczyszczeń i nadmiaru sebum, a następnie wprowadzeniu substancji nawilżających i odżywczych. Skóra jest wygładzona i rozświetlona, a Ty wracasz do codziennych zajęć praktycznie od razu.",
+      "HydraFacial w naszym salonie trwa około 1,5 godziny i kosztuje 200 zł. To zabieg, który klientki w Warszawie powtarzają regularnie — przed ważnym wydarzeniem, ślubem albo po prostu dla zdrowego blasku.",
+    ],
+    sections: [
+      {
+        heading: "Jak działa HydraFacial?",
+        body: [
+          "HydraFacial oczyszcza skórę etapowo: delikatnie usuwa martwy naskórek, odblokowuje pory i pomaga pozbyć się zaskórników, a następnie dostarcza skórze nawilżenie oraz składniki pielęgnacyjne. Dzięki temu skóra wygląda świeżo i gładko, bez agresywnego złuszczania.",
+          "Zabieg jest dobrze tolerowany, dlatego często wybierają go osoby z wrażliwą skórą, które chcą zadbać o cerę bez długiej rekonwalescencji.",
+        ],
+      },
+      {
+        heading: "HydraFacial cena i czas trwania",
+        body: [
+          "HydraFacial w Royal Beauty Salon kosztuje 200 zł i trwa około 1 godziny 30 minut. Jeśli szukasz innego wariantu pielęgnacji, oferujemy też Royal Facial (150 zł), a także faciale dopasowane do skóry suchej, tłustej i wrażliwej (od 120 zł).",
+        ],
+      },
+      {
+        heading: "Dla kogo jest HydraFacial?",
+        body: [
+          "HydraFacial sprawdzi się przy skórze suchej, tłustej, mieszanej i wrażliwej. To dobry wybór przed ślubem, sesją zdjęciową, ważnym spotkaniem lub gdy skóra jest zmęczona i poszarzała. Podczas konsultacji dobierzemy zabieg do Twoich potrzeb i stanu cery.",
+        ],
+      },
+      {
+        heading: "HydraFacial w Warszawie — gdzie wykonać",
+        body: [
+          "Nasz salon znajduje się na Alejach Stanów Zjednoczonych 67/D7 (04-028 Warszawa), z dogodnym dojazdem komunikacją miejską i miejscami parkingowymi. Jesteśmy otwarci w poniedziałek oraz od środy do niedzieli w godzinach 11:00-18:00 (wtorek zamknięte), więc wizytę łatwo dopasować do swojego tygodnia.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "200 zł", desc: "HydraFacial z pełnym oczyszczeniem i nawilżeniem." },
+      { title: "Dla każdej cery", desc: "Sucha, tłusta, mieszana i wrażliwa skóra." },
+      { title: "Bez przestoju", desc: "Wracasz do zajęć praktycznie od razu." },
+      { title: "Otwarte 6 dni", desc: "Pon. i śr.-niedz. 11:00-18:00." },
+    ],
+    faqs: [
+      {
+        q: "Ile kosztuje HydraFacial w Warszawie?",
+        a: "W Royal Beauty Salon HydraFacial kosztuje 200 zł i trwa około 1,5 godziny. Oferujemy także Royal Facial za 150 zł oraz faciale dla skóry suchej, tłustej i wrażliwej od 120 zł.",
+      },
+      {
+        q: "Czy HydraFacial jest bolesny?",
+        a: "Nie. HydraFacial jest zabiegiem komfortowym i dobrze tolerowanym, dlatego często wybierają go także osoby z wrażliwą skórą.",
+      },
+      {
+        q: "Jak często robić HydraFacial?",
+        a: "Zalecamy powtarzanie zabiegu co 3-4 tygodnie, aby utrzymać efekt oczyszczenia i nawilżenia. Przed ważnym wydarzeniem warto wykonać go kilka dni wcześniej.",
+      },
+      {
+        q: "Gdzie w Warszawie wykonam HydraFacial?",
+        a: "Zapraszamy na Aleje Stanów Zjednoczonych 67/D7, 04-028 Warszawa. Jesteśmy otwarci w poniedziałek oraz od środy do niedzieli w godzinach 11:00-18:00 (wtorek zamknięte).",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hydra-facial",
+      "royal-facial",
+      "facial-sensitive-skin",
+      "facial-dry-skin",
+      "facial-oily-skin",
+    ],
+    relatedNicheSlugs: [
+      "oczyszczanie-twarzy-warszawa",
+      "zabiegi-na-twarz-warszawa",
+      "peeling-chemiczny-warszawa",
+    ],
+    relatedCategorySlugs: ["facials"],
+    serviceName: "HydraFacial Warszawa",
+    serviceDescription:
+      "HydraFacial w Warszawie — wieloetapowe oczyszczanie, delikatny peeling i intensywne nawilżenie skóry w jednym zabiegu.",
+    imageAltRecommendations: [
+      "HydraFacial — oczyszczanie twarzy w salonie kosmetycznym Warszawa",
+      "Zabieg nawilżający na twarz u kosmetyczki w Warszawie",
+      "Promienna skóra po zabiegu HydraFacial w Warszawie",
+      "Kosmetyczka wykonuje peeling i nawilżenie twarzy",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić się na zabieg HydraFacial w Royal Beauty Salon w Warszawie.",
+  },
+
+  /* ─────────────────────── Beauty salon near me (EN) ─────────────────────── */
+  {
+    slug: "beauty-salon-near-me-warsaw",
+    primaryKeyword: "beauty salon near me Warsaw",
+    secondaryKeywords: [
+      "beauty salon Warsaw",
+      "hair salon near me Warsaw",
+      "nail salon near me Warsaw",
+      "salon near me Warsaw",
+      "English speaking beauty salon Warsaw",
+    ],
+    title: "Beauty Salon Near Me in Warsaw — Hair, Nails, Facials & Bridal",
+    metaDescription:
+      "Searching for a beauty salon near me in Warsaw? Royal Beauty Salon offers hair, nails, facials, threading, waxing and bridal on Aleja Stanów Zjednoczonych. Open six days a week.",
+    h1: "Beauty Salon Near Me in Warsaw",
+    eyebrow: "Beauty Salon • Warsaw",
+    tagline:
+      "Hair, nails, facials, threading, waxing and bridal — all in one salon in central Warsaw, open six days a week.",
+    heroImage: U("photo-1560066984-138dadb4c035"),
+    heroAlt: "Beauty salon in Warsaw offering hair, nails and facial treatments",
+    intro: [
+      "If you have been searching for a beauty salon near me in Warsaw, Royal Beauty Salon has everything you need in one place: hair, nails, facials, threading, waxing and bridal services. We are on Aleja Stanów Zjednoczonych 67/D7, easy to reach from across the city.",
+      "Our team speaks English as well as Polish, so international residents, expats, students and visitors can book and be understood easily. Whether you need a quick blow-dry before an event or a full beauty routine, we will take care of it.",
+      "We are open Monday and Wednesday to Sunday, from 11:00 to 18:00 (closed Tuesdays), and we accept card payments as well as cash. Book online, by phone or on WhatsApp — whatever is easiest for you.",
+    ],
+    sections: [
+      {
+        heading: "Everything under one roof",
+        body: [
+          "Instead of travelling between a hair salon, a nail studio and a skincare clinic, you can get it all in one visit. Our menu includes precision cuts and blow-dry, colour, keratin and nanoplasty smoothing, manicure and pedicure, facials such as HydraFacial, eyebrow threading, waxing and bridal hair and makeup.",
+        ],
+      },
+      {
+        heading: "Easy to find, easy to book",
+        body: [
+          "We are located at Aleja Stanów Zjednoczonych 67/D7, 04-028 Warsaw, reachable by public transport with parking for guests. To book, use the online booking form, call or message us on WhatsApp at +48 573 377 659.",
+        ],
+      },
+      {
+        heading: "For international clients in Warsaw",
+        body: [
+          "Many of our clients are new to Warsaw and want a salon where English is spoken and prices are clear. Our team will walk you through the options, recommend treatments for your hair and skin, and make sure you leave with exactly what you asked for.",
+        ],
+      },
+      {
+        heading: "Bridal and special occasions",
+        body: [
+          "Planning a wedding or a special event in Warsaw? We offer bridal makeup, bridal hairstyling and saree or dupatta draping, with the option to travel to your home, hotel or venue. Book early so we can reserve your date.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "One-stop beauty", desc: "Hair, nails, facials, threading, waxing, bridal." },
+      { title: "English spoken", desc: "Clear communication and transparent pricing." },
+      { title: "Open 6 days", desc: "Mon and Wed–Sun, 11:00-18:00." },
+      { title: "Central Warsaw", desc: "Aleja Stanów Zjednoczonych 67/D7, with parking." },
+    ],
+    faqs: [
+      {
+        q: "Where is your beauty salon in Warsaw?",
+        a: "We are at Aleja Stanów Zjednoczonych 67/D7, 04-028 Warsaw — reachable by public transport, with parking for guests.",
+      },
+      {
+        q: "What are your opening hours?",
+        a: "We are open Monday and Wednesday to Sunday, from 11:00 to 18:00, and closed on Tuesdays.",
+      },
+      {
+        q: "Do you speak English?",
+        a: "Yes. Our team speaks English as well as Polish, so international clients in Warsaw can book and be understood easily.",
+      },
+      {
+        q: "Do I need to book in advance?",
+        a: "Booking is recommended, especially for colour, facials, bridal and weekend slots. Quick services such as threading are often available on a walk-in basis when we have space.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-basic",
+      "blow-dry",
+      "manicure",
+      "pedicure",
+      "hydra-facial",
+      "threading-combo",
+    ],
+    relatedNicheSlugs: [
+      "salon-kosmetyczny-blisko-mnie-warszawa",
+      "salon-fryzjerski-blisko-mnie-warszawa",
+      "salon-kosmetyczny-warszawa",
+    ],
+    relatedCategorySlugs: ["hair", "makeup", "facials", "nails", "threading", "waxing"],
+    serviceName: "Beauty Salon in Warsaw",
+    serviceDescription:
+      "A central Warsaw beauty salon offering hair, nails, facials, threading, waxing and bridal services, open six days a week (closed Tuesdays) with English-speaking staff.",
+    imageAltRecommendations: [
+      "Beauty salon interior in Warsaw — hair and nail stations",
+      "English-speaking beauty salon in central Warsaw",
+      "Blow dry and hair styling at a Warsaw beauty salon",
+      "Manicure and facial treatments at Royal Beauty Salon Warsaw",
+    ],
+    ctaMessage:
+      "Hello Royal Beauty Salon, I'd like to book an appointment at your Warsaw salon.",
+  },
+
+  /* ─────────────────────── Open on Sundays ─────────────────────── */
+  {
+    slug: "salon-otwarty-w-niedziele-warszawa",
+    locale: "pl",
+    primaryKeyword: "salon kosmetyczny otwarty w niedzielę Warszawa",
+    secondaryKeywords: [
+      "fryzjer otwarty w niedzielę Warszawa",
+      "salon otwarty w niedzielę Warszawa",
+      "salon czynny w niedzielę Warszawa",
+      "beauty salon open Sunday Warsaw",
+      "niedziela salon kosmetyczny Warszawa",
+    ],
+    title: "Salon Otwarty w Niedzielę w Warszawie — 6 Dni w Tygodniu",
+    metaDescription:
+      "Szukasz salonu otwartego w niedzielę w Warszawie? Royal Beauty Salon pracuje 6 dni w tygodniu — pon. i śr.-niedz. 11:00-18:00 (wtorek zamknięte). Fryzjer, paznokcie, facial i brwi na Alejach Stanów Zjednoczonych.",
+    h1: "Salon Kosmetyczny Otwarty w Niedzielę w Warszawie",
+    eyebrow: "Otwarte w Niedzielę • Warszawa",
+    tagline:
+      "Pracujemy także w niedzielę — otwarte 6 dni w tygodniu (wtorek zamknięte) w godzinach 11:00-18:00.",
+    heroImage: U("photo-1516975080664-ed2fc6a32937"),
+    heroAlt: "Salon kosmetyczny otwarty w niedzielę w Warszawie",
+    intro: [
+      "Większość salonów w Warszawie jest zamknięta w niedzielę — my nie. Royal Beauty Salon pracuje 6 dni w tygodniu — w poniedziałek oraz od środy do niedzieli, w godzinach 11:00-18:00, więc wizytę możesz umówić także w weekend.",
+      "Niedziela to dla wielu osób jedyny dzień wolny, w którym można spokojnie zadbać o włosy, paznokcie, brwi lub cerę. Dlatego prowadzimy pełny grafik również w niedzielę — bez konieczności brania urlopu w tygodniu.",
+      "Jesteśmy na Alejach Stanów Zjednoczonych 67/D7 (04-028 Warszawa). Rezerwacja online, telefonicznie lub przez WhatsApp: +48 573 377 659.",
+    ],
+    sections: [
+      {
+        heading: "Co możesz zrobić w niedzielę w naszym salonie?",
+        body: [
+          "W niedzielę wykonujemy te same usługi co w tygodniu: strzyżenie i modelowanie włosów, koloryzację, keratynowe prostowanie i nanoplasty, manicure i pedicure, facial oraz HydraFacial, depilację nitką i woskiem, a także makijaż i fryzury okolicznościowe.",
+        ],
+      },
+      {
+        heading: "Godziny otwarcia",
+        body: [
+          "Salon jest czynny w poniedziałek oraz od środy do niedzieli w godzinach 11:00-18:00 (wtorek zamknięte). Jeśli planujesz dłuższą usługę, np. koloryzację lub keratynowe prostowanie, umów wizytę z odpowiednim wyprzedzeniem, aby zarezerwować wystarczająco dużo czasu.",
+        ],
+      },
+      {
+        heading: "Kiedy umówić się na niedzielę?",
+        body: [
+          "Niedzielne terminy cieszą się dużą popularnością — szczególnie przed świętami, ślubami i sezonem urlopowym. Rezerwuj z kilkudniowym wyprzedzeniem, aby wybrać dogodną godzinę. Możesz to zrobić online, telefonicznie lub na WhatsApp.",
+        ],
+      },
+      {
+        heading: "Jak do nas trafić w weekend",
+        body: [
+          "Dojazd na Aleje Stanów Zjednoczonych 67/D7 jest wygodny również w weekend — komunikacją miejską lub samochodem. Dla gości przygotowaliśmy miejsca parkingowe.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "6 dni w tygodniu", desc: "Otwarte pon. i śr.-niedz., także w niedzielę." },
+      { title: "11:00-18:00", desc: "Pon. i śr.-niedz. (wtorek zamknięte)." },
+      { title: "Pełny zakres usług", desc: "Włosy, paznokcie, facial, brwi i makijaż." },
+      { title: "Rezerwacja online", desc: "Umów wizytę przez internet lub WhatsApp." },
+    ],
+    faqs: [
+      {
+        q: "Czy wasz salon jest otwarty w niedzielę?",
+        a: "Tak. Royal Beauty Salon pracuje 6 dni w tygodniu — w poniedziałek oraz od środy do niedzieli, w godzinach 11:00-18:00. Wtorek jest zamknięty.",
+      },
+      {
+        q: "W jakich godzinach jesteście otwarci w weekend?",
+        a: "W sobotę i niedzielę jesteśmy otwarci w godzinach 11:00-18:00. Zamknięte jesteśmy w każdy wtorek.",
+      },
+      {
+        q: "Czy w niedzielę wykonujecie wszystkie usługi?",
+        a: "Tak. W niedzielę oferujemy pełen zakres usług: strzyżenie, koloryzację, keratynowe prostowanie, manicure i pedicure, facial, depilację oraz makijaż.",
+      },
+      {
+        q: "Gdzie znajduje się salon otwarty w niedzielę w Warszawie?",
+        a: "Na Alejach Stanów Zjednoczonych 67/D7, 04-028 Warszawa. Umów wizytę online, telefonicznie lub przez WhatsApp.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-basic",
+      "blow-dry",
+      "manicure",
+      "hydra-facial",
+      "threading-combo",
+      "bridal-hairstyle",
+    ],
+    relatedNicheSlugs: [
+      "salon-kosmetyczny-warszawa",
+      "salon-pieknosci-warszawa",
+      "salon-kosmetyczny-blisko-mnie-warszawa",
+    ],
+    relatedCategorySlugs: ["hair", "makeup", "facials", "nails", "threading", "waxing"],
+    serviceName: "Salon Kosmetyczny Otwarty w Niedzielę w Warszawie",
+    serviceDescription:
+      "Salon kosmetyczny w Warszawie otwarty 6 dni w tygodniu, także w niedzielę (wtorek zamknięte), w godzinach 11:00-18:00 — włosy, paznokcie, facial, brwi i makijaż.",
+    imageAltRecommendations: [
+      "Salon kosmetyczny otwarty w niedzielę w Warszawie",
+      "Fryzjer czynny w niedzielę — salon na Alejach Stanów Zjednoczonych",
+      "Manicure i facial w niedzielę w Warszawie",
+      "Umów wizytę w salonie otwartym w niedzielę",
+    ],
+    ctaMessage:
+      "Dzień dobry, chciałabym umówić wizytę w niedzielę w Royal Beauty Salon w Warszawie.",
   },
 ];
 

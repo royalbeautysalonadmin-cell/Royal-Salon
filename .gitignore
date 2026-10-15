@@ -29,3 +29,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# raw source media (compressed copies live in frontend/public)
+/videos/
+/b&a/
