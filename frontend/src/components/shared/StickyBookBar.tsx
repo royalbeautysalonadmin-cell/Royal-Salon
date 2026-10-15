@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useBookingStore } from "@/store/booking";
 import { useTranslation } from "@/lib/i18n";
 import { useStickyBarStore } from "@/store/stickyBar";
+import { trackEvent } from "@/lib/analytics";
 
 export function StickyBookBar() {
   const [visible, setVisible] = useState(false);
@@ -48,7 +49,10 @@ export function StickyBookBar() {
               {t("stickyBar.mobile")}
             </p>
             <Button
-              onClick={() => openBooking()}
+              onClick={() => {
+                trackEvent("book_open", { source: "sticky_bar" });
+                openBooking();
+              }}
               className="rounded-full bg-brown px-6 py-2.5 text-sm font-semibold text-white shadow-luxury hover:bg-brown/90"
             >
               <CalendarCheck className="mr-2 h-4 w-4" />

@@ -4,7 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { Providers } from "@/components/providers";
 import { localBusinessJsonLd, websiteJsonLd } from "@/lib/seo";
-import { Analytics, FacebookPixel } from "@/components/analytics";
+import { Analytics, AnalyticsRouteTracker, FacebookPixel } from "@/components/analytics";
 import { JsonLd } from "@/components/shared/JsonLd";
 
 const playfair = Playfair_Display({
@@ -87,6 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={[localBusinessJsonLd(), websiteJsonLd()]} />
         <Providers>{children}</Providers>
         <Analytics />
+        <AnalyticsRouteTracker />
         <FacebookPixel />
       </body>
     </html>

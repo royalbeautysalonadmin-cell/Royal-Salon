@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { siteConfig, navLinks, serviceCategoryLinks, warsawLinks, specialtyLinks } from "@/lib/site";
 import { useTranslation } from "@/lib/i18n";
+import { trackEvent } from "@/lib/analytics";
 
 export function Footer() {
   const { t } = useTranslation();
@@ -103,7 +104,11 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone className="h-4 w-4 shrink-0 text-gold" />
-              <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="hover:text-gold">
+              <a
+                href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                onClick={() => trackEvent("call_click", { source: "footer" })}
+                className="hover:text-gold"
+              >
                 {siteConfig.phone}
               </a>
             </li>

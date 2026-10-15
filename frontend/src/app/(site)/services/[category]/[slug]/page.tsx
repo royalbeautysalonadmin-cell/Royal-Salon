@@ -8,6 +8,7 @@ import { FaqSection } from "@/components/shared/FaqSection";
 import { CtaBand } from "@/components/shared/CtaBand";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { BookButton } from "@/components/shared/BookButton";
+import { TrackedLink } from "@/components/shared/TrackedLink";
 import { Badge } from "@/components/ui/badge";
 import { formatPrice } from "@/lib/utils";
 import { siteConfig, whatsappLink } from "@/lib/site";
@@ -167,14 +168,16 @@ export default async function ServiceDetailPage({
 
             <div className="mt-8 flex flex-wrap gap-3">
               <BookButton serviceSlug={service.slug} unavailable={unavailable} />
-              <a
+              <TrackedLink
+                event="whatsapp_click"
+                params={{ source: "service_detail", service: service.slug }}
                 href={whatsappLink(`Hello Royal Beauty Salon, I'd like to book ${service.name}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
                 Ask on WhatsApp
-              </a>
+              </TrackedLink>
             </div>
           </div>
 
@@ -273,12 +276,14 @@ export default async function ServiceDetailPage({
               <div className="mt-6">
                 <BookButton serviceSlug={service.slug} full unavailable={unavailable} />
               </div>
-              <a
+              <TrackedLink
+                event="call_click"
+                params={{ source: "service_detail" }}
                 href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                 className="mt-3 block text-center text-sm font-medium text-brown hover:underline"
               >
                 Or call {siteConfig.phone}
-              </a>
+              </TrackedLink>
             </div>
           </aside>
         </div>

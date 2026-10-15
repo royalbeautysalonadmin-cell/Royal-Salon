@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ArrowUp } from "lucide-react";
 import { siteConfig, whatsappLink } from "@/lib/site";
 import { useStickyBarStore } from "@/store/stickyBar";
+import { trackEvent } from "@/lib/analytics";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -47,6 +48,7 @@ export function FloatingActions() {
       <a
         href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
         aria-label="Call us"
+        onClick={() => trackEvent("call_click", { source: "floating_button" })}
         className="flex h-12 w-12 items-center justify-center rounded-full bg-brown text-white shadow-luxury transition-transform hover:-translate-y-1"
       >
         <Phone className="h-5 w-5" />
@@ -57,6 +59,7 @@ export function FloatingActions() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
+        onClick={() => trackEvent("whatsapp_click", { source: "floating_button" })}
         className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-luxury transition-transform hover:-translate-y-1"
       >
         <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366]/40" />

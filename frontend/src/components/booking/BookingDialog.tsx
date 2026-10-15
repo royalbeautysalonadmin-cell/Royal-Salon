@@ -29,6 +29,7 @@ import { SERVICE_CATEGORIES } from "@/lib/validation";
 import type { SlotInfo, WeekdayKey } from "@/lib/availability";
 import { WEEKDAY_KEYS } from "@/lib/availability";
 import type { ServiceCategory } from "@/types";
+import { trackEvent } from "@/lib/analytics";
 
 interface BookableService {
   _id: string;
@@ -245,6 +246,14 @@ export function BookingDialog() {
         const json = await res.json().catch(() => null);
         throw new Error(json?.error || "Booking failed");
       }
+      trackEvent("book_success", {
+        service: selectedService?.slug ?? form.service,
+        service_name: selectedService?.name,
+        value: selectedService?.price,
+        currency: "PLN",
+        date: form.date,
+        time: form.time,
+      });
       setDone(true);
     } catch (err) {
       setError(

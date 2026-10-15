@@ -5,6 +5,7 @@ import { Phone, Calendar } from "lucide-react";
 import { siteConfig, whatsappLink } from "@/lib/site";
 import { useBookingStore } from "@/store/booking";
 import { useTranslation } from "@/lib/i18n";
+import { trackEvent } from "@/lib/analytics";
 
 interface CtaBandProps {
   title?: string;
@@ -43,7 +44,10 @@ export function CtaBand({
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <button
             type="button"
-            onClick={() => openBooking(serviceSlug)}
+            onClick={() => {
+              trackEvent("book_open", { service: serviceSlug ?? "any", source: "cta_band" });
+              openBooking(serviceSlug);
+            }}
             className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-luxury-black shadow-luxury transition-transform hover:-translate-y-0.5"
           >
             <Calendar className="h-4 w-4" />
@@ -53,18 +57,21 @@ export function CtaBand({
             href={whatsappLink(message)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click", { source: "cta_band" })}
             className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
           >
             {t("cta.whatsapp")}
           </a>
           <Link
             href="/contact"
+            onClick={() => trackEvent("contact_click", { source: "cta_band" })}
             className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
           >
             {t("cta.contact")}
           </Link>
           <a
             href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+            onClick={() => trackEvent("call_click", { source: "cta_band" })}
             className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
           >
             <Phone className="h-4 w-4" />

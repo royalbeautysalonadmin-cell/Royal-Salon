@@ -4,6 +4,7 @@ import { Calendar } from "lucide-react";
 import { toast } from "sonner";
 import { useBookingStore } from "@/store/booking";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 interface BookButtonProps {
   serviceSlug?: string;
@@ -46,7 +47,10 @@ export function BookButton({
   return (
     <button
       type="button"
-      onClick={() => open(serviceSlug)}
+      onClick={() => {
+        trackEvent("book_open", { service: serviceSlug ?? "any" });
+        open(serviceSlug);
+      }}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-luxury-black shadow-luxury transition-transform hover:-translate-y-0.5",
         full && "w-full",

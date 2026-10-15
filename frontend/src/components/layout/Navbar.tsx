@@ -10,6 +10,7 @@ import { navLinks, siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { useBookingStore } from "@/store/booking";
 import { useTranslation } from "@/lib/i18n";
+import { trackEvent } from "@/lib/analytics";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,7 +58,11 @@ export function Navbar() {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="flex items-center gap-1.5 hover:text-gold">
+            <a
+              href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+              onClick={() => trackEvent("call_click", { source: "navbar_top" })}
+              className="flex items-center gap-1.5 hover:text-gold"
+            >
               <Phone className="h-3.5 w-3.5 text-gold" /> {siteConfig.phone}
             </a>
             <span className="h-3 w-px bg-white/20" />
@@ -129,7 +134,14 @@ export function Navbar() {
               <Globe className="h-3.5 w-3.5 text-gold-600" />
               {lang === "en" ? "PL" : "EN"}
             </button>
-            <Button variant="gold" size="sm" onClick={() => openBooking()}>
+            <Button
+              variant="gold"
+              size="sm"
+              onClick={() => {
+                trackEvent("book_open", { source: "navbar" });
+                openBooking();
+              }}
+            >
               {t("booking.title")}
             </Button>
           </div>
@@ -166,6 +178,7 @@ export function Navbar() {
               ))}
               <a
                 href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                onClick={() => trackEvent("call_click", { source: "navbar_mobile" })}
                 className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-charcoal/70"
               >
                 <Phone className="h-4 w-4 text-brown" /> {siteConfig.phone}
@@ -175,6 +188,7 @@ export function Navbar() {
                 className="mt-2"
                 onClick={() => {
                   setOpen(false);
+                  trackEvent("book_open", { source: "navbar_mobile" });
                   openBooking();
                 }}
               >

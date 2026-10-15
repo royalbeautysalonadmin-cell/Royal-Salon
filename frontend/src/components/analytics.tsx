@@ -1,6 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import Script from "next/script";
+import { usePathname } from "next/navigation";
+import { trackPageView } from "@/lib/analytics";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -17,14 +20,24 @@ export function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', {
-            page_title: document.title,
-            page_location: window.location.href,
-          });
+          gtag('config', '${GA_ID}', { send_page_view: false });
         `}
       </Script>
     </>
   );
+}
+
+/**
+ * Fires a GA4 `page_view` (and Meta `PageView`) on every App Router
+ * navigation. The initial page_view is handled here too — the gtag config
+ * above disables GA4's own automatic one so the two never double-count.
+ */
+export function AnalyticsRouteTracker() {
+  const pathname = usePathname();
+  useEffect(() => {
+    trackPageView(pathname);
+  }, [pathname]);
+  return null;
 }
 
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
@@ -43,7 +56,6 @@ export function FacebookPixel() {
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '${FB_PIXEL_ID}');
-        fbq('track', 'PageView');
       `}
     </Script>
   );

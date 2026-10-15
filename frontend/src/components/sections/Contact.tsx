@@ -19,6 +19,7 @@ import { siteConfig, whatsappLink } from "@/lib/site";
 import { faqs } from "@/data/content";
 import { sendContactEmailJS, isEmailJSConfigured } from "@/lib/emailjs";
 import { useTranslation } from "@/lib/i18n";
+import { trackEvent } from "@/lib/analytics";
 
 export function Contact() {
   const [loading, setLoading] = useState(false);
@@ -51,6 +52,7 @@ export function Contact() {
       }
 
       toast.success(t("contact.successMsg"));
+      trackEvent("contact_click", { source: "contact_form" });
       form.reset();
     } catch {
       toast.error(t("contact.errorMsg"));
@@ -82,6 +84,12 @@ export function Contact() {
                 <a
                   key={c.label}
                   href={c.href || "#"}
+                  onClick={() =>
+                    trackEvent(c.href?.startsWith("tel:") ? "call_click" : "contact_click", {
+                      source: "contact_card",
+                      channel: c.label,
+                    })
+                  }
                   className="rounded-2xl border border-brown/10 bg-cream/40 p-5 transition-colors hover:border-gold/40 hover:bg-white"
                 >
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brown-gradient text-white">
@@ -153,7 +161,12 @@ export function Contact() {
                   {loading ? t("contact.sending") : <>{t("contact.send")} <Send className="h-4 w-4" /></>}
                 </Button>
                 <Button type="button" variant="outline" asChild className="flex-1">
-                  <a href={whatsappLink()} target="_blank" rel="noreferrer">
+                  <a
+                    href={whatsappLink()}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => trackEvent("whatsapp_click", { source: "contact_form" })}
+                  >
                     <MessageCircle className="h-4 w-4" /> {t("contact.whatsapp")}
                   </a>
                 </Button>

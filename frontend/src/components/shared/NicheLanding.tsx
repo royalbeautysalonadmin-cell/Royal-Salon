@@ -8,6 +8,7 @@ import { FaqSection } from "@/components/shared/FaqSection";
 import { CtaBand } from "@/components/shared/CtaBand";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { BookButton } from "@/components/shared/BookButton";
+import { TrackedLink } from "@/components/shared/TrackedLink";
 import { siteConfig, whatsappLink } from "@/lib/site";
 import { breadcrumbJsonLd, faqJsonLd, genericServiceJsonLd } from "@/lib/seo";
 import { nicheBySlug, nicheFeaturedServices } from "@/data/niche-seo";
@@ -137,14 +138,16 @@ export async function NicheLanding({ slug }: { slug: string }) {
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <BookButton label={t.bookAppointment} />
-              <a
+              <TrackedLink
+                event="whatsapp_click"
+                params={{ source: "niche_hero", page: page.slug }}
                 href={whatsappLink(page.ctaMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
                 {t.askWhatsapp}
-              </a>
+              </TrackedLink>
             </div>
           </div>
 
