@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Check, MapPin, Phone, ChevronRight, ArrowUpRight } from "lucide-react";
+import { Check, MapPin, Phone, ChevronRight, ArrowUpRight, Tag } from "lucide-react";
 import { ServiceLinkCard } from "@/components/shared/ServiceLinkCard";
 import { FaqSection } from "@/components/shared/FaqSection";
 import { CtaBand } from "@/components/shared/CtaBand";
@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { BookButton } from "@/components/shared/BookButton";
 import { TrackedLink } from "@/components/shared/TrackedLink";
 import { siteConfig, whatsappLink } from "@/lib/site";
-import { breadcrumbJsonLd, faqJsonLd, genericServiceJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, genericServiceJsonLd, priceRangeOf, serviceAggregateOfferJsonLd } from "@/lib/seo";
 import { nicheBySlug, nicheFeaturedServices } from "@/data/niche-seo";
 import { categoryBySlug } from "@/data/seo-data";
 import { getBackendServices } from "@/lib/backend-api";
@@ -29,6 +29,7 @@ const CHROME = {
     alsoLooking: "You may also be looking for",
     learnMore: "Learn more",
     address: "Aleja Stanów Zjednoczonych 67/D7, Warszawa",
+    priceFrom: (low: number) => `Popular treatments from ${low} zł`,
   },
   pl: {
     home: "Strona główna",
@@ -40,6 +41,7 @@ const CHROME = {
     alsoLooking: "Może zainteresuje Cię również",
     learnMore: "Dowiedz się więcej",
     address: "Aleja Stanów Zjednoczonych 67/D7, Warszawa",
+    priceFrom: (low: number) => `Popularne zabiegi od ${low} zł`,
   },
 } as const;
 
@@ -89,24 +91,38 @@ export async function NicheLanding({ slug }: { slug: string }) {
   const services = nicheFeaturedServices(allServices, page);
   const locale = page.locale ?? "en";
   const t = CHROME[locale];
+  const range = priceRangeOf(services);
+
+  const jsonLd: unknown[] = [
+    genericServiceJsonLd({
+      name: page.serviceName,
+      description: page.serviceDescription,
+      path: `/${page.slug}`,
+      serviceType: page.primaryKeyword,
+    }),
+    breadcrumbJsonLd([
+      { name: t.home, path: "/" },
+      { name: page.h1, path: `/${page.slug}` },
+    ]),
+    faqJsonLd(page.faqs),
+  ];
+  if (range) {
+    jsonLd.push(
+      serviceAggregateOfferJsonLd({
+        name: page.serviceName,
+        description: page.serviceDescription,
+        path: `/${page.slug}`,
+        serviceType: page.primaryKeyword,
+        lowPrice: range.low,
+        highPrice: range.high,
+        offerCount: range.count,
+      })
+    );
+  }
 
   return (
     <div lang={locale === "pl" ? "pl" : undefined}>
-      <JsonLd
-        data={[
-          genericServiceJsonLd({
-            name: page.serviceName,
-            description: page.serviceDescription,
-            path: `/${page.slug}`,
-            serviceType: page.primaryKeyword,
-          }),
-          breadcrumbJsonLd([
-            { name: t.home, path: "/" },
-            { name: page.h1, path: `/${page.slug}` },
-          ]),
-          faqJsonLd(page.faqs),
-        ]}
-      />
+      <JsonLd data={jsonLd} />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-luxury-black pt-32 pb-16 text-white sm:pt-40">
@@ -149,6 +165,12 @@ export async function NicheLanding({ slug }: { slug: string }) {
                 {t.askWhatsapp}
               </TrackedLink>
             </div>
+            {range && (
+              <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold-300">
+                <Tag className="h-3.5 w-3.5" />
+                {t.priceFrom(range.low)}
+              </p>
+            )}
           </div>
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-luxury">

@@ -163,24 +163,86 @@ export function faqJsonLd(items?: { q: string; a: string }[]) {
   };
 }
 
+/**
+ * Min/max price across a set of bookable services. Ignored entries:
+ *  - `priceOnRequest` (no public price)
+ *  - inactive services (`active === false`)
+ *  - placeholder entries priced at 1 zł awaiting client confirmation
+ * Returns `null` when no bookable price is known, so callers render nothing
+ * rather than publishing misleading numbers.
+ */
+export function priceRangeOf(
+  services: Service[]
+): { low: number; high: number; count: number } | null {
+  const priced = services.filter(
+    (s) => !s.priceOnRequest && s.active !== false && s.price > 1
+  );
+  if (priced.length === 0) return null;
+  const prices = priced.map((s) => s.price);
+  return { low: Math.min(...prices), high: Math.max(...prices), count: priced.length };
+}
+
 /** Structured data for a single service / treatment page. */
 export function serviceDetailJsonLd(service: Service, canonicalPath: string) {
+  const hasPrice = !service.priceOnRequest && service.price > 1;
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.name,
     description: service.description,
     serviceType: service.category,
+    category: service.category,
     url: `${siteConfig.url}${canonicalPath}`,
     image: service.image,
     areaServed: { "@type": "City", name: "Warsaw" },
     provider: { "@id": `${siteConfig.url}/#organization` },
     offers: {
       "@type": "Offer",
-      price: service.price,
+      // Price is only emitted when it is a real, confirmed figure — a
+      // placeholder 1 zł or a price-on-request service would otherwise
+      // publish a false number to Google.
+      ...(hasPrice ? { price: service.price } : {}),
       priceCurrency: "PLN",
-      availability: "https://schema.org/InStock",
+      availability:
+        service.active === false
+          ? "https://schema.org/OutOfStock"
+          : "https://schema.org/InStock",
       url: `${siteConfig.url}${canonicalPath}`,
+    },
+  };
+}
+
+/**
+ * Price-range structured data for a category / themed landing page.
+ * Emits a Service with an AggregateOffer so "[service] cena" queries can see
+ * a real price band. Only call when `priceRangeOf` returned a value.
+ */
+export function serviceAggregateOfferJsonLd(opts: {
+  name: string;
+  description: string;
+  path: string;
+  serviceType?: string;
+  lowPrice: number;
+  highPrice: number;
+  offerCount: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: opts.name,
+    description: opts.description,
+    serviceType: opts.serviceType ?? opts.name,
+    url: `${siteConfig.url}${opts.path}`,
+    areaServed: { "@type": "City", name: "Warsaw" },
+    provider: { "@id": `${siteConfig.url}/#organization` },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "PLN",
+      lowPrice: opts.lowPrice,
+      highPrice: opts.highPrice,
+      offerCount: opts.offerCount,
+      availability: "https://schema.org/InStock",
+      url: `${siteConfig.url}${opts.path}`,
     },
   };
 }

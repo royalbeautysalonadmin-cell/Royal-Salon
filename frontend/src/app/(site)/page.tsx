@@ -4,12 +4,46 @@ import { Hero } from "@/components/sections/Hero";
 import { ClosedDaysBanner } from "@/components/shared/ClosedDaysBanner";
 import { servicesJsonLd, faqJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import type { GalleryImage, Service } from "@/types";
 import {
   getBackendServices,
   getBackendTestimonials,
   getBackendGallery,
   getBackendClosedDays,
 } from "@/lib/backend-api";
+
+// Real service imagery → gallery categories (filters match Gallery.tsx).
+const GALLERY_CATEGORY: Record<Service["category"], GalleryImage["category"]> = {
+  Hair: "Hair",
+  "Makeup & Styling": "Makeup",
+  Threading: "Skin",
+  Waxing: "Skin",
+  "Facial & Skin Care": "Skin",
+  "Manicure & Pedicure": "Nails",
+};
+
+/**
+ * Fallback gallery built from the salon's own real service photos (the same
+ * images shown on the service pages) so the gallery is never empty while the
+ * admin hasn't uploaded dedicated shots. Featured services lead.
+ */
+function galleryFromServices(services: Service[]): GalleryImage[] {
+  const seen = new Set<string>();
+  return [...services]
+    .filter((s) => s.image)
+    .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)))
+    .filter((s) => {
+      if (seen.has(s.image)) return false;
+      seen.add(s.image);
+      return true;
+    })
+    .slice(0, 16)
+    .map((s) => ({
+      src: s.image,
+      category: GALLERY_CATEGORY[s.category],
+      alt: `${s.name} at Royal Beauty Salon Warsaw`,
+    }));
+}
 
 export const revalidate = 300;
 
@@ -86,6 +120,7 @@ export default async function HomePage() {
     getBackendClosedDays(),
   ]);
   const activeServices = services.filter((s) => s.active !== false);
+  const galleryImages = gallery.length > 0 ? gallery : galleryFromServices(activeServices);
   return (
     <>
       <script
@@ -105,7 +140,7 @@ export default async function HomePage() {
       <WhyChooseUs />
       <Amenities />
       <Testimonials testimonials={testimonials} />
-      <Gallery images={gallery} />
+      <Gallery images={galleryImages} />
       <Contact />
     </>
   );

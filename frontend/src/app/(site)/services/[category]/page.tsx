@@ -18,6 +18,8 @@ import {
   breadcrumbJsonLd,
   faqJsonLd,
   categoryItemListJsonLd,
+  priceRangeOf,
+  serviceAggregateOfferJsonLd,
 } from "@/lib/seo";
 import { getBackendServices } from "@/lib/backend-api";
 
@@ -74,7 +76,7 @@ export default async function CategoryPage({
 
   const allServices = await getBackendServices();
   const services = servicesForCategorySlug(allServices, category);
-  const fromPrice = Math.min(...services.map((s) => s.price));
+  const range = priceRangeOf(services);
 
   const breadcrumb = breadcrumbJsonLd([
     { name: "Home", path: "/" },
@@ -82,10 +84,24 @@ export default async function CategoryPage({
     { name: meta.label, path: `/services/${meta.slug}` },
   ]);
   const itemList = categoryItemListJsonLd(services, meta.label, servicePath);
+  const jsonLd: unknown[] = [breadcrumb, itemList, faqJsonLd(meta.faqs)];
+  if (range) {
+    jsonLd.push(
+      serviceAggregateOfferJsonLd({
+        name: `${meta.label} treatments in Warsaw`,
+        description: meta.metaDescription,
+        path: `/services/${meta.slug}`,
+        serviceType: meta.label,
+        lowPrice: range.low,
+        highPrice: range.high,
+        offerCount: range.count,
+      })
+    );
+  }
 
   return (
     <>
-      <JsonLd data={[breadcrumb, itemList, faqJsonLd(meta.faqs)]} />
+      <JsonLd data={jsonLd} />
 
       <PageHero
         eyebrow={meta.eyebrow}
@@ -104,7 +120,8 @@ export default async function CategoryPage({
               </p>
             ))}
             <p className="text-sm text-charcoal/70">
-              {services.length} treatments available · from {fromPrice} zł · central Warsaw
+              {services.length} treatments available
+              {range ? ` · from ${range.low} zł` : ""} · central Warsaw
             </p>
           </div>
           <div className="rounded-3xl border border-brown/10 bg-cream p-7 shadow-soft">

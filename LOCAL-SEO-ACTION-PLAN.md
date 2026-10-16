@@ -28,9 +28,8 @@ are currently **stock/placeholder** and must be replaced with real assets:
 
 Same Name / Address / Phone everywhere, byte-for-byte.
 
-- **[BLOCKED] Postal code conflict:** `frontend/src/lib/site.ts` says
-  `04-028 Warszawa`, `backend/src/lib/site.ts` says `03-770 Warszawa`.
-  Confirm the correct one and I'll sync both.
+- **[RESOLVED] Postal code:** canonical value is `04-028 Warszawa`. The stale
+  `03-770` in `backend/src/lib/site.ts` has been corrected to match the frontend.
 - **[BLOCKED] Confirm domain:** code uses `royalbeautysaloon.com` ("saloon").
 - **[BLOCKED] Confirm GPS:** currently `52.2545, 21.0538`.
 - **[BLOCKED] Confirm hours:** Mon, Wed–Sun 11:00–18:00 (Tue closed).
