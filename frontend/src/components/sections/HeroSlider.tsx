@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
@@ -65,6 +66,17 @@ export function HeroSlider() {
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0"
           >
+            {/* Optimized LCP image (avif/webp, preloaded via priority on the
+                first slide) sits behind the video, so the largest paint is a
+                small optimized asset rather than the video's raw poster JPG. */}
+            <Image
+              src={slides[index].poster}
+              alt={slides[index].label}
+              fill
+              priority={index === 0}
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+            />
             <video
               src={slides[index].src}
               poster={slides[index].poster}

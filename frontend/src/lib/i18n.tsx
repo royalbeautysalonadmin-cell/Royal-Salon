@@ -1,6 +1,8 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback, useMemo, useEffect, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import { contentLocaleForPath } from "./route-locale";
 
 type Lang = "en" | "pl";
 
@@ -246,11 +248,15 @@ const LanguageContext = createContext<LanguageCtx>({
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(getInitialLang);
+  const pathname = usePathname();
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, lang);
-    document.documentElement.lang = lang;
   }, [lang]);
+
+  useEffect(() => {
+    document.documentElement.lang = contentLocaleForPath(pathname) ?? lang;
+  }, [lang, pathname]);
 
   const toggle = useCallback(() => {
     setLang((prev) => (prev === "en" ? "pl" : "en"));

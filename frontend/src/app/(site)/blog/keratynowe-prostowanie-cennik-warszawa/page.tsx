@@ -131,6 +131,8 @@ export default function BlogPost() {
             src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80"
             alt="Keratynowe prostowanie włosów w salonie fryzjerskim Warszawa"
             fill
+            priority
+            sizes="(max-width: 768px) 100vw, 768px"
             className="object-cover"
           />
         </div>
