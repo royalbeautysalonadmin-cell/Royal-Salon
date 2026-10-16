@@ -828,58 +828,6 @@ export const packages = [
   },
 ];
 
-/* ─── Courses ─── */
-export const courses = [
-  {
-    slug: "professional-makeup-artistry",
-    name: "Professional Makeup Artistry",
-    duration: "8 Weeks",
-    level: "Professional",
-    price: 4500,
-    description:
-      "Master bridal, editorial and HD makeup with a complete professional kit and live model practice.",
-    modules: ["Skin prep & theory", "Bridal & HD looks", "Editorial & airbrush", "Business of makeup"],
-    certification: "Internationally Accredited Diploma",
-    image: U("photo-1487412947147-5cebf100ffc2"),
-  },
-  {
-    slug: "advanced-hair-styling",
-    name: "Advanced Hair Styling",
-    duration: "6 Weeks",
-    level: "Professional",
-    price: 3800,
-    description:
-      "Learn cutting, colouring, keratin and red-carpet styling from senior stylists.",
-    modules: ["Cutting techniques", "Colour theory", "Keratin & treatments", "Bridal updos"],
-    certification: "Professional Hair Certification",
-    image: U("photo-1562322140-8baeececf3df"),
-  },
-  {
-    slug: "skincare-facial-specialist",
-    name: "Skincare & Facial Specialist",
-    duration: "4 Weeks",
-    level: "Beginner",
-    price: 2800,
-    description:
-      "Become a certified facial therapist with hands-on training in advanced skincare.",
-    modules: ["Skin analysis", "Facial protocols", "Hydra facial", "Client care"],
-    certification: "Certified Skincare Therapist",
-    image: U("photo-1616394584738-fc6e612e71b9"),
-  },
-  {
-    slug: "master-mehndi-art",
-    name: "Master Mehndi Art",
-    duration: "3 Weeks",
-    level: "Master",
-    price: 2200,
-    description:
-      "Perfect intricate bridal henna design and build your freelance mehndi business.",
-    modules: ["Pattern fundamentals", "Bridal motifs", "Arabic & Indo designs", "Speed & finishing"],
-    certification: "Master Mehndi Artist Certificate",
-    image: U("photo-1595407753234-0882f1e77954"),
-  },
-];
-
 /* ─── Testimonials ─── */
 export const testimonials = [
   {

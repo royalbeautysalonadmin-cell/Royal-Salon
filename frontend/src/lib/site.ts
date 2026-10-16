@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Royal Beauty",
   tagline: "Where Beauty Meets Royalty",
   description:
-    "Experience luxury beauty treatments, bridal makeovers, premium skincare, and professional beauty training at Royal Beauty Salon.",
+    "Experience luxury beauty treatments, bridal makeovers, premium skincare and expert hair artistry at Royal Beauty Salon.",
   // Falls back to the live domain so production SEO (sitemap, canonical, OG)
   // is correct even if NEXT_PUBLIC_SITE_URL is not set in the host env.
   // Local dev overrides this via .env.local (http://localhost:3000).

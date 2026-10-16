@@ -24,18 +24,6 @@ export interface Service {
   updatedAt?: string;
 }
 
-export interface Course {
-  slug: string;
-  name: string;
-  duration: string;
-  level: "Beginner" | "Professional" | "Master";
-  price: number;
-  description: string;
-  modules: string[];
-  certification: string;
-  image: string;
-}
-
 export interface Testimonial {
   name: string;
   role: string;

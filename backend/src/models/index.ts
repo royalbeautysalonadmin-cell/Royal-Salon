@@ -44,24 +44,6 @@ const PackageSchema = new Schema(
 );
 export const PackageModel = models.Package || model("Package", PackageSchema);
 
-/** Training course */
-const CourseSchema = new Schema(
-  {
-    slug: { type: String, required: true, unique: true },
-    name: { type: String, required: true },
-    duration: { type: String, default: "" },
-    level: { type: String, default: "Professional" },
-    price: { type: Number, required: true },
-    description: { type: String, default: "" },
-    modules: { type: [String], default: [] },
-    certification: { type: String, default: "" },
-    image: { type: String, default: "" },
-  },
-  { timestamps: true }
-);
-export const TrainingCourse =
-  models.TrainingCourse || model("TrainingCourse", CourseSchema);
-
 /** Contact / inquiry message */
 const ContactMessageSchema = new Schema(
   {

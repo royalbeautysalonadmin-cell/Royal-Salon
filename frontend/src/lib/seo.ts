@@ -26,7 +26,6 @@ const KNOWS_ABOUT = [
   "Waxing and laser hair removal",
   "Manicure, pedicure and hybrid nails",
   "Hijab-friendly, women-only and Muslim women's hair services",
-  "Beauty academy training courses",
 ];
 
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${siteConfig.address.mapsQuery}`;

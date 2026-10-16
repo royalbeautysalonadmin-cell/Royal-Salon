@@ -7,13 +7,12 @@ config({ path: ".env.local" });
 
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
-import { allServices, packages, courses, testimonials, gallery } from "./seed-data";
+import { allServices, packages, testimonials, gallery } from "./seed-data";
 import { ServiceModel } from "../src/models/Service";
 import {
   Gallery,
   Testimonial,
   PackageModel,
-  TrainingCourse,
 } from "../src/models/index";
 import { User } from "../src/models/User";
 
@@ -26,18 +25,16 @@ async function seed() {
   await Promise.all([
     ServiceModel.deleteMany({}),
     PackageModel.deleteMany({}),
-    TrainingCourse.deleteMany({}),
     Testimonial.deleteMany({}),
     Gallery.deleteMany({}),
   ]);
 
   await ServiceModel.insertMany(allServices);
   await PackageModel.insertMany(packages);
-  await TrainingCourse.insertMany(courses);
   await Testimonial.insertMany(testimonials);
   await Gallery.insertMany(gallery);
   console.log(
-    `✔ Seeded ${allServices.length} services, ${packages.length} packages, ${courses.length} courses, ${testimonials.length} testimonials, ${gallery.length} gallery images`
+    `✔ Seeded ${allServices.length} services, ${packages.length} packages, ${testimonials.length} testimonials, ${gallery.length} gallery images`
   );
 
   const email = process.env.ADMIN_EMAIL;

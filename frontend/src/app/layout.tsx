@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     "beauty salon Warsaw",
     "hydra facial Warsaw",
     "keratin treatment Warsaw",
-    "beauty academy Warsaw",
     "hair styling Warsaw",
     "manicure pedicure Warszawa",
     "depilacja nitką Warszawa",

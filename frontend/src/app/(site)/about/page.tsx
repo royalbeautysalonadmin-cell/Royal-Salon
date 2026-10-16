@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     "about Royal Beauty Salon",
     "beauty salon Warsaw",
     "luxury salon Warsaw",
-    "beauty academy Warsaw",
   ],
   alternates: {
     canonical: `${siteConfig.url}/about`,

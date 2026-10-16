@@ -111,7 +111,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "footer.services": { en: "Services", pl: "Usługi" },
   "footer.inWarsaw": { en: "In Warsaw", pl: "W Warszawie" },
   "footer.contact": { en: "Contact", pl: "Kontakt" },
-  "footer.tagline": { en: "Warsaw's destination for luxury beauty treatments, bridal artistry and professional beauty training.", pl: "Warszawski adres dla luksusowych zabiegów pielęgnacyjnych, sztuki ślubnej i profesjonalnego szkolenia beauty." },
+  "footer.tagline": { en: "Warsaw's destination for luxury beauty treatments, bridal artistry and premium hair care.", pl: "Warszawski adres dla luksusowych zabiegów pielęgnacyjnych, sztuki ślubnej i premium pielęgnacji włosów." },
   "footer.popular": { en: "Popular in Warsaw", pl: "Popularne w Warszawie" },
   "footer.rights": { en: "All rights reserved.", pl: "Wszelkie prawa zastrzeżone." },
   "footer.privacy": { en: "Privacy Policy", pl: "Polityka Prywatności" },
