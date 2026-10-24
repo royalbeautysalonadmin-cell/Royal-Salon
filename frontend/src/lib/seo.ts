@@ -19,6 +19,7 @@ const AREA_SERVED = [
 /** Topics the salon is an authority on — feeds LLM entity/knowledge grounding. */
 const KNOWS_ABOUT = [
   "Bridal makeup",
+  "Indian, Pakistani and Bangladeshi (South Asian) bridal beauty and mehndi",
   "Hair colouring, balayage and highlights",
   "Keratin, silk-botox and nanoplasty hair smoothing",
   "HydraFacial and advanced skincare",

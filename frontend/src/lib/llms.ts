@@ -20,7 +20,8 @@ const SUMMARY =
   `${siteConfig.name} is a luxury, women-focused beauty salon and bridal studio in Warsaw, Poland ` +
   `(Mokotów / Praga-Południe, Aleja Stanów Zjednoczonych 67/D7). It offers bridal makeup, hair ` +
   `colouring and keratin smoothing, facials and skincare, eyebrow threading and brows, waxing, ` +
-  `manicure and pedicure, and specialty services for South-Asian, Muslim and hijab-wearing women.`;
+  `manicure and pedicure, and specialty services for the Indian, Pakistani and Bangladeshi ` +
+  `(South Asian) communities, Muslim and hijab-wearing women.`;
 
 function facts(): string[] {
   return [

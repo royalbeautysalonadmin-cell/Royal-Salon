@@ -145,7 +145,14 @@ export const nichePages: NichePage[] = [
       "party-makeup",
       "royal-nanoplasty",
     ],
-    relatedNicheSlugs: ["indian-parlour-warsaw", "desi-salon-warsaw", "hijab-friendly-salon-warsaw"],
+    relatedNicheSlugs: [
+      "indian-parlour-warsaw",
+      "desi-salon-warsaw",
+      "pakistani-salon-warsaw",
+      "bangladeshi-salon-warsaw",
+      "south-asian-salon-poland",
+      "hijab-friendly-salon-warsaw",
+    ],
     relatedCategorySlugs: ["threading", "makeup", "hair"],
     serviceName: "Indian Beauty Salon Services in Warsaw",
     serviceDescription:
@@ -239,8 +246,13 @@ export const nichePages: NichePage[] = [
       "face-bleach",
       "hair-oil-massage",
     ],
-    relatedNicheSlugs: ["indian-salon-warsaw", "desi-salon-warsaw"],
-    relatedCategorySlugs: ["threading", "waxing", "facials"],
+    relatedNicheSlugs: [
+      "indian-salon-warsaw",
+      "desi-salon-warsaw",
+      "ladies-salon-warsaw",
+      "pakistani-salon-warsaw",
+    ],
+    relatedCategorySlugs: ["threading", "facials", "waxing"],
     serviceName: "Indian Ladies' Parlour Services in Warsaw",
     serviceDescription:
       "Everyday ladies' parlour grooming in Warsaw — eyebrow and facial threading, waxing, facials, cleanups, bleach and hair oil massage.",
@@ -342,7 +354,13 @@ export const nichePages: NichePage[] = [
       "party-makeup",
       "hair-do-advanced",
     ],
-    relatedNicheSlugs: ["indian-salon-warsaw", "indian-parlour-warsaw"],
+    relatedNicheSlugs: [
+      "indian-salon-warsaw",
+      "pakistani-salon-warsaw",
+      "bangladeshi-salon-warsaw",
+      "mehndi-artist-warsaw",
+      "south-asian-salon-poland",
+    ],
     relatedCategorySlugs: ["makeup", "hair", "threading"],
     serviceName: "Desi Bridal & Party Services in Warsaw",
     serviceDescription:
@@ -354,6 +372,644 @@ export const nichePages: NichePage[] = [
       "Party HD makeup for wedding guests at a Desi salon Warsaw",
     ],
     ctaMessage: "Hello Royal Beauty Salon, I'd like to enquire about Desi bridal services in Warsaw.",
+  },
+
+  /* ─────────────────────────── Pakistani salon ─────────────────────────── */
+  {
+    slug: "pakistani-salon-warsaw",
+    primaryKeyword: "Pakistani salon Warsaw",
+    secondaryKeywords: [
+      "Pakistani beauty salon Warsaw",
+      "Pakistani hairdresser Warsaw",
+      "Pakistani makeup artist Warsaw",
+      "Pakistani parlour Warsaw",
+      "Pakistani bridal makeup Warsaw",
+      "salon for Pakistani women Warsaw",
+      "salon for Indian and Pakistani women",
+    ],
+    title: "Pakistani Salon in Warsaw — Bridal, Threading & Beauty",
+    metaDescription:
+      "Pakistani salon in Warsaw for bridal makeup, threading, mehndi, hair oil treatments and HD party makeup. Serving the Pakistani community on Aleja Stanów Zjednoczonych. Book at Royal Beauty Salon.",
+    h1: "Pakistani Salon in Warsaw",
+    eyebrow: "Pakistani Salon • Warsaw",
+    tagline:
+      "Authentic Pakistani beauty care — bridal artistry, threading and parlour services — in central Warsaw.",
+    heroImage: U("photo-1519741497674-611481863552"),
+    heroAlt: "Pakistani bridal makeup and jewellery at a Warsaw salon",
+    intro: [
+      "Looking for a Pakistani salon in Warsaw where the team actually understands Pakistani beauty traditions? Royal Beauty Salon on Aleja Stanów Zjednoczonych is a home from home for the Pakistani community — with authentic threading, Desi bridal makeup, mehndi, champi hair oil massage and everyday parlour grooming under one roof.",
+      "Our artists and stylists work with Pakistani clients every week, so they know what a walima look should feel like, how thick South Asian hair behaves, and why precise thread work matters more than waxing for brows. Staff also speak Urdu, so you can explain exactly what you want without translating.",
+      "Whether you are the bride, her family or a guest, and whether you need a five-minute upper-lip tidy or a full bridal transformation, you are welcome here — with the same warmth and care you would expect from a trusted parlour back home.",
+    ],
+    sections: [
+      {
+        heading: "Pakistani bridal makeup for baraat and walima",
+        body: [
+          "Pakistani weddings are long, emotional and photographed constantly — your makeup has to last from the rasm to the last dance. We build every bridal look on proper skin prep using HD, transfer-resistant products that hold through tears, heat and hours of celebration, tailored to your outfit, jewellery and function.",
+          "Bridal trials are strongly recommended so there are no surprises on the big day, and on-location service across Warsaw means we can come to your home, hotel or venue.",
+        ],
+      },
+      {
+        heading: "Threading the parlour way",
+        body: [
+          "Threading — not waxing — is how brows and facial hair are shaped in Pakistani parlours, and ours is no exception. Our specialists map each arch to your bone structure and remove upper lip, chin, forehead and full-face hair with a fine thread: gentle on sensitive skin, more precise than waxing, and the result your face is used to.",
+        ],
+      },
+      {
+        heading: "Champi hair oil massage and hair care",
+        body: [
+          "A proper champi — warm oil massage with steam and wash — nourishes the scalp, eases stress and supports healthy growth. It is one of the most-requested services from our Pakistani clients, alongside cutting, colour and keratin or nanoplasty smoothing for thick, frizz-prone hair.",
+        ],
+      },
+      {
+        heading: "Everyday parlour services for Pakistani women",
+        body: [
+          "Between weddings there is the everyday routine: a quick brow thread, an upper-lip tidy, a cleanup before an event, a relaxing facial or smooth waxing. Our parlour menu covers all of it — quick, hygienic and affordable, with no appointment anxiety.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Urdu-speaking team", desc: "Explain your look in Urdu — we understand." },
+      { title: "Pakistani bridal looks", desc: "HD baraat, walima and mehndi-night makeup." },
+      { title: "Authentic threading", desc: "Precise brow and facial threading, parlour-style." },
+      { title: "Champi & hair care", desc: "Oil massage, smoothing and colour for Desi hair." },
+    ],
+    faqs: [
+      {
+        q: "Is there a Pakistani salon in Warsaw?",
+        a: "Yes. Royal Beauty Salon on Aleja Stanów Zjednoczonych 67/D7 in Warsaw serves the Pakistani community with bridal makeup, threading, mehndi, hair oil treatments and full parlour services. Staff speak Urdu as well as English and Polish.",
+      },
+      {
+        q: "Do you do Pakistani bridal makeup?",
+        a: "Yes — our artists specialise in HD Pakistani bridal makeup for baraat, walima, mehndi and reception functions, with long-wearing looks tailored to your outfit and jewellery. Bridal trials are available and included with our bridal package.",
+      },
+      {
+        q: "Can I book threading and parlour services as a Pakistani woman?",
+        a: "Absolutely. Eyebrow and facial threading, upper lip, chin, full face, waxing, facials, cleanups and bleach are all available — the everyday parlour services Pakistani women look for.",
+      },
+      {
+        q: "Do you offer on-location bridal service for Pakistani weddings in Warsaw?",
+        a: "Yes — we travel to homes, hotels and venues across Warsaw for bridal and party bookings. Charges depend on distance and team size.",
+      },
+      {
+        q: "Is there a salon for Indian and Pakistani women in Warsaw?",
+        a: "Yes — Royal Beauty Salon is trusted by both Indian and Pakistani clients in Warsaw. Our artists are trained in South Asian bridal beauty, threading and hair care, so both communities feel completely at home.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "bridal-makeup",
+      "bridal-hairstyle",
+      "saree-dupatta-draping",
+      "threading-combo",
+      "hair-oil-massage-steam",
+      "hd-party-makeup",
+    ],
+    relatedNicheSlugs: [
+      "indian-salon-warsaw",
+      "desi-salon-warsaw",
+      "south-asian-salon-poland",
+      "ladies-salon-warsaw",
+    ],
+    relatedCategorySlugs: ["makeup", "threading", "hair"],
+    serviceName: "Pakistani Salon Services in Warsaw",
+    serviceDescription:
+      "Pakistani salon services in Warsaw — bridal makeup for baraat and walima, threading, mehndi, champi hair oil massage and HD party makeup.",
+    imageAltRecommendations: [
+      "Pakistani bridal makeup at a salon in Warsaw",
+      "Eyebrow threading at a Pakistani salon in Warsaw",
+      "Champi hair oil massage for a Pakistani client in Warsaw",
+      "Walima bridal look by a Pakistani makeup artist in Warsaw",
+    ],
+    ctaMessage: "Hello Royal Beauty Salon, I'd like to book at your Pakistani salon in Warsaw.",
+  },
+
+  /* ─────────────────────────── Bangladeshi salon ─────────────────────────── */
+  {
+    slug: "bangladeshi-salon-warsaw",
+    primaryKeyword: "Bangladeshi salon Warsaw",
+    secondaryKeywords: [
+      "Bangladeshi beauty parlour Warsaw",
+      "Bangladeshi hairdresser Warsaw",
+      "salon for Bangladeshi women Warsaw",
+      "Bengali salon Warsaw",
+      "Bangladeshi bridal makeup Warsaw",
+    ],
+    title: "Bangladeshi Salon in Warsaw — Bridal, Threading & Parlour",
+    metaDescription:
+      "Bangladeshi salon in Warsaw for bridal makeup, threading, facials, mehndi and hair care. A welcoming parlour for the Bangladeshi community at Royal Beauty Salon. Book today.",
+    h1: "Bangladeshi Salon in Warsaw",
+    eyebrow: "Bangladeshi Salon • Warsaw",
+    tagline:
+      "Familiar parlour care for the Bangladeshi community — bridal looks, threading and grooming in central Warsaw.",
+    heroImage: U("photo-1595407753234-0882f1e77954"),
+    heroAlt: "Bridal mehndi hands at a Bangladeshi salon in Warsaw",
+    intro: [
+      "If you have been searching for a Bangladeshi salon or parlour in Warsaw, you will feel at home at Royal Beauty Salon. We proudly serve Warsaw's Bangladeshi community with the beauty services that matter — precise threading, bridal and party makeup, mehndi, facials, waxing and hair care — in a warm, women-friendly space on Aleja Stanów Zjednoczonych.",
+      "Bangladeshi weddings and family celebrations are full of colour and long days of functions, and our makeup artists know how to build looks that stay fresh and photograph beautifully through every one of them. For everyday visits, our parlour menu covers the quick grooming routines you know — brows, upper lip, cleanups and more.",
+      "Many Bangladeshi clients tell us mainstream Warsaw salons do not offer threading or do not understand Desi hair and skin. We do both — with the care and respect you deserve.",
+    ],
+    sections: [
+      {
+        heading: "Bridal and wedding-party makeup",
+        body: [
+          "From holud and reception functions to the main wedding day, our artists create long-wearing HD makeup tailored to your outfit, jewellery and theme. Mothers, sisters and friends can book party makeup and hairstyling too, so the whole family gets ready together.",
+        ],
+      },
+      {
+        heading: "Threading and facial grooming",
+        body: [
+          "Threading is the parlour standard for brows and facial hair, and our specialists do it with precision — brow mapping, upper lip, chin, forehead and full-face threading that is gentle on sensitive skin. Waxing alternatives are available for every area.",
+        ],
+      },
+      {
+        heading: "Facials, cleanups and skin care",
+        body: [
+          "A good facial before a function, or a regular cleanup routine through the year, keeps skin fresh and bright. Our facial menu covers dry, oily and sensitive skin, plus HydraFacial and tan-removal treatments for a pre-event glow.",
+        ],
+      },
+      {
+        heading: "Hair care for thick South Asian hair",
+        body: [
+          "Thick, strong hair needs the right hands. Our stylists handle cutting, colour, keratin and nanoplasty smoothing and nourishing oil treatments — the same care you would expect from a trusted hairdresser who knows Desi hair.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Bangladeshi bridal looks", desc: "HD makeup for holud, reception and wedding days." },
+      { title: "Parlour essentials", desc: "Threading, waxing, facials and cleanups." },
+      { title: "Desi hair expertise", desc: "Cutting, colour and smoothing for thick hair." },
+      { title: "Warm community space", desc: "A welcoming salon for Bangladeshi women." },
+    ],
+    faqs: [
+      {
+        q: "Is there a Bangladeshi salon in Warsaw?",
+        a: "Yes. Royal Beauty Salon on Aleja Stanów Zjednoczonych 67/D7 serves Warsaw's Bangladeshi community with bridal makeup, threading, facials, mehndi and hair services.",
+      },
+      {
+        q: "Do you do Bangladeshi bridal makeup?",
+        a: "Yes — our artists create HD bridal and party makeup for Bangladeshi weddings and functions, with long-wearing looks tailored to your outfit. Book a trial so we can perfect your look in advance.",
+      },
+      {
+        q: "Can I get eyebrow threading at your salon?",
+        a: "Yes — threading is one of our most-booked services. We shape brows precisely and offer upper lip, chin, forehead and full-face threading as well.",
+      },
+      {
+        q: "Do you speak a language I am comfortable with?",
+        a: "Our team speaks English and Polish, and staff also speak Hindi and Urdu, so South Asian clients can usually explain their preferences comfortably.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "bridal-makeup",
+      "party-makeup",
+      "threading-combo",
+      "full-face-eyebrows-threading",
+      "cleanup",
+      "hair-cutting-advanced",
+    ],
+    relatedNicheSlugs: [
+      "indian-salon-warsaw",
+      "pakistani-salon-warsaw",
+      "desi-salon-warsaw",
+      "ladies-salon-warsaw",
+    ],
+    relatedCategorySlugs: ["makeup", "threading", "facials", "hair"],
+    serviceName: "Bangladeshi Salon Services in Warsaw",
+    serviceDescription:
+      "Bangladeshi salon services in Warsaw — bridal and party makeup, threading, facials, mehndi and hair care for the Bangladeshi community.",
+    imageAltRecommendations: [
+      "Bangladeshi bridal makeup at a Warsaw salon",
+      "Eyebrow threading for a Bangladeshi client in Warsaw",
+      "Party makeup for a Bangladeshi wedding function in Warsaw",
+      "Hair care at a Bangladeshi parlour in Warsaw",
+    ],
+    ctaMessage: "Hello Royal Beauty Salon, I'd like to book at your Bangladeshi salon in Warsaw.",
+  },
+
+  /* ─────────────────── South Asian salon (Poland, country-level) ─────────────────── */
+  {
+    slug: "south-asian-salon-poland",
+    primaryKeyword: "South Asian salon Poland",
+    secondaryKeywords: [
+      "Indian salon Poland",
+      "Pakistani salon Poland",
+      "Desi salon Poland",
+      "Indian beauty parlour Poland",
+      "South Asian bridal makeup Poland",
+      "salon for Indian and Pakistani women in Poland",
+      "best Indian salon in Poland",
+    ],
+    title: "South Asian Salon in Poland — Indian & Pakistani Beauty in Warsaw",
+    metaDescription:
+      "The South Asian salon in Poland for Indian, Pakistani and Bangladeshi brides and beauty clients. Bridal makeup, threading, mehndi and hair care in Warsaw — clients travel from across Poland. Book at Royal Beauty Salon.",
+    h1: "South Asian Salon in Poland",
+    eyebrow: "South Asian Salon • Poland",
+    tagline:
+      "Indian, Pakistani and Bangladeshi beauty services in Warsaw — the salon clients travel across Poland for.",
+    heroImage: U("photo-1519741497674-611481863552"),
+    heroAlt: "South Asian bride in bridal makeup at a salon in Poland",
+    intro: [
+      "Across Poland, South Asian brides, students and professionals look for a salon that truly understands Indian, Pakistani and Bangladeshi beauty — and many of them travel to Royal Beauty Salon in Warsaw. We are the South Asian salon in Poland where authentic threading, Desi bridal makeup, mehndi, champi hair oil treatments and HD party looks come together under one roof.",
+      "Warsaw is home to Poland's largest Indian, Pakistani and Bangladeshi community, and our salon on Aleja Stanów Zjednoczonych sits at its heart. Clients come to us from Kraków, Wrocław, Łódź, Gdańsk and beyond — especially for weddings, when getting the bridal look right matters most.",
+      "Our artists specialise in South Asian bridal beauty: long-wearing HD makeup built for vibrant outfits and heavy jewellery, intricate mehndi, expert saree and dupatta draping, and hair care for thick, strong hair. Staff speak Hindi and Urdu as well as English and Polish.",
+    ],
+    sections: [
+      {
+        heading: "Why South Asian clients travel to us",
+        body: [
+          "Mainstream salons across Poland rarely offer threading, understand Desi bridal looks or know how to care for South Asian hair. We do all three — every day. That is why families plan their Warsaw visits around appointments with us, especially in wedding season.",
+        ],
+      },
+      {
+        heading: "Bridal services for Indian, Pakistani and Bangladeshi weddings",
+        body: [
+          "Our bridal team handles mehndi nights, sangeet, holud, baraat, walima and receptions — each function with its own look, built to last and to photograph beautifully. Bridal trials, hairstyling, draping and on-location service across Warsaw are all part of the package.",
+        ],
+      },
+      {
+        heading: "Threading, parlour and everyday grooming",
+        body: [
+          "Threading, brow shaping, upper lip, facials, cleanups, waxing and the full parlour menu are available for everyday visits — the same services you would book back home, with European hygiene standards and premium products.",
+        ],
+      },
+      {
+        heading: "Visiting from another city in Poland?",
+        body: [
+          "Many clients combine their appointment with a day in Warsaw. Book ahead — especially for bridal and full-day packages — so we can reserve enough time. We are easy to reach on Aleja Stanów Zjednoczonych, with parking available for guests.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Poland-wide bridal clients", desc: "Brides travel from Kraków, Wrocław, Gdańsk and more." },
+      { title: "Hindi & Urdu spoken", desc: "Explain your look in the language you prefer." },
+      { title: "Full Desi menu", desc: "Bridal, mehndi, threading, champi and parlour care." },
+      { title: "One roof, every function", desc: "Mehndi to reception — the whole wedding party covered." },
+    ],
+    faqs: [
+      {
+        q: "Is there an Indian or Pakistani salon in Poland?",
+        a: "Yes — Royal Beauty Salon in Warsaw is a leading South Asian salon in Poland, serving Indian, Pakistani and Bangladeshi clients with bridal makeup, threading, mehndi and hair care. Many clients visit from other Polish cities.",
+      },
+      {
+        q: "Do you do Indian and Pakistani bridal makeup?",
+        a: "Yes — our artists specialise in HD Desi bridal makeup for Indian, Pakistani and Bangladeshi weddings, including mehndi nights, sangeet, baraat, walima and receptions, with trials and on-location service in Warsaw.",
+      },
+      {
+        q: "Can I visit from another city in Poland?",
+        a: "Absolutely — clients travel to us from across Poland, especially for bridal bookings. Book in advance so we can reserve enough time for your full package.",
+      },
+      {
+        q: "Do you offer threading and traditional treatments?",
+        a: "Yes — eyebrow and facial threading, champi hair oil massage, mehndi and the full parlour menu are all available, performed the traditional way with premium products.",
+      },
+      {
+        q: "Which languages does your team speak?",
+        a: "Our team speaks English and Polish, and staff also speak Hindi and Urdu — so most South Asian clients can explain their preferences comfortably.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "royal-bridal",
+      "bridal-makeup",
+      "bridal-hairstyle",
+      "saree-dupatta-draping",
+      "hd-party-makeup",
+      "hair-oil-massage-steam",
+    ],
+    relatedNicheSlugs: [
+      "indian-salon-warsaw",
+      "pakistani-salon-warsaw",
+      "desi-salon-warsaw",
+      "mehndi-artist-warsaw",
+    ],
+    relatedCategorySlugs: ["makeup", "hair", "threading"],
+    serviceName: "South Asian Salon Services in Poland",
+    serviceDescription:
+      "South Asian salon services in Poland — Indian, Pakistani and Bangladeshi bridal makeup, threading, mehndi and hair care in Warsaw.",
+    imageAltRecommendations: [
+      "South Asian bridal makeup at a salon in Poland",
+      "Indian and Pakistani bride at a Warsaw beauty salon",
+      "Threading and parlour services for South Asian clients in Poland",
+      "Desi bridal hairstyling and draping in Warsaw",
+    ],
+    ctaMessage:
+      "Hello Royal Beauty Salon, I'd like to enquire about South Asian bridal services in Warsaw.",
+  },
+
+  /* ─────────────────────────── Mehndi artist ─────────────────────────── */
+  {
+    slug: "mehndi-artist-warsaw",
+    primaryKeyword: "Mehndi artist Warsaw",
+    secondaryKeywords: [
+      "henna artist Warsaw",
+      "bridal mehndi Warsaw",
+      "mehndi for hands Warsaw",
+      "Arabic mehndi Warsaw",
+      "Indian mehndi artist Warsaw",
+      "Pakistani mehndi artist Warsaw",
+      "mehndi night makeup Warsaw",
+    ],
+    title: "Mehndi Artist in Warsaw — Bridal & Party Henna",
+    metaDescription:
+      "Book a mehndi artist in Warsaw for bridal, party and Arabic henna designs. Intricate mehndi for hands and feet for mehndi nights and weddings at Royal Beauty Salon.",
+    h1: "Mehndi Artist in Warsaw",
+    eyebrow: "Mehndi & Henna • Warsaw",
+    tagline:
+      "Intricate bridal and party mehndi for hands and feet — traditional, Arabic and Indo-Western designs.",
+    heroImage: U("photo-1595407753234-0882f1e77954"),
+    heroAlt: "Intricate bridal mehndi henna design on hands by a Warsaw mehndi artist",
+    intro: [
+      "Mehndi is one of the most beautiful parts of any South Asian celebration — and finding a skilled mehndi artist in Warsaw should not be a scramble before the big day. At Royal Beauty Salon, our henna artists create detailed bridal and party mehndi for hands and feet, from classic Indian motifs to Arabic and Indo-Western designs.",
+      "Bridal mehndi is booked as a dedicated session so there is time for the full, intricate work — front and back of both hands, and feet if you wish. For guests, sisters and friends, simpler party designs keep everyone decorated for the mehndi night without taking hours.",
+      "Many brides combine their mehndi appointment with a bridal makeup trial or the rest of their wedding-party bookings, so everything is planned under one roof.",
+    ],
+    sections: [
+      {
+        heading: "Bridal mehndi for the full wedding look",
+        body: [
+          "Bridal mehndi is detailed work that deserves time. Our artists design patterns that complement your jewellery and outfit — dense traditional layouts, delicate floral trails or modern minimal styles — for hands and feet, finished with care so the colour develops richly.",
+        ],
+      },
+      {
+        heading: "Party and guest mehndi",
+        body: [
+          "Mehndi nights are more fun when everyone has henna. We offer quicker party designs for guests and family — elegant single-hand motifs, floral trails and Arabic styles that look beautiful without taking the whole evening.",
+        ],
+      },
+      {
+        heading: "Arabic, Indian and Indo-Western designs",
+        body: [
+          "Tell us the style you love and we will match it — bold Arabic florals, fine Indian detail, Punjabi patterns or a contemporary Indo-Western mix. Bring a reference photo if you have one; our artists work from it.",
+        ],
+      },
+      {
+        heading: "Pair mehndi with makeup and styling",
+        body: [
+          "Many brides book mehndi alongside their bridal makeup trial, hairstyling or party makeup for the same event. Share your function schedule and we will plan timings so every look is ready when you need it.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "Bridal mehndi specialists", desc: "Full hands and feet for the bride." },
+      { title: "Party & guest designs", desc: "Quicker henna for mehndi-night guests." },
+      { title: "Any style you like", desc: "Arabic, Indian, Punjabi or Indo-Western." },
+      { title: "Book with your bridal package", desc: "Combine mehndi with makeup and hair trials." },
+    ],
+    faqs: [
+      {
+        q: "Do you have a mehndi artist in Warsaw?",
+        a: "Yes — Royal Beauty Salon has henna artists who create bridal and party mehndi on Aleja Stanów Zjednoczonych 67/D7 in Warsaw. Book ahead for bridal work so we can reserve enough time.",
+      },
+      {
+        q: "How long does bridal mehndi take?",
+        a: "Full bridal mehndi for both hands (and feet if included) usually takes a few hours. We book bridal sessions with enough time so the artist can work in detail without rushing.",
+      },
+      {
+        q: "Can you do party mehndi for wedding guests?",
+        a: "Yes — simpler party and guest designs are perfect for mehndi nights and let sisters and friends get henna without a long appointment.",
+      },
+      {
+        q: "What mehndi styles do you offer?",
+        a: "Traditional Indian, Arabic, Punjabi and Indo-Western designs. Bring a reference photo if you have a particular pattern in mind and our artists will match the style.",
+      },
+      {
+        q: "Should I book mehndi with my bridal makeup?",
+        a: "Many brides do — booking mehndi alongside a bridal makeup trial or other wedding bookings keeps everything coordinated under one roof. Share your schedule when you enquire.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "bridal-makeup",
+      "bridal-hairstyle",
+      "saree-dupatta-draping",
+      "hd-party-makeup",
+      "party-makeup",
+      "hair-do-advanced",
+    ],
+    relatedNicheSlugs: [
+      "desi-salon-warsaw",
+      "indian-salon-warsaw",
+      "pakistani-salon-warsaw",
+      "south-asian-salon-poland",
+    ],
+    relatedCategorySlugs: ["makeup"],
+    serviceName: "Mehndi & Henna Artistry in Warsaw",
+    serviceDescription:
+      "Mehndi artist services in Warsaw — bridal mehndi, party henna and Arabic designs for hands and feet for weddings and celebrations.",
+    imageAltRecommendations: [
+      "Bridal mehndi henna design on hands in Warsaw",
+      "Party mehndi for a mehndi night in Warsaw",
+      "Arabic mehndi design by a henna artist in Warsaw",
+      "Bridal mehndi for feet at a Warsaw salon",
+    ],
+    ctaMessage: "Hello Royal Beauty Salon, I'd like to book a mehndi artist in Warsaw.",
+  },
+
+  /* ─────────────────────────── Ladies salon ─────────────────────────── */
+  {
+    slug: "ladies-salon-warsaw",
+    primaryKeyword: "Ladies salon Warsaw",
+    secondaryKeywords: [
+      "ladies beauty parlour Warsaw",
+      "ladies hair salon Warsaw",
+      "women's salon Warsaw",
+      "salon for ladies near me Warsaw",
+      "ladies grooming salon Warsaw",
+      "female salon Warsaw",
+    ],
+    title: "Ladies Salon in Warsaw — Threading, Hair, Facials & Nails",
+    metaDescription:
+      "Ladies salon in Warsaw for threading, hair, facials, waxing, manicure and pedicure. A comfortable women-focused salon on Aleja Stanów Zjednoczonych. Book at Royal Beauty Salon.",
+    h1: "Ladies Salon in Warsaw",
+    eyebrow: "Ladies Salon • Warsaw",
+    tagline:
+      "All the beauty essentials for women — hair, skin, threading, nails and more — in one comfortable salon.",
+    heroImage: U("photo-1522337660859-02fbefca4702"),
+    heroAlt: "Female stylist styling hair at a ladies salon in Warsaw",
+    intro: [
+      "A ladies salon should feel comfortable, cover everything you need and never make you explain the same request twice. Royal Beauty Salon is a women-focused beauty salon in Warsaw where you can book threading, haircuts, colour, facials, waxing, manicure and pedicure — all under one roof on Aleja Stanów Zjednoczonych.",
+      "Whether you are popping in for a quick eyebrow thread between errands or settling in for a full afternoon of hair, skin and nails, our team treats every visit with the same care. The atmosphere is calm and premium, the hygiene standards are strict, and the results speak for themselves — a 5.0 rating from 2,000+ Google reviews.",
+      "Many of our regulars are women who wanted one reliable ladies salon instead of travelling between separate hair, brow, nail and facial places. Here, it is all done — and done well.",
+    ],
+    sections: [
+      {
+        heading: "Hair services for women",
+        body: [
+          "Cuts mapped to your face shape, blow-dries, balayage and highlights, global colour, grey coverage, keratin and nanoplasty smoothing, hair spa and treatments — a complete hair menu delivered by senior stylists who take time to consult before any change.",
+        ],
+      },
+      {
+        heading: "Threading, brows and facials",
+        body: [
+          "Eyebrow threading and shaping, upper lip, full-face threading, brow lamination and henna, plus facials for every skin type and HydraFacial for a pre-event glow. The skin-and-brows routine many women keep coming back for.",
+        ],
+      },
+      {
+        heading: "Waxing, manicure and pedicure",
+        body: [
+          "Gentle waxing for every area, classic and hybrid manicures, pedicure and nail care — the finishing touches that make a full salon day feel complete. Single-use tools and strict sanitisation come as standard.",
+        ],
+      },
+      {
+        heading: "A comfortable, women-focused space",
+        body: [
+          "Our salon is built around women's comfort — female staff for treatments on request, private options available, and a welcoming environment whether you come alone, with your mother or with friends. Tell us your preferences when booking and we will arrange your visit.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "One salon, everything done", desc: "Hair, skin, threading, nails and waxing." },
+      { title: "5.0 from 2,000+ reviews", desc: "Trusted by women across Warsaw." },
+      { title: "Quick visits welcome", desc: "In and out for threading — or stay all afternoon." },
+      { title: "Women-focused comfort", desc: "Female staff and private options on request." },
+    ],
+    faqs: [
+      {
+        q: "Is there a good ladies salon in Warsaw?",
+        a: "Yes — Royal Beauty Salon on Aleja Stanów Zjednoczonych 67/D7 is a women-focused salon offering threading, hair, facials, waxing, manicure and pedicure, with a 5.0 rating from 2,000+ Google reviews.",
+      },
+      {
+        q: "What services can I book at a ladies salon?",
+        a: "Everything in our menu — haircuts, colour, keratin, facials, HydraFacial, threading, brow services, waxing, manicure and pedicure — so you can complete multiple treatments in one visit.",
+      },
+      {
+        q: "Can I book a quick threading appointment?",
+        a: "Yes — eyebrow threading and upper lip are quick appointments that fit between errands. Walk-ins are welcome when capacity allows; booking ahead guarantees your slot.",
+      },
+      {
+        q: "Do you have female staff?",
+        a: "Yes — treatments can be performed by female staff on request. Mention your preference when booking so we can confirm availability for your appointment.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "blow-dry",
+      "threading-combo",
+      "royal-facial",
+      "manicure",
+      "pedicure",
+    ],
+    relatedNicheSlugs: [
+      "best-beauty-salon-women-warsaw",
+      "women-only-hair-salon-warsaw",
+      "indian-parlour-warsaw",
+      "beauty-salon-near-me-warsaw",
+    ],
+    relatedCategorySlugs: ["hair", "facials", "threading", "nails", "waxing"],
+    serviceName: "Ladies Salon Services in Warsaw",
+    serviceDescription:
+      "Ladies salon services in Warsaw — threading, haircuts, colour, facials, waxing, manicure and pedicure in a comfortable women-focused salon.",
+    imageAltRecommendations: [
+      "Ladies salon in Warsaw — hair styling for women",
+      "Eyebrow threading at a ladies salon in Warsaw",
+      "Facial treatment at a women's salon in Warsaw",
+      "Manicure and pedicure at a ladies salon in Warsaw",
+    ],
+    ctaMessage: "Hello Royal Beauty Salon, I'd like to book at your ladies salon in Warsaw.",
+  },
+
+  /* ─────────────────── Best beauty salon for women ─────────────────── */
+  {
+    slug: "best-beauty-salon-women-warsaw",
+    primaryKeyword: "Best beauty salon for women Warsaw",
+    secondaryKeywords: [
+      "best salon for ladies Warsaw",
+      "best women's salon Warsaw",
+      "top rated beauty salon Warsaw women",
+      "best hair salon for women Warsaw",
+      "best facial salon Warsaw women",
+      "recommended salon for women Warsaw",
+    ],
+    title: "Best Beauty Salon for Women in Warsaw — 5.0 Rated",
+    metaDescription:
+      "Looking for the best beauty salon for women in Warsaw? Royal Beauty Salon holds a 5.0 rating from 2,000+ Google reviews — hair, facials, makeup, threading and nails for women. Book today.",
+    h1: "The Best Beauty Salon for Women in Warsaw",
+    eyebrow: "Women-Recommended • Warsaw",
+    tagline:
+      "A 5.0-rated, women-focused salon for hair, skin, makeup and grooming — trusted by 2,000+ clients.",
+    heroImage: U("photo-1560066984-138dadb4c035"),
+    heroAlt: "Elegant beauty salon interior for women in Warsaw",
+    intro: [
+      "When women in Warsaw search for the best beauty salon, they are not looking for the fanciest Instagram wall — they want skilled hands, honest advice, spotless hygiene and results they can trust before a big day or a normal Tuesday. That is what Royal Beauty Salon has been built around.",
+      "Our Google rating tells the story: 5.0 stars from more than 2,000 reviews. Women come to us for senior-stylist haircuts and colour, keratin smoothing, HydraFacial and facials, bridal and party makeup, eyebrow threading, waxing, manicure and pedicure — and they keep coming back because the quality is consistent.",
+      "We are women-focused, with female staff and private options on request, on Aleja Stanów Zjednoczonych in central Warsaw. Whether you want one signature treatment or a full day of beauty, this is the salon Warsaw women recommend to their friends.",
+    ],
+    sections: [
+      {
+        heading: "What makes a salon the best for women?",
+        body: [
+          "Skill, consistency and comfort. Every colour appointment starts with a consultation. Every facial begins with a skin assessment. Every tool is sterilised, every product premium and cruelty-free. Those standards are why our rating has stayed at 5.0 across thousands of reviews.",
+        ],
+      },
+      {
+        heading: "Hair that turns heads — and stays healthy",
+        body: [
+          "Balayage, highlights, global colour, grey coverage, precision cuts, keratin, silk-botox and nanoplasty smoothing — all using low-ammonia, bond-protecting lines chosen to protect your hair while delivering the look you asked for.",
+        ],
+      },
+      {
+        heading: "Skin, brows and finishing touches",
+        body: [
+          "HydraFacial and tailored facials for every skin type, eyebrow threading and lamination, waxing, manicure and pedicure — the complete routine so you never need three separate appointments in three different places.",
+        ],
+      },
+      {
+        heading: "Bridal and event beauty",
+        body: [
+          "Brides trust us with their wedding-day makeup, hairstyling and draping, backed by trials and on-location service across Warsaw. Party makeup, mehndi and guest looks keep the whole wedding party camera-ready.",
+        ],
+      },
+    ],
+    highlights: [
+      { title: "5.0 Google rating", desc: "From 2,000+ verified client reviews." },
+      { title: "Women-focused salon", desc: "Female staff and private options on request." },
+      { title: "Complete beauty menu", desc: "Hair, skin, makeup, threading, nails, waxing." },
+      { title: "Central Warsaw", desc: "Aleja Stanów Zjednoczonych, with parking." },
+    ],
+    faqs: [
+      {
+        q: "What is the best beauty salon for women in Warsaw?",
+        a: "Royal Beauty Salon is among the top-rated women's salons in Warsaw — a 5.0 Google rating from 2,000+ reviews, covering hair, facials, makeup, threading, waxing and nails on Aleja Stanów Zjednoczonych 67/D7.",
+      },
+      {
+        q: "Why do women recommend your salon?",
+        a: "Consistent quality, consultation-first appointments, strict hygiene, premium cruelty-free products and a comfortable women-focused environment — the standards behind our 5.0 rating.",
+      },
+      {
+        q: "What treatments can I book as a woman at your salon?",
+        a: "Haircuts, colour, balayage, keratin smoothing, facials, HydraFacial, bridal and party makeup, eyebrow threading, brow lamination, waxing, manicure and pedicure — the full beauty routine in one place.",
+      },
+      {
+        q: "Do you offer female staff and private options?",
+        a: "Yes — treatments can be performed by female staff on request, and private arrangements can be discussed when booking. Tell us your preferences and we will accommodate them.",
+      },
+      {
+        q: "Where is your salon in Warsaw?",
+        a: "Aleja Stanów Zjednoczonych 67/D7, 04-028 Warszawa — open Monday and Wednesday–Sunday, 11:00–18:00 (closed Tuesdays). Book online, by phone or WhatsApp.",
+      },
+    ],
+    featuredServiceSlugs: [
+      "hair-cutting-advanced",
+      "keratin-treatment-medium",
+      "hydra-facial",
+      "royal-facial",
+      "bridal-makeup",
+      "threading-combo",
+    ],
+    relatedNicheSlugs: [
+      "ladies-salon-warsaw",
+      "women-only-hair-salon-warsaw",
+      "beauty-salon-near-me-warsaw",
+      "salon-otwarty-w-niedziele-warszawa",
+    ],
+    relatedCategorySlugs: ["hair", "facials", "makeup", "threading", "nails"],
+    serviceName: "Top-Rated Beauty Salon for Women in Warsaw",
+    serviceDescription:
+      "Best-rated beauty salon for women in Warsaw — hair, facials, bridal makeup, threading and nails, holding a 5.0 rating from 2,000+ Google reviews.",
+    imageAltRecommendations: [
+      "Top-rated beauty salon for women in Warsaw",
+      "Woman receiving a facial at a recommended Warsaw salon",
+      "Hair colour by a top-rated ladies salon in Warsaw",
+      "Bridal makeup at a 5-star rated salon in Warsaw",
+    ],
+    ctaMessage: "Hello Royal Beauty Salon, I'd like to book an appointment at your salon in Warsaw.",
   },
 
   /* ─────────────────────────── Hijab-friendly salon ─────────────────────────── */
@@ -541,6 +1197,8 @@ export const nichePages: NichePage[] = [
       "hijab-friendly-salon-warsaw",
       "muslim-women-hairdresser-warsaw",
       "keratin-nanoplasty-hijab-hair-warsaw",
+      "best-beauty-salon-women-warsaw",
+      "ladies-salon-warsaw",
     ],
     relatedCategorySlugs: ["hair"],
     serviceName: "Women-Only Hair Salon Services in Warsaw",

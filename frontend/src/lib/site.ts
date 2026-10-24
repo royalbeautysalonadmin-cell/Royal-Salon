@@ -78,8 +78,14 @@ export const warsawLinks = [
 /** Specialty / community landing pages for footer + internal linking. */
 export const specialtyLinks = [
   { label: "Indian Salon Warsaw", href: "/indian-salon-warsaw" },
+  { label: "Pakistani Salon Warsaw", href: "/pakistani-salon-warsaw" },
+  { label: "Bangladeshi Salon Warsaw", href: "/bangladeshi-salon-warsaw" },
+  { label: "South Asian Salon Poland", href: "/south-asian-salon-poland" },
   { label: "Indian Parlour Warsaw", href: "/indian-parlour-warsaw" },
   { label: "Desi Salon Warsaw", href: "/desi-salon-warsaw" },
+  { label: "Mehndi Artist Warsaw", href: "/mehndi-artist-warsaw" },
+  { label: "Ladies Salon Warsaw", href: "/ladies-salon-warsaw" },
+  { label: "Best Salon for Women Warsaw", href: "/best-beauty-salon-women-warsaw" },
   { label: "Hijab-Friendly Salon Warsaw", href: "/hijab-friendly-salon-warsaw" },
   { label: "Women-Only Hair Salon Warsaw", href: "/women-only-hair-salon-warsaw" },
   { label: "Muslim Women Hairdresser Warsaw", href: "/muslim-women-hairdresser-warsaw" },
