@@ -873,7 +873,7 @@ export const localPages: LocalPage[] = [
     featureCategories: ["hair", "nails", "facials"],
   },
   {
-    slug: "salon-piekosci-centrum",
+    slug: "salon-pieknosci-centrum",
     title: "Salon Piękności Centrum Warszawa",
     metaDescription:
       "Salon piękności w centrum Warszawy — fryzjer, kosmetyczka, manicure i makijaż. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
@@ -1161,7 +1161,7 @@ export const localPages: LocalPage[] = [
     eyebrow: "Praga • Warszawa",
     tagline: "Twój salon kosmetyczny na Pragze — profesjonalna obsługa blisko domu.",
     intro: [
-      "Praga to nasza dzielnica — Royal Beauty Salon znajduje się na Alei Stanów Zjednoczonych w sercu Pragi-Północ. Oferujemy kompleksowe usługi kosmetyczne i fryzjerskie dla mieszkańców Pragi i okolic.",
+      "Praga to nasza dzielnica — Royal Beauty Salon znajduje się na Alei Stanów Zjednoczonych w sercu Pragi-Południe. Oferujemy kompleksowe usługi kosmetyczne i fryzjerskie dla mieszkańców Pragi i okolic.",
       "Jako lokalny salon, znamy potrzeby naszych klientów i dbamy o to, aby każda wizyta była komfortowa i satysfakcjonująca.",
       "Oferujemy fryzjerskie, kosmetyczne, manicure i depilację — wszystko w eleganckim wnętrzu z bezpłatnym parkingiem.",
     ],
@@ -1174,7 +1174,7 @@ export const localPages: LocalPage[] = [
     faqs: [
       {
         q: "Gdzie dokładnie jesteście na Pradze?",
-        a: "Na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa — w sercu Pragi-Północ.",
+        a: "Na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa — w sercu Pragi-Południe.",
       },
       {
         q: "Jakie usługi oferujecie?",
@@ -1183,6 +1183,111 @@ export const localPages: LocalPage[] = [
       {
         q: "Czy mogę zaparkować?",
         a: "Tak — bezpłatny parking tuż przy salonie.",
+      },
+    ],
+    featureCategories: ["hair", "nails", "waxing"],
+  },
+  {
+    slug: "salon-kosmetyczny-praga-poludnie",
+    title: "Salon Kosmetyczny Praga-Południe — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny na Pradze-Południe, Warszawa — fryzjer, keratyna, manicure i depilacja. Royal Beauty Salon, Aleja Stanów Zjednoczonych 67. Umów wizytę.",
+    heading: "Salon Kosmetyczny na Pradze-Południe",
+    eyebrow: "Praga-Południe • Warszawa",
+    tagline: "Twój lokalny salon na Pradze-Południe — pełen zakres usług beauty.",
+    intro: [
+      "Royal Beauty Salon leży na Alei Stanów Zjednoczonych 67/D7 — w samym sercu Pragi-Południe. Dla mieszkańców tej dzielnicy to salon, do którego dojdziesz spacerem lub dojedziesz w kilka minut samochodem, bez stresu z parkowaniem.",
+      "Oferujemy pełen zakres usług: fryzjer i koloryzacja, keratynowe prostowanie, zabiegi na twarz, depilacja, nitkowanie brwi, manicure i pedicure — wszystko pod jednym dachem, w eleganckim i higienicznym wnętrzu.",
+      "Znamy naszą dzielnicę i jej klientów. Bezpłatny parking, płatności kartą i BLIK oraz zespół mówiący po polsku, angielsku, hindi i urdu — wizyta u nas jest prosta od pierwszego kontaktu.",
+    ],
+    highlights: [
+      { title: "W Twojej dzielnicy", desc: "Aleja Stanów Zjednoczonych 67 — serce Pragi-Południa." },
+      { title: "Bezpłatny parking", desc: "Zaparkuj wygodnie tuż przy salonie." },
+      { title: "Pełen zakres usług", desc: "Fryzjer, kosmetyczka, manicure i depilacja w jednym miejscu." },
+      { title: "5.0 w Google", desc: "Ponad 2000 zweryfikowanych opinii klientek." },
+    ],
+    faqs: [
+      {
+        q: "Gdzie dokładnie znajduje się salon na Pradze-Południe?",
+        a: "Na Alei Stanów Zjednoczonych 67/D7, 04-028 Warszawa — w Pradze-Południe, z bezpłatnym parkingiem dla gości.",
+      },
+      {
+        q: "Jakie usługi oferujecie dla mieszkańców Pragi-Południa?",
+        a: "Pełen zakres — fryzjer, koloryzacja, keratyna, zabiegi na twarz, depilacja, nitkowanie brwi, manicure i pedicure.",
+      },
+      {
+        q: "Czy mogę zaparkować przy salonie?",
+        a: "Tak — bezpłatny parking dostępny dla naszych gości, także w weekendy.",
+      },
+    ],
+    featureCategories: ["hair", "nails", "facials"],
+  },
+  {
+    slug: "salon-kosmetyczny-wawer",
+    title: "Salon Kosmetyczny Wawer — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny dla mieszkańców Wawra, Warszawa — fryzjer, keratyna, manicure, depilacja i zabiegi na twarz. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    heading: "Salon Kosmetyczny dla Wawra",
+    eyebrow: "Wawer • Warszawa",
+    tagline: "Profesjonalne usługi beauty dla mieszkańców Wawra i Pragi-Południa.",
+    intro: [
+      "Mieszkasz w Wawrze i szukasz salonu, do którego łatwo dojechać? Royal Beauty Salon na Alei Stanów Zjednoczonych jest idealnie skomunikowany z Wawrem — dojedziesz samochodem w kilkanaście minut, a komunikacją miejską bez przesiadek.",
+      "Oferujemy fryzjerskie, kosmetyczne i pielęgnacyjne usługi w jednym miejscu — od strzyżenia i koloryzacji, przez keratynowe prostowanie i zabiegi na twarz, po manicure, pedicure i depilację.",
+      "Nasze klientki z Wawra cenią sobie bezpłatny parking, punktualność i indywidualne podejście. Umów wizytę online przez Booksy lub zadzwoń — dobierzemy termin pasujący do Twojego dnia.",
+    ],
+    highlights: [
+      { title: "Blisko Wawra", desc: "Szybki dojazd z Wawra i Pragi-Południa." },
+      { title: "Bezpłatny parking", desc: "Wygodny dojazd samochodem bez szukania miejsca." },
+      { title: "Kompleksowe usługi", desc: "Włosy, skóra, paznokcie i depilacja w jednym salonie." },
+      { title: "Rezerwacja online", desc: "Booksy — wybór terminu w 30 sekund, 24/7." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Wawra do salonu?",
+        a: "Z Wawra dojedziesz samochodem w kilkanaście minut Aleją Stanów Zjednoczonych lub komunikacją miejską — do przystanku w pobliżu salonu.",
+      },
+      {
+        q: "Jakie usługi polecacie dla mieszkańców Wawra?",
+        a: "Nasze bestsellery to keratynowe prostowanie, zabiegi na twarz, manicure hybrydowy i depilacja — pełna oferta na stronie usług.",
+      },
+      {
+        q: "Czy jest parking przy salonie?",
+        a: "Tak — bezpłatny parking dla gości, także przyjeżdżających spoza Warszawy.",
+      },
+    ],
+    featureCategories: ["hair", "facials", "nails"],
+  },
+  {
+    slug: "salon-kosmetyczny-targowek",
+    title: "Salon Kosmetyczny Targówek — Warszawa",
+    metaDescription:
+      "Salon kosmetyczny dla Targówka, Warszawa — fryzjer, koloryzacja, manicure, depilacja i zabiegi na twarz. Royal Beauty Salon, Aleja Stanów Zjednoczonych.",
+    heading: "Salon Kosmetyczny dla Targówka",
+    eyebrow: "Targówek • Warszawa",
+    tagline: "Usługi beauty dla Targówka i Pragi — fryzjer, kosmetyczka i manicure.",
+    intro: [
+      "Targówek to prężnie rozwijająca się dzielnica — a Royal Beauty Salon jest naturalnym wyborem dla jej mieszkańców. Nasz salon na Alei Stanów Zjednoczonych leży kilka minut od Targówka, z prostym dojazdem i bezpłatnym parkingiem.",
+      "Zespół doświadczonych specjalistek zadba o Twoje włosy, skórę i paznokcie: strzyżenie i koloryzacja, keratyna i nanoplasty, zabiegi na twarz, nitkowanie brwi, depilacja, manicure i pedicure.",
+      "Stawiamy na higienę, sterylne narzędzia i produkty premium. Przyjdź sama lub z przyjaciółką — umów wizytę online o dowolnej porze, także wieczorem.",
+    ],
+    highlights: [
+      { title: "Blisko Targówka", desc: "Kilka minut od Targówka — szybki dojazd." },
+      { title: "Higiena i sterylność", desc: "Narzędzia sterylizowane, jednorazowe akcesoria." },
+      { title: "Pełen zakres usług", desc: "Fryzjer, kosmetyczka, manicure i depilacja." },
+      { title: "Rezerwacja online", desc: "Booksy — umów wizytę w dogodnym terminie." },
+    ],
+    faqs: [
+      {
+        q: "Jak dojechać z Targówka do salonu?",
+        a: "Z Targówka dojedziesz samochodem lub autobusem w kilkanaście minut — salon znajduje się na Alei Stanów Zjednoczonych 67/D7.",
+      },
+      {
+        q: "Jakie usługi są najczęściej wybierane przez klientów z Targówka?",
+        a: "Keratynowe prostowanie, koloryzacja, manicure hybrydowy, depilacja i zabiegi na twarz.",
+      },
+      {
+        q: "Czy mogę zaparkować przy salonie?",
+        a: "Tak — bezpłatny parking dla naszych gości, także w godzinach szczytu.",
       },
     ],
     featureCategories: ["hair", "nails", "waxing"],

@@ -69,7 +69,7 @@ export const warsawLinks = [
   { label: "Eyebrow Threading Warsaw", href: "/warsaw/eyebrow-threading-warsaw" },
   { label: "Waxing Warsaw", href: "/warsaw/waxing-warsaw" },
   { label: "Salon Mokotów", href: "/warsaw/salon-kosmetyczny-mokotow" },
-  { label: "Salon Centrum", href: "/warsaw/salon-piekosci-centrum" },
+  { label: "Salon Centrum", href: "/warsaw/salon-pieknosci-centrum" },
   { label: "Salon Ursynów", href: "/warsaw/salon-kosmetyczny-ursynow" },
   { label: "Salon Praga", href: "/warsaw/salon-kosmetyczny-praga" },
   { label: "Salon Wilanów", href: "/warsaw/salon-urody-wilanow" },
@@ -78,6 +78,9 @@ export const warsawLinks = [
   { label: "Salon Wola", href: "/warsaw/salon-kosmetyczny-wola" },
   { label: "Salon Bemowo", href: "/warsaw/salon-fryzjerski-bemowo" },
   { label: "Salon Bielany", href: "/warsaw/salon-kosmetyczny-bielany" },
+  { label: "Salon Praga-Południe", href: "/warsaw/salon-kosmetyczny-praga-poludnie" },
+  { label: "Salon Wawer", href: "/warsaw/salon-kosmetyczny-wawer" },
+  { label: "Salon Targówek", href: "/warsaw/salon-kosmetyczny-targowek" },
 ] as const;
 
 /** Specialty / community landing pages for footer + internal linking. */
