@@ -75,7 +75,12 @@ export function localBusinessJsonLd() {
         closes: "18:00",
       },
     ],
-    sameAs: [...Object.values(siteConfig.socials), MAPS_URL],
+    sameAs: [
+      ...Object.values(siteConfig.socials),
+      MAPS_URL,
+      siteConfig.booksy,
+      siteConfig.googleBusiness,
+    ],
     contactPoint: [
       {
         "@type": "ContactPoint",

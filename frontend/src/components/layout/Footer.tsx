@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import Link from "next/link";
-import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock, Calendar, Star } from "lucide-react";
 import { siteConfig, navLinks, serviceCategoryLinks, warsawLinks, specialtyLinks } from "@/lib/site";
 import { useTranslation } from "@/lib/i18n";
 import { trackEvent } from "@/lib/analytics";
@@ -17,6 +17,7 @@ export function Footer() {
     "/our-work": t("nav.ourWork"),
     "/tools": t("nav.tools"),
     "/blog": t("nav.blog"),
+    "/booksy": t("nav.booksy"),
     "/contact": t("nav.contact"),
   }), [t]);
 
@@ -39,20 +40,45 @@ export function Footer() {
           </p>
           <div className="flex gap-3">
             {[
-              { icon: Instagram, href: siteConfig.socials.instagram },
-              { icon: Facebook, href: siteConfig.socials.facebook },
-              { icon: Youtube, href: siteConfig.socials.youtube },
-            ].map(({ icon: Icon, href }, i) => (
+              { icon: Instagram, href: siteConfig.socials.instagram, label: "Instagram" },
+              { icon: Facebook, href: siteConfig.socials.facebook, label: "Facebook" },
+              { icon: Youtube, href: siteConfig.socials.youtube, label: "YouTube" },
+            ].map(({ icon: Icon, href, label }) => (
               <a
-                key={i}
+                key={label}
                 href={href}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={label}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-all hover:border-gold hover:bg-gold hover:text-luxury-black"
               >
                 <Icon className="h-4 w-4" />
               </a>
             ))}
+          </div>
+
+          {/* Sitewide strong outbound backlinks to our booking + Google profiles */}
+          <div className="space-y-2.5">
+            <a
+              href={siteConfig.booksy}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("booksy_click", { source: "footer" })}
+              className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white/70 transition-all hover:border-gold/40 hover:bg-white/10 hover:text-gold"
+            >
+              <Calendar className="h-4 w-4 text-gold" />
+              Book on Booksy
+            </a>
+            <a
+              href={siteConfig.googleBusiness}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("google_business_click", { source: "footer" })}
+              className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white/70 transition-all hover:border-gold/40 hover:bg-white/10 hover:text-gold"
+            >
+              <Star className="h-4 w-4 text-gold" />
+              Reviews on Google
+            </a>
           </div>
         </div>
 

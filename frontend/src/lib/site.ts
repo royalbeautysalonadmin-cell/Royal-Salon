@@ -33,6 +33,10 @@ export const siteConfig = {
     tiktok: "https://tiktok.com/@royalbeautywarsaw",
     youtube: "https://youtube.com/@royalbeautywarsaw",
   },
+  /** Third-party booking profile — linked sitewide as a strong outbound backlink. */
+  booksy: "https://royalbeautywarsawsalon.booksy.com",
+  /** Google Business Profile share link — linked sitewide as a strong outbound backlink. */
+  googleBusiness: "https://share.google/0fjJVnfXsKUH30EUb",
 } as const;
 
 export const navLinks = [
@@ -41,6 +45,7 @@ export const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Our Work", href: "/our-work" },
   { label: "Blog", href: "/blog" },
+  { label: "Book Online", href: "/booksy" },
   { label: "Contact", href: "/contact" },
   { label: "Free Tools", href: "/tools" },
 ] as const;

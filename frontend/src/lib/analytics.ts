@@ -17,7 +17,9 @@ export type ConversionEvent =
   | "book_success"
   | "whatsapp_click"
   | "call_click"
-  | "contact_click";
+  | "contact_click"
+  | "booksy_click"
+  | "google_business_click";
 
 interface AnalyticsWindow extends Window {
   gtag?: (...args: unknown[]) => void;
@@ -32,6 +34,8 @@ const FB_EVENT_MAP: Record<ConversionEvent, string> = {
   whatsapp_click: "Contact",
   call_click: "Contact",
   contact_click: "Contact",
+  booksy_click: "InitiateCheckout",
+  google_business_click: "Contact",
 };
 
 export function trackEvent(

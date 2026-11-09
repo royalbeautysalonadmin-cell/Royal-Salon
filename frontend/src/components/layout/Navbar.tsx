@@ -36,6 +36,7 @@ export function Navbar() {
     "/our-work": t("nav.ourWork"),
     "/tools": t("nav.tools"),
     "/blog": t("nav.blog"),
+    "/booksy": t("nav.booksy"),
     "/contact": t("nav.contact"),
   }), [t]);
 

@@ -19,6 +19,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.services": { en: "Services", pl: "Usługi" },
   "nav.tools": { en: "Free Tools", pl: "Darmowe Narzędzia" },
   "nav.blog": { en: "Blog", pl: "Blog" },
+  "nav.booksy": { en: "Book Online", pl: "Rezerwuj Online" },
   "nav.contact": { en: "Contact", pl: "Kontakt" },
   "nav.ourWork": { en: "Our Work", pl: "Nasza Praca" },
 
@@ -213,6 +214,26 @@ const translations: Record<string, Record<Lang, string>> = {
   "amenities.heading": { en: "Salon Amenities", pl: "Udogodnienia Salonu" },
   "amenities.title": { en: "Everything You Need", pl: "Wszystko, Czego Potrzebujesz" },
   "amenities.description": { en: "We've thought of every detail to make your visit to our Warsaw salon comfortable, convenient and truly luxurious.", pl: "Pomyśleliśmy o każdym detalu, aby wizyta w naszym warszawskim salonie była komfortowa, wygodna i prawdziwie luksusowa." },
+
+  // Booksy
+  "booksy.heading": { en: "Book Online", pl: "Rezerwuj Online" },
+  "booksy.title": { en: "Book Instantly on Booksy", pl: "Zarezerwuj Natychmiast na Booksy" },
+  "booksy.description": { en: "Skip the phone call — pick your service, date and time on our Booksy profile and get instant confirmation.", pl: "Pomiń telefon — wybierz usługę, datę i godzinę na naszym profilu Booksy i otrzymaj natychmiastowe potwierdzenie." },
+  "booksy.perk1": { en: "Live availability, 24/7", pl: "Dostępne terminy, 24/7" },
+  "booksy.perk2": { en: "Instant booking confirmation", pl: "Natychmiastowe potwierdzenie rezerwacji" },
+  "booksy.perk3": { en: "Read verified client reviews", pl: "Czytaj zweryfikowane opinie klientek" },
+  "booksy.cta": { en: "Book on Booksy", pl: "Rezerwuj na Booksy" },
+
+  // Google Business Profile
+  "gbp.heading": { en: "Find Us on Google", pl: "Znajdź Nas w Google" },
+  "gbp.title": { en: "Our Google Business Profile", pl: "Nasz Profil Google Moja Firma" },
+  "gbp.description": { en: "See our verified Google profile for opening hours, directions, real client reviews — and photos straight from the salon.", pl: "Zobacz nasz zweryfikowany profil Google z godzinami otwarcia, wskazówkami dojazdu, opiniami klientek i zdjęciami prosto z salonu." },
+  "gbp.rating": { en: "5.0 rating from 2,000+ Google reviews", pl: "Ocena 5.0 z ponad 2000 opinii Google" },
+  "gbp.verified": { en: "Verified Google Business Profile", pl: "Zweryfikowany profil Google" },
+  "gbp.local": { en: "Aleja Stanów Zjednoczonych 67/D7, Warszawa", pl: "Aleja Stanów Zjednoczonych 67/D7, Warszawa" },
+  "gbp.photoCaption": { en: "Inside our Warsaw salon", pl: "Wnętrze naszego salonu w Warszawie" },
+  "gbp.cardText": { en: "Look us up on Google to get directions, check today's hours, or read what clients say about Royal Beauty Salon before you visit.", pl: "Znajdź nas w Google, aby sprawdzić wskazówki dojazdu, godziny otwarcia lub przeczytać, co klientki mówią o Royal Beauty Salon przed wizytą." },
+  "gbp.cta": { en: "View on Google", pl: "Zobacz w Google" },
 
   // CTA
   "cta.title": { en: "Ready to book your appointment?", pl: "Gotowa na umówienie wizyty?" },

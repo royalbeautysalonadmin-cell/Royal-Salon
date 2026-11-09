@@ -28,6 +28,7 @@ const ABOUT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const SERVICES_PAGE_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const OUR_WORK_UPDATED = new Date("2026-08-08T10:00:00-07:00"); // our-work/page.tsx
 const CONTACT_UPDATED = new Date("2026-08-08T10:00:00-07:00");
+const BOOKSY_UPDATED = new Date("2026-11-09T10:00:00-07:00"); // booksy/page.tsx
 const WARSAW_HUB_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const BLOG_INDEX_UPDATED = new Date("2026-08-08T10:00:00-07:00");
 const STANDALONE_BLOG_UPDATED = new Date("2026-08-27T10:00:00-07:00"); // static blog pages (not in blogPosts)
@@ -62,6 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "services", priority: 0.9, changeFrequency: "weekly", lastModified: SERVICES_PAGE_UPDATED },
     { path: "our-work", priority: 0.8, changeFrequency: "monthly", lastModified: OUR_WORK_UPDATED },
     { path: "contact", priority: 0.7, changeFrequency: "monthly", lastModified: CONTACT_UPDATED },
+    { path: "booksy", priority: 0.8, changeFrequency: "weekly", lastModified: BOOKSY_UPDATED },
 
     // Local SEO hub
     { path: "warsaw", priority: 0.9, changeFrequency: "weekly", lastModified: WARSAW_HUB_UPDATED },

@@ -71,6 +71,12 @@ const Testimonials = dynamic(() =>
   import("@/components/sections/Testimonials").then((m) => m.Testimonials)
 );
 const Gallery = dynamic(() => import("@/components/sections/Gallery").then((m) => m.Gallery));
+const BooksySection = dynamic(() =>
+  import("@/components/sections/BooksySection").then((m) => m.BooksySection)
+);
+const GoogleBusinessSection = dynamic(() =>
+  import("@/components/sections/GoogleBusinessSection").then((m) => m.GoogleBusinessSection)
+);
 const Contact = dynamic(() => import("@/components/sections/Contact").then((m) => m.Contact));
 
 export const metadata: Metadata = {
@@ -141,6 +147,8 @@ export default async function HomePage() {
       <Amenities />
       <Testimonials testimonials={testimonials} />
       <Gallery images={galleryImages} />
+      <BooksySection />
+      <GoogleBusinessSection />
       <Contact />
     </>
   );

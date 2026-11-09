@@ -31,7 +31,7 @@ function facts(): string[] {
     `Email: ${siteConfig.email}`,
     `Opening hours: Monday and Wednesday–Sunday 11:00–18:00 (closed Tuesdays)`,
     `Languages: English, Polish (staff also speak Hindi and Urdu)`,
-    `Booking: online, by phone or WhatsApp`,
+    `Booking: online via Booksy (${siteConfig.booksy.replace("https://", "")}), by phone or WhatsApp`,
     `Price range: luxury ($$$), prices in PLN`,
     `Google rating: 5.0 from 2,000+ reviews (google.com/maps search: Royal Beauty Salon Warsaw)`,
   ];
@@ -57,6 +57,7 @@ export function buildLlmsTxt(): string {
     ["Blog", "/blog"],
     ["Free beauty tools", "/tools"],
     ["Contact & booking", "/contact"],
+    ["Book online via Booksy", "/booksy"],
     ["Warsaw beauty salon hub", "/warsaw"],
   ];
   for (const [label, path] of core) out.push(`- [${label}](${url(path)})`);
