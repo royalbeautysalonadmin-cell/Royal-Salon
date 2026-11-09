@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
       { source: "/bridal-makeup-warsaw", destination: "/warsaw/bridal-makeup-warsaw", permanent: true },
       { source: "/facial-warsaw", destination: "/warsaw/facial-warsaw", permanent: true },
       { source: "/waxing-warsaw", destination: "/warsaw/waxing-warsaw", permanent: true },
+      {
+        source: "/warsaw/salon-piekosci-centrum",
+        destination: "/warsaw/salon-pieknosci-centrum",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
