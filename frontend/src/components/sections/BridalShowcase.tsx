@@ -36,16 +36,16 @@ function BeforeAfter() {
       onTouchMove={(e) => update(e.touches[0].clientX)}
     >
       <Image src={AFTER} alt="After bridal makeover" fill className="object-cover" sizes="50vw" />
-      <span className="absolute right-4 top-4 rounded-full bg-brown px-3 py-1 text-xs font-medium text-white">
-        After
+      <span className="absolute right-4 top-4 rounded-full bg-brown px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-luxury sm:text-sm">
+        Before
       </span>
 
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
         <div className="relative h-full" style={{ width: ref.current?.offsetWidth || "100%" }}>
           <Image src={BEFORE} alt="Before makeover" fill className="object-cover" sizes="50vw" />
         </div>
-        <span className="absolute left-4 top-4 rounded-full bg-luxury-black/80 px-3 py-1 text-xs font-medium text-white">
-          Before
+        <span className="absolute left-4 top-4 rounded-full bg-gold px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-luxury-black shadow-luxury sm:text-sm">
+          After
         </span>
       </div>
 
