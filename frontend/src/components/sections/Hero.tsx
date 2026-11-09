@@ -3,12 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Sparkles, ArrowRight, Star, ChevronDown } from "lucide-react";
+import { Sparkles, ArrowRight, Star, ChevronDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBookingStore } from "@/store/booking";
 import { stats } from "@/data/content";
 import { HeroSlider } from "./HeroSlider";
 import { useTranslation } from "@/lib/i18n";
+import { siteConfig } from "@/lib/site";
+import { trackEvent } from "@/lib/analytics";
 
 const ParticleField = dynamic(() => import("@/components/three/ParticleField"), {
   ssr: false,
@@ -117,6 +119,21 @@ export function Hero() {
               <Button size="lg" variant="outline" asChild>
                 <a href="/services">{t("hero.explore")}</a>
               </Button>
+            </motion.div>
+
+            {/* Prominent Google Business Profile link */}
+            <motion.div variants={item} className="mt-5 flex flex-wrap gap-3">
+              <a
+                href={siteConfig.googleBusiness}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("google_business_click", { source: "hero" })}
+                className="group inline-flex items-center gap-2 rounded-full border-2 border-gold bg-white px-5 py-3 text-sm font-bold text-luxury-black shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-luxury"
+              >
+                <Star className="h-4 w-4 fill-gold text-gold" />
+                {t("hero.google")}
+                <ExternalLink className="h-3.5 w-3.5 text-brown transition-transform group-hover:translate-x-0.5" />
+              </a>
             </motion.div>
 
             <motion.div

@@ -32,6 +32,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "hero.book": { en: "Book Appointment", pl: "Umów Wizytę" },
   "hero.explore": { en: "Explore Services", pl: "Zobacz Usługi" },
   "hero.rating": { en: "from 2,000+ happy clients", pl: "od ponad 2000 zadowolonych klientek" },
+  "hero.google": { en: "5.0 on Google · 2,000+ reviews", pl: "5.0 w Google · 2000+ opinii" },
   "hero.scroll": { en: "Scroll", pl: "Przewiń" },
 
   // Services
