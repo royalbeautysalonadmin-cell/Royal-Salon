@@ -564,7 +564,7 @@ export const nichePages: NichePage[] = [
       "threading-combo",
       "full-face-eyebrows-threading",
       "cleanup",
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
     ],
     relatedNicheSlugs: [
       "indian-salon-warsaw",
@@ -879,7 +879,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "blow-dry",
       "threading-combo",
       "royal-facial",
@@ -986,7 +986,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "keratin-treatment-medium",
       "hydra-facial",
       "royal-facial",
@@ -1091,7 +1091,7 @@ export const nichePages: NichePage[] = [
       "hair-spa-blow-dry",
       "royal-facial",
       "hair-oil-massage-steam",
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
     ],
     relatedNicheSlugs: [
       "women-only-hair-salon-warsaw",
@@ -1186,7 +1186,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "fashion-shade-global-color-medium",
       "hair-highlights-medium",
       "keratin-treatment-medium",
@@ -1288,7 +1288,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "keratin-treatment-medium",
       "royal-nanoplasty",
       "hair-spa-blow-dry",
@@ -1599,7 +1599,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "royal-nanoplasty",
       "manicure",
       "pedicure",
@@ -1798,7 +1798,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "fashion-shade-global-color-medium",
       "royal-nanoplasty",
       "keratin-treatment-medium",
@@ -2272,7 +2272,7 @@ export const nichePages: NichePage[] = [
     featuredServiceSlugs: [
       "hair-highlights-medium",
       "fashion-shade-global-color-medium",
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
     ],
     relatedNicheSlugs: ["fryzjer-warszawa", "salon-urody-warszawa"],
     relatedCategorySlugs: ["hair"],
@@ -2548,7 +2548,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "royal-nanoplasty",
       "manicure",
       "royal-facial",
@@ -2742,7 +2742,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "fashion-shade-global-color-medium",
       "royal-nanoplasty",
       "keratin-treatment-medium",
@@ -3298,7 +3298,7 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "hair-cutting-basic",
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "kids-haircut",
     ],
     relatedNicheSlugs: [
@@ -3401,7 +3401,7 @@ export const nichePages: NichePage[] = [
       "threading-combo",
       "manicure",
       "royal-facial",
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
     ],
     relatedNicheSlugs: [
       "salon-kosmetyczny-warszawa",
@@ -3500,7 +3500,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "manicure",
       "pedicure",
       "royal-facial",
@@ -3723,7 +3723,7 @@ export const nichePages: NichePage[] = [
     featuredServiceSlugs: [
       "fashion-shade-global-color-medium",
       "hair-highlights-medium",
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "keratin-treatment-medium",
     ],
     relatedNicheSlugs: [
@@ -3835,7 +3835,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "hair-cutting-basic",
       "blow-dry",
       "hair-spa-blow-dry",
@@ -3948,7 +3948,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     featuredServiceSlugs: [
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "royal-nanoplasty",
       "fashion-shade-global-color-medium",
       "blow-dry",
@@ -4169,7 +4169,7 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "hair-cutting-basic",
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
       "hair-oil-massage-steam",
     ],
     relatedNicheSlugs: [
@@ -4479,7 +4479,7 @@ export const nichePages: NichePage[] = [
     ],
     featuredServiceSlugs: [
       "hair-cutting-basic",
-      "hair-cutting-advanced",
+      "hair-cutting-advanced-medium",
     ],
     relatedNicheSlugs: [
       "barber-warszawa",
