@@ -35,9 +35,9 @@ const values = [
 ];
 
 const team = [
-  { name: "Kinjal", role: "Founder & Creative Director", img: U("photo-1494790108377-be9c29b29330") },
-  { name: "Kiran", role: "Lead Beauty Expert", img: U("photo-1438761681033-6461ffad8d80") },
-  { name: "Darpan", role: "Senior Colourist", img: U("photo-1534528741775-53994a69daeb") },
+  { name: "Kinjal", role: "Stylist", img: U("photo-1494790108377-be9c29b29330") },
+  { name: "Kiran", role: "Stylist", img: U("photo-1438761681033-6461ffad8d80") },
+  { name: "Darpan", role: "Stylist", img: U("photo-1534528741775-53994a69daeb") },
 ];
 
 export function AboutExtras() {
@@ -61,7 +61,7 @@ export function AboutExtras() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-6 text-sm uppercase tracking-[0.3em] text-gold">
-              Kinjal, Kiran &amp; Darpan · Founders
+              Mr. Jawad · Founder
             </p>
           </Reveal>
         </div>

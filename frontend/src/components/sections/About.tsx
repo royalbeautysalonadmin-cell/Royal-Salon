@@ -84,7 +84,7 @@ export function About() {
 
           <Reveal delay={0.4} className="mt-10 flex items-center gap-6 border-t border-border pt-6">
             <div className="flex -space-x-3">
-              {["K", "K", "D"].map((initial, i) => (
+              {["J", "K", "K", "D"].map((initial, i) => (
                 <div
                   key={i}
                   className="flex h-12 w-12 items-center justify-center rounded-full bg-brown-gradient text-sm font-semibold text-white ring-2 ring-white"
@@ -94,8 +94,8 @@ export function About() {
               ))}
             </div>
             <div>
-              <p className="font-serif text-lg text-luxury-black">Kinjal, Kiran &amp; Darpan</p>
-              <p className="text-sm text-charcoal/70">Founders</p>
+              <p className="font-serif text-lg text-luxury-black">Mr. Jawad · Founder</p>
+              <p className="text-sm text-charcoal/70">Kinjal, Kiran &amp; Darpan · Stylists</p>
             </div>
           </Reveal>
         </div>
