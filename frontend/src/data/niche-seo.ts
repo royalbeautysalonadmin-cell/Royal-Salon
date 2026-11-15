@@ -217,14 +217,14 @@ export const nichePages: NichePage[] = [
     ],
     highlights: [
       { title: "Quick & walk-in friendly", desc: "Pop in for fast threading and touch-ups." },
-      { title: "Affordable everyday care", desc: "Threading from 25 zł, cleanups from 50 zł." },
+      { title: "Affordable everyday care", desc: "Threading from 25 zł, cleanups from 90 zł." },
       { title: "Hygienic", desc: "Single-use tools and strict sanitisation every visit." },
       { title: "All the parlour basics", desc: "Threading, waxing, facials, bleach and more." },
     ],
     faqs: [
       {
         q: "How much is threading at your Warsaw parlour?",
-        a: "Eyebrow threading starts from 25 zł and a full threading combo (brows, lip and chin) is 40 zł. Full-face threading is 50 zł.",
+        a: "Eyebrow threading starts from 25 zł and a full threading combo (brows, lip and chin) is 40 zł. Full-face threading is 60 zł.",
       },
       {
         q: "Do I need an appointment for threading or waxing?",
@@ -2970,7 +2970,7 @@ export const nichePages: NichePage[] = [
     faqs: [
       {
         q: "Ile kosztuje oczyszczanie twarzy w Warszawie?",
-        a: "Ceny zaczynają się od 50 zł za cleanup, 120 zł za oczyszczanie kawitacyjne i 200 zł za HydraFacial (oczyszczanie wodorowe).",
+        a: "Ceny zaczynają się od 90 zł za cleanup, 120 zł za oczyszczanie kawitacyjne i 250 zł za HydraFacial (oczyszczanie wodorowe).",
       },
       {
         q: "Jak często należy robić oczyszczanie twarzy?",
@@ -4540,7 +4540,7 @@ export const nichePages: NichePage[] = [
       {
         heading: "Zabiegi na twarz cennik Warszawa",
         body: [
-          "W Royal Beauty Salon zabiegi na twarz zaczynają się od 120 zł. Oczyszczanie twarzy — od 120 zł, zabieg nawilżający — od 120 zł, hydra facial — 200 zł, royal facial — 150 zł.",
+          "W Royal Beauty Salon zabiegi na twarz zaczynają się od 50 zł. Oczyszczanie twarzy — od 90 zł, zabieg nawilżający — od 120 zł, hydra facial — 250 zł, royal facial — 175 zł.",
           "Każdy zabieg obejmuje konsultację, oczyszczenie skóry, główny etap zabiegu, maskę i pielęgnację końcową. Czas trwania: 45-90 minut.",
         ],
       },
@@ -4568,7 +4568,7 @@ export const nichePages: NichePage[] = [
     faqs: [
       {
         q: "Ile kosztuje zabieg na twarz w Warszawie?",
-        a: "W Royal Beauty Salon zabiegi na twarz zaczynają się od 120 zł. Oczyszczanie — od 120 zł, nawilżanie — od 120 zł, hydra facial — 200 zł, royal facial — 150 zł.",
+        a: "W Royal Beauty Salon zabiegi na twarz zaczynają się od 50 zł. Oczyszczanie — od 90 zł, nawilżanie — od 120 zł, hydra facial — 250 zł, royal facial — 175 zł.",
       },
       {
         q: "Jaki zabieg na twarz jest najlepszy?",
@@ -4649,7 +4649,7 @@ export const nichePages: NichePage[] = [
       {
         heading: "Depilacja woskiem cennik Warszawa",
         body: [
-          "W Royal Beauty Salon depilacja woskiem zaczyna się od 35 zł (pachy). Depilacja nóg — od 70 zł (pół nogi), 110 zł (całe nogi). Depilacja bikini — od 120 zł. Depilacja twarzy — od 35 zł.",
+          "W Royal Beauty Salon depilacja woskiem zaczyna się od 35 zł (pachy). Depilacja nóg — od 70 zł (pół nogi), 120 zł (całe nogi). Depilacja bikini — od 200 zł. Depilacja twarzy — od 35 zł.",
           "Oferujemy pakiety rabatowe: depilacja 3 partii — 10% zniżki, depilacja 5 partii — 15% zniżki. Zapytaj o pakiety podczas rezerwacji.",
         ],
       },
@@ -4677,7 +4677,7 @@ export const nichePages: NichePage[] = [
     faqs: [
       {
         q: "Ile kosztuje depilacja woskiem nóg w Warszawie?",
-        a: "W Royal Beauty Salon depilacja pół nóg kosztuje od 70 zł, a całych nóg od 110 zł. Depilacja bikini — od 120 zł, pach — od 35 zł.",
+        a: "W Royal Beauty Salon depilacja pół nóg kosztuje od 70 zł, a całych nóg od 120 zł. Depilacja bikini — od 200 zł, pach — od 35 zł.",
       },
       {
         q: "Jak długo utrzymuje się efekt depilacji woskiem?",
@@ -5081,7 +5081,7 @@ export const nichePages: NichePage[] = [
         heading: "Fryzura ślubna dopasowana do Twoich włosów",
         body: [
           "Cienkie włosy wymagają innego przygotowania niż gęste i ciężkie. Dobieramy preparaty i techniki tak, aby fryzura była stabilna, ale naturalna — bez efektu sklejonych włosów. Dodajemy objętość tam, gdzie trzeba, i wygładzamy tam, gdzie ma błyszczeć.",
-          "Oferujemy również drapowanie sari i dupatty (Saree / Dupatta Draping) za 60 zł — szczególnie doceniane przez klientki ślubów hinduskich i południowoazjatyckich.",
+          "Oferujemy również drapowanie sari i dupatty (Saree / Dupatta Draping) za 80 zł — szczególnie doceniane przez klientki ślubów hinduskich i południowoazjatyckich.",
         ],
       },
       {
@@ -5094,13 +5094,13 @@ export const nichePages: NichePage[] = [
     highlights: [
       { title: "Upięcia i fale", desc: "Fryzury ślubne trwałe przez cały dzień." },
       { title: "Próbne upięcie", desc: "Bez niespodzianek w dniu ślubu." },
-      { title: "Od 100 zł", desc: "Upięcie ślubne 230 zł, drapowanie sari 60 zł." },
+      { title: "Od 100 zł", desc: "Upięcie ślubne 230 zł, drapowanie sari 80 zł." },
       { title: "Fryzura + makijaż", desc: "Spójny look ślubny w jednym salonie." },
     ],
     faqs: [
       {
         q: "Ile kosztuje fryzura ślubna w Warszawie?",
-        a: "W Royal Beauty Salon upięcie ślubne (Bridal Hairstyle) kosztuje 230 zł, zaawansowana stylizacja 200 zł, a podstawowe modelowanie 100 zł. Drapowanie sari lub dupatty to 60 zł.",
+        a: "W Royal Beauty Salon upięcie ślubne (Bridal Hairstyle) kosztuje 230 zł, zaawansowana stylizacja 200 zł, a podstawowe modelowanie 100 zł. Drapowanie sari lub dupatty to 80 zł.",
       },
       {
         q: "Kiedy umówić próbne upięcie ślubne?",
@@ -5154,7 +5154,7 @@ export const nichePages: NichePage[] = [
     ],
     title: "HydraFacial Warszawa — Cena i Efekty | Royal Beauty Salon",
     metaDescription:
-      "HydraFacial w Warszawie: oczyszczenie, delikatny peeling i intensywne nawilżenie w jednym zabiegu. Cena 200 zł. Umów HydraFacial na Alejach Stanów Zjednoczonych.",
+      "HydraFacial w Warszawie: oczyszczenie, delikatny peeling i intensywne nawilżenie w jednym zabiegu. Cena 250 zł. Umów HydraFacial na Alejach Stanów Zjednoczonych.",
     h1: "HydraFacial w Warszawie",
     eyebrow: "HydraFacial • Warszawa",
     tagline:
@@ -5164,7 +5164,7 @@ export const nichePages: NichePage[] = [
     intro: [
       "HydraFacial to jeden z najczęściej wybieranych zabiegów na twarz w Warszawie — łączy oczyszczanie, delikatny peeling i intensywne nawilżenie w jednym, komfortowym spotkaniu. W Royal Beauty Salon na Alejach Stanów Zjednoczonych wykonujemy HydraFacial dla każdego typu skóry.",
       "Zabieg polega na stopniowym, wieloetapowym oczyszczeniu skóry z zanieczyszczeń i nadmiaru sebum, a następnie wprowadzeniu substancji nawilżających i odżywczych. Skóra jest wygładzona i rozświetlona, a Ty wracasz do codziennych zajęć praktycznie od razu.",
-      "HydraFacial w naszym salonie trwa około 1,5 godziny i kosztuje 200 zł. To zabieg, który klientki w Warszawie powtarzają regularnie — przed ważnym wydarzeniem, ślubem albo po prostu dla zdrowego blasku.",
+      "HydraFacial w naszym salonie trwa około 1,5 godziny i kosztuje 250 zł. To zabieg, który klientki w Warszawie powtarzają regularnie — przed ważnym wydarzeniem, ślubem albo po prostu dla zdrowego blasku.",
     ],
     sections: [
       {
@@ -5177,7 +5177,7 @@ export const nichePages: NichePage[] = [
       {
         heading: "HydraFacial cena i czas trwania",
         body: [
-          "HydraFacial w Royal Beauty Salon kosztuje 200 zł i trwa około 1 godziny 30 minut. Jeśli szukasz innego wariantu pielęgnacji, oferujemy też Royal Facial (150 zł), a także faciale dopasowane do skóry suchej, tłustej i wrażliwej (od 120 zł).",
+          "HydraFacial w Royal Beauty Salon kosztuje 250 zł i trwa około 1 godziny 30 minut. Jeśli szukasz innego wariantu pielęgnacji, oferujemy też Royal Facial (175 zł), a także faciale dopasowane do skóry suchej, tłustej i wrażliwej (od 120 zł).",
         ],
       },
       {
@@ -5194,7 +5194,7 @@ export const nichePages: NichePage[] = [
       },
     ],
     highlights: [
-      { title: "200 zł", desc: "HydraFacial z pełnym oczyszczeniem i nawilżeniem." },
+      { title: "250 zł", desc: "HydraFacial z pełnym oczyszczeniem i nawilżeniem." },
       { title: "Dla każdej cery", desc: "Sucha, tłusta, mieszana i wrażliwa skóra." },
       { title: "Bez przestoju", desc: "Wracasz do zajęć praktycznie od razu." },
       { title: "Otwarte 6 dni", desc: "Pon. i śr.-niedz. 11:00-18:00." },
@@ -5202,7 +5202,7 @@ export const nichePages: NichePage[] = [
     faqs: [
       {
         q: "Ile kosztuje HydraFacial w Warszawie?",
-        a: "W Royal Beauty Salon HydraFacial kosztuje 200 zł i trwa około 1,5 godziny. Oferujemy także Royal Facial za 150 zł oraz faciale dla skóry suchej, tłustej i wrażliwej od 120 zł.",
+        a: "W Royal Beauty Salon HydraFacial kosztuje 250 zł i trwa około 1,5 godziny. Oferujemy także Royal Facial za 175 zł oraz faciale dla skóry suchej, tłustej i wrażliwej od 120 zł.",
       },
       {
         q: "Czy HydraFacial jest bolesny?",

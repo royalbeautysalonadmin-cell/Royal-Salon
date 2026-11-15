@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { toast } from "sonner";
+import { bustSiteCache } from "@/components/admin/bustSiteCache";
 import { Upload, Trash2, Link as LinkIcon, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -56,6 +57,7 @@ export function GalleryManager() {
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Upload failed.");
       setItems((p) => [json.image, ...p]);
+      await bustSiteCache();
       toast.success("Image added.");
       setUrl("");
     } catch (err) {
@@ -77,6 +79,7 @@ export function GalleryManager() {
       const res = await fetch(`/api/gallery/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error();
       setItems((p) => p.filter((i) => i._id !== id));
+      await bustSiteCache();
       toast.success("Image removed.");
     } catch {
       toast.error("Delete failed.");

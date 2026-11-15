@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dialog";
 import { formatPrice, cn } from "@/lib/utils";
 import { SERVICE_CATEGORIES } from "@/lib/validation";
+import { bustSiteCache } from "@/components/admin/bustSiteCache";
 
 export interface AdminService {
   _id: string;
@@ -245,7 +246,10 @@ export function ServicesManager() {
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Could not add service.");
       setItems((p) => [json.service, ...p]);
-      toast.success("Service added.");
+      const live = await bustSiteCache();
+      toast.success(
+        live ? "Service added — live on the website now." : "Service added. Website refreshes in a few minutes."
+      );
       setAddOpen(false);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Could not add service.");
@@ -267,7 +271,10 @@ export function ServicesManager() {
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Could not update service.");
       setItems((p) => p.map((s) => (s._id === editing._id ? json.service : s)));
-      toast.success("Service updated.");
+      const live = await bustSiteCache();
+      toast.success(
+        live ? "Service updated — live on the website now." : "Service updated. Website refreshes in a few minutes."
+      );
       setEditing(null);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Could not update service.");
@@ -287,6 +294,7 @@ export function ServicesManager() {
       if (!res.ok) throw new Error();
       const { service } = await res.json();
       setItems((p) => p.map((i) => (i._id === s._id ? service : i)));
+      await bustSiteCache();
       toast.success(service.active ? "Service enabled." : "Service disabled.");
     } catch {
       toast.error("Could not update status.");
@@ -301,6 +309,7 @@ export function ServicesManager() {
       const res = await fetch(`/api/services/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error();
       setItems((p) => p.filter((s) => s._id !== id));
+      await bustSiteCache();
       toast.success("Service deleted.");
     } catch {
       toast.error("Delete failed.");

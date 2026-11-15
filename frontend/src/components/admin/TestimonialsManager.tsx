@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { bustSiteCache } from "@/components/admin/bustSiteCache";
 import { Plus, Trash2, Star, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -54,6 +55,7 @@ export function TestimonialsManager() {
       if (!res.ok) throw new Error();
       const { testimonial } = await res.json();
       setItems((p) => [testimonial, ...p]);
+      await bustSiteCache();
       toast.success("Testimonial added.");
       setOpen(false);
     } catch {
@@ -68,6 +70,7 @@ export function TestimonialsManager() {
       const res = await fetch(`/api/testimonials/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error();
       setItems((p) => p.filter((t) => t._id !== id));
+      await bustSiteCache();
       toast.success("Deleted.");
     } catch {
       toast.error("Delete failed.");

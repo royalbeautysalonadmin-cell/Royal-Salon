@@ -787,7 +787,7 @@ export const localPages: LocalPage[] = [
     faqs: [
       {
         q: "How much is eyebrow threading in Warsaw?",
-        a: "Full Face + Eyebrows Threading is 65 zł at Royal Beauty Salon, and our Threading Combo covering brows, lip and chin is 40 zł.",
+        a: "Full Face + Eyebrows Threading is 70 zł at Royal Beauty Salon, and our Threading Combo covering brows, lip and chin is 40 zł.",
       },
       {
         q: "Is threading better than waxing for brows?",
@@ -823,7 +823,7 @@ export const localPages: LocalPage[] = [
     faqs: [
       {
         q: "How much is a Brazilian wax in Warsaw?",
-        a: "A Brazilian bikini wax starts from 102 zł at Royal Beauty Salon, performed gently with premium, skin-friendly wax.",
+        a: "A Brazilian bikini wax is 200 zł at Royal Beauty Salon, performed gently with premium, skin-friendly wax.",
       },
       {
         q: "How long should hair be before waxing?",

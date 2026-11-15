@@ -1,9 +1,19 @@
 import { NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 /**
- * Called by the backend right after a service/testimonial/gallery mutation
- * so the statically-generated frontend doesn't wait out its 24h ISR window.
+ * Called right after a service/testimonial/gallery mutation so the
+ * statically-generated frontend doesn't wait out its ISR window.
+ *
+ * Two callers, two auth paths:
+ *  - the backend's fire-and-forget ping, authenticated with x-revalidate-secret;
+ *  - the admin dashboard itself (bustSiteCache), authenticated with the
+ *    NextAuth admin session cookie. This path exists because the backend ping
+ *    silently does nothing when FRONTEND_URL / REVALIDATE_SECRET aren't set on
+ *    the backend host — the exact failure mode where an admin price edit never
+ *    reached the public site.
  *
  * Deliberately NOT under /api/ — next.config.ts proxies all /api/* requests
  * to the backend (beforeFiles rewrite), which would make a route handler
@@ -16,11 +26,24 @@ import { revalidatePath, revalidateTag } from "next/cache";
  * warsaw/niche pages that surface featured services, the sitemap...).
  */
 export async function POST(req: Request) {
-  const secret =
+  const provided =
     req.headers.get("x-revalidate-secret") || new URL(req.url).searchParams.get("secret");
-  if (!process.env.REVALIDATE_SECRET || secret !== process.env.REVALIDATE_SECRET) {
-    return NextResponse.json({ error: "Invalid secret" }, { status: 401 });
+  const secretOk = Boolean(
+    process.env.REVALIDATE_SECRET && provided === process.env.REVALIDATE_SECRET
+  );
+
+  if (!secretOk) {
+    let session = null;
+    try {
+      session = await getServerSession(authOptions);
+    } catch {
+      session = null;
+    }
+    if (!session) {
+      return NextResponse.json({ error: "Invalid secret" }, { status: 401 });
+    }
   }
+
   revalidatePath("/", "layout");
   revalidateTag("services");
   return NextResponse.json({ revalidated: true, now: Date.now() });

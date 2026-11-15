@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "Ile kosztuje wizyta w salonie kosmetycznym w Warszawie?",
-    a: "Ceny wahają się od 50 zł za podstawowe zabiegi (cleanup, henna) do 700+ zł za zaawansowane zabiegi (keratyna, nanoplastia). Royal Beauty Salon oferuje konkurencyjne ceny przy premium jakości usług.",
+    a: "Ceny wahają się od 50 zł za podstawowe zabiegi (detan, henna) do 700+ zł za zaawansowane zabiegi (keratyna, nanoplastia). Royal Beauty Salon oferuje konkurencyjne ceny przy premium jakości usług.",
   },
   {
     q: "Jak znaleźć dobry salon kosmetyczny w Warszawie?",
